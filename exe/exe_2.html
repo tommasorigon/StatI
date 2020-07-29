@@ -1514,8 +1514,150 @@ div.tocify {
 </div>
 
 
-<div id="esercizio-1" class="section level2">
-<h2>Esercizio 1</h2>
+<p>La maggior parte dei problemi di questa esercitazione <strong>non</strong> è stata svolta a lezione. Si consiglia agli studenti di provare a risolvere i problemi autonomamente.</p>
+<div id="posizione-ottimale-del-supermercato" class="section level2">
+<h2>Posizione ottimale del supermercato</h2>
+<p>In una strada rettilinea sono collocati <span class="math inline">\(5\)</span> condomini, chiamati <code>A, B, C, D</code> ed <code>E</code>. Il comune desidera determinare la <strong>posizione ottimale</strong> per un nuovo supermercato. I condomini sono occupati dal seguente numero di inquilini:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numero di inquilini</td>
+<td>6</td>
+<td>6</td>
+<td>20</td>
+<td>12</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Inoltre, la posizione dei condomini, ovvero i metri di distanza dall’inizio della via, sono le seguenti:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Distanza dall’inizio della via (metri)</td>
+<td>1000</td>
+<td>2000</td>
+<td>3000</td>
+<td>3100</td>
+<td>3150</td>
+</tr>
+</tbody>
+</table>
+<div id="domanda" class="section level3">
+<h3>Domanda</h3>
+<p>Tenendo conto del numero degli inquilini, si indichi la posizione ideale del supermercato, ovvero la <strong>posizione che minimizza il disagio</strong> degli inquilini in termini di <strong>distanza percorsa</strong>. Si identifichi quindi la posizione in due casi:</p>
+<ul>
+<li>Supponendo che disagio cresca <strong>linearmente</strong> con la distanza.</li>
+<li>Supponendo che disagio cresca con il <strong>quadrato</strong> della distanza.</li>
+</ul>
+</div>
+<div id="schema-di-soluzione" class="section level3">
+<h3>Schema di soluzione</h3>
+<p>Siano <span class="math inline">\(x_1,\dots,x_{52}\)</span> le posizioni dei vari inquilini nella strada rettilinea. Sebbene i coinquilini siano <span class="math inline">\(52\)</span>, le modalità sono solamente <span class="math inline">\(5\)</span>, dal momento che essi vivono in <span class="math inline">\(5\)</span> condomini.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Modalità <span class="math inline">\(c_j\)</span></th>
+<th>Frequenza assoluta <span class="math inline">\(n_j\)</span></th>
+<th>Frequenza cumulata <span class="math inline">\(N_j\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1000</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>2000</td>
+<td>6</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>3000</td>
+<td>20</td>
+<td>32</td>
+</tr>
+<tr class="even">
+<td>3100</td>
+<td>12</td>
+<td>44</td>
+</tr>
+<tr class="odd">
+<td>3150</td>
+<td>8</td>
+<td>52</td>
+</tr>
+</tbody>
+</table>
+<p>Il primo quesito chiede di individuare il valore <span class="math inline">\(\alpha\)</span> (la posizione ottimale del supermercato), che minimizza</p>
+<p><span class="math display">\[
+\sum_{i=1}^{52}|x_i - \alpha | = \sum_{j=1}^5 n_j |c_j - \alpha| = 6 |1000 - \alpha| + \cdots + 8 |3150 - \alpha|.
+\]</span> Un possibile valore (in generale, ce ne potrebbero essere tanti!), che minimizza tale somma è la mediana. In questo caso, la numerosità campionaria è pari a <span class="math inline">\(n = 52\)</span> e pertanto la mediana è pari alla media dei due valori centrali, ovvero i valori dei individui in posizione <span class="math inline">\(26\)</span> e <span class="math inline">\(27\)</span>. Poichè entrambi sono pari a <span class="math inline">\(3000\)</span>, la mediana è pari a <span class="math inline">\(\alpha = 3000\)</span>. Poichè <span class="math inline">\(x_{(26)} = x_{(27)} = 3000\)</span>, il valore <span class="math inline">\(\alpha = 3000\)</span> è l’unica soluzione ammissibile.</p>
+<p>La seconda domanda chiede il valore <span class="math inline">\(\alpha\)</span> che minimizza il quadrato delle distanza, ovvero il valore che rende minima la somma <span class="math display">\[
+\sum_{i=1}^{52}(x_i - \alpha)^2 = \sum_{j=1}^5 n_j (c_j - \alpha)^2 = 6 (1000 - \alpha)^2 + \cdots + 8 (3150 - \alpha)^2.
+\]</span> Tale valore è la media aritmetica. Si ottiene quindi che</p>
+<p><span class="math display">\[
+\alpha = \bar{x} = \frac{1}{52}\sum_{i=1}^{52} x_i = \frac{1}{52} \sum_{j=1}^5 n_j c_j = \frac{1}{52}(1000\times 6 + \cdots + 3150\times 8) = 2700.
+\]</span></p>
+</div>
+</div>
+<div id="foglie-di-platano" class="section level2">
+<h2>Foglie di platano</h2>
+</div>
+<div id="diametro-degli-abeti-rossi-continuazione" class="section level2">
+<h2>Diametro degli abeti rossi (continuazione)</h2>
+<p>Si faccia riferimento ai dati dell’<a href="exe_1.html">esercitazione 1</a> riguardanti gli <strong>abeti rossi</strong>.</p>
+<div id="domande" class="section level3">
+<h3>Domande</h3>
+</div>
+<div id="schema-della-soluzione" class="section level3">
+<h3>Schema della soluzione</h3>
+<div id="media" class="section level4">
+<h4>Media</h4>
+</div>
+<div id="mediana" class="section level4">
+<h4>Mediana</h4>
+</div>
+<div id="media-approssimata" class="section level4">
+<h4>Media approssimata</h4>
+</div>
+<div id="mediana-approssimata" class="section level4">
+<h4>Mediana approssimata</h4>
+</div>
+<div id="quantili" class="section level4">
+<h4>Quantili</h4>
+</div>
+</div>
+</div>
+<div id="velocità-della-luce-continuazione" class="section level2">
+<h2>Velocità della luce (continuazione)</h2>
+</div>
+<div id="gran-premio-del-canada" class="section level2">
+<h2>Gran premio del Canada</h2>
+</div>
+<div id="blocchi-di-marmo" class="section level2">
+<h2>Blocchi di marmo</h2>
 </div>
 
 
