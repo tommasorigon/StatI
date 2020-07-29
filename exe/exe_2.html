@@ -1613,7 +1613,7 @@ div.tocify {
 <p>Il primo quesito chiede di individuare il valore <span class="math inline">\(\alpha\)</span> (la posizione ottimale del supermercato), che minimizza</p>
 <p><span class="math display">\[
 \sum_{i=1}^{52}|x_i - \alpha | = \sum_{j=1}^5 n_j |c_j - \alpha| = 6 |1000 - \alpha| + \cdots + 8 |3150 - \alpha|.
-\]</span> Un possibile valore (in generale, ce ne potrebbero essere tanti!), che minimizza tale somma è la mediana. In questo caso, la numerosità campionaria è pari a <span class="math inline">\(n = 52\)</span> e pertanto la mediana è pari alla media dei due valori centrali, ovvero i valori dei individui in posizione <span class="math inline">\(26\)</span> e <span class="math inline">\(27\)</span>. Poichè entrambi sono pari a <span class="math inline">\(3000\)</span>, la mediana è pari a <span class="math inline">\(\alpha = 3000\)</span>. Poichè <span class="math inline">\(x_{(26)} = x_{(27)} = 3000\)</span>, il valore <span class="math inline">\(\alpha = 3000\)</span> è l’unica che minimizza la somma degli scarti in valore assoluto.</p>
+\]</span> Un possibile valore (ce ne potrebbero essere tanti!), che minimizza tale somma è la mediana. In questo caso, la numerosità campionaria è pari a <span class="math inline">\(n = 52\)</span> e pertanto la mediana è pari alla media dei due valori centrali, ovvero i valori dei individui in posizione <span class="math inline">\(26\)</span> e <span class="math inline">\(27\)</span>. Poichè entrambi sono pari a <span class="math inline">\(3000\)</span>, la mediana è pari a <span class="math inline">\(\alpha = 3000\)</span>. Poichè <span class="math inline">\(x_{(26)} = x_{(27)} = 3000\)</span>, il valore <span class="math inline">\(\alpha = 3000\)</span> è l’unico che minimizza la somma degli scarti in valore assoluto.</p>
 <p>La seconda domanda chiede il valore <span class="math inline">\(\alpha\)</span> che minimizza il quadrato delle distanza, ovvero il valore che rende minima la somma <span class="math display">\[
 \sum_{i=1}^{52}(x_i - \alpha)^2 = \sum_{j=1}^5 n_j (c_j - \alpha)^2 = 6 (1000 - \alpha)^2 + \cdots + 8 (3150 - \alpha)^2.
 \]</span> Tale valore è la media aritmetica. Si ottiene quindi che</p>
@@ -1664,10 +1664,29 @@ div.tocify {
 <li><p>Si calcoli un’approssimazione della media e della mediana dopo un giorno di pioggia continuata.</p></li>
 </ol>
 </div>
+<div id="schema-della-soluzione" class="section level3">
+<h3>Schema della soluzione</h3>
+<p>Dato che <span class="math inline">\(n = 100\)</span>, la mediana è il valore medio delle unità statistiche in posizione <span class="math inline">\(50\)</span> e <span class="math inline">\(51\)</span>. Entrambe queste unità appartengono alla classe <span class="math inline">\((145, 150]\)</span> e pertanto anche la mediana.</p>
+<p>Una possibile approssimazione per la mediana è si ottiene tramite la formula:</p>
+<p><span class="math display">\[
+\text{Me}_x \approx 145 + (150 - 145)\frac{0.5 - 0.3}{0.9 - 0.3} = 145 + (150 - 145)\frac{50 - 30}{90 - 30} = 146.7.
+\]</span> Siano <span class="math inline">\(m_1,\dots,m_4\)</span> i valori centrali degli intervalli. Allora, un valore approssimato per la media è</p>
+<p><span class="math display">\[
+\bar{x} \approx \frac{1}{n} \sum_{i = 1}^4 m_j n_j = \frac{1}{100}(127.5 \times 10 + \cdots + 157.5 \times 10) = 145. 
+\]</span></p>
+<p>Il secondo quesito si risolve rapidamente poichè è equivalente al calcolo della media e della mediana dei dati trasformati <span class="math display">\[y_i = 0.5 + (1 + 0.1) x_i, \qquad i=1,\dots,n.\]</span></p>
+<p>Trattandosi di una trasformazione lineare monotona crescente, si ottiene che</p>
+<p><span class="math display">\[
+\text{Me}_y =  0.5 + (1 + 0.1) \text{Me}_x \approx 161.879,
+\]</span> e</p>
+<p><span class="math display">\[
+\bar{y} =  0.5 + (1 + 0.1) \bar{x} \approx 160.
+\]</span></p>
+</div>
 </div>
 <div id="diametro-degli-abeti-rossi-continuazione" class="section level2">
 <h2>Diametro degli abeti rossi (continuazione)</h2>
-<p>Si faccia riferimento ai dati dell’<a href="exe_1.html">esercitazione 1</a> riguardanti gli <strong>abeti rossi</strong>. Vengono misurati ulteriori <code>n = 30</code> diametri, come riportato nella tabella seguente, in cui <strong>D</strong> = Diametro, <strong><span class="math inline">\(n_j\)</span></strong> = frequenze assolute.</p>
+<p>Si faccia riferimento ai dati dell’<a href="exe_1.html#Diametro_degli_abeti_rossi">esercitazione 1</a> riguardanti gli <strong>abeti rossi</strong>. Vengono misurati ulteriori <code>n = 30</code> diametri, come riportato nella tabella seguente, in cui <strong>D</strong> = Diametro, <strong><span class="math inline">\(n_j\)</span></strong> = frequenze assolute.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1752,11 +1771,12 @@ div.tocify {
 <ol style="list-style-type: decimal">
 <li><p>Si calcoli la media aritmetica e la mediana</p></li>
 <li><p>Si calcoli il primo quartile (<span class="math inline">\(\mathcal{Q}_{0.25}\)</span>), il terzo quartile (<span class="math inline">\(\mathcal{Q}_{0.75}\)</span>) ed il quarto decile (<span class="math inline">\(\mathcal{Q}_{0.4}\)</span>), seguendo la definizione data nelle <a href="../slides/sl_C.pdf">slides</a>.</p></li>
-<li><p>Si confrontino questi valori con la funzione di ripartizione ottenuta nella prima esercitazione. I nuovi valori sembrano essere compatibili col dataset originario?</p></li>
+<li><p>Si confrontino questi indici di posizione con la funzione di ripartizione ottenuta nella prima esercitazione. I nuovi valori sembrano essere compatibili con i dati originari?</p></li>
 </ol>
 </div>
-<div id="schema-della-soluzione" class="section level3">
+<div id="schema-della-soluzione-1" class="section level3">
 <h3>Schema della soluzione</h3>
+<p>I risultati che seguono non costituiscono la soluzione completa dato che i vari passaggi sono stati omessi.</p>
 <div id="media" class="section level4">
 <h4>Media</h4>
 <p>La media è circa 38.87.</p>
