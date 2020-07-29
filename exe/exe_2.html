@@ -1624,29 +1624,150 @@ div.tocify {
 </div>
 <div id="foglie-di-platano" class="section level2">
 <h2>Foglie di platano</h2>
+<p>È riportata di seguito una tabella che riassume le <strong>lunghezze</strong> in mm di <code>n = 100</code> foglie di platano, dopo 10 giorni di siccità.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Classe</th>
+<th>Frequenza assoluta <span class="math inline">\(n_j\)</span></th>
+<th>Frequenza cumulata <span class="math inline">\(N_j\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\((120,135]\)</span></td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((135,145]\)</span></td>
+<td>20</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((145,150]\)</span></td>
+<td>60</td>
+<td>90</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((150,165]\)</span></td>
+<td>10</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>È noto che, dopo un giorno di pioggia, la lunghezza delle foglie aumenta di una quota percentuale del <span class="math inline">\(10\%\)</span> più una quota fissa pari a <span class="math inline">\(0.5\)</span> mm.</p>
+<div id="domande" class="section level3">
+<h3>Domande</h3>
+<ol style="list-style-type: decimal">
+<li><p>Si calcoli un’approssimazione della media e della mediana.</p></li>
+<li><p>Si calcoli un’approssimazione della media e della mediana dopo un giorno di pioggia continuata.</p></li>
+</ol>
+</div>
 </div>
 <div id="diametro-degli-abeti-rossi-continuazione" class="section level2">
 <h2>Diametro degli abeti rossi (continuazione)</h2>
-<p>Si faccia riferimento ai dati dell’<a href="exe_1.html">esercitazione 1</a> riguardanti gli <strong>abeti rossi</strong>.</p>
-<div id="domande" class="section level3">
+<p>Si faccia riferimento ai dati dell’<a href="exe_1.html">esercitazione 1</a> riguardanti gli <strong>abeti rossi</strong>. Vengono misurati ulteriori <code>n = 30</code> diametri, come riportato nella tabella seguente, in cui <strong>D</strong> = Diametro, <strong><span class="math inline">\(n_j\)</span></strong> = frequenze assolute.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">D</th>
+<th align="right"><span class="math inline">\(n_j\)</span></th>
+<th align="right">D</th>
+<th align="right"><span class="math inline">\(n_j\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">19</td>
+<td align="right">1</td>
+<td align="right">37</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">22</td>
+<td align="right">2</td>
+<td align="right">38</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">25</td>
+<td align="right">1</td>
+<td align="right">40</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">26</td>
+<td align="right">1</td>
+<td align="right">41</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">28</td>
+<td align="right">1</td>
+<td align="right">43</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">29</td>
+<td align="right">2</td>
+<td align="right">45</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">30</td>
+<td align="right">1</td>
+<td align="right">46</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">31</td>
+<td align="right">1</td>
+<td align="right">47</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">32</td>
+<td align="right">1</td>
+<td align="right">48</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">34</td>
+<td align="right">1</td>
+<td align="right">53</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">36</td>
+<td align="right">1</td>
+<td align="right">54</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<div id="domande-1" class="section level3">
 <h3>Domande</h3>
+<p>Con riferimento al nuovo insieme di dati:</p>
+<ol style="list-style-type: decimal">
+<li><p>Si calcoli la media aritmetica e la mediana</p></li>
+<li><p>Si calcoli il primo quartile (<span class="math inline">\(\mathcal{Q}_{0.25}\)</span>), il terzo quartile (<span class="math inline">\(\mathcal{Q}_{0.75}\)</span>) ed il quarto decile (<span class="math inline">\(\mathcal{Q}_{0.4}\)</span>), seguendo la definizione data nelle <a href="../slides/sl_C.pdf">slides</a>.</p></li>
+<li><p>Si confrontino questi valori con la funzione di ripartizione ottenuta nella prima esercitazione. I nuovi valori sembrano essere compatibili col dataset originario?</p></li>
+</ol>
 </div>
 <div id="schema-della-soluzione" class="section level3">
 <h3>Schema della soluzione</h3>
 <div id="media" class="section level4">
 <h4>Media</h4>
+<p>La media è circa 38.87.</p>
 </div>
 <div id="mediana" class="section level4">
 <h4>Mediana</h4>
-</div>
-<div id="media-approssimata" class="section level4">
-<h4>Media approssimata</h4>
-</div>
-<div id="mediana-approssimata" class="section level4">
-<h4>Mediana approssimata</h4>
+<p>La mediana è 38.</p>
 </div>
 <div id="quantili" class="section level4">
 <h4>Quantili</h4>
+<p>Il primo quartile è pari a 29, il terzo quartile è pari a 46 mentre il quarto decile è pari a 34.</p>
 </div>
 </div>
 </div>
