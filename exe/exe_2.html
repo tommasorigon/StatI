@@ -1667,7 +1667,7 @@ div.tocify {
 <div id="schema-della-soluzione" class="section level3">
 <h3>Schema della soluzione</h3>
 <p>Dato che <span class="math inline">\(n = 100\)</span>, la mediana è il valore medio delle unità statistiche in posizione <span class="math inline">\(50\)</span> e <span class="math inline">\(51\)</span>. Entrambe queste unità appartengono alla classe <span class="math inline">\((145, 150]\)</span> e pertanto anche la mediana.</p>
-<p>Una possibile approssimazione per la mediana è si ottiene tramite la formula:</p>
+<p>Una possibile approssimazione per la mediana si ottiene tramite la formula:</p>
 <p><span class="math display">\[
 \text{Me}_x \approx 145 + (150 - 145)\frac{0.5 - 0.3}{0.9 - 0.3} = 145 + (150 - 145)\frac{50 - 30}{90 - 30} = 146.7.
 \]</span> Siano <span class="math inline">\(m_1,\dots,m_4\)</span> i valori centrali degli intervalli. Allora, un valore approssimato per la media è</p>
@@ -1677,7 +1677,7 @@ div.tocify {
 <p>Il secondo quesito si risolve rapidamente poichè è equivalente al calcolo della media e della mediana dei dati trasformati <span class="math display">\[y_i = 0.5 + (1 + 0.1) x_i, \qquad i=1,\dots,n.\]</span></p>
 <p>Trattandosi di una trasformazione lineare monotona crescente, si ottiene che</p>
 <p><span class="math display">\[
-\text{Me}_y =  0.5 + (1 + 0.1) \text{Me}_x \approx 161.879,
+\text{Me}_y =  0.5 + (1 + 0.1) \text{Me}_x \approx 161.87,
 \]</span> e</p>
 <p><span class="math display">\[
 \bar{y} =  0.5 + (1 + 0.1) \bar{x} \approx 160.
@@ -1776,7 +1776,7 @@ div.tocify {
 </div>
 <div id="schema-della-soluzione-1" class="section level3">
 <h3>Schema della soluzione</h3>
-<p>I risultati che seguono non costituiscono la soluzione completa dato che i vari passaggi sono stati omessi.</p>
+<p>I risultati che seguono <strong>non</strong> costituiscono la soluzione completa dato che i vari passaggi sono stati omessi.</p>
 <div id="media" class="section level4">
 <h4>Media</h4>
 <p>La media è circa 38.87.</p>
@@ -1793,9 +1793,51 @@ div.tocify {
 </div>
 <div id="velocità-della-luce-continuazione" class="section level2">
 <h2>Velocità della luce (continuazione)</h2>
+<p>Si faccia riferimento ai dati trasformati <span class="math inline">\(y_1,\dots,y_{66}\)</span> dell’<a href="exe_1.html#La_velocità_della_luce">esercitazione 1</a>, riguardanti la <strong>la velocità della luce</strong>.</p>
+<div id="domande-2" class="section level3">
+<h3>Domande</h3>
+<ol style="list-style-type: decimal">
+<li>Si calcoli la media e la mediana dei dati. Si commentino i risultati.</li>
+<li>Si escluda il valore anomalo (-44) dall’analisi e si calcolino nuovamente media e mediana. Si commenti.</li>
+</ol>
+</div>
+<div id="schema-della-soluzione-2" class="section level3">
+<h3>Schema della soluzione</h3>
+<p>I risultati che seguono <strong>non</strong> costituiscono la soluzione completa dato che i passaggi ed i commenti sono stati omessi.</p>
+<div id="media-e-mediana" class="section level4">
+<h4>Media e mediana</h4>
+<p>La media dei dati trasformati è circa 26.21 mentre la mediana è 27.</p>
+</div>
+<div id="media-e-mediana-dati-trasformati" class="section level4">
+<h4>Media e mediana dati trasformati</h4>
+<p>La media dei dati trasformati, escluso il valore anomalo -44, è pari a 27.29 mentre la mediana è 27.</p>
+</div>
+<div id="commento" class="section level4">
+<h4>Commento</h4>
+<p>Il valore anomalo influenza sensibilmente il valore della media aritmetica. Viceversa, la mediana rimane invariata.</p>
+</div>
+</div>
 </div>
 <div id="gran-premio-del-canada" class="section level2">
 <h2>Gran premio del Canada</h2>
+<p>Il Gran premio del Canada viene interrotto per la pioggia dopo <span class="math inline">\(42\)</span> giri, quando il pilota A era in terza posizione, con una velocità media di <span class="math inline">\(204\)</span> km/h. I restanti <span class="math inline">\(21\)</span> giri vengono percorsi da dal pilota A ad una media di <span class="math inline">\(126\)</span> km/h. Il circuito misura <span class="math inline">\(5\)</span> km. Al termine si sommano i tempi delle due frazioni di gara e il pilota A risulta il vincitore.</p>
+<div id="domande-3" class="section level3">
+<h3>Domande</h3>
+<ol style="list-style-type: decimal">
+<li><p>Calcolare la velocità media del pilota A.</p></li>
+<li><p>Calcolare la durata delle due frazioni di gara e quella complessiva.</p></li>
+</ol>
+</div>
+<div id="schema-di-soluzione-1" class="section level3">
+<h3>Schema di soluzione</h3>
+<p>In totale ci sono <span class="math inline">\(n = 63 \times 5 = 315\)</span> km da percorrere, di cui <span class="math inline">\(42 \times 5 = 210\)</span> nella prima frazione di gara e <span class="math inline">\(21 \times 5 = 105\)</span> nella seconda. La velocità media complessiva si ottiene tramite una media armonica ponderata, ovvero</p>
+<p><span class="math display">\[
+\mathbb{A} = \frac{315}{210/204 + 105/126}= \frac{63}{42/204 + 21/126} = 169.1053.
+\]</span> Le durate delle due frazioni di gara <span class="math inline">\(t_1, t_2\)</span> sono pari a (tempo) = (distanza) / (velocità) e pertanto si ottiene che</p>
+<p><span class="math display">\[
+t_1 = 210 / 204 = 1.0294 \text{h}, \qquad t_2 = 105 / 126 = 0.8\bar{3} \text{h},
+\]</span> per un totale di <span class="math inline">\(t_1 + t_2 = 1.8627\)</span> ore.</p>
+</div>
 </div>
 <div id="blocchi-di-marmo" class="section level2">
 <h2>Blocchi di marmo</h2>
