@@ -12,7 +12,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="date" content="2020-08-25" />
 
 <title>Statistica I</title>
 
@@ -78,149 +77,172 @@ code span.ot { color: #007020; }
 
 <section class="page-header">
 <h1 class="title toc-ignore project-name">Statistica I</h1>
-<h3 class="subtitle project-tagline">Esercizi 1</h3>
-<h4 class="date project-date">2020-08-25</h4>
+<h3 class="subtitle project-tagline">Esercitazione 3</h3>
 </section>
 
 
 
 <section class="main-content">
-<div id="esercizio-1" class="section level2">
-<h2>Esercizio 1</h2>
-<p>Il controllo sul peso (in grammi) di <span class="math inline">\(n = 71\)</span> pacchetti di burro ha fornito la seguente distribuzione di frequenza <strong>cumulata</strong>.</p>
-<table>
-<thead>
-<tr class="header">
-<th><span class="math inline">\(c_j\)</span> (grammi)</th>
-<th><span class="math inline">\((249,250]\)</span></th>
-<th><span class="math inline">\((250, 251]\)</span></th>
-<th><span class="math inline">\((251, 252]\)</span></th>
-<th><span class="math inline">\((252, 253]\)</span></th>
-<th><span class="math inline">\((253, 254]\)</span></th>
-<th><span class="math inline">\((254 , 255]\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(N_j\)</span></td>
-<td>0</td>
-<td>15</td>
-<td>42</td>
-<td>60</td>
-<td>70</td>
-<td>71</td>
-</tr>
-</tbody>
-</table>
+<p>Molti dei problemi di questa esercitazione <strong>non</strong> sono stati svolti a lezione. Si consiglia agli studenti di provare a risolvere i problemi autonomamente.</p>
+<div id="strani-indici" class="section level2">
+<h2>Strani indici</h2>
+<p>Si dica se gli indici elencati di seguito possono o non possono essere interpretati come una misura di posizione oppure di variabilità di un certo insieme di dati tutti positivi, <span class="math inline">\(y_1, \dots, y_n\)</span>. Il simbolo <span class="math inline">\(\mathcal{Q}_p\)</span> indica il quantile <span class="math inline">\(p\)</span>.</p>
 <ol style="list-style-type: decimal">
-<li>Si dica qual è l’unità statistica e la tipologia della variabile considerata.</li>
-<li>Trovare le frequenze assolute <span class="math inline">\(n_1,\dots,n_k\)</span> e relative <span class="math inline">\(f_1,\dots,f_k\)</span>.</li>
-<li>Rappresentare graficamente il fenomeno tramite un istogramma.</li>
-<li>Quanti sono i pacchetti di burro che pesano meno di <span class="math inline">\(252\)</span>g o esattamente <span class="math inline">\(252\)</span>g?</li>
+<li><p><span class="math display">\[
+\frac{1}{n^2}\sum_{i=1}^n\sum_{j=1}^n(y_i - y_j).
+\]</span></p></li>
+<li><p><span class="math display">\[
+\frac{1}{n^2}\sum_{i=1}^n\sum_{j=1}^n(y_i - y_j)^2.
+\]</span></p></li>
+<li><p><span class="math display">\[
+\frac{1}{n^2}\sum_{i=1}^n\sum_{j=1}^n|y_i - y_j|.
+\]</span></p></li>
+<li><p><span class="math display">\[
+\exp\left\{\frac{1}{n}\sum_{i=1}^n\log{x_i}\right\}.
+\]</span></p></li>
+<li><p><span class="math display">\[
+\mathcal{Q}_{0.5} - \mathcal{Q}_{0.25} + |\mathcal{Q}_{0.5} - \mathcal{Q}_{0.75}|
+\]</span></p></li>
 </ol>
 </div>
-<div id="esercizio-2" class="section level2">
-<h2>Esercizio 2</h2>
-<p>Nel 1975 in Italia il numero di parti legittimi per età della madre al parto è stato il seguente:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Età della madre</th>
-<th>Numero nati</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>(9, 14]</td>
-<td>489</td>
-</tr>
-<tr class="even">
-<td>(14, 20]</td>
-<td>94921</td>
-</tr>
-<tr class="odd">
-<td>(20, 24]</td>
-<td>200255</td>
-</tr>
-<tr class="even">
-<td>(24, 29]</td>
-<td>274779</td>
-</tr>
-<tr class="odd">
-<td>(29, 34]</td>
-<td>144282</td>
-</tr>
-<tr class="even">
-<td>(34, 44]</td>
-<td>99238</td>
-</tr>
-<tr class="odd">
-<td>(44, 55]</td>
-<td>1747</td>
-</tr>
-</tbody>
-</table>
-<ol style="list-style-type: decimal">
-<li>Si dica qual è l’unità statistica e qual la variabile considerata.</li>
-<li>Di che tipo di variabile si tratta?</li>
-<li>Rappresentare graficamente il fenomeno.</li>
-<li>Calcolare la percentuale dei nati per fasce d’età della madre.</li>
-</ol>
+<div id="tubi-catodici" class="section level2">
+<h2>Tubi catodici</h2>
+<p>Una vecchia fabbrica di televisori produce due tipi di tubi catodici: il tipo A e il tipo B. I tubi catodici hanno tempi di durata media, rispettivamente di 1495 ore e 1875 ore e scarti quadratici rispettivamente di 280 ore e 310 ore. In generale, è preferibile il tubo catodico che ha la durata più alta e variabilità più bassa.</p>
+<p>Quale dei due tubi catodici è preferibile?</p>
 </div>
-<div id="esercizio-3" class="section level2">
-<h2>Esercizio 3</h2>
-<p>Durante la correzione delle bozze di un libro di <span class="math inline">\(280\)</span> pagine si è riscontrata la seguente distribuzione degli errori di stampa per pagina:</p>
+<div id="lampadine" class="section level2">
+<h2>Lampadine</h2>
+<p>Un’azienda produttrice di lampadine controlla la durata dei suoi prodotti facendo funzionare <span class="math inline">\(n = 200\)</span> lampadine ininterrottamente fino a che si rompono. A determinati istanti di tempo si effettua un controllo e si verifica quante in totale non sono più funzionanti. I dati sono riportati nella tabella seguente</p>
 <table>
 <thead>
 <tr class="header">
-<th>Numero di errori</th>
-<th>Frequenze assolute</th>
+<th>Tempo</th>
+<th>10</th>
+<th>30</th>
+<th>100</th>
+<th>150</th>
+<th>200</th>
+<th>400</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>112</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>88</td>
-</tr>
-<tr class="odd">
+<td>Rotture cumulate</td>
 <td>2</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>18</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>8</td>
+<td>20</td>
+<td>40</td>
+<td>80</td>
+<td>120</td>
+<td>170</td>
 </tr>
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li>Qual è l’unità statistica?</li>
-<li>Di quale tipologia di variabile si tratta?</li>
-<li>Calcolare e disegnare la funzione di ripartizione.</li>
-<li>Qual è la proporzione di pagine con meno di 3 errori? Quanto vale <span class="math inline">\(F(3)\)</span>?</li>
+<li>Si valuti la durata media e si dia un indice di posizione appropriato per sintetizzare la distribuzione delle durate.</li>
+<li>Si calcoli un opportuno indice di variabilità.</li>
 </ol>
+<div id="schema-della-soluzione" class="section level3">
+<h3>Schema della soluzione</h3>
+<p>In primo luogo, ri-organizziamo la tabella in maniera tale da evidenziare gli intervalli considerati</p>
+<table>
+<thead>
+<tr class="header">
+<th>Tempo</th>
+<th><span class="math inline">\((0, 10]\)</span></th>
+<th><span class="math inline">\((10, 30]\)</span></th>
+<th><span class="math inline">\((30, 100]\)</span></th>
+<th><span class="math inline">\((100,150]\)</span></th>
+<th><span class="math inline">\((150,200]\)</span></th>
+<th><span class="math inline">\((200,400]\)</span></th>
+<th><span class="math inline">\((400, \infty]\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(n_j\)</span></td>
+<td>2</td>
+<td>18</td>
+<td>20</td>
+<td>40</td>
+<td>40</td>
+<td>50</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(f_j\)</span></td>
+<td>0.01</td>
+<td>0.09</td>
+<td>0.10</td>
+<td>0.20</td>
+<td>0.20</td>
+<td>0.25</td>
+<td>0.15</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(F_j\)</span></td>
+<td>0.01</td>
+<td>0.1</td>
+<td>0.20</td>
+<td>0.40</td>
+<td>0.60</td>
+<td>0.85</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Si noti che un totale di <span class="math inline">\(200 - 170 = 30\)</span> lampadine non si sono mai rotte entro il tempo <span class="math inline">\(400\)</span>. Questo pone delle difficoltà nel calcolo della media. Infatti, non è chiaro quale valore sia il valore centrale dell’intervallo <span class="math inline">\((400, \infty]\)</span>. Qualunque scelta dovrebbe ben essere giustificata.</p>
+<p>La mediana non risente di questo problema. La mediana appartiene necessariamente all’intervallo <span class="math inline">\((150,200]\)</span>. Utilizzando l’approssimazione lineare, otteniamo che</p>
+<p><span class="math display">\[
+\text{Me} \approx 150 + (200 - 150)\frac{0.5 - 0.4}{0.6 - 0.4} = 175.
+\]</span> Per le stesse ragioni menzionate prima, ci sono delle difficoltà nel calcolo della varianza. Consideriamo quindi lo scarto interquartile. Utilizzando l’approssimazione lineare, si ottiene</p>
+<p><span class="math display">\[
+\mathcal{Q}_{0.25} \approx 100 + (150 - 100)\frac{0.25 - 0.2}{0.4 - 0.2} = 112.5.
+\]</span> <span class="math display">\[
+\mathcal{Q}_{0.75} \approx 200 + (400 - 200)\frac{0.75 - 0.6}{0.85 - 0.6} = 320.
+\]</span> Pertanto lo scarto interquartile è pari a</p>
+<p><span class="math display">\[\mathcal{Q}_{0.75} - \mathcal{Q}_{0.25} = 207.5.\]</span></p>
 </div>
-<div id="esercizio-4" class="section level2">
-<h2>Esercizio 4</h2>
-<p>Ai dipendenti di una piccola azienda è stato chiesto di precisare il loro titolo di studio. I risultati relativi a <span class="math inline">\(n=22\)</span> dipendenti sono i seguenti:</p>
-<pre><code>L, E, E, E, I, E, I, S, L, E, S, I, N, E, N, S, S, I, E, I, I, S </code></pre>
-<p>in cui: <code>N</code> = nessun titolo di studio, <code>E</code> = licenza elementare, <code>I</code> = licenza media inferiore, <code>S</code> = licenza media superiore, e <code>L</code> = laurea.</p>
+</div>
+<div id="moscerini-della-frutta" class="section level2">
+<h2>Moscerini della frutta</h2>
+<p>Un gruppo di ricercatori sta valutando la tossicità su <em>D. melanogaster</em> (moscerini della frutta) di un composto molecolare. I moscerini vengono divisi casualmente in 10 gruppi e vengono trattati col composto. Dopo 1 giorno si registra la percentuale di moscerini non sopravvissuti per l’eccessiva tossicità.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Gruppo</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frazione di decessi</td>
+<td>0.38</td>
+<td>0.32</td>
+<td>0.59</td>
+<td>0.58</td>
+<td>0.41</td>
+<td>0.67</td>
+<td>0.54</td>
+<td>0.4</td>
+<td>0.42</td>
+<td>0.4</td>
+</tr>
+</tbody>
+</table>
 <ol style="list-style-type: decimal">
-<li>Qual è l’unità statistica? Di quale tipologia di variabile si tratta?</li>
-<li>Organizzare i dati in una tabella.</li>
-<li>Calcolare le frequenze relative.</li>
-<li>Si calcoli la percentuale di dipendenti aventi la licenza media o un titolo superiore.</li>
+<li><p>Si individuino le distribuzioni di frequenze assolute cumulate, relative e relative cumulate della mortalità dei moscerini.</p></li>
+<li><p>Si tracci il box-plot.</p></li>
+<li><p>Si calcolino media e varianza.</p></li>
+<li><p>Si calcoli un indice di variabilità robusto.</p></li>
 </ol>
 </div>
 </section>
