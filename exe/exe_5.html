@@ -331,13 +331,13 @@ R^2 = 1 - \frac{\text{var}(r)}{\text{var}(y)} = 1 - \frac{0.096}{12.67 - 3.524^2
 <p><span class="math display">\[
 \sum_{i=1}^nx_i^2 = 393876, \qquad \sum_{i=1}^ny_i^2 = 398375.
 \]</span> Utilizzando le quantità del punto precedente, possiamo quindi ottenere la stima ai minimi quadrati <span class="math inline">\((\hat{\alpha},\hat{\beta})\)</span> di un modello di regressione lineare semplice. In particolare, avremo che:</p>
-<p><span class="math display">\[\hat{\beta} = \frac{\text{cov}(x,y)}{\text{var}(x)} = \frac{19.938 - 5.586\times 3.524}{31.617 - 5.586^2}= 0.611.\]</span> Si ha infatti che <span class="math inline">\(\text{cov}(x,y) = 19.938 - 5.586\times 3.524 = 0.252936\)</span> mentre <span class="math inline">\(\text{var}(x) = 31.617 - 5.586^2 = 0.4136\)</span>. Inoltre avremo che:</p>
+<p><span class="math display">\[\hat{\beta} = \frac{\text{cov}(x,y)}{\text{var}(x)} = \frac{30468.92 - 174\times 175}{30298.15 - 174^2}= 0.854.\]</span> Si ha infatti che <span class="math inline">\(\text{cov}(x,y) = 30468.92 - 174\times 175 = 18.92\)</span> mentre <span class="math inline">\(\text{var}(x) = 30298.15 - 174^2 = 22.15\)</span>. Inoltre avremo che:</p>
 <p><span class="math display">\[
-\hat{\alpha} = \bar{y} - \hat{\beta} \bar{x} = \frac{35.24}{10} - 0.611\frac{55.86}{10} = 0.111.
+\hat{\alpha} = \bar{y} - \hat{\beta} \bar{x} = 175 - 0.854\times 174 = 26.404.
 \]</span> I valori previsti si ottengono quindi tramite l’equazione:</p>
 <p><span class="math display">\[
-\hat{y}_i = 0.111 + 0.611x_i.
-\]</span></p>
+\hat{y}_i = 26.404 + 0.854 x_i.
+\]</span> Pertanto, il valore previsto cercato è pari a <span class="math inline">\(26.404 + 0.854 \times 170.5 = 172.011\)</span>.</p>
 </div>
 </div>
 <div id="prezzo-della-benzina-e-veicoli-circolanti" class="section level2">
