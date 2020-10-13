@@ -136,6 +136,50 @@ code span.ot { color: #007020; }
 </ol>
 <div id="schema-della-soluzione" class="section level3">
 <h3>Schema della soluzione</h3>
+<p>In primo luogo, calcoliamo le medie e la devianze / varianze campionarie per ciascun gruppo, che sono riassunte nella tabella seguente:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Classe</th>
+<th align="left"><span class="math inline">\(\bar{x}_j\)</span></th>
+<th align="left"><span class="math inline">\(\sigma^2_j\)</span></th>
+<th align="left"><span class="math inline">\(d_j\)</span></th>
+<th align="left"><span class="math inline">\(n_j\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="left">74.2</td>
+<td align="left">86.16</td>
+<td align="left">430.8</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="left">76.75</td>
+<td align="left">37.69</td>
+<td align="left">150.75</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<p>La media globale è pertanto pari a <span class="math inline">\((5\bar{x}_1 + 4 \bar{x}_2)/9 = 75.33\)</span>. La devianza tra i gruppi è pertanto pari a</p>
+<p><span class="math display">\[
+\mathscr{D}_\text{tr} = \sum_{j=1}^2n_j(\bar{x}_j - \bar{x})^2 = 5(74.2 - 75.33)^2 + 4(76.75 - 75.33)^2 = 14.45.
+\]</span></p>
+<p>Invece, la devianza entro i gruppi è pari a:</p>
+<p><span class="math display">\[
+\mathscr{D}_\text{en} = d_1 + d_2 = 430.8 + 150.75 = 581.55.
+\]</span></p>
+<p>Quindi otteniamo che la devianza complessiva è pari a <span class="math inline">\(\mathscr{D} = \mathscr{D}_\text{en} + \mathscr{D}_\text{tr} = 14.45 + 581.55 = 596\)</span>. Il rapporto di correlazione è pertanto pari a:</p>
+<p><span class="math display">\[
+\eta^2 = 1 - \frac{\mathscr{D}_\text{en}}{\mathscr{D}} = 1 - \frac{581.55}{596} = 0.0242.
+\]</span></p>
+<p>Di conseguenza, la dipendenza in media è molto debole. Si noti che è possibile calcolare la devianza totale anche tramite calcolo diretto, ovvero ponendo:</p>
+<p><span class="math display">\[
+\mathscr{D} = \sum_{j=1}^2\sum_{i=1}^{n_j}(x_{ij} - \bar{x})^2 = (61 - 75.33)^2 + \cdots+ (83 - 75.33)^2 = 596.
+\]</span></p>
 </div>
 </div>
 </section>
