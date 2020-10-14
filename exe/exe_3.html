@@ -93,7 +93,7 @@ code span.ot { color: #007020; }
 \frac{1}{n^2}\sum_{i=1}^n\sum_{j=1}^n(y_i - y_j)^2.
 \]</span></p></li>
 <li><p><span class="math display">\[
-\frac{1}{n^2}\sum_{i=1}^n\sum_{j=1}^n|y_i - y_j|.
+\frac{1}{2n^2}\sum_{i=1}^n\sum_{j=1}^n|y_i - y_j|.
 \]</span></p></li>
 <li><p><span class="math display">\[
 \exp\left\{\frac{1}{n}\sum_{i=1}^n\log{x_i}\right\}.
@@ -106,7 +106,7 @@ code span.ot { color: #007020; }
 <h3>Schema della soluzione</h3>
 <ol style="list-style-type: decimal">
 <li><p>Questo indice è sempre pari a zero, quindi certamente non è adatto per misurare nè la posizione nè la variabilità.</p></li>
-<li><p>Questo indice è la varianza campionaria.</p></li>
+<li><p>Questo indice è pari al doppio della varianza campionaria.</p></li>
 <li><p>Questo indice è una misura robusta di variabilità.</p></li>
 <li><p>Questo indice è una riscrittura della media geometrica <span class="math inline">\(\mathbb{G}\)</span>.</p></li>
 <li><p>Questo indice è una riscrittura dello scarto interquartile. Si noti infatti che <span class="math inline">\(|\mathcal{Q}_{0.5} - \mathcal{Q}_{0.75}| = \mathcal{Q}_{0.75} - \mathcal{Q}_{0.5}\)</span>.</p></li>
@@ -154,8 +154,9 @@ code span.ot { color: #007020; }
 </tr>
 </tbody>
 </table>
+<p>Si noti che <span class="math inline">\(30\)</span> lampadine non si sono mai rotte.</p>
 <ol style="list-style-type: decimal">
-<li><p>Si valuti la durata media e si dia un indice di posizione appropriato per sintetizzare la distribuzione delle durate.</p></li>
+<li><p>Si valuti la “durata media” e si dia un indice di posizione appropriato per sintetizzare la distribuzione delle durate.</p></li>
 <li><p>Si calcoli un opportuno indice di variabilità.</p></li>
 </ol>
 <div id="schema-della-soluzione-2" class="section level3">
