@@ -182,6 +182,119 @@ code span.ot { color: #007020; }
 \]</span></p>
 </div>
 </div>
+<div id="pressione-sistolica-e-ipertensione" class="section level2">
+<h2>Pressione sistolica e ipertensione</h2>
+<p>Per verificare tre differenti strategie mediche per trattare l’ipertensione, sono state individuate <span class="math inline">\(n = 18\)</span> persone di sesso maschile, leggermente sovrappeso, con abitudini sedentarie e con problemi di ipertensione (pressione sistolica maggiore di 100mmHg). Tali persone sono state poi suddivise in tre gruppi:</p>
+<ol style="list-style-type: decimal">
+<li><p>Il primo gruppo (5 persone) ha seguito una terapia farmacologica.</p></li>
+<li><p>Il secondo gruppo (7 persone) ha seguito una dieta prefissata.</p></li>
+<li><p>Il terzo gruppo (6 persone) ha seguito la dieta del secondo gruppo ma ha anche svolto regolarmente delle attività fisiche.</p></li>
+</ol>
+<p>La pressione sistolica è stata misurata sia all’inizio che dopo 3 mesi dall’ingresso nella studio. La seguente tabella mostra, per ognuno dei 18 individui, la differenza tra la pressione iniziale e quella rilevata dopo 3 mesi.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Solo farmaco</td>
+<td>21</td>
+<td>20</td>
+<td>7</td>
+<td>11</td>
+<td>16</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Solo dieta</td>
+<td>-9</td>
+<td>13</td>
+<td>1</td>
+<td>2</td>
+<td>24</td>
+<td>6</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Dieta &amp; esercizio fisico</td>
+<td>19</td>
+<td>18</td>
+<td>21</td>
+<td>8</td>
+<td>8</td>
+<td>18</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<ol style="list-style-type: decimal">
+<li><p>Perchè secondo voi è stata utilizzata la differenza tra la pressione iniziale e quella finale e non direttamente quest’ultima?</p></li>
+<li><p>Sulla base dei dati disponibili, quale strategia sembra funzionare meglio? Si risponda con opportuni indici.</p></li>
+<li><p>Si quantifichi la correlazione tra strategia utilizzata e la differenza in pressione sistolica.</p></li>
+</ol>
+<div id="schema-della-soluzione-1" class="section level3">
+<h3>Schema della soluzione</h3>
+<p>Calcoliamo le medie e la devianze / varianze campionarie per ciascun gruppo, che sono riassunte nella tabella seguente:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Strategia</th>
+<th align="left"><span class="math inline">\(\bar{x}_j\)</span></th>
+<th align="left"><span class="math inline">\(\sigma^2_j\)</span></th>
+<th align="left"><span class="math inline">\(d_j\)</span></th>
+<th align="left"><span class="math inline">\(n_j\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Solo formaco</td>
+<td align="left">15</td>
+<td align="left">28.4</td>
+<td align="left">142</td>
+<td align="left">5</td>
+</tr>
+<tr class="even">
+<td align="left">Solo dieta</td>
+<td align="left">6.57</td>
+<td align="left">92.24</td>
+<td align="left">645.71</td>
+<td align="left">7</td>
+</tr>
+<tr class="odd">
+<td align="left">Dieta &amp; esercizio fisico</td>
+<td align="left">15.33</td>
+<td align="left">27.89</td>
+<td align="left">167.33</td>
+<td align="left">6</td>
+</tr>
+</tbody>
+</table>
+<p>Di conseguenza, la strategia che sembra funzionare meglio è quella basata sulla dieta insieme all’esercizio fisico. Inoltre, la media globale è pari a <span class="math inline">\((5\bar{x}_1 + 7 \bar{x}_2 + 6\bar{x}_3)/18 = 11.83\)</span>. La devianza tra i gruppi è pertanto pari a</p>
+<p><span class="math display">\[
+\mathscr{D}_\text{tr} = \sum_{j=1}^3n_j(\bar{x}_j - \bar{x})^2 = 5(15 - 11.83)^2 + 7(6.57 - 11.83)^2 + 6(15.33 - 11.83)^2= 317.42.
+\]</span></p>
+<p>Invece, la devianza entro i gruppi è pari a:</p>
+<p><span class="math display">\[
+\mathscr{D}_\text{en} = d_1 + d_2 + d_3= 142 + 645.71 + 167.33 = 955.04.
+\]</span></p>
+<p>Quindi otteniamo che la devianza complessiva è pari a <span class="math inline">\(\mathscr{D} = \mathscr{D}_\text{en} + \mathscr{D}_\text{tr} = 317.42 + 955.04 = 1272.5\)</span>. Il rapporto di correlazione è pertanto pari a:</p>
+<p><span class="math display">\[
+\eta^2 = 1 - \frac{\mathscr{D}_\text{en}}{\mathscr{D}} = 1 - \frac{955.04}{1272.5} = 0.25.
+\]</span></p>
+<p>Di conseguenza, la dipendenza in media è moderata.</p>
+</div>
+</div>
 </section>
 
 
