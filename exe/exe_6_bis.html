@@ -30,6 +30,45 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<style type="text/css">
+a.anchor-section {margin-left: 10px; visibility: hidden; color: inherit;}
+a.anchor-section::before {content: '#';}
+.hasAnchor:hover a.anchor-section {visibility: visible;}
+</style>
+<script>// Anchor sections v1.0 written by Atsushi Yasumoto on Oct 3rd, 2020.
+document.addEventListener('DOMContentLoaded', function() {
+  // Do nothing if AnchorJS is used
+  if (typeof window.anchors === 'object' && anchors.hasOwnProperty('hasAnchorJSLink')) {
+    return;
+  }
+
+  const h = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  // Do nothing if sections are already anchored
+  if (Array.from(h).some(x => x.classList.contains('hasAnchor'))) {
+    return null;
+  }
+
+  // Use section id when pandoc runs with --section-divs
+  const section_id = function(x) {
+    return ((x.classList.contains('section') || (x.tagName === 'SECTION'))
+            ? x.id : '');
+  };
+
+  // Add anchors
+  h.forEach(function(x) {
+    const id = x.id || section_id(x.parentElement);
+    if (id === '') {
+      return null;
+    }
+    let anchor = document.createElement('a');
+    anchor.href = '#' + id;
+    anchor.classList = ['anchor-section'];
+    x.classList.add('hasAnchor');
+    x.appendChild(anchor);
+  });
+});
+</script>
 
 
 
@@ -81,8 +120,8 @@ code span.ot { color: #007020; }
 
 
 <section class="main-content">
-<div id="esercizio-1" class="section level2">
-<h2>Esercizio 1</h2>
+<div id="esercizio-a" class="section level2">
+<h2>Esercizio A</h2>
 <p>Un certo gruppo di polli e stato suddiviso casualmente in tre gruppi. Successivamente i tre gruppi sono stati alimentati con tre diete differenti, chiamate A, B, C. Siamo interessati alla variabile <span class="math inline">\(x_j\)</span>, per <span class="math inline">\(j=1,\dots,3\)</span>, ovvero gli incrementi di peso dopo 6 settimane in ciascuna dieta. Alcuni dati di sintesi sono riportati nella seguente tabella:</p>
 <table>
 <thead>
@@ -120,8 +159,8 @@ code span.ot { color: #007020; }
 <li><p>Quantificare la “correlazione” la variabili <code>dieta</code> ed <code>incremento del peso</code>.</p></li>
 </ol>
 </div>
-<div id="esercizio-2" class="section level2">
-<h2>Esercizio 2</h2>
+<div id="esercizio-b" class="section level2">
+<h2>Esercizio B</h2>
 <p>Durante una sperimentazione clinica, un gruppo di pazienti è stato suddiviso in tre sotto-gruppi: il primo, di <span class="math inline">\(5\)</span> pazienti, comprendente i pazienti con età tra i <span class="math inline">\(20\)</span> e i <span class="math inline">\(40\)</span> anni; il secondo, di 5, tra i <span class="math inline">\(40\)</span> e <span class="math inline">\(60\)</span> ed il terzo, di tre pazienti, con <span class="math inline">\(60\)</span> o più anni.</p>
 <p>Per tutti i pazienti è stato rilevato il tempo di reazione all’inoculazione di un farmaco. I risultati, in minuti, sono rappresentati dai seguenti valori (nell’ordine per i gruppi A, B, C): <code>76, 52, 178, 113, 83, 80, 124, 46, 88, 36, 94, 51, 74</code>.</p>
 <hr />
@@ -130,8 +169,8 @@ code span.ot { color: #007020; }
 <li><p>Si valuti la frazione di varianza spiegata dai gruppi.</p></li>
 </ol>
 </div>
-<div id="esercizio-3" class="section level2">
-<h2>Esercizio 3</h2>
+<div id="esercizio-c" class="section level2">
+<h2>Esercizio C</h2>
 <p>I dati riportati nella tabella che segue fanno riferimento a un esperimento in cui a 15 cavie è stata somministrata una stessa quantità di un veleno. Le cavie sono state poi suddivise casualmente in 3 gruppi (di numerosità diverse) e ciascun gruppo è stato sottoposto a un trattamento.</p>
 <p>Alle cavie del primo gruppo è stato somministrato l’antidoto A, a quelle del secondo l’antidoto B e a quelle del terzo l’antidoto C. Per ciascuna cavia si è quindi misurato, in decine di ore, il tempo di sopravvivenza.</p>
 <table>
