@@ -164,6 +164,31 @@ y_i = a + b x_i, \qquad i=1,\dots,n,
 <li><p>A cosa corrisponde la minima mutabilità, in questo problema specifico, in termini qualitativi? A cosa corrisponde la massima mutabilità?</p></li>
 <li><p>Sulla base dei punti precedenti, è ragionevole assumere che la posizione influenzi la probabilità di vittoria?</p></li>
 </ol>
+<div id="schema-della-soluzione" class="section level3">
+<h3>Schema della soluzione</h3>
+<p>Si nota già dalla tabella e dal diagramma a bastoncini che le prime 4 posizioni presentano frequenze maggiori rispetto alle ultime 4. Viceversa, gli indici di Gini e Shannon normalizzati sono entrambi <strong>prossimi</strong> al valore massimo, suggerendo quindi uno scenario di massima mutabilità.</p>
+<p>Per stabilire quindi se la posizione iniziale influenzi la probabilità di vittoria è quindi utile tenere in considerazione <strong>tutti</strong> questi indicatori. Gli indici di Gini e Shannon suggeriscono che il ruolo della posizione è abbastanza marginale ai fini della vittoria della gara. Al tempo stesso, una diretta ispezione della tabella suggerisce che la posizione ha un impatto sull’esito della gara, seppur abbastanza limitato.</p>
+<p>Le differenze diventano maggiormente apprezzabili se si considera la seguente tabella, in cui le posizioni sono state aggregate:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Posizione</th>
+<th align="right">Vittorie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1 - 4</td>
+<td align="right">91</td>
+</tr>
+<tr class="even">
+<td align="right">5 - 8</td>
+<td align="right">53</td>
+</tr>
+</tbody>
+</table>
+<p>Il <strong>nuovo</strong> coefficiente di Gini normalizzato in questo caso è pari a <code>0.930</code>.</p>
+</div>
 </div>
 <div id="esercizio-3" class="section level2">
 <h2>Esercizio 3</h2>
@@ -211,6 +236,33 @@ y_i = a + b x_i, \qquad i=1,\dots,n,
 <li><p>Si ottenga la precedente tabella di contingenza sotto l’ipotesi di indipendenza tra le variabili <code>anno</code> e <code>esperienza</code>.</p></li>
 <li><p>È ragionevole assumere che via sia una relazione tra le variabili <code>anno</code> ed <code>esperienza</code>? Si risponda tramite indici opportuni.</p></li>
 </ol>
+<div id="schema-della-soluzione-1" class="section level3">
+<h3>Schema della soluzione</h3>
+<p>La distribuzione marginale della variabile <code>esperienza</code> è la seguente:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Esperienza</th>
+<th>Bassa</th>
+<th>Medio-Bassa</th>
+<th>Medio-Alta</th>
+<th>Alta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frequenze assolute</td>
+<td>43</td>
+<td>18</td>
+<td>20</td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+<p>La moda della variabile <code>esperienza</code> è la modalità “bassa”. Tuttavia, il numero di decessi di paracadutisti con alta esperienza è maggiore di quelli con esperienza medio-bassa e medio-alta. Quest’ultimo fatto potrebbe (erroneamente) suggerire che una maggiore esperienza conduce ad un rischio maggiore di decesso, un’affermazione che in effetti sembra essere molto controintuitiva.</p>
+<p>Il motivo di questa apparente contraddizione probabilmente risiede nel modo in cui sono stati raccolti i dati. Ciò di cui avremmo bisogno per prendere una decisione più informata è del numero di lanci con il paracadute effettuati con successo, suddivisi per livello di esperienza. È infatti verosimile che la maggior parte dei paracadutisti sia molto esperta e questo di conseguenza potrebbe aver condotto ad un altro numero di decessi (<code>34</code>) rispetto a quelli con esperienza media (<code>18</code> e <code>20</code>).</p>
+<p>In conclusione, questi dati non sono sufficienti per stabilire se l’esperienza aumenta / diminuisce il rischio di decesso. Per misurare quest’ultimo fenomeno, sarebbe utile confrontare il rapporto <code>numero di decessi / numero di salti complessivo</code>, per ciascun livello di esperienza.</p>
+</div>
 </div>
 <div id="esercizio-4" class="section level2">
 <h2>Esercizio 4</h2>
