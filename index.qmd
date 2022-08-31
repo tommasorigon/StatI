@@ -23,7 +23,7 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 
 ### Materiale didattico
 
-**Nota**: la dicitura §2.1 --- §2.4 indica che vanno considerate le Sezioni §2.1, §2.2, §2.3 e §2.4.
+**Nota**: la dicitura §2.1 --- §2.4 indica che vanno considerate le Sezioni §2.1, §2.2, §2.3 e §2.4 del libro di testo.
 
 | Argomenti                            | Materiale didattico                        | Ulteriore materiale |
 |-----------------|------------------------|--------------------------------|
