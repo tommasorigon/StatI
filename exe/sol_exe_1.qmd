@@ -1,5 +1,6 @@
 ---
-title: "Esercizi 1"
+title: "Statistica I"
+subtitle: 'Esercizi 1: distribuzioni di frequenza'
 ---
 
 ```{r setup, include=FALSE}
