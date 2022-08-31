@@ -39,7 +39,7 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 | **Applicazioni**                     | [Slides unità D](slides/sl_D.pdf)          |                            |
 |                                      | [Slides unità E](slides/sl_E.pdf)          |                            |
 | **Esercitazione**                    | [Esercitazione 2](exe/exe_2.html)          |                            |
-| *Esercizi*                           | [Esercizi 2](exe/exe_2_bis.html)           |                            |
+| *Esercizi*                           | [Esercizi 2](exe/exe_2_bis.html)           | [Soluzione 2](exe/sol_exe_2.html)                           |
 | Indici di variabilità                | [Slides unità F](slides/sl_F.pdf)          | §5.1 --- §5.3              |
 | Istogrammi & boxplot                 | [Slides unità G](slides/sl_G.pdf)          | §3.4, §6.4, §6.5           |
 | Simmetria, curtosi, multimodalità    | [Slides unità H](slides/sl_H.pdf)          | §6.1 --- §6.3              |

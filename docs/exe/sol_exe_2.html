@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alborghetti Alex">
 
-<title>Statistica I - Esercitazione 2</title>
+<title>Statistica I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,10 +98,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contenuto della pagina</h2>
    
   <ul>
-  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link active" data-scroll-target="#esercizio-a">Esercizio A</a></li>
+  <li><a href="#soluzione-di-alcuni-esercizi" id="toc-soluzione-di-alcuni-esercizi" class="nav-link active" data-scroll-target="#soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</a>
+  <ul class="collapse">
+  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link" data-scroll-target="#esercizio-a">Esercizio A</a></li>
   <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
   <li><a href="#esercizio-d" id="toc-esercizio-d" class="nav-link" data-scroll-target="#esercizio-d">Esercizio D</a></li>
   <li><a href="#esercizio-e" id="toc-esercizio-e" class="nav-link" data-scroll-target="#esercizio-e">Esercizio E</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -111,19 +113,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Esercitazione 2</h1>
+<h1 class="title">Statistica I</h1>
+<p class="subtitle lead">Esercizi 2: indici di posizione</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Alborghetti Alex </p>
-          </div>
-  </div>
     
     
   </div>
@@ -131,69 +128,74 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="soluzione-di-alcuni-esercizi" class="level2">
+<h2 class="anchored" data-anchor-id="soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</h2>
+<p>Le seguenti soluzioni sono state gentilmente fornite dal <strong>tutor di Statistica I</strong> dell’A.A. 2021/2022, <em>Alex Alborghetti</em>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
 <section id="esercizio-a" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h3>
-<p>Dato il vettore di osservazioni</p>
+<p>È dato il vettore di osservazioni:</p>
 <p><span class="math display">\[
 x = (-4,5,3,1,-1,3,-1,1,0,3,2)
 \]</span></p>
 <p>Ricordando la definizione di media aritmetica:</p>
 <p><span class="math display">\[
-\bar{x} = \frac{1}{n}\sum_{i=1}^nx_i = \frac{-4+5+3+\dots}{11} = 1.091
+\bar{x} = \frac{1}{n}\sum_{i=1}^nx_i = \frac{-4+5+3+\cdots + 2}{11} = 1.091
 \]</span></p>
-<p>Ricordando la definizione di mediana:</p>
+<p>Inoltre, la definizione di mediana è:</p>
 <p><span class="math display">\[
-Me(x) = \bigg{\{}
-\begin{array}{ll}
-          x_{(\frac{n+1}{2})} &amp;\quad se \;n \;dispari\\
-         \big{[}x_{(n/2)} + x_{(n/2 +1)}\big{]}/2 &amp;\quad se\; n \;pari\\
-     \end{array}
+\text{Me}(x) = \begin{cases}
+          x_{(\frac{n+1}{2})} &amp;\qquad  n \text{ dispari}\\
+         \big{[}x_{(n/2)} + x_{(n/2 +1)}\big{]}/2 &amp; \qquad n \text{ pari}\\
+\end{cases}
 \]</span></p>
-<p>dove <span class="math inline">\(x_{(i)}\)</span> indica l’i-esimo valore in ordine crescente di <span class="math inline">\(x\)</span>, si trova facilmente che <span class="math inline">\(Me(x) = x_{(6)} = 1\)</span>.</p>
-<p>Data <span class="math inline">\(f(x)\)</span> trasformazione monotona dei dati di partenza, allora <span class="math inline">\(Me(f(x)) = f(Me(x))\)</span>. La media, invece, gode della proprietà di linearità, tale per cui <span class="math inline">\(\bar{y} = M(a+bx) = a+bM(x) = a + b\bar{x}\)</span>. Grazie a queste due proprietà, si possono ricavare le seguenti:</p>
+<p>dove <span class="math inline">\(x_{(i)}\)</span> indica l’i-esimo valore in ordine crescente di <span class="math inline">\(x\)</span>. Si trova facilmente che <span class="math inline">\(\text{Me}(x) = x_{(6)} = 1\)</span>.</p>
+<p>Sia <span class="math inline">\(f(x)\)</span> una trasformazione monotona dei dati di partenza, allora <span class="math inline">\(Me(f(x)) = f(Me(x))\)</span>.</p>
+<p>La media, invece, gode della proprietà di linearità, tale per cui <span class="math inline">\(\bar{y} = a + b\bar{x}\)</span>. Grazie a queste due proprietà, si possono ricavare le seguenti:</p>
 <table class="table">
 <thead>
 <tr class="header">
 <th style="text-align: left;"><span class="math inline">\(y\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(Me(y)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\text{Me}(y)\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\bar{y}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(e^x\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(e^{Me(x)} = e\)</span></td>
-<td style="text-align: center;">.</td>
+<td style="text-align: center;"><span class="math inline">\(e^{\text{Me}(x)} = e\)</span></td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(x+4\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(Me(x) + 4 = 5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Me}(x) + 4 = 5\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\bar{x}+4 = 5.091\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(-3x+1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(-3 Me(x) +1=-2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-3 \text{Me}(x) +1=-2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(-3\bar{x}+1 = -2.273\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(x^2\)</span></td>
-<td style="text-align: center;">.</td>
-<td style="text-align: center;">.</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 </tr>
 </tbody>
 </table>
-<p>i tre spazi vuoti della tabella, invece, vanno necessariamente completati trasformando manualmente i dati e calcolando gli indici richiesti.</p>
-<p>Si trova che <span class="math inline">\(M(e^x) = 20.295\)</span>, <span class="math inline">\(Me(x^2) = 4\)</span> e <span class="math inline">\(M(x^2) = 6.909\)</span>. I risultati sono stati arrotondati a tre cifre decimali.</p>
+<p>I tre spazi vuoti della tabella, invece, vanno necessariamente completati trasformando manualmente i dati e calcolando gli indici richiesti.</p>
+<p>Si trova che <span class="math inline">\(\bar{y} = n^{-1}\sum_{i=1}^n e^{x_i} = 20.295\)</span>, <span class="math inline">\(\text{Me}(x^2) = 4\)</span> e <span class="math inline">\(\bar{y} = n^{-1}\sum_{i=1}^n x_i^2 = 6.909\)</span>. I risultati sono stati arrotondati a tre cifre decimali.</p>
 </section>
 <section id="esercizio-c" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h3>
-<p>La distanza di un negozio dal magazzino può essere espressa come lo scarto <span class="math inline">\(|x_i - a| km\)</span>, dove <span class="math inline">\(x_i\)</span> è il kilometro al quale si trova il negozio e <span class="math inline">\(a\)</span> è il kilometro al quale si trova il magazzino. Si deve cercare quel valore <span class="math inline">\(a\)</span> tale per cui il doppio (andata e ritorno) della somma di questi scarti viene minimizzata. Il valore <span class="math inline">\(a\)</span> deve, pertanto, corrispondere alla mediana, che vale <span class="math inline">\(134\)</span>. La distanza totale percorsa per rifornire tutti e cinque i negozi è pari a <span class="math inline">\(1178km\)</span>. Se avessimo posizionato il magazzino sul kilometro pari alla media, che vale <span class="math inline">\(200.2km\)</span>, avremmo dovuto percorrere <span class="math inline">\(1319.2km\)</span>.</p>
+<p>La distanza di un negozio dal magazzino può essere espressa come lo scarto <span class="math inline">\(|x_i - a|\)</span>km, dove <span class="math inline">\(x_i\)</span> è il kilometro al quale si trova il negozio e <span class="math inline">\(a\)</span> è il chilometro al quale si trova il magazzino.</p>
+<p>Si deve cercare quel valore <span class="math inline">\(a\)</span> tale per cui il doppio (andata e ritorno) della somma di questi scarti viene minimizzata. Il valore <span class="math inline">\(a\)</span> deve, pertanto, corrispondere alla mediana, che vale <span class="math inline">\(134\)</span>.</p>
+<p>La distanza totale percorsa per rifornire tutti e cinque i negozi è pari a <span class="math inline">\(1178\)</span>km. Se avessimo posizionato il magazzino sul chilometro pari alla media, che vale <span class="math inline">\(200.2\)</span>km, avremmo dovuto percorrere <span class="math inline">\(1319.2\)</span>km.</p>
 </section>
 <section id="esercizio-d" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-d">Esercizio D</h3>
 <p>Una comune approssimazione della media quando i dati sono suddivisi in classi è data da: <span class="math display">\[
 \bar{x} \approx \frac{1}{n} \sum_{j=1}^k n_jm_j,
-\]</span> dove <span class="math inline">\(m_j\)</span> è il punto centrale del j-esimo intervallo ed <span class="math inline">\(n_j\)</span> è la sua frequenza assoluta. Abbiamo già visto nell’Esercitazione 1 come ricavare le frequenze assolute:</p>
+\]</span> dove <span class="math inline">\(m_j\)</span> è il punto centrale del j-esimo intervallo ed <span class="math inline">\(n_j\)</span> è la sua frequenza assoluta. Abbiamo già visto negli <a href="sol_exe_1.html">esercizi 1</a> come ricavare le frequenze assolute:</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -235,32 +237,32 @@ Me(x) = \bigg{\{}
 </tr>
 </tbody>
 </table>
-<p>quindi, possiamo calcolare la media come:</p>
+<p>Quindi, possiamo calcolare la media come:</p>
 <p><span class="math display">\[
 \bar{x} \approx \frac{0\cdot125+15\cdot250.5+27\cdot251.5+18\cdot252.5+10\cdot253.5+1\cdot254.5}{71} = 251.866.
 \]</span></p>
 <p>Invece, una comune approssimazione della mediana quando i dati sono suddivisi in classi è data da: <span class="math display">\[
-Me(x) \approx a_{j-1} + (a_j - a_{j-1})\frac{1/2 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
+\text{Me}(x) \approx a_{j-1} + (a_j - a_{j-1})\frac{1/2 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
 \]</span></p>
-<p>dove <span class="math inline">\((a_{j-1}, a_{j}]\)</span> è la classe alla quale la mediana appartiene ed <span class="math inline">\(F(\cdot)\)</span> è la funzione di ripartizione empirica. Nel nostro caso, è evidente che la mediana, ovvero l’osservazione <span class="math inline">\(x_{36}\)</span>, appartiene all’intervallo <span class="math inline">\((251,252]\)</span>. Sappiamo, inoltre, che <span class="math inline">\(F(252) = 42/71 = 0.592\)</span> e <span class="math inline">\(F(251) = 15/71 = 0.211\)</span>. Sostituendo tutti i valori nella formula, si ricava: <span class="math display">\[
-Me(x) \approx 251.759.
+<p>dove <span class="math inline">\((a_{j-1}, a_{j}]\)</span> è la classe alla quale la mediana appartiene ed <span class="math inline">\(F(\cdot)\)</span> è la funzione di ripartizione empirica. Nel nostro caso, è evidente che la mediana, ovvero l’osservazione <span class="math inline">\(x_{(36)}\)</span>, appartiene all’intervallo <span class="math inline">\((251,252]\)</span>. Sappiamo, inoltre, che <span class="math inline">\(F(252) = 42/71 = 0.592\)</span> e <span class="math inline">\(F(251) = 15/71 = 0.211\)</span>. Sostituendo tutti i valori nella formula, si ricava: <span class="math display">\[
+\text{Me}(x) \approx 251.759.
 \]</span></p>
 <p>Tutti i risultati sono arrotondati a tre cifre decimali.</p>
 <p>Una comune approssimazione del primo quartile quando i dati sono suddivisi in classi è, invece, data da: <span class="math display">\[
-Q_{.25} \approx a_{j-1} + (a_j - a_{j-1})\frac{0.25 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
+Q_{0.25} \approx a_{j-1} + (a_j - a_{j-1})\frac{0.25 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
 \]</span></p>
-<p>dove <span class="math inline">\((a_{j-1}, a_{j}]\)</span> è la classe alla quale il primo quartile appartiene ed <span class="math inline">\(F(\cdot)\)</span> è la funzione di ripartizione empirica. Poiché il primo quartile sta nell’intervallo <span class="math inline">\((251,252]\)</span>, dato che <span class="math inline">\(F(252) = 0.592\)</span> e <span class="math inline">\(F(251) = 0.211\)</span>, sostituendo nella formula troviamo che <span class="math inline">\(Q_{.25} \approx 251.102\)</span>.</p>
+<p>dove <span class="math inline">\((a_{j-1}, a_{j}]\)</span> è la classe alla quale il primo quartile appartiene ed <span class="math inline">\(F(\cdot)\)</span> è la funzione di ripartizione empirica. Poiché il primo quartile sta nell’intervallo <span class="math inline">\((251,252]\)</span>, dato che <span class="math inline">\(F(252) = 0.592\)</span> e <span class="math inline">\(F(251) = 0.211\)</span>, sostituendo nella formula troviamo che <span class="math inline">\(Q_{0.25} \approx 251.102\)</span>.</p>
 <p>Una comune approssimazione del terzo quartile quando i dati sono suddivisi in classi è data da: <span class="math display">\[
-Q_{.75} \approx a_{j-1} + (a_j - a_{j-1})\frac{0.75 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
+Q_{0.75} \approx a_{j-1} + (a_j - a_{j-1})\frac{0.75 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
 \]</span></p>
-<p>dove <span class="math inline">\((a_{j-1}, a_{j}]\)</span> è la classe alla quale il primo quartile appartiene ed <span class="math inline">\(F(\cdot)\)</span> è la funzione di ripartizione empirica. Poiché il terzo quartile sta nell’intervallo <span class="math inline">\((252,253]\)</span> dato che <span class="math inline">\(F(252) = 0.592\)</span> e <span class="math inline">\(F(253) = 60/71 = 0.845\)</span>, sostituendo nella formula troviamo che <span class="math inline">\(Q_{.75} \approx 252.625\)</span>.</p>
-<p>Per esercizio, provare a dimostrare la formula per l’approssimazione della mediana. <em>Hint</em>: si parte dalla formula della retta per due punti applicata nel grafico della funzione di ripartizione empirica.</p>
+<p>dove <span class="math inline">\((a_{j-1}, a_{j}]\)</span> è la classe alla quale il primo quartile appartiene ed <span class="math inline">\(F(\cdot)\)</span> è la funzione di ripartizione empirica. Poiché il terzo quartile sta nell’intervallo <span class="math inline">\((252,253]\)</span> dato che <span class="math inline">\(F(252) = 0.592\)</span> e <span class="math inline">\(F(253) = 60/71 = 0.845\)</span>, sostituendo nella formula troviamo che <span class="math inline">\(Q_{0.75} \approx 252.625\)</span>.</p>
 </section>
 <section id="esercizio-e" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-e">Esercizio E</h3>
 <p>La mediana della variabile <span class="math inline">\(x\)</span> vale approssimativamente <span class="math inline">\(17\)</span>. Il primo quartile vale approssimativamente <span class="math inline">\(16\)</span>, il terzo <span class="math inline">\(22\)</span>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
