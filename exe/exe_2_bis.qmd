@@ -23,7 +23,10 @@ $$ $$
 y_i = f_4(x_i) = x_i^2, \qquad i =1,\dots,11.
 $$
 
-**Nota**. Se possibile, si eviti di calcolare i valori $y_1,\dots,y_n$.
+:::{.callout-note}
+## Nota
+Se possibile, si eviti di calcolare i valori $y_1,\dots,y_n$.
+:::
 
 ## Esercizio B
 
@@ -45,7 +48,10 @@ Di un gruppo di $n = 100$ ragazzi appartenenti ad una società sportiva si hanno
 
 Una ditta di trasporti rifornisce con uguale periodicità cinque negozi posti rispettivamente ai chilometri $50, 89, 134, 198, 530$ di una stessa strada. Avendo deciso di costruire un magazzino sulla strada medesima, la ditta vuole stabilirne la posizione (ovvero il chilometro della strada) in modo da minimizzare la distanza percorsa per rifornire i cinque negozi.
 
-**Nota**: un camion può rifornire un negozio poi deve tornare al magazzino.
+:::{.callout-note}
+## Nota 
+Un camion può rifornire un negozio poi deve tornare al magazzino.
+:::
 
 <!-- ### Schema della soluzione -->
 

@@ -37,7 +37,7 @@ $$
 
 dove $x_{(i)}$ indica l'i-esimo valore in ordine crescente di $x$. Si trova facilmente che $\text{Me}(x) = x_{(6)} = 1$.
 
-Sia $f(x)$ una trasformazione monotona dei dati di partenza, allora $Me(f(x)) = f(Me(x))$. 
+Sia $f(x)$ una trasformazione monotona dei dati di partenza, allora $\text{Me}(f(x)) = f(\text{Me}(x))$. 
 
 La media, invece, gode della proprietà di linearità, tale per cui $\bar{y} = a + b\bar{x}$. Grazie a queste due proprietà, si possono ricavare le seguenti:
 
