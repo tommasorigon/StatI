@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alborghetti Alex">
 
-<title>Statistica I</title>
+<title>Statistica I - Esercitazione 6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,8 +102,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link active" data-scroll-target="#esercizio-a">Esercizio A</a></li>
   <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
   <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
-  <li><a href="#esercizio-d-cicchitelli-esercizio-2.4" id="toc-esercizio-d-cicchitelli-esercizio-2.4" class="nav-link" data-scroll-target="#esercizio-d-cicchitelli-esercizio-2.4">Esercizio D (Cicchitelli, esercizio 2.4)</a></li>
-  <li><a href="#esercizio-e" id="toc-esercizio-e" class="nav-link" data-scroll-target="#esercizio-e">Esercizio E</a></li>
   </ul>
 </nav>
     </div>
@@ -111,14 +110,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistica I</h1>
-<p class="subtitle lead">Esercizi 1: distribuzioni di frequenza</p>
+<h1 class="title">Esercitazione 6</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alborghetti Alex </p>
+          </div>
+  </div>
     
     
   </div>
@@ -126,170 +130,108 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="esercizio-a" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h2>
-<p>Il controllo sul peso (in grammi) di <span class="math inline">\(n = 71\)</span> pacchetti di burro ha fornito la seguente distribuzione di frequenza <strong>cumulata</strong>.</p>
+<section id="esercizio-a" class="level3">
+<h3 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h3>
+<p>Si sa, dalla scomposizione della devianza totale, che vale la seguente relazione:</p>
+<p><span class="math display">\[
+\mathcal{D}^2 = \underbrace{\sum_{j = 1}^k \sum_{i = 1}^{n_j}(x_{ij}-\bar{x}_j)^2}_{\mathcal{D}^2_{en}} + \underbrace{\sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2}_{\mathcal{D}^2_{tr}},
+\]</span></p>
+<p>i noti che dividendo per <span class="math inline">\(n\)</span> entrambi i membri, la scomposizione risulta valida anche per le varianze. Calcoliamo quindi le due varianze e sommiamole. Abbiamo già a disposizione le varianze di ciascun gruppo, dunque si può dimostrare che:</p>
+<p><span class="math display">\[
+\mathcal{\sigma}^2_{en} = \frac{1}{n} \sum_{j=1}^k n_j\sigma_j^2 = 2679.4.
+\]</span></p>
+<p>Per quanto riguarda la varianza tra i gruppi, calcoliamo anzitutto la media, si dimostri che vale la seguente relazione:</p>
+<p><span class="math display">\[
+\bar{x} = \frac{1}{n} \sum_{j=1}^k n_j\bar{x}_j= 259.7.
+\]</span></p>
+<p>Allora, la varianza tra i gruppi vale:</p>
+<p><span class="math display">\[
+\sigma^2_{tr} = \frac{1}{n} \sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2 = 2209.0.
+\]</span></p>
+<p>Pertanto, la varianza totale sarà pari a <span class="math inline">\(\sigma^2 = 2679.4 + 2209.0 = 4888.4\)</span>. I risultati sono arrotondati al primo decimale.</p>
+<p>Per calcolare la “correlazione” tra dieta e incremento del peso utilizziamo l’indice <span class="math inline">\(\eta^2\)</span>, definito come:</p>
+<p><span class="math display">\[
+\eta^2 = 1 - \frac{devianza\; entro\; i\; gruppi}{devianza\; totale}.
+\]</span></p>
+<p>Si può dimostrare (lo si faccia per esercizio) che tale indice è equivalente al complemento ad uno del rapporto tra varianza entro i gruppi e varianza totale. Allora, con i nostri dati:</p>
+<p><span class="math display">\[
+\eta^2 = 1 - 2679.4/(2679.4+2209.0) = 0.45.
+\]</span></p>
+<p>C’è quindi una moderata “correlazione” tra le due variabili. Il risultato è stato arrotondato a due decimali.</p>
+</section>
+<section id="esercizio-b" class="level3">
+<h3 class="anchored" data-anchor-id="esercizio-b">Esercizio B</h3>
+<p>Le medie e le varianze dei tempi di reazione di ciascun gruppo sono state calcolate e vengono riassunte nella tabella seguente:</p>
 <table class="table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(c_j\)</span> (grammi)</th>
-<th><span class="math inline">\((249,250]\)</span></th>
-<th><span class="math inline">\((250, 251]\)</span></th>
-<th><span class="math inline">\((251, 252]\)</span></th>
-<th><span class="math inline">\((252, 253]\)</span></th>
-<th><span class="math inline">\((253, 254]\)</span></th>
-<th><span class="math inline">\((254 , 255]\)</span></th>
+<th style="text-align: left;">Gruppo</th>
+<th style="text-align: center;"><span class="math inline">\(\bar{x}_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\sigma^2_j\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(N_j\)</span></td>
-<td>0</td>
-<td>15</td>
-<td>42</td>
-<td>60</td>
-<td>70</td>
-<td>71</td>
+<td style="text-align: left;">20-40</td>
+<td style="text-align: center;">100.4</td>
+<td style="text-align: center;">1884.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">40-60</td>
+<td style="text-align: center;">74.8</td>
+<td style="text-align: center;">991.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">60+</td>
+<td style="text-align: center;">73</td>
+<td style="text-align: center;">308.7</td>
 </tr>
 </tbody>
 </table>
-<ol type="1">
-<li><p>Si dica qual è l’unità statistica e la tipologia della variabile considerata.</p></li>
-<li><p>Trovare le frequenze assolute <span class="math inline">\(n_1,\dots,n_k\)</span> e relative <span class="math inline">\(f_1,\dots,f_k\)</span>.</p></li>
-<li><p>Rappresentare graficamente il fenomeno tramite un istogramma.</p></li>
-<li><p>Quanti sono i pacchetti di burro che pesano meno di <span class="math inline">\(252\)</span>g o esattamente <span class="math inline">\(252\)</span>g?</p></li>
-</ol>
+<p>(i risultati sono arrotondati al primo decimale).</p>
+<p>La varianza tra i gruppi è interpretabile come la varianza spiegata dalle medie. La media totale è pari a <span class="math inline">\(\bar{x} = 84.2\)</span>, allora:</p>
+<p><span class="math display">\[
+\sigma^2_{tr} = \frac{1}{n} \sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2 = 163.9.
+\]</span></p>
+<p>Considerato che a varianza totale è pari a <span class="math inline">\(\sigma^2 = (1/n) \sum_{i=1}^n(x_i-\bar{x})^2 = 1341.102\)</span>, la proporzione di varianza spiegata è circa del <span class="math inline">\(12.2\%\)</span>.</p>
 </section>
-<section id="esercizio-b" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-b">Esercizio B</h2>
-<p>Durante la correzione delle bozze di un libro di <span class="math inline">\(280\)</span> pagine si è riscontrata la seguente distribuzione degli errori di stampa per pagina:</p>
+<section id="esercizio-c" class="level3">
+<h3 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h3>
+<p>Per comodità, vengono calcolate e riassunte nella seguente tabella alcune quantità utili:</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Numero di errori</th>
-<th>Frequenze assolute</th>
+<th style="text-align: left;">Gruppo</th>
+<th style="text-align: center;"><span class="math inline">\(\bar{x}_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\sigma^2_j\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>112</td>
+<td style="text-align: left;">A</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.03</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>88</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: center;">3.07</td>
+<td style="text-align: center;">0.14</td>
 </tr>
 <tr class="odd">
-<td>2</td>
-<td>44</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>18</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>8</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: center;">1.76</td>
+<td style="text-align: center;">0.22</td>
 </tr>
 </tbody>
 </table>
-<ol type="1">
-<li><p>Qual è l’unità statistica?</p></li>
-<li><p>Di quale tipologia di variabile si tratta?</p></li>
-<li><p>Calcolare e disegnare la funzione di ripartizione.</p></li>
-<li><p>Qual è la proporzione di pagine con meno di 3 errori? Quanto vale <span class="math inline">\(F(3)\)</span>?</p></li>
-</ol>
-</section>
-<section id="esercizio-c" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h2>
-<p>Ai dipendenti di una piccola azienda è stato chiesto di precisare il loro titolo di studio. I risultati relativi a <span class="math inline">\(n=22\)</span> dipendenti sono i seguenti:</p>
-<pre><code>L, E, E, E, I, E, I, S, L, E, S, I, N, E, N, S, S, I, E, I, I, S </code></pre>
-<p>in cui: <code>N</code> = nessun titolo di studio, <code>E</code> = licenza elementare, <code>I</code> = licenza media inferiore, <code>S</code> = licenza media superiore, e <code>L</code> = laurea.</p>
-<ol type="1">
-<li><p>Qual è l’unità statistica? Di quale tipologia di variabile si tratta?</p></li>
-<li><p>Organizzare i dati in una tabella.</p></li>
-<li><p>Calcolare le frequenze relative.</p></li>
-<li><p>Si calcoli la percentuale di dipendenti aventi la licenza media o un titolo superiore.</p></li>
-</ol>
-</section>
-<section id="esercizio-d-cicchitelli-esercizio-2.4" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-d-cicchitelli-esercizio-2.4">Esercizio D (Cicchitelli, esercizio 2.4)</h2>
-<p>Quella che segue è una distribuzione di frequenze di famiglie italiane secondo il numero di componenti (dati Istat; frequenze espresse in migliaia)</p>
-<table class="table">
-<colgroup>
-<col style="width: 47%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 6%">
-<col style="width: 12%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Numero di componenti</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6 o più</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Numero di famiglie (in migliaia)</td>
-<td>5428</td>
-<td>5905</td>
-<td>4136</td>
-<td>1266</td>
-<td>369</td>
-<td>71</td>
-</tr>
-</tbody>
-</table>
-<ol type="1">
-<li><p>Si riscriva la tabella riportando accanto alle frequenze assolute quelle relative. Sulla base di questo, poi, si faccia un commento sulla struttura della famiglia in Italia</p></li>
-<li><p>Si determinino le frequenze cumulate relative e si commentino i risultati.</p></li>
-</ol>
-</section>
-<section id="esercizio-e" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-e">Esercizio E</h2>
-<p>Si considerino le funzioni di ripartizione relative alle variabili <span class="math inline">\(x\)</span> ed <span class="math inline">\(y\)</span></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="exe_1_bis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="1600"></p>
-</figure>
-</div>
-</div>
-</div>
-<ol type="1">
-<li><p>Quale variabile assume valori tendenzialmente maggiori?</p></li>
-<li><p>Sulla base del grafico, quanto vale approssimativamente <span class="math inline">\(F_x(0)\)</span>, dove <span class="math inline">\(F_x(\cdot)\)</span> è la funzione di ripartizione della variabile <span class="math inline">\(x\)</span>? Quanto vale <span class="math inline">\(F_x(2)\)</span>?</p></li>
-<li><p>Sulla base del grafico, quanto valgono il minimo ed il massimo della variabile <span class="math inline">\(y\)</span>?</p></li>
-<li><p>Si dica quale dei seguenti vettori sono i dati <span class="math inline">\(x\)</span> e quale invece sono i dati <span class="math inline">\(y\)</span> (si ignori il simbolo <code>[1]</code>). Si ottengano quindi i valori precisi delle quantità calcolate nei punti precedenti.</p></li>
-</ol>
-<div class="cell" data-layout-align="center">
-<pre><code>##  [1]  0.22 -0.64 -0.60 -0.89 -1.56  0.79 -0.50 -2.97 -0.30 -1.47</code></pre>
-</div>
-<div class="cell" data-layout-align="center">
-<pre><code>##  [1] -0.56 -0.23  1.56  0.07  0.13  1.72  0.46 -1.27 -0.69 -0.45</code></pre>
-</div>
+<p>i risultati sono stati arrotondati a due decimali. La dipendenza in media si misura tramite l’indice <span class="math inline">\(\eta\)</span>, cioè il complemento ad uno del rapporto tra la varianza entro i gruppi e la varianza totale. La varianza entro i gruppi può essere calcolata come segue:</p>
+<p><span class="math display">\[
+\mathcal{\sigma}^2_{en} = \frac{1}{n} \sum_{j=1}^k n_j\sigma_j^2 = 0.15.
+\]</span></p>
+<p>Per il calcolo della varianza totale, utilizziamo la definizione: <span class="math inline">\(\sigma^2 = (1/n) \sum_{i=1}^n(x_i-\bar{x})^2 = 1.01\)</span>, con <span class="math inline">\(\bar{x} = 1.65\)</span>. I risultati sono arrotondati a due decimali. In conclusione, possiamo dire che i tre antidoti non sembrano avere la stessa efficacia, dato che:</p>
+<p><span class="math display">\[
+\eta^2 = 1 - 0.15/1.01 = 0.85.
+\]</span></p>
 
 
 </section>

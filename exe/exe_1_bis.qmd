@@ -1,6 +1,10 @@
 ---
 title: 'Statistica I'
 subtitle: 'Esercizi 1: distribuzioni di frequenza'
+execute:
+  echo: false
+  include: true
+  warning: true
 ---
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
