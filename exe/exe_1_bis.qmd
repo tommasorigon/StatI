@@ -1,0 +1,103 @@
+---
+title: 'Statistica I'
+subtitle: 'Esercizi 1: distribuzioni di frequenza'
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 4, fig.width = 8)
+```
+
+## Esercizio A
+
+Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza **cumulata**.
+
+| $c_j$ (grammi) | $(249,250]$ | $(250, 251]$ | $(251, 252]$ | $(252, 253]$ | $(253, 254]$ | $(254 , 255]$ |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| $N_j$          | 0           | 15           | 42           | 60           | 70           | 71            |
+
+1.  Si dica qual è l'unità statistica e la tipologia della variabile considerata.
+
+2.  Trovare le frequenze assolute $n_1,\dots,n_k$ e relative $f_1,\dots,f_k$.
+
+3.  Rappresentare graficamente il fenomeno tramite un istogramma.
+
+4.  Quanti sono i pacchetti di burro che pesano meno di $252$g o esattamente $252$g?
+
+## Esercizio B
+
+Durante la correzione delle bozze di un libro di $280$ pagine si è riscontrata la seguente distribuzione degli errori di stampa per pagina:
+
+| Numero di errori | Frequenze assolute |
+|------------------|--------------------|
+| 0                | 112                |
+| 1                | 88                 |
+| 2                | 44                 |
+| 3                | 18                 |
+| 4                | 10                 |
+| 5                | 8                  |
+
+1.  Qual è l'unità statistica?
+
+2.  Di quale tipologia di variabile si tratta?
+
+3.  Calcolare e disegnare la funzione di ripartizione.
+
+4.  Qual è la proporzione di pagine con meno di 3 errori? Quanto vale $F(3)$?
+
+## Esercizio C
+
+Ai dipendenti di una piccola azienda è stato chiesto di precisare il loro titolo di studio. I risultati relativi a $n=22$ dipendenti sono i seguenti:
+
+    L, E, E, E, I, E, I, S, L, E, S, I, N, E, N, S, S, I, E, I, I, S 
+
+in cui: `N` = nessun titolo di studio, `E` = licenza elementare, `I` = licenza media inferiore, `S` = licenza media superiore, e `L` = laurea.
+
+1.  Qual è l'unità statistica? Di quale tipologia di variabile si tratta?
+
+2.  Organizzare i dati in una tabella.
+
+3.  Calcolare le frequenze relative.
+
+4.  Si calcoli la percentuale di dipendenti aventi la licenza media o un titolo superiore.
+
+## Esercizio D (Cicchitelli, esercizio 2.4)
+
+Quella che segue è una distribuzione di frequenze di famiglie italiane secondo il numero di componenti (dati Istat; frequenze espresse in migliaia)
+
+| Numero di componenti             | 1    | 2    | 3    | 4    | 5   | 6 o più |
+|----------------------------------|------|------|------|------|-----|---------|
+| Numero di famiglie (in migliaia) | 5428 | 5905 | 4136 | 1266 | 369 | 71      |
+
+1.  Si riscriva la tabella riportando accanto alle frequenze assolute quelle relative. Sulla base di questo, poi, si faccia un commento sulla struttura della famiglia in Italia
+
+2.  Si determinino le frequenze cumulate relative e si commentino i risultati.
+
+## Esercizio E
+
+Si considerino le funzioni di ripartizione relative alle variabili $x$ ed $y$
+
+```{r}
+set.seed(123)
+x <- rnorm(10)
+y <- rnorm(10, -1)
+
+par(mfrow=c(1,2))
+plot(ecdf(x), main = "Variabile x")
+plot(ecdf(y), main = "Variabile y")
+```
+
+1.  Quale variabile assume valori tendenzialmente maggiori?
+
+2.  Sulla base del grafico, quanto vale approssimativamente $F_x(0)$, dove $F_x(\cdot)$ è la funzione di ripartizione della variabile $x$? Quanto vale $F_x(2)$?
+
+3.  Sulla base del grafico, quanto valgono il minimo ed il massimo della variabile $y$?
+
+4.  Si dica quale dei seguenti vettori sono i dati $x$ e quale invece sono i dati $y$ (si ignori il simbolo `[1]`). Si ottengano quindi i valori precisi delle quantità calcolate nei punti precedenti.
+
+```{r}
+round(y,2)
+```
+
+```{r}
+round(x,2)
+```

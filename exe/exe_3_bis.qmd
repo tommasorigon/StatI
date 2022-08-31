@@ -1,0 +1,157 @@
+---
+title: 'Statistica I'
+subtitle: 'Esercizi 3: variabilità, istogrammi, boxplot, simmetria, curtosi'
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    math: katex
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 4, fig.width = 8)
+```
+
+
+## Esercizio A
+
+Il numero di giorni di ferie richiesti per il mese di giugno 2019 in un campione di $n = 16$ lavoratori è rappresentato nella seguente tabella
+
+|Modalità $c_j$|	3 |	7 |	8 |	11 | 15 | 17 | 24 |
+|--------------|----|---|---|----|----|----|---|
+|Frequenze assolute $n_j$| 2 | 4 |	5 |	1 |	2	|  1 | 1 |
+	
+
+1.	Rappresentare graficamente la funzione di ripartizione empirica.
+
+1.	Calcolare la mediana e i quartili. 
+
+1. Sono presenti outlier? Quindi, disegnare un boxplot.
+
+1.	Determinare media aritmetica.
+
+1.	Calcolare il campo di variazione, la differenza interquartile e lo scarto quadratico medio.
+
+## Esercizio B
+
+Nel 1975 in Italia il numero di parti legittimi per età della madre al parto è stato il seguente:
+
+| Età della madre | Numero nati |
+|-----------------|-------------|
+| (9, 14] | 489 |
+| (14, 20] | 94921 |
+| (20, 24] | 200255 |
+| (24, 29] | 274779 |
+| (29, 34] | 144282 |
+| (34, 44] | 99238 |
+| (44, 55] | 1747 |
+
+1. Si dica qual è l’unità statistica e qual è la variabile considerata. 
+
+1. Di che tipo di variabile si tratta?
+
+1. Rappresentare graficamente il fenomeno. **Attenzione**: le classi non hanno dimensione uguale.
+
+1. Calcolare la percentuale dei nati per fasce d'età della madre.
+
+
+## Esercizio C
+
+Per $n = 56$ studenti si è rilevata la variabile `voto all’esame di maturità`. Il voto medio rilevato è pari a 76 e la varianza pari a 25.
+
+1. Se si osserva un ulteriore studente che ha riportato un voto pari a 90. Qual è il nuovo voto medio?
+
+1. Nella stessa ipotesi, come cambia la varianza?
+
+1. Se lo studente che si aggiunge ha riportato un voto pari a 76 come cambiano le risposte ai quesiti precedenti?
+
+## Esercizio D
+
+Si considerino i seguenti tre insiemi di $n = 10$ dati raccolti sulla medesima variabile in tre situazioni diverse: $$x = (−1.65, −5.74, −0.84, −4.50, 12.90, 0.84, −4.73, 7.89, 10.72, 4.40),$$ 
+$$y = (−5.34,−6.26,3.80,−2.15,−1.72,−7.35,6.84,5.92,1.72,7.76),$$ 
+$$z = (7.05, −0.43, −10.21, −5.44, −6.75, −12.33, 13.76, 21.51, 0.43, 6.14).$$ 
+
+1. Si confrontino le variabilità, la simmetria e la curtosi di questi insiemi dapprima con uno strumento grafico e, successivamente, con appositi indici.
+
+1. Sono presenti outlier nei precedenti insiemi?
+
+### Schema della soluzione
+
+```{r}
+x <- c(-1.65, -5.74, -0.84, -4.50, 12.90, 0.84, -4.73, 7.89, 10.72, 4.40)
+y <- c(-5.34,-6.26,3.80,-2.15,-1.72,-7.35,6.84,5.92,1.72,7.76)
+z <- c(7.05, -0.43, -10.21, -5.44, -6.75, -12.33, 13.76, 21.51, 0.43, 6.14)
+
+var2 <- function(x) mean(x^2) - mean(x)^2
+sd2 <- function(x) sqrt(var2(x))
+
+Pearson_sym <- function(x){
+  mean((x - mean(x))^3)/sd2(x)^3
+}
+
+Pearson_kurt <- function(x){
+  mean((x - mean(x))^4)/sd2(x)^4
+}
+
+
+tab <- cbind(c(mean(x), mean(y), mean(z)),
+             c(quantile(x,c(0.25),type=1),quantile(y,c(0.25),type=1),quantile(z,c(0.25),type=1)),
+             c(quantile(x,c(0.75),type=1),quantile(y,c(0.75),type=1),quantile(z,c(0.75),type=1)),
+             c(var2(x),var2(y),var2(z)),
+             c(Pearson_sym(x),Pearson_sym(y),Pearson_sym(z)),
+             c(Pearson_kurt(x),Pearson_kurt(y),Pearson_kurt(z)))
+rownames(tab) <- c("x","y","z")
+colnames(tab) <- 1:6
+# knitr::kable(tab)
+```
+
+La tabella seguente costituisce solamente uno schema della soluzione, non la soluzione stessa.
+
+|   |     Media |     $\mathcal{Q}_{0.25}$| $\mathcal{Q}_{0.75}$   |         $\sigma^2$|          $\gamma$|        $\kappa$ |
+|:--|-----:|-----:|----:|---------:|----------:|--------:|
+|x  | 1.929| -4.50| 7.89|  40.54343|  0.4440664| 1.771384|
+|y  | 0.322| -5.34| 5.92|  28.77178| -0.0215201| 1.500529|
+|z  | 1.373| -6.75| 7.05| 105.23674|  0.4975537| 2.251117|
+
+Il calcolo di eventuali oulier è agevole a partire dalla tabella precedente.
+
+## Esercizio E
+
+Sia $x$ una variabile binaria, ovvero una variable che può assumere solo due modalità ($0$ e $1$). La frequenza relativa associata al valore $1$ è $f_1$ mentre quella associata al valore $0$ è $f_0 = 1 - f_1$.
+
+1. Si calcoli la varianza della variabile $x$ in funzione di $f_1$, ovvero $\text{var}(x)$. Si supponga quindi che $f_1 = 0.4$ e si dica quanto vale la varianza in questo caso particolare.
+
+1. Si disegni il grafico di $\text{var}(x)$ in funzione di $f_1$. Si trovi quindi il valore di $f_1$ che rende massima $\text{var}(x)$.
+
+## Esercizio F
+
+Il peso (in kg) degli individui maschi adulti di una certa popolazione si distribuisce con media  $\bar{x} = 70$ e deviazione standard $\sigma = 15$. Supponendo di non aver accesso ai dati completi, cosa è possibile dire riguardo alla frequenza relativa di individui appartenenti alle seguenti classi?
+
+1. Frequenza relativa della classe di peso $[50, 90]$.
+1. Frequenza relativa della classe di peso $[55, 85]$.
+1. (**Difficile**) Frequenza relativa della classe di peso $[50, 100]$.
+
+Si commentino i risultati.
+
+**Suggerimento**. Si faccia uso della disuguaglianza di Chebyshev. Per quel che riguarda il terzo punto, si noti che $[50,90] \subset [50,100]$. 
+
+## Esercizio G
+
+I dati $x_1,\dots,x_n$ e $y_1,\dots,y_n$ sono rappresentati negli istogrammi seguenti
+
+```{r}
+set.seed(123)
+x <- rnorm(1000)
+y <- rnorm(1000,0,20)
+par(mfrow=c(1,2))
+hist(x, breaks= 30, main = "Variabile x", ylab = "Frequenze assolute")
+hist(y, breaks= 30, main = "Variabile y", ylab = "Frequenze assolute")
+```
+
+1. Quale delle due variabili presenta la maggiore variabilità? 
+
+1. A giudicare dal grafico, quando vale (approssimativamente) l'indice di asimmetria di Pearson? E quello di Bowley?
+

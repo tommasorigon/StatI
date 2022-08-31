@@ -1,0 +1,248 @@
+---
+title: 'Statistica I'
+subtitle: 'Esercitazione 2: indici di posizione'
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    math: katex
+editor_options: 
+  chunk_output_type: console
+---
+
+Molti dei problemi di questa esercitazione **non** sono stati svolti a lezione. Si consiglia agli studenti di provare a risolvere i problemi autonomamente. 
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval= T, message=F, warning=F, error=F, comment=NA, cache=F, include=T, R.options=list(width=220), dpi = 200, fig.align = "center")
+```
+
+## Posizione ottimale del supermercato
+
+In una strada rettilinea sono collocati $5$ condomini, chiamati `A, B, C, D` ed `E`. Il comune desidera determinare la **posizione ottimale** per un nuovo supermercato. I condomini sono occupati dal seguente numero di inquilini:
+
+| | A | B | C | D | E |
+|-|---|---|---|---|---|
+| Numero di inquilini | 6 | 6 | 20 | 12 | 8|
+
+Inoltre, la posizione dei condomini, ovvero i metri di distanza dall'inizio della via, sono le seguenti:
+
+|   | A | B | C | D | E |
+|---|---|---|---|---|---|
+| Distanza dall'inizio della via (metri) | 1000 | 2000 | 3000 | 3100 | 3150 |
+
+
+### Domanda
+
+Tenendo conto del numero degli inquilini, si indichi la posizione ideale del supermercato, ovvero la **posizione che minimizza il disagio** degli inquilini in termini di **distanza percorsa**. Si identifichi quindi la posizione in due casi:
+
+  * Supponendo che disagio cresca **linearmente** con la distanza.
+  * Supponendo che disagio cresca con il **quadrato** della distanza.
+
+### Schema di soluzione
+
+Siano $x_1,\dots,x_{52}$ le posizioni dei vari inquilini nella strada rettilinea. Sebbene i coinquilini siano $52$, le modalità sono solamente $5$, dal momento che essi vivono in $5$ condomini. 
+
+| Modalità $c_j$ | Frequenza assoluta $n_j$ | Frequenza cumulata $N_j$ |
+| -------------|--------------------|--------------------|
+| 1000 | 6 | 6 |
+| 2000 | 6 | 12 |
+| 3000 | 20 | 32 |
+| 3100 | 12 | 44 |
+| 3150 | 8 | 52 |
+
+Il primo quesito chiede di individuare il valore $\alpha$ (la posizione ottimale del supermercato), che minimizza
+
+
+
+$$
+\sum_{i=1}^{52}|x_i - \alpha | = \sum_{j=1}^5 n_j |c_j - \alpha| = 6 |1000 - \alpha| + \cdots + 8 |3150 - \alpha|.
+$$
+Un possibile valore (ce ne potrebbero essere tanti!), che minimizza tale somma è la mediana. In questo caso, la numerosità campionaria è pari a $n = 52$ e pertanto la mediana è pari alla media dei due valori centrali, ovvero i valori degli individui in posizione $26$ e $27$. Poichè entrambi sono pari a $3000$, la mediana è a sua volta pari a $3000$. Inoltre, poichè $x_{(26)} = x_{(27)} = 3000$, il valore $\alpha = 3000$ è l'unico che minimizza la somma degli scarti in valore assoluto.  
+
+La seconda domanda chiede il valore $\alpha$ che minimizza il quadrato delle distanza, ovvero il valore che rende minima la somma
+$$
+\sum_{i=1}^{52}(x_i - \alpha)^2 = \sum_{j=1}^5 n_j (c_j - \alpha)^2 = 6 (1000 - \alpha)^2 + \cdots + 8 (3150 - \alpha)^2.
+$$
+Tale valore è la media aritmetica. Si ottiene quindi che
+
+$$
+\alpha = \bar{x} = \frac{1}{52}\sum_{i=1}^{52} x_i = \frac{1}{52} \sum_{j=1}^5 n_j c_j = \frac{1}{52}(1000\times 6 + \cdots + 3150\times 8) = 2700.
+$$
+
+## Foglie di platano
+
+È riportata di seguito una tabella che riassume le **lunghezze** in mm di `n = 100` foglie di platano, dopo 10 giorni di siccità.
+
+| Classe | Frequenza assoluta $n_j$ | Frequenza cumulata $N_j$ |
+|--------|--------------------------|--------------------|
+| $(120,135]$ | 10 | 10 |
+| $(135,145]$ | 20 | 30 |
+| $(145,150]$ | 60 | 90 |
+| $(150,165]$ | 10 | 100 |
+
+È noto che, dopo un giorno di pioggia, la lunghezza delle foglie aumenta di una quota percentuale del $10\%$ più una quota fissa pari a $0.5$ mm.
+
+### Domande
+
+1. Si calcoli un'approssimazione della media e della mediana.
+
+1. Si calcoli un'approssimazione della media e della mediana dopo un giorno di pioggia continuata.
+
+### Schema della soluzione
+
+Dato che $n = 100$, la mediana è il valore medio delle unità statistiche in posizione $50$ e $51$. Entrambe queste unità appartengono alla classe $(145, 150]$ e pertanto anche la mediana. 
+
+Una possibile approssimazione per la mediana si ottiene tramite la formula:
+
+$$
+\text{Me}_x \approx 145 + (150 - 145)\frac{0.5 - 0.3}{0.9 - 0.3} = 145 + (150 - 145)\frac{50 - 30}{90 - 30} = 146.7.
+$$
+Siano $m_1,\dots,m_4$ i valori centrali degli intervalli. Allora, un valore approssimato per la media è
+
+$$
+\bar{x} \approx \frac{1}{n} \sum_{i = 1}^4 m_j n_j = \frac{1}{100}(127.5 \times 10 + \cdots + 157.5 \times 10) = 145. 
+$$
+
+Il secondo quesito si risolve rapidamente poichè è equivalente al calcolo della media e della mediana dei dati trasformati 
+$$y_i = 0.5 + (1 + 0.1) x_i, \qquad i=1,\dots,n.$$
+
+Trattandosi di una trasformazione lineare monotona crescente, si ottiene che
+
+$$
+\text{Me}_y =  0.5 + (1 + 0.1) \text{Me}_x \approx 161.87,
+$$
+e
+
+$$
+\bar{y} =  0.5 + (1 + 0.1) \bar{x} \approx 160.
+$$
+
+## Diametro degli abeti rossi (continuazione)
+
+Si faccia riferimento ai dati dell'[esercitazione 1](exe_1.html#Diametro_degli_abeti_rossi) riguardanti gli **abeti rossi**. Vengono misurati ulteriori `n = 30` diametri, come riportato nella tabella seguente, in cui **D** = Diametro, **$n_j$** = frequenze assolute. 
+
+```{r, results="asis"}
+diametri <- 18:77
+frequenze <- c(21,47,34,69,74,52,46,28,49,40,
+               43,48,51,65,76,64,72,33,32,59,
+               45,41,43,49,45,42,39,40,47,35,
+               38,26,31,46,48,23,39,30,29,16,
+               17,23,12,14,10,11,4,3,0,4,
+               7,1,5,0,6,9,0,4,0,2)
+
+set.seed(123) # Se stai leggendo questo codice: si, ho barato. Non sono dati nuovi, ho solo ricampionato quelli originali
+
+id <- sample(1887,30)
+
+diam_full <- sort(rep(diametri, frequenze)[id])
+n <- length(diam_full)
+
+tab <- data.frame(unique(diam_full), as.numeric(table(diam_full)))
+# tab <- cbind(tab[1:11,],tab[12:22,])
+colnames(tab) <- c("D","$n_j$")
+
+rows <- seq_len(nrow(tab) %/% 2)
+knitr::kable(list(tab[rows,1:2], tab[-rows, 1:2]), row.names = FALSE) 
+```
+
+
+### Domande
+
+Con riferimento al nuovo insieme di dati:
+
+1. Si calcoli la media aritmetica e la mediana
+
+1. Si calcoli il primo quartile ($\mathcal{Q}_{0.25}$), il terzo quartile ($\mathcal{Q}_{0.75}$) ed il quarto decile ($\mathcal{Q}_{0.4}$), seguendo la definizione data nelle [slides](../slides/sl_C.pdf).
+
+1. Si confrontino questi indici di posizione con la funzione di ripartizione ottenuta nella prima esercitazione. I nuovi valori sembrano essere compatibili con i dati originari?
+
+### Schema della soluzione
+
+I risultati che seguono **non** costituiscono la soluzione completa dato che i vari passaggi sono stati omessi. 
+
+
+#### Media
+
+La media è circa `r round(mean(diam_full),2)`.
+
+#### Mediana
+
+La mediana è `r median(diam_full)`.
+
+#### Quantili
+
+Il primo quartile è pari a `r quantile(diam_full,0.25, type=1)`, il terzo quartile è  pari a `r quantile(diam_full,0.75, type=1)` mentre il quarto decile  è pari a `r quantile(diam_full,0.4, type=1)`.
+
+## Velocità della luce (continuazione)
+
+Si faccia riferimento ai dati trasformati $y_1,\dots,y_{66}$ dell'[esercitazione 1](exe_1.html#La_velocità_della_luce), riguardanti la **la velocità della luce**. 
+
+### Domande
+
+1. Si calcoli la media e la mediana dei dati. Si commentino i risultati.
+1. Si escluda il valore anomalo (-44) dall'analisi e si calcolino nuovamente media e mediana. Si commenti.
+
+### Schema della soluzione
+
+I risultati che seguono **non** costituiscono la soluzione completa dato che i passaggi ed i commenti sono stati omessi. 
+
+```{r}
+library(BayesDA)
+data(light)
+```
+
+#### Media e mediana
+
+La media dei dati trasformati è circa `r round(mean(light),2)` mentre la mediana è `r median(light)`.
+
+#### Media e mediana dati trasformati
+
+La media dei dati trasformati, escluso il valore anomalo -44, è pari a `r round(mean(light[-6]),2)` mentre la mediana è `r median(light[-6])`.
+
+#### Commento
+
+Il valore anomalo influenza sensibilmente il valore della media aritmetica. Viceversa, la mediana rimane invariata.  
+
+## Gran premio del Canada
+
+Il Gran premio del Canada viene interrotto per la pioggia dopo $42$ giri, quando il pilota A era in terza posizione, con una velocità media di $204$ km/h. I restanti $21$ giri vengono percorsi da dal pilota A ad una media di $126$ km/h. Il circuito misura $5$ km. Al termine si sommano i tempi delle due frazioni di gara e il pilota A risulta il vincitore. 
+
+### Domande
+
+1. Calcolare la velocità media del pilota A.
+
+1. Calcolare la durata delle due frazioni di gara e quella complessiva.
+
+### Schema di soluzione
+
+In totale ci sono $n = 63 \times 5 = 315$ km da percorrere, di cui $42 \times 5 = 210$ nella prima frazione di gara e $21 \times 5 = 105$ nella seconda. La velocità media complessiva si ottiene tramite una media armonica ponderata, ovvero 
+
+$$
+\mathbb{A} = \frac{315}{210/204 + 105/126}= \frac{63}{42/204 + 21/126} = 169.1053.
+$$
+Le durate delle due frazioni di gara $t_1, t_2$ sono pari a (tempo) = (distanza) / (velocità) e pertanto si ottiene che
+
+$$
+t_1 = 210 / 204 = 1.0294 \text{h}, \qquad t_2 = 105 / 126 = 0.8\bar{3} \text{h},
+$$
+per un totale di $t_1 + t_2 = 1.8627$ ore.
+
+## Blocchi di marmo
+
+Da una cava di marmo vengono ricavati $n = 25$ blocchi cubici, la cui distribuzione secondo la dimensione del lato ($l$) misurata in metri risulta la seguente:
+
+| Dimensione lato $l$ | $(1,2]$ | $(2,4]$ | $(4,5]$ | $(5,6]$ | 
+|-|-|-|-|-|
+| Frequenze assolute | 8 | 9 | 6 | 2 |
+
+### Domanda
+
+Si calcoli un'approssimazione per la dimensione media del lato di tali blocchi di marmo.
+
+### Schema della soluzione
+
+Procedendo come in un esercizio precedente, otteniamo che
+
+$$
+\bar{x} \approx \frac{1}{25} \sum_{j=1}^4m_j n_j = \frac{1}{25}(1.5 \times 8 + 3 \times 9 + 4.5 \times 6 + 5.5 \times 2 ) = 3.08.
+$$

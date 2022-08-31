@@ -1,0 +1,105 @@
+---
+title: 'Statistica I'
+subtitle: 'Esercizi 4: dati qualitativi, eterogeneità'
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    math: katex
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 4, fig.width = 8)
+```
+
+
+## Esercizio A
+
+Da un collettivo di $n = 60$ occupati secondo il settore di attività e la posizione nella professione, si vuol verificare rispetto a quale carattere esso è più eterogeneo.
+
+| Settore di attività |	A | I | AA |
+|-------------|---|---|----|
+| Frequenze assolute    | 10 | 20 |	30 |
+
+
+| **Posizione professionale** |	Imprenditore, dirigente | Lavoratore autonomo | Impiegato | Operaio | 
+|---------------------------------|-------------------------|----------|-----------|---------|
+| Frequenze assolute    | 5 | 10 | 25 |	20 |
+
+## Esercizio B
+
+
+Siete il responsabile marketing di una grande azienda. Vi vengono forniti i dati di un’indagine di _customer satisfaction_ svolta su $500$ clienti di un'azienda concorrente, che voi mettete a confronto con un'indagine su $100$ vostri clienti.
+
+Sono disponibili le seguenti frequenze relative percentuali:
+
+|  |	Per niente soddisfatti | Poco soddisfatti | Abbastanza soddisfatti | Molto soddisfatti | 
+|-------------|---|---|----|--|
+| Clienti azienda    | 14\% | 16\% |	48\% | 22\% |
+| Clienti concorrenza    | 10\% | 13\% |	62\% | 15\% |
+
+
+1. Rappresentare graficamente i dati usando le frequenze relative. **Suggerimento**: si veda l'[esercitazione 4](exe_4.html).
+
+1. Analizzare le differenze riscontrate tra le due distribuzioni e sinteticamente indicare le caratteristiche delle due distribuzioni. 
+
+1. Che cosa fareste al posto del responsabile di marketing dell’azienda in questione?
+
+1. Si calcoli la mediana della soddisfazione dei clienti nei due casi. 
+
+## Esercizio C (difficile)
+
+I clienti di un'azienza locale di vendita per corrispondenza sono stati classificati per provincia di residenza. Si conoscono le frequenze relative per le province di Trieste e Gorizia (si veda la tabella sottostante).
+
+| Provincia | Frequenza relativa |
+|-|-|
+|Trieste | 0.5 |
+| Gorizia | 0.3 |
+| Udine | ? |
+| Pordenone | ? |
+
+
+Sapendo che l'indice di Gini normalizzato è pari a $G_\text{norm} = 0.85333$, si dica quali sono le frequenze relative di Udine e Pordenone.
+
+## Esercizio D
+
+I risultati di un'indagine sulla pratica di una specifica attività sportiva tra le donne di tre regioni italiane sono riassunti nella tabella seguente.
+
+
+|  | Con continuità | Saltuariamente | Raramente | Mai |
+|---------|----------------|----------------|----------------|-----|
+| Veneto | 64 | 33 | 112 | 82 | 
+| Lombardia | 62 | 37 | 122 | 68 |
+| Trentino | 78 | 54 | 114 | 50 |
+
+1. Qual è la moda della variabile "attività fisica" nella regione Lombardia?
+
+1. Si dia una rappresentazione grafica dei dati che permetta di confrontare le distribuzioni dell'attività fisica delle tre regioni. 
+
+1. Si confronti l'eterogeneità della variabile "attività fisica" nelle tre regioni.
+
+## Esercizio E
+
+Una regione delle alpi è stata suddivisa in 6 zone di uguale dimensione e conformazione. Per ogni sottoarea è stato svolto un censimento delle marmotte presenti. I risultati ottenuti sono stati:
+
+| Zona | A | B | C | D | E | F |
+|-----------|---|---|---|---|---|---|
+| Frequenza assoluta | 24 | 7 | 10 | 4 | 35 | 13 |
+
+Si valuti se le marmotte sono equamente presenti nelle $6$ zone con opportuni grafici ed indici. 
+
+## Esercizio F
+
+Nella tabella seguente sono riportati i risultati relativi ad uno studio clinico per $n = 200$ pazienti affetti dal morbo di Hodgkin. Sono stati rilevati due tipi di istologici di linfonodi: PL (predominanza di linfociti) e SN (sclerosi nodulare). 
+
+Dopo tre mesi di trattamento è stato assegnato un giudizio clinico sull'efficacia tramite la classificazione: positivo, parziale, nessuno.
+
+| | Positivo | Parziale | Nessuno|
+|-|-|-|-|
+| PL | 74 | 18 | 12 |
+| SN | 68 | 16 | 12 |
+
+Si chiede di valutare, con opportuni grafici ed indici, se l'efficacia del trattamento è stata la stessa per i due tipo di linfonodi. 

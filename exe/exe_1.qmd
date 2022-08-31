@@ -1,0 +1,166 @@
+---
+title: 'Statistica I'
+subtitle: 'Esercitazione 1: distribuzioni di frequenza'
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval= T, message=F, warning=F, error=F, comment=NA, cache=F, include=T, R.options=list(width=100), dpi = 200, fig.align = "center")
+```
+
+## Diametro degli abeti rossi
+
+Il **diametro** del fusto di una pianta viene misurato attraverso uno strumento chiamato "Cavalletto". La misura viene effettuata tenendo il cavalletto in posizione perpendicolare al fusto ad una altezza dal terreno di circa 1.30 m, con una precisione non superiore a 1 cm.
+
+Nell'autunno del 1999 sono stati misurati i diametri di `n = 1887` **abeti rossi** presenti in una zona boschiva a San Vito di Cadore. Le misure sono elencante nella tabella seguente, in cui **D** = Diametro, $n_j$ = frequenze assolute.
+
+```{r, results="asis"}
+diametri <- 18:77
+frequenze <- c(21,47,34,69,74,52,46,28,49,40,
+               43,48,51,65,76,64,72,33,32,59,
+               45,41,43,49,45,42,39,40,47,35,
+               38,26,31,46,48,23,39,30,29,16,
+               17,23,12,14,10,11,4,3,0,4,
+               7,1,5,0,6,9,0,4,0,2)
+
+tab <- cbind(diametri[1:10],frequenze[1:10],
+             diametri[11:20],frequenze[11:20],
+             diametri[21:30],frequenze[21:30],
+             diametri[31:40],frequenze[31:40],
+             diametri[41:50],frequenze[41:50],
+             diametri[51:60],frequenze[51:60])
+colnames(tab) <- rep(c('D',"$n_j$"), 6)
+knitr::kable(tab)
+```
+
+### Domande
+
+1.  Qual è l'unità statistica di questo problema? Qual è la numerosità campionaria?
+
+2.  Per i dati riferiti al diametro del fusto si è soliti sintetizzare l'informazione in classi di 5 cm. Si costruisca tale tabella, usando pertanto gli intervalli $(17, 22], (22,27], \dots, (72,77]$. Si ottengano quindi: i) le frequenze assolute, ii) le frequenze relative, iii)-iv) le frequenze cumulate assolute e relative.
+
+3.  Si disegni l'istogramma dei dati utilizzando gli intervalli del punto precedente.
+
+4.  Si faccia un disegno (anche approssimativo) della funzione di ripartizione.
+
+5.  Quanto vale la funzione di ripartizione calcolata in $52$, ovvero $F(52)$?
+
+6.  Quanti sono gli alberi aventi diametro più piccolo di $42.5$ cm?
+
+### Schema della soluzione
+
+Le tabelle ed i grafici che seguono sono un **supporto alla soluzione** e non costituiscono la soluzione completa.
+
+```{r, results="asis"}
+diam_full <- rep(diametri, frequenze)
+n <- length(diam_full)
+breaks <- 17 + 5*(0:12)
+diam_class <- cut(diam_full, breaks=breaks)
+
+freq <- as.numeric(table(diam_class))
+freq_perc <- freq / n
+freq_cum  <- cumsum(freq)
+freq_cum_perc <- freq_cum / n
+
+tab <- data.frame(class=levels(diam_class),freq, freq_perc, freq_cum, freq_cum_perc)
+colnames(tab) <- c("Classe","Frequenze assolute","Frequenze relative","Frequenze cumulate assolute","Frequenze cumulate relative")
+knitr::kable(tab, digits=3)
+```
+
+```{r}
+# Using the same breaks as before
+library(ggplot2)
+
+data_plot <- data.frame(diam_full, diam_class)
+ggplot(data=data_plot, aes(x = diam_full, y=..count..)) + geom_histogram(fill="white",col="black", breaks=breaks) + theme_bw() +ylab("Frequenze assolute") + xlab("Diametro")
+```
+
+```{r}
+plot(ecdf(diam_full), ylab = "F(diametro)", xlab = "Diametro", main = "", cex = 0.4)
+# ggplot(data=data_plot, aes(x = diam_full)) + stat_ecdf(geom = "step", size=1.2)+ theme_bw()  + ylab("F(diametro)") + xlab("Diametro")
+```
+
+## La velocità della luce
+
+Simon Newcomb ha misurato nel 1882 la velocità della luce. Nello specifico, Newcomb ha misurato il tempo necessario alla luce per percorrere una distanza di 7442 metri. Newcomb ha ripetuto l'esperimento `n = 66` volte.
+
+#### Dati Newcomb
+
+```{r}
+library(BayesDA)
+data(light)
+light_micro <- 0.001*light + 24.8
+```
+
+I dati $x_1,\dots,x_{66}$ rappresentano le misurazioni della velocità della luce espresse in microsecondi. I dati sono elencanti qui di seguito, raggruppati in colonne per semplicità espositiva.
+
+```{r, results="asis"}
+tab <- cbind(light[1:11], light[12:22], light[23:33], light[34:44], light[45:55], light[56:66])
+colnames(tab) <- 1:6
+knitr::kable(0.001*tab + 24.8)
+```
+
+Risulta comodo cambiare la scale dei dati, per semplificarne la loro analisi. In particolare, consideriamo le differenze da $24.8$ microsecondi ed esprimiamo queste deviazioni in nanosecondi. In simboli, vogliamo ottenere
+
+$$y_i= 1000 \times (x_i - 24.8), \qquad i=1,\dots,66.$$ I dati $y_1,\dots,y_{66}$ espressi nella scala trasformata sono quindi pari a:
+
+```{r, results="asis"}
+knitr::kable(tab)
+```
+
+**Curiosità**. Sulla base delle recenti misurazioni, il "vero valore" della velocità della luce nella scala trasformata è $33.0$.
+
+### Domande
+
+1.  Si ottenga il minimo ed il massimo delle misurazioni di Newcomb nella scala trasformata $y_1,\dots,y_{66}$.
+
+2.  Si costruisca una tabella per la scala trasformata, utilizzando gli intervalli $(-50, -40], (-40,-30], \dots, (30,40]$. Si ottengano quindi: i) le frequenze assolute, ii) le frequenze relative, iii)-iv) le frequenze cumulate assolute e relative.
+
+3.  Nella scala trasformata, si calcoli la frazione di misurazioni contemporaneamente maggiore di $20$ e minore o uguale di $30$.
+
+4.  Nella scala trasformata, si ottenga un istogramma usando gli intervalli $(-50, -40], (-40,-30], \dots, (30,40]$.
+
+5.  Si ottenga un grafico approssimativo della funzione di ripartizione nella scala originale ed in quella trasformata. Si commentino i risultati.
+
+### Schema della soluzione
+
+Le tabelle ed i grafici che seguono sono un **supporto alla soluzione** e non costituiscono la soluzione completa.
+
+#### Minimo e massimo
+
+Il minimo vale `r min(light)`, il massimo vale `r max(light)`.
+
+#### Tabelle e grafici
+
+```{r, results="asis"}
+n <- length(light)
+breaks <- 10*(-5:4)
+light_class <- cut(light, breaks=breaks)
+
+freq <- as.numeric(table(light_class))
+freq_perc <- freq / n
+freq_cum  <- cumsum(freq)
+freq_cum_perc <- freq_cum / n
+
+tab <- data.frame(class=levels(light_class),freq, freq_perc, freq_cum, freq_cum_perc)
+colnames(tab) <- c("Classe","Frequenze assolute","Frequenze relative","Frequenze cumulate assolute","Frequenze cumulate relative")
+knitr::kable(tab, digits=3)
+```
+
+```{r}
+# Using the same breaks as before
+library(ggplot2)
+
+data_plot <- data.frame(light, light_class, light_micro)
+ggplot(data=data_plot, aes(x = light, y=..count..)) + geom_histogram(fill="white",col="black", breaks=breaks) + theme_bw() +ylab("Frequenze assolute") + xlab("Velocità della luce")
+```
+
+```{r}
+plot(ecdf(data_plot$light_micro), ylab = "F(velocità della luce)", xlab = "Velocità della luce", main = "Scala originaria (microsecondi)", cex = 0.4)
+
+plot(ecdf(data_plot$light), ylab = "F(velocità della luce)", xlab = "Velocità della luce", main = "Scala trasformata: differenze in nanosecondi da 24.800", cex = 0.4)
+
+
+# ggplot(data=data_plot, aes(x = light_micro)) + stat_ecdf(geom = "step", size=1.2)+ theme_bw()  + ylab("F(velocità della luce)") + xlab("Velocità della luce") + ggtitle("Scala originaria (microsecondi)")
+
+# ggplot(data=data_plot, aes(x = light)) + stat_ecdf(geom = "step", size=1.2)+ theme_bw()  + ylab("F(velocità della luce)") + xlab("Velocità della luce") + ggtitle("Scala trasformata: differenze in nanosecondi da 24.800")
+```

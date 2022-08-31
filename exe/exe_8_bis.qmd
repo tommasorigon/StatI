@@ -1,0 +1,44 @@
+---
+title: 'Statistica I'
+subtitle: 'Esami passati'
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    math: katex
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 4, fig.width = 8)
+```
+
+## Esami passati - Post 2020
+
+| Data esame | Tema d'esame 
+|-----------|---------------------|
+| 31 Gennaio 2022 | [Esame](../esami/31_01_2022.html) |
+| 22 Novembre 2021 | [Esame](../esami/22_11_2021.html) |
+| 21 Giugno 2021 | [Esame](../esami/21_06_2021.html) |
+| 15 Febbraio 2021 | [Esame](../esami/15_02_2021.html) |
+| 28 Gennaio 2021 | [Esame](../esami/28_01_2021.html) |
+| 16 Novembre 2020 | [Esame](../esami/16_11_2020.html) |
+
+
+## Esami passati - Pre 2020
+
+**Nota importante**. I seguenti esami fanno riferimento agli Anni Accademici precedenti al 2020, in cui il corso era affidato ad un docente diverso da quello attuale.
+
+Il programma di allora era leggermente diverso da quello corrente. Non verranno quindi fornite spiegazioni riguardo gli argomenti non affrontati a lezione.
+
+
+| Data esame | Link | Argomenti non affrontati |
+|-----------|---------------------|----------------------------|
+| 18 Febbraio 2019 | [File pdf](../esami/OLD_18_02_2019.pdf) | Si, parzialmente |
+| 30 Gennaio 2019 | [File pdf](../esami/OLD_30_01_2019.pdf) | Si, parzialmente |
+| 21 Novembre 2018 | [File pdf](../esami/OLD_21_11_2018.pdf) | Si, parzialmente |
+| 20 Giugno 2018 | [File pdf](../esami/OLD_20_06_2018.pdf) | Si, parzialmente |
+| 24 Gennaio 2018 | [File pdf](../esami/OLD_24_01_2018.pdf) | Si, parzialmente |
+| 13 Settembre 2017 | [File pdf](../esami/OLD_13_09_2017.pdf) | No |

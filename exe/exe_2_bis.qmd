@@ -1,0 +1,180 @@
+---
+title: 'Statistica I'
+subtitle: 'Esercizi 2: indici di posizione'
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    math: katex
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 5, fig.width = 8)
+```
+
+
+
+## Esercizio A
+
+Per le osservazioni $x_1,\dots,x_{11}$, i cui valori sono $(−4, 5, 3, 1, −1, 3, −1, 1, 0, 3, 2)$, si calcolino media e mediana. 
+
+Inoltre, si dica quali sono mediana e media delle osservazioni trasformate $y_1,\dots,y_{11}$ che si ottengono trasformando i dati di partenza secondo le funzioni
+
+$$y_i = f_1(x_i)=e^{x_i}, \quad i=1,\dots,11.$$
+$$
+y_i = f_2(x_i) = x_i + 4, \qquad i=1,\dots,11.
+$$
+
+$$
+y_i = f_3(x_i) = -3 x_i + 1,\qquad i=1,\dots,11.
+$$
+$$
+y_i = f_4(x_i) = x_i^2, \qquad i =1,\dots,11.
+$$
+
+**Nota**. Se possibile, si eviti di calcolare i valori $y_1,\dots,y_n$.
+
+## Esercizio B
+
+Di un gruppo di $n = 100$ ragazzi appartenenti ad una società sportiva si hanno le seguenti informazioni sull’età (in anni compiuti) e sulla statura (in cm). Sapendo che la media della statura relativa ai $100$ ragazzi è di $178$ cm, si determini:
+
+1. La media della statura per i $n_2 = 40$ ragazzi di 17 anni. 
+
+2. La media dell’età.
+
+È inoltre noto che:
+
+| Età | Numerosità ($n_j$) | Media statura | 
+|-----|--------------------|---------------|
+| 16  | 40                 | 175           |
+| 17  | 40                 | (ignota) | 
+| 18  | 20 | 180 | 
+
+
+## Esercizio C
+
+Una ditta di trasporti rifornisce con uguale periodicità cinque negozi posti rispettivamente ai chilometri $50, 89, 134, 198, 530$ di una stessa strada. Avendo deciso di costruire un magazzino sulla strada medesima, la ditta vuole stabilirne la posizione (ovvero il chilometro della strada) in modo da minimizzare la distanza percorsa per rifornire i cinque negozi.
+
+**Nota**: un camion può rifornire un negozio poi deve tornare al magazzino.
+
+<!-- ### Schema della soluzione -->
+
+<!-- Detta $a$ la posizione del magazzino e $x_1, \dots, x_5$ le posizioni dei cinque negozi, la distanza totale percorsa per rifornire i negozi è -->
+<!-- $$ -->
+<!-- D(a)= \sum_{i=1}^5 2 |x_i − a| = 2\sum_{i=1}^5|x_i − a| -->
+<!-- $$ -->
+<!-- in cui si è tenuto conto che un camion deve effettuare il viaggio di andata e poi tornare al magazzino. Sappiamo dalle proprietà della mediana che $D(a) \ge D(\text{Me})$ per ogni $a \in \mathbb{R}$, per cui poiché la mediana vale $\text{Me} = 134$, questo è il chilometro ottimale dove stabilire il magazzino. -->
+
+## Esercizio D
+
+Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza **cumulata**.
+
+| **Peso** $c_j$ | $(0,250]$ | $(250, 251]$ |  $(251, 252]$ | $(252, 253]$ | $(253,  254]$ | $(254 , 255]$ | 
+| ---------------|---------|------------|-------------|------------|-------------|-------------|
+| Frequenza cumulata | 0   | 15         | 42          | 60         | 70          |  71         |
+
+Effettuando, se necessarie, le dovute approssimazioni:
+
+1. Si calcolino media e mediana del peso dei pacchetti di burro.
+
+1. Si calcoli il primo ed il terzo quartile.
+
+## Esercizio E
+
+È data la seguente distribuzione di mortalità, in un dato anno e luogo, divisa per classi d'età.
+
+| Età | $(0,1]$ | $(1,5]$ |  $(5, 25]$ |$(25, 45]$  |$(45, 65]$ | $(65, 75]$ | $(75, 100]$ | 
+| ---------------|---------|------------|-------------|------------|-------------|----------|--|
+| Numero di morti | 203   | 750         | 4281          | 5074         | 6184          |  1983 | 799 |
+
+Si noti che $n = 19274$. Effettuando, se necessarie, le dovute approssimazioni:
+
+1. Si calcolino media e mediana dell'età.
+
+1. Si calcoli il primo ed il terzo quartile.
+
+## Esercizio F
+
+Ai dipendenti di un’azienda è stato chiesto di indicare il grado di soddisfazione (1 = scarsa; 10 = ottima) riguardo alla qualità del cibo distribuito dalla mensa aziendale. I dati sono i seguenti:
+
+| Giudizio  | 1 |2 |3 |4 |5 |6 |7 |8 |9 |10|
+|-----------|---|--|--|--|--|--|--|--|--|--|
+| Frequenza assoluta | 35 | 44 | 52 | 56 | 48 | 69 | 62 | 16 | 16 | 2 |
+
+1. Costruire la funzione di ripartizione empirica e commentare i risultati.
+
+1. Calcolare il valore medio, mediano, il primo e il terzo quartile. Commentare i risultati.
+
+1. A quale percentile corrisponde il valore $7$ del grado di soddisfazione? Spiegare il risultato.
+
+1. I dipendenti risultano concordi nella valutazione della mensa? Sono contenti o scontenti? Cosa suggerireste ai responsabili della mensa?
+
+## Esercizio G (difficile)
+
+In un'azienda industriale si hanno 5 linee diverse di produzione. Per ogni produzione si sono rilevati i dati seguenti
+
+| **Linea di produzione** |	A |	B |	C |	D | E |
+|-------------------------|---|---|---|---|---|
+| Numero di pezzi $(x)$     | 5 | 10 |	20 |	10 |	4	|
+
+1. Si calcoli il numero medio di pezzi prodotti tale da lasciare immutato il consumo totale di energia $z$, nell'ipotesi che tra consumo energetico e numero di pezzi prodotti sussista la relazione:
+$$
+z = k + h(x + 0.1 x^2),
+$$
+dove $k$ e $h$ sono due valori costanti non noti. **Suggerimento**: si utilizzi l'approcco di Chisini.
+
+1. Si svolga ora l'esercizio ipotizzando la relazione
+$$
+z = k + hx,
+$$
+dove $k$ e $h$ sono due valori costanti non noti.
+
+## Esercizio H
+
+Si consideri la seguente funzione di ripartizione della variabile $x$, con $n = 20$.
+
+```{r}
+x <- rgamma(20, 20, 1)
+plot(ecdf(x), main = "Variabile x")
+```
+
+1. Quanto vale (approssimativamente) la mediana della variabile $x$?
+
+1. Quanto valgono (approssimativamente) il primo ed il terzo quartile? 
+
+## Esercizio I
+
+Secondo i dati forniti dall'[Istituto Superiore di Sanità (ISS)](https://www.epicentro.iss.it/coronavirus/bollettino/Bollettino-sorveglianza-integrata-COVID-19_29-settembre-2020.pdf), aggiornati al 29 Settembre 2020, l'età delle persone decedute per COVID-19 in Italia sono in totale $35.900$. Le persone di cui è nota l'età sono $35.899$ (ovvero tutte tranne una), distribuite nelle seguenti classi d'età:
+
+| Età | $(0,9]$ | $(9,19]$ |  $(19, 29]$ |$(29, 39]$  |$(39, 49]$  |
+| ----|---------|----------|-------------|------------|------------|
+| Numero di decessi | 4   | 0         | 15          | 70         | 318          |
+
+| Età | $(49, 59]$ | $(59, 69]$ | $(69, 79]$ | $(79, 89]$ | $> 89$ | 
+| ----|---------|----------|-------------|------------|------------|
+| Numero di decessi | 1255   | 3599        | 9372          | 14686         | 6580          |  
+
+Si consideri chiusa l'ultima classe ipotizzando che l'età massima sia pari a $115$. Effettuando, se necessarie, le dovute approssimazioni:
+
+1. Si calcolino le frequenze relative e cumulate relative;
+
+1. Si calcolino media e mediana dell’età;
+
+1. Si calcoli il primo ed il terzo quartile.
+
+### Schema della soluzione
+
+```{r}
+freq_ass <- c(4, 0, 15, 70, 318, 1255, 3599, 9372, 14686, 6580)
+freq_rel <- freq_ass / sum(freq_ass)
+freq_cum_rel <- cumsum(freq_rel)
+freq_cum_ass <- cumsum(freq_ass)
+tab <- cbind(freq_ass, freq_rel, freq_cum_rel, freq_cum_ass)
+colnames(tab) <- c("$n_j$", "$f_j$", "$F_j$", "$N_j$")
+knitr::kable(tab, digits=4)
+```
+
+
