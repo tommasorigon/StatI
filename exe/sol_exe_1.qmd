@@ -56,8 +56,8 @@ for(i in 1:6)
   dati = c(dati, runif(numerosità[i], min = 248+i, max = 249+i))
 }
 
-hist(dati, nclass = 6, 
-     xlim = c(249, 256),
+hist(dati, 
+     breaks = 249:255,
      freq = T, 
      ylim = c(0, 30), 
      main = "Istogramma",
