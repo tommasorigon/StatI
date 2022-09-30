@@ -73,9 +73,7 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 
 #### Quotidiani
 
-- [Cronistoria della statistica](approfondimenti/cronistoria.pdf)
-
--   [La vera America è qui da noi: italiani più ricchi](https://www.corriere.it/esteri/20_giugno_25/vera-america-qui-noi-italiani-piu-ricchi-d4cc4256-b64b-11ea-9dea-5ac3c9ec7c08.shtml). *Corriere della Sera* del 25 Giugno 2020.
+- [La vera America è qui da noi: italiani più ricchi](https://www.corriere.it/esteri/20_giugno_25/vera-america-qui-noi-italiani-piu-ricchi-d4cc4256-b64b-11ea-9dea-5ac3c9ec7c08.shtml). *Corriere della Sera* del 25 Giugno 2020.
 
 -   [A caccia di un milione di scienziati dei dati. Inizia la democratizzazione della data science](https://nova.ilsole24ore.com/nova24-tech/a-caccia-di-un-milione-di-scienziati-dei-dati-inizia-la-democratizzazione-della-data-science/). *Nóva, de Il Sole 24 ore* del 20 Marzo 2019.
 
@@ -90,6 +88,11 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 -   [Schwertman, N. C., Gilks, A. J., and Cameron, J. (1990)](approfondimenti/Schwertman1990.pdf). A simple noncalculus proof that the median minimizes the sum of the absolute deviations. *The American Statistician* **44**(1), 38--38.
 
 -   [Wainer, H. (1984)](approfondimenti/Wainer1984.pdf). How to display data badly. *The American Statistician* **38**(2), 137--147.
+
+### Altro
+
+- [Cronistoria della statistica](approfondimenti/cronistoria.pdf)
+
 
 ## Modalità d'esame
 
