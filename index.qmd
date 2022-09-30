@@ -65,7 +65,7 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 | **Simulazione d'esame**              | [Esercitazione 8](exe/exe_8.html)          |                            |
 |                                      | **LEZIONI AGGIUNTIVE**                     |                            |
 | La pandemia di COVID-19 in Lombardia | [Slides unità Q](slides/sl_Q.pdf)          |                            |
-| Mutua variabilità e concentrazione   | [Slides unità R]()                         | §5.4 --- §5.5              |
+| Mutua variabilità e concentrazione   | [Slides unità R](slides/sl_R.pdf)          | §5.4 --- §5.5              |
 |                                      | **ESAMI PASSATI**                          |                            |
 |                                      | [Esami passati](exe/exe_8_bis.html)        |                            |
 
