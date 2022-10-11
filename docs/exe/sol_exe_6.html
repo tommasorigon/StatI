@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alborghetti Alex">
 
-<title>Statistica I - Esercitazione 6</title>
+<title>Statistica I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,9 +98,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contenuto della pagina</h2>
    
   <ul>
-  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link active" data-scroll-target="#esercizio-a">Esercizio A</a></li>
+  <li><a href="#soluzione-di-alcuni-esercizi" id="toc-soluzione-di-alcuni-esercizi" class="nav-link active" data-scroll-target="#soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</a>
+  <ul class="collapse">
+  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link" data-scroll-target="#esercizio-a">Esercizio A</a></li>
   <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
   <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -110,19 +112,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Esercitazione 6</h1>
+<h1 class="title">Statistica I</h1>
+<p class="subtitle lead">Esercizi 6: analisi della varianza</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Alborghetti Alex </p>
-          </div>
-  </div>
     
     
   </div>
@@ -130,15 +127,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="soluzione-di-alcuni-esercizi" class="level2">
+<h2 class="anchored" data-anchor-id="soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</h2>
+<p>Le seguenti soluzioni sono state gentilmente fornite dal <strong>tutor di Statistica I</strong> dell’A.A. 2021/2022, <em>Alex Alborghetti</em>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
 <section id="esercizio-a" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h3>
-<p>Si sa, dalla scomposizione della devianza totale, che vale la seguente relazione:</p>
+<p>È noto, dalla scomposizione della devianza totale, che vale la seguente relazione:</p>
 <p><span class="math display">\[
-\mathcal{D}^2 = \underbrace{\sum_{j = 1}^k \sum_{i = 1}^{n_j}(x_{ij}-\bar{x}_j)^2}_{\mathcal{D}^2_{en}} + \underbrace{\sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2}_{\mathcal{D}^2_{tr}},
+\mathcal{D}^2 = \underbrace{\sum_{j = 1}^k \sum_{i = 1}^{n_j}(x_{ij}-\bar{x}_j)^2}_{\mathcal{D}^2_\text{en}} + \underbrace{\sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2}_{\mathcal{D}^2_\text{tr}},
 \]</span></p>
-<p>i noti che dividendo per <span class="math inline">\(n\)</span> entrambi i membri, la scomposizione risulta valida anche per le varianze. Calcoliamo quindi le due varianze e sommiamole. Abbiamo già a disposizione le varianze di ciascun gruppo, dunque si può dimostrare che:</p>
+<p>Evidentemente, dividendo per <span class="math inline">\(n\)</span> entrambi i membri, la scomposizione risulta valida anche per le varianze. Calcoliamo quindi le due varianze e sommiamole. Abbiamo già a disposizione le varianze di ciascun gruppo, dunque si può dimostrare che:</p>
 <p><span class="math display">\[
-\mathcal{\sigma}^2_{en} = \frac{1}{n} \sum_{j=1}^k n_j\sigma_j^2 = 2679.4.
+\sigma^2_{\text{en}} = \frac{1}{n} \sum_{j=1}^k n_j\sigma_j^2 = 2679.4.
 \]</span></p>
 <p>Per quanto riguarda la varianza tra i gruppi, calcoliamo anzitutto la media, si dimostri che vale la seguente relazione:</p>
 <p><span class="math display">\[
@@ -146,12 +146,12 @@ ul.task-list li input[type="checkbox"] {
 \]</span></p>
 <p>Allora, la varianza tra i gruppi vale:</p>
 <p><span class="math display">\[
-\sigma^2_{tr} = \frac{1}{n} \sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2 = 2209.0.
+\sigma^2_{\text{tr}} = \frac{1}{n} \sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2 = 2209.0.
 \]</span></p>
 <p>Pertanto, la varianza totale sarà pari a <span class="math inline">\(\sigma^2 = 2679.4 + 2209.0 = 4888.4\)</span>. I risultati sono arrotondati al primo decimale.</p>
 <p>Per calcolare la “correlazione” tra dieta e incremento del peso utilizziamo l’indice <span class="math inline">\(\eta^2\)</span>, definito come:</p>
 <p><span class="math display">\[
-\eta^2 = 1 - \frac{devianza\; entro\; i\; gruppi}{devianza\; totale}.
+\eta^2 = 1 - \frac{\text{devianza  entro  i  gruppi}}{\text{devianza totale}}.
 \]</span></p>
 <p>Si può dimostrare (lo si faccia per esercizio) che tale indice è equivalente al complemento ad uno del rapporto tra varianza entro i gruppi e varianza totale. Allora, con i nostri dati:</p>
 <p><span class="math display">\[
@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <p>(i risultati sono arrotondati al primo decimale).</p>
 <p>La varianza tra i gruppi è interpretabile come la varianza spiegata dalle medie. La media totale è pari a <span class="math inline">\(\bar{x} = 84.2\)</span>, allora:</p>
 <p><span class="math display">\[
-\sigma^2_{tr} = \frac{1}{n} \sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2 = 163.9.
+\sigma^2_\text{tr} = \frac{1}{n} \sum_{j=1}^kn_j(\bar{x}_j-\bar{x})^2 = 163.9.
 \]</span></p>
 <p>Considerato che a varianza totale è pari a <span class="math inline">\(\sigma^2 = (1/n) \sum_{i=1}^n(x_i-\bar{x})^2 = 1341.102\)</span>, la proporzione di varianza spiegata è circa del <span class="math inline">\(12.2\%\)</span>.</p>
 </section>
@@ -226,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>i risultati sono stati arrotondati a due decimali. La dipendenza in media si misura tramite l’indice <span class="math inline">\(\eta\)</span>, cioè il complemento ad uno del rapporto tra la varianza entro i gruppi e la varianza totale. La varianza entro i gruppi può essere calcolata come segue:</p>
 <p><span class="math display">\[
-\mathcal{\sigma}^2_{en} = \frac{1}{n} \sum_{j=1}^k n_j\sigma_j^2 = 0.15.
+\sigma^2_\text{en} = \frac{1}{n} \sum_{j=1}^k n_j\sigma_j^2 = 0.15.
 \]</span></p>
 <p>Per il calcolo della varianza totale, utilizziamo la definizione: <span class="math inline">\(\sigma^2 = (1/n) \sum_{i=1}^n(x_i-\bar{x})^2 = 1.01\)</span>, con <span class="math inline">\(\bar{x} = 1.65\)</span>. I risultati sono arrotondati a due decimali. In conclusione, possiamo dire che i tre antidoti non sembrano avere la stessa efficacia, dato che:</p>
 <p><span class="math display">\[
@@ -234,6 +234,7 @@ ul.task-list li input[type="checkbox"] {
 \]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

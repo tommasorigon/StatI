@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alborghetti Alex">
 
-<title>Statistica I - Esercitazione 7</title>
+<title>Statistica I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,9 +98,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contenuto della pagina</h2>
    
   <ul>
-  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link active" data-scroll-target="#esercizio-a">Esercizio A</a></li>
+  <li><a href="#soluzione-di-alcuni-esercizi" id="toc-soluzione-di-alcuni-esercizi" class="nav-link active" data-scroll-target="#soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</a>
+  <ul class="collapse">
+  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link" data-scroll-target="#esercizio-a">Esercizio A</a></li>
   <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
   <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -110,19 +112,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Esercitazione 7</h1>
+<h1 class="title">Statistica I</h1>
+<p class="subtitle lead">Esercizi 7: tabelle di contingenza</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Alborghetti Alex </p>
-          </div>
-  </div>
     
     
   </div>
@@ -130,11 +127,14 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="soluzione-di-alcuni-esercizi" class="level2">
+<h2 class="anchored" data-anchor-id="soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</h2>
+<p>Le seguenti soluzioni sono state gentilmente fornite dal <strong>tutor di Statistica I</strong> dell’A.A. 2021/2022, <em>Alex Alborghetti</em>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
 <section id="esercizio-a" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h3>
 <p>Per misurare la dipendenza in distribuzione di <span class="math inline">\(x\)</span> da <span class="math inline">\(y\)</span> utilizziamo l’indice <span class="math inline">\(\chi^2\)</span> normalizzato, che si basa sulla distanza tra frequenze attese e frequenze osservate, così definito:</p>
 <p><span class="math display">\[
-\chi^2_{norm} =  \frac{1}{n\:\min\{{h-1, k-1}\}} \sum_{i=1}^h\sum_{j=1}^k \frac{(n_{ij} - \hat{n}_{ij})^2}{\hat{n}_{ij}}.
+\chi^2_\text{norm} =  \frac{1}{n\:\min\{{h-1, k-1}\}} \sum_{i=1}^h\sum_{j=1}^k \frac{(n_{ij} - \hat{n}_{ij})^2}{\hat{n}_{ij}}.
 \]</span></p>
 <p>Posto <span class="math inline">\(h = k = 3\)</span>, calcoliamo le frequenze attese <span class="math inline">\(\hat{n}_{ij} = (n_{i+}n_{+j})/n\)</span>. Partendo dalla seguente:</p>
 <table class="table">
@@ -222,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>Allora:</p>
 <p><span class="math display">\[
-\chi^2_{norm} \approx 0.01.
+\chi^2_\text{norm} \approx 0.01.
 \]</span></p>
 <p>Possiamo quindi concludere che, praticamente, esiste indipendenza in distribuzione tra le due variabili, ovvero, sulla base dei dati disponibili, il titolo di studio ottenuto alle superiori non sembra essere connesso con il numero di esami dati al primo anno di università, o comunque in modo molto lieve.</p>
 </section>
@@ -231,12 +231,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Riportiamo la tabella calcolando le frequenze marginali:</p>
 <table class="table">
 <colgroup>
-<col style="width: 12%">
+<col style="width: 10%">
 <col style="width: 18%">
+<col style="width: 16%">
 <col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 12%">
+<col style="width: 19%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -294,12 +294,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Come in precedenza, analizziamo la dipendenza in distribuzione tramite l’indice <span class="math inline">\(\chi^2\)</span>, costruiamo pertanto la tabella delle frequenze attese:</p>
 <table class="table">
 <colgroup>
-<col style="width: 12%">
+<col style="width: 10%">
 <col style="width: 18%">
+<col style="width: 16%">
 <col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 12%">
+<col style="width: 19%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -359,28 +359,28 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Esercitazione-7_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sol_exe_7_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Esercitazione-7_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sol_exe_7_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Esercitazione-7_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sol_exe_7_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Esercitazione-7_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sol_exe_7_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -452,11 +452,12 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>Allora:</p>
 <p><span class="math display">\[
-\chi^2_{norm} \approx 0.06.
+\chi^2_\text{norm} \approx 0.06.
 \]</span></p>
 <p>Esiste quindi una lieve connessione tra il tipo di allattamento e i difetti nella dentatura del neonato. Non si può, però, affermare con certezza che passando da un tipo di allattamento ad un altro siano più frequenti difetti nella dentatura neonatale, dal momento che aver trovato una connessione non significa necessariamente aver trovato un rapporto di causalità.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
