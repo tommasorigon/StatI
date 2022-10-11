@@ -25,7 +25,7 @@ Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la s
 
 3.  Rappresentare graficamente il fenomeno tramite un istogramma.
 
-4.  Quanti sono i pacchetti di burro che pesano meno di $252$g o esattamente $252$g?
+4.  Quanti sono i pacchetti di burro che pesano meno di $252$g? Quanti quelli che hanno un peso compreso nell'intervallo $(251, 252]$?
 
 ## Esercizio B
 

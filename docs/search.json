@@ -389,7 +389,7 @@
     "href": "exe/exe_1_bis.html",
     "title": "Statistica I",
     "section": "",
-    "text": "Il controllo sul peso (in grammi) di \\(n = 71\\) pacchetti di burro ha fornito la seguente distribuzione di frequenza cumulata.\n\n\n\n\n\n\n\n\n\n\n\n\n\\(c_j\\) (grammi)\n\\((249,250]\\)\n\\((250, 251]\\)\n\\((251, 252]\\)\n\\((252, 253]\\)\n\\((253, 254]\\)\n\\((254 , 255]\\)\n\n\n\n\n\\(N_j\\)\n0\n15\n42\n60\n70\n71\n\n\n\n\nSi dica qual è l’unità statistica e la tipologia della variabile considerata.\nTrovare le frequenze assolute \\(n_1,\\dots,n_k\\) e relative \\(f_1,\\dots,f_k\\).\nRappresentare graficamente il fenomeno tramite un istogramma.\nQuanti sono i pacchetti di burro che pesano meno di \\(252\\)g o esattamente \\(252\\)g?"
+    "text": "Il controllo sul peso (in grammi) di \\(n = 71\\) pacchetti di burro ha fornito la seguente distribuzione di frequenza cumulata.\n\n\n\n\n\n\n\n\n\n\n\n\n\\(c_j\\) (grammi)\n\\((249,250]\\)\n\\((250, 251]\\)\n\\((251, 252]\\)\n\\((252, 253]\\)\n\\((253, 254]\\)\n\\((254 , 255]\\)\n\n\n\n\n\\(N_j\\)\n0\n15\n42\n60\n70\n71\n\n\n\n\nSi dica qual è l’unità statistica e la tipologia della variabile considerata.\nTrovare le frequenze assolute \\(n_1,\\dots,n_k\\) e relative \\(f_1,\\dots,f_k\\).\nRappresentare graficamente il fenomeno tramite un istogramma.\nQuanti sono i pacchetti di burro che pesano meno di \\(252\\)g? Quanti quelli che hanno un peso compreso nell’intervallo \\((251, 252]\\)?"
   },
   {
     "objectID": "exe/exe_1_bis.html#esercizio-b",
