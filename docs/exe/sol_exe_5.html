@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alborghetti Alex">
 
-<title>Statistica I - Esercitazione 5</title>
+<title>Statistica I</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,9 +98,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contenuto della pagina</h2>
    
   <ul>
-  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link active" data-scroll-target="#esercizio-a">Esercizio A</a></li>
+  <li><a href="#soluzione-di-alcuni-esercizi" id="toc-soluzione-di-alcuni-esercizi" class="nav-link active" data-scroll-target="#soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</a>
+  <ul class="collapse">
+  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link" data-scroll-target="#esercizio-a">Esercizio A</a></li>
   <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
   <li><a href="#esercizio-f" id="toc-esercizio-f" class="nav-link" data-scroll-target="#esercizio-f">Esercizio F</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -110,19 +112,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Esercitazione 5</h1>
+<h1 class="title">Statistica I</h1>
+<p class="subtitle lead">Esercizi 5: covarianza, correlazione, regressione lineare semplice</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Alborghetti Alex </p>
-          </div>
-  </div>
     
     
   </div>
@@ -130,42 +127,45 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="soluzione-di-alcuni-esercizi" class="level2">
+<h2 class="anchored" data-anchor-id="soluzione-di-alcuni-esercizi">Soluzione di <strong>alcuni</strong> esercizi</h2>
+<p>Le seguenti soluzioni sono state gentilmente fornite dal <strong>tutor di Statistica I</strong> dell’A.A. 2021/2022, <em>Alex Alborghetti</em>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
 <section id="esercizio-a" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h3>
-<p>i dati nel grafico <span class="math inline">\(A\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = 0.7\)</span>,</p>
-<p>i dati nel grafico <span class="math inline">\(B\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = 0.9\)</span>,</p>
-<p>i dati nel grafico <span class="math inline">\(C\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = -1\)</span>,</p>
-<p>i dati nel grafico <span class="math inline">\(D\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = 0\)</span>.</p>
+<p>I dati nel grafico <span class="math inline">\(A\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = 0.7\)</span>,</p>
+<p>I dati nel grafico <span class="math inline">\(B\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = 0.9\)</span>,</p>
+<p>I dati nel grafico <span class="math inline">\(C\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = -1\)</span>,</p>
+<p>I dati nel grafico <span class="math inline">\(D\)</span> hanno una correlazione pari a <span class="math inline">\(\rho = 0\)</span>.</p>
 </section>
 <section id="esercizio-b" class="level3">
 <h3 class="anchored" data-anchor-id="esercizio-b">Esercizio B</h3>
 <p>Alcune misure per descrivere la variabile peso, da qui in poi chiamata anche y:</p>
 <ul>
 <li><p>Media = <span class="math inline">\(75.05kg\)</span>,</p></li>
-<li><p>Primo quartile = <span class="math inline">\(68.00kg\)</span>,</p></li>
-<li><p>Secondo quartile = <span class="math inline">\(74.00kg\)</span>,</p></li>
-<li><p>Terzo quartile = <span class="math inline">\(78.00kg\)</span>,</p></li>
-<li><p>Minimo = <span class="math inline">\(60kg\)</span>,</p></li>
-<li><p>Massimo = <span class="math inline">\(110kg\)</span>.</p></li>
-<li><p>Scarto quadratico medio = <span class="math inline">\(10.39kg\)</span>.</p></li>
+<li><p>Primo quartile = <span class="math inline">\(68.00\)</span>kg,</p></li>
+<li><p>Secondo quartile = <span class="math inline">\(74.00\)</span>kg,</p></li>
+<li><p>Terzo quartile = <span class="math inline">\(78.00\)</span>kg,</p></li>
+<li><p>Minimo = <span class="math inline">\(60\)</span>kg,</p></li>
+<li><p>Massimo = <span class="math inline">\(110\)</span>kg.</p></li>
+<li><p>Scarto quadratico medio = <span class="math inline">\(10.39\)</span>kg.</p></li>
 </ul>
 <p>Calcoliamo poi l’indice di asimmetria di Fisher per la variabile peso:</p>
 <p><span class="math display">\[
-\gamma_y = \frac{1}{n} \sum_{i=1}^n \big{(}\frac{y_i - \bar{y}}{\sigma_y}\big{)}^3 = 1.541.
+\gamma_y = \frac{1}{n} \sum_{i=1}^n \left(\frac{y_i - \bar{y}}{\sigma_y}\right)^3 = 1.541.
 \]</span></p>
 <p>Tale variabile è dunque asimmetrica positiva. Qui sotto vengono riportati istogramma della variabile e grafico a dispersione tra peso e altezza.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Esercitazione-5_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sol_exe_5_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Esercitazione-5_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="sol_exe_5_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -177,24 +177,24 @@ y \approx \hat{\alpha} + \hat{\beta}x,
 <p>dove</p>
 <p><span class="math display">\[
 \begin{split}
-           &amp;\hat{\beta} = \frac{cov(x,y)}{var(x)},\\
+           &amp;\hat{\beta} = \frac{\text{cov}(x,y)}{\text{var}(x)},\\
            &amp;\hat{\alpha} = \bar{y} - \hat{\beta}\bar{x}.
       \end{split}
       \]</span></p>
-<p>Calcoliamo quindi le quantità che ci servono (la media per la variabile <span class="math inline">\(x\)</span> è stata calcolata e vale <span class="math inline">\(176.35\textit{cm}\)</span>):</p>
+<p>Calcoliamo quindi le quantità che ci servono (la media per la variabile <span class="math inline">\(x\)</span> è stata calcolata e vale <span class="math inline">\(176.35\)</span>):</p>
 <p><span class="math display">\[
 \begin{split}
-           &amp;cov(x,y) = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = \frac{1}{20}\sum_{i=1}^n(x_i-176.85)(y_i-75.05) = 42.932, \\
-           &amp;var(x) = \sigma_x^2 = 30.528.
+           &amp;\text{cov}(x,y) = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = \frac{1}{20}\sum_{i=1}^n(x_i-176.85)(y_i-75.05) = 42.932, \\
+           &amp;\text{var}(x) = \sigma_x^2 = 30.528.
        \end{split}
 \]</span></p>
 <p>Allora <span class="math inline">\(\hat{\beta} = 1.406\)</span>, da cui <span class="math inline">\(\hat{\alpha} = -172.961\)</span>. La bontà di adattamento del modello ai dati si misura tramite il coefficiente di determinazione <span class="math inline">\(R^2\)</span>, che è definito come il complemento a <span class="math inline">\(1\)</span> della proporzione di varianza residua rispetto alla varianza totale della variabile risposta:</p>
 <p><span class="math display">\[
-R^2 = 1-\frac{varianza\; residui}{varianza \;totale\; y}.
+R^2 = 1-\frac{\text{varianza\; residui}}{\text{varianza totale $y$}}.
 \]</span></p>
 <p>Si può dimostrare che tale coefficiente è esprimibile come il quadrato del coefficiente di correlazione (lo si faccia per esercizio). Allora, ci basta calcolare lo scarto quadratico medio di <span class="math inline">\(x\)</span>, calcolare <span class="math inline">\(\rho\)</span> ed elevarlo al quadrato per trovare <span class="math inline">\(R^2\)</span>. Lo scarto quadratico medio di <span class="math inline">\(x\)</span> vale <span class="math inline">\(\sigma_x = 6.319\)</span>. Allora, possiamo concludere che:</p>
 <p><span class="math display">\[
-R^2 = \bigg{[}\frac{cov(x,y)}{\sigma_x\sigma_y}\bigg{]}^2 = 0.559.
+R^2 = \bigg{[}\frac{\text{cov}(x,y)}{\sigma_x\sigma_y}\bigg{]}^2 = 0.559.
 \]</span> Il risultato è stato arrotondato a tre cifre decimali. Il modello si adatta ai dati in maniera mediocre.</p>
 <p>Il generico residuo <span class="math inline">\(r_i\)</span> è definito in questo modo:</p>
 <p><span class="math display">\[
@@ -354,6 +354,7 @@ R^2 = 1-\frac{\sigma_r^2}{\sigma_y^2} = 0.96.
 \]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

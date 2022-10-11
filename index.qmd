@@ -44,24 +44,24 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 | Istogrammi & boxplot                 | [Slides unità G](slides/sl_G.pdf)          | §3.4, §6.4, §6.5                  |
 | Simmetria, curtosi, multimodalità    | [Slides unità H](slides/sl_H.pdf)          | §6.1 --- §6.3                     |
 | **Esercitazione**                    | [Esercitazione 3](exe/exe_3.html)          |                                   |
-| *Esercizi*                           | [Esercizi 3](exe/exe_3_bis.html)           |    [Soluzione 1](exe/sol_exe_3.html)                               |
+| *Esercizi*                           | [Esercizi 3](exe/exe_3_bis.html)           | [Soluzione 3](exe/sol_exe_3.html) |
 | Dati qualitativi, eterogeneità       | [Slides unità I](slides/sl_I.pdf)          | §5.7                              |
 | **Esercitazione**                    | [Esercitazione 4](exe/exe_4.html)          |                                   |
-| *Esercizi*                           | [Esercizi 4](exe/exe_4_bis.html)           |                                   |
+| *Esercizi*                           | [Esercizi 4](exe/exe_4_bis.html)           | [Soluzione 4](exe/sol_exe_4.html) |
 |                                      | **STATISTICA BIVARIATA**                   |                                   |
 | Covarianza e correlazione            | [Slides unità J](slides/sl_J.pdf)          | §7.1, §7.6 --- §7.7               |
 | Regressione lineare semplice         | [Slides unità K](slides/sl_K.pdf)          | §22.1 --- §22.4, §22.8            |
 | **Applicazione**                     | [Slides unità L](slides/sl_L.pdf)          | §22.9                             |
 | Correlazione parziale                | [Slides unità M](slides/sl_M.pdf)          | §7.6                              |
 | **Esercitazione**                    | [Esercitazione 5](exe/exe_5.html)          |                                   |
-| *Esercizi*                           | [Esercizi 5](exe/exe_5_bis.html)           |                                   |
+| *Esercizi*                           | [Esercizi 5](exe/exe_5_bis.html)           | [Soluzione 5](exe/sol_exe_5.html) |
 | Analisi della varianza               | [Slides unità N](slides/sl_N.pdf)          | §7.4                              |
 | **Esercitazione**                    | [Esercitazione 6](exe/exe_6.html)          |                                   |
-| *Esercizi*                           | [Esercizi 6](exe/exe_6_bis.html)           |                                   |
+| *Esercizi*                           | [Esercizi 6](exe/exe_6_bis.html)           | [Soluzione 6](exe/sol_exe_6.html) |
 | Tabelle di contingenza               | [Slides unità O](slides/sl_O.pdf)          | §7.1 --- §7.5                     |
 | La dipendenza tra variabili          | [Slides unità P](slides/sl_P.pdf)          | §7.4                              |
 | **Esercitazione**                    | [Esercitazione 7](exe/exe_7.html)          |                                   |
-| *Esercizi*                           | [Esercizi 7](exe/exe_7_bis.html)           |                                   |
+| *Esercizi*                           | [Esercizi 7](exe/exe_7_bis.html)           | [Soluzione 7](exe/sol_exe_7.html) |
 | **Simulazione d'esame**              | [Esercitazione 8](exe/exe_8.html)          |                                   |
 |                                      | **LEZIONI AGGIUNTIVE**                     |                                   |
 | La pandemia di COVID-19 in Lombardia | [Slides unità Q](slides/sl_Q.pdf)          |                                   |
