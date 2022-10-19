@@ -78,7 +78,7 @@ $$ dove $m_j$ è il punto centrale del j-esimo intervallo ed $n_j$ è la sua fre
 Quindi, possiamo calcolare la media come:
 
 $$
-\bar{x} \approx \frac{0\cdot125+15\cdot250.5+27\cdot251.5+18\cdot252.5+10\cdot253.5+1\cdot254.5}{71} = 251.866.
+\bar{x} \approx \frac{0\cdot249.5+15\cdot250.5+27\cdot251.5+18\cdot252.5+10\cdot253.5+1\cdot254.5}{71} = 251.866.
 $$
 
 Invece, una comune approssimazione della mediana quando i dati sono suddivisi in classi è data da: 
@@ -105,6 +105,6 @@ $$
 
 dove $(a_{j-1}, a_{j}]$ è la classe alla quale il primo quartile appartiene ed $F(\cdot)$ è la funzione di ripartizione empirica. Poiché il terzo quartile sta nell'intervallo $(252,253]$ dato che $F(252) = 0.592$ e $F(253) = 60/71 = 0.845$, sostituendo nella formula troviamo che $Q_{0.75} \approx 252.625$.
 
-### Esercizio E
+### Esercizio H
 
 La mediana della variabile $x$ vale approssimativamente $17$. Il primo quartile vale approssimativamente $16$, il terzo $22$.
