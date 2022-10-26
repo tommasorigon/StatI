@@ -114,19 +114,18 @@ hist(y, ylim = c(0,4), xlim = c(-30,30), breaks = seq(-25,25,5), main = "Istogra
 hist(z, ylim = c(0,4), xlim = c(-30,30), breaks = seq(-25,25,5), main = "", ylab = "Frequenza assoluta")
 ```
 
-Ricordando che:
+L'indice di asimmetria di Pearson è:
 
 $$
-\gamma_x = \frac{1}{n_x} \sum_{i=1}^{n_x} \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^3
+\gamma_x = \frac{1}{n_x} \sum_{i=1}^{n_x} \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^3,
+$$
+mentre l'indice di curtosi di Person è:
+
+$$
+\kappa_x =  \frac{1}{n_x} \sum_{i=1}^{n_x} \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^4.
 $$
 
-è l'indice di Pearson che descrive l'asimmetria dei dati e che:
-
-$$
-\kappa_x =  \frac{1}{n_x} \sum_{i=1}^{n_x} \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^4
-$$
-
-è l'indice di curtosi, e analogamente per $y$ e $z$, sono riportati di seguito i risultati calcolati sui dati a disposizione.
+Sono riportati di seguito i risultati calcolati sui dati a disposizione:
 
 | Dati | Media | Varianza | Asimmetria | Curtosi |           Descrizione           |
 |:-----|:-----:|:--------:|:----------:|:-------:|:-------------------------------:|
