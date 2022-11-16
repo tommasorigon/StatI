@@ -1,6 +1,7 @@
 ---
 title: "Statistica I"
 subtitle: "CdL in Scienze Statistiche ed Economiche, Università Milano-Bicocca"
+lang: it
 author:
   name: Tommaso Rigon
   affiliation: DEMS
@@ -26,7 +27,7 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 **Nota**: la dicitura §2.1 --- §2.4 indica che vanno considerate le Sezioni §2.1, §2.2, §2.3 e §2.4 del libro di testo.
 
 | Argomenti                            | Materiale didattico                        | Ulteriore materiale               |
-|--------------------------------------|--------------------------------------------|-----------------------------------|
+|------------------------|---------------------------|----------------------|
 | Introduzione al corso                | [Slides introduzione](slides/sl_intro.pdf) | §1.1 --- §1.8                     |
 |                                      | **STATISTICA UNIVARIATA**                  |                                   |
 | Sommatorie                           | [Slides unità A.1](slides/sl_A1.pdf)       |                                   |
