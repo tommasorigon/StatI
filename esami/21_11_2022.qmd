@@ -30,7 +30,7 @@ psychotic
 
 **Pazienti giudicati non-psicotici (B)**:
 
-```{r, echo=FALSE}
+```{r}
 #| echo: false
 non_psychotic
 ```
@@ -47,6 +47,8 @@ non_psychotic
 
 6.  Si proponga un indice adeguato per misurare se e quanto il livello di dopamina differisce tra i due gruppi di pazienti. Quindi, si **commentino i risultati**.
 
+#### Schema della soluzione
+
 ```{r}
 #| echo: false
 #| results: markup
@@ -57,43 +59,74 @@ colnames(tab) <- c("Frequenze assolute", "Frequenze relative", "Densità")
 kable(tab)
 ```
 
+Istogramma dei dati dei pazienti giudicati psicotici (A)
+
 ```{r}
 #| echo: false
 hist(psychotic, breaks = breaks)
 ```
 
+Statistiche descrittive
+
 ```{r}
 #| echo: false
 tab <- t(c(mean(psychotic), mean(non_psychotic), median(psychotic), median(non_psychotic)))
-colnames(tab) <- c("Mean psy (A) ", "Mean non-psy (B)", "Median psy (A)", "Median non-psy (B)")
+colnames(tab) <- c("Media gruppo (A) ", "Media gruppo (B)", "Mediana gruppo (A)", "Mediana gruppo (B)")
 tab
 ```
 
+Primo e terzo quartile dei pazienti giudicati psicotici (A)
+
 ```{r}
+#| echo: false
 quantile(psychotic, type = 1, c(0.25, 0.75))
 ```
 
+Primo e terzo quartile dei pazienti giudicati non-psicotici (B)
+
 ```{r}
+#| echo: false
 quantile(non_psychotic, type = 1, c(0.25, 0.75))
 ```
+
+Confronto tra i due boxplot:
 
 ```{r}
 #| echo: false
 boxplot(psychotic, non_psychotic, names=c("psychotic (A)","non psychotic (B)"))
 ```
 
+Devianza entro i gruppi:
+
 ```{r}
+#| echo: false
 xbar <- mean(c(psychotic, non_psychotic))
 d1 <- length(psychotic) * (mean(psychotic^2) - mean(psychotic)^2)
 d2 <- length(non_psychotic) * (mean(non_psychotic^2) - mean(non_psychotic)^2)
 D_en <- d1 + d2
 D_en
+```
 
+Devianza tra i gruppi:
+
+```{r}
+#| echo: false
 D_tr <- length(psychotic) * (mean(psychotic) - xbar)^2 + length(non_psychotic) * (mean(non_psychotic) - xbar)^2
 D_tr
+```
 
+Devianza totale
+
+```{r}
+#| echo: false
 D_tot <- D_en + D_tr
+D_tot
+```
 
+Indice $\eta^2$
+
+```{r}
+#| echo: false
 eta <- D_tr / D_tot
 eta
 ```
@@ -157,6 +190,10 @@ $$
 
 6.  Si ottenga l'indice di bontà di adattamento $R^2$ e lo si interpreti nel contesto del problema.
 
+#### Schema della soluzione
+
+Grafico a dispersione, con retta di regressione stimata
+
 ```{r}
 #| echo: false
 plot(x, y)
@@ -166,18 +203,26 @@ abline(lm(y ~ x))
 ```{r}
 #| echo: false
 tab <- t(c(mean(x), mean(y), mean(x^2) - mean(x)^2, mean(y^2) - mean(y)^2, mean(x * y) - mean(x) * mean(y), cor(x, y)))
-colnames(tab) <- c("Mean x", "Mean y", "Var x", "Var y", "Cov xy", "Cor xy")
+colnames(tab) <- c("Media x", "Media y", "Varianza x", "Varianza y", "Covarianza xy", "Correlazione xy")
 tab
 ```
 
+Coefficienti del modello di regressione stimati $(\hat{\alpha},\hat{\beta})$:
+
 ```{r}
+#| echo: false
 m1 <- lm(y ~ x)
 coef(m1)
 ```
 
+Previsione del numero di battiti quando $x = 50$
+
 ```{r}
+#| echo: false
 244.75 + 0.0175 * 50
 ```
+
+Indice $R^2$
 
 ```{r}
 summary(m1)$r.squared
