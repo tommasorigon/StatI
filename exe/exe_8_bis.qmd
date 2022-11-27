@@ -1,13 +1,8 @@
 ---
 title: 'Statistica I'
 subtitle: 'Esami passati'
-output:
-  prettydoc::html_pretty:
-    theme: cayman
-    highlight: github
-    math: katex
-editor_options: 
-  chunk_output_type: console
+editor: visual
+lang: it
 ---
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
