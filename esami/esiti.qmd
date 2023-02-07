@@ -1,10 +1,9 @@
 ---
 title: 'Statistica I'
-subtitle: 'Esiti prova scritta - 21 Novembre 2022'
+subtitle: 'Esiti prova scritta - 6 Febbraio 2023'
 editor: visual
 lang: it
 ---
-
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 6, fig.width = 8)

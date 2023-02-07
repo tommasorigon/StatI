@@ -17,7 +17,7 @@ aggregate(Esito ~ AA,length, data = filter(dataset, Appello == "I"))
 aggregate(Esito ~ AA, function(x) sum(x == "RIT"), data = filter(dataset, Appello == "I"))
 aggregate(Esito ~ AA, function(x) sum(x == "ASS"), data = filter(dataset, Appello == "I"))
 aggregate(Esito ~ AA, function(x) sum(x == "RIFIUTATO"), data = filter(dataset, Appello == "I"))
-aggregate(Esito ~ AA, function(x) sum(x == "INS"), data = filter(dataset, Appello == "I"))
+aggregate(Esito ~ AA, function(x) sum(x == "INS" | x == "RIT"), data = filter(dataset, Appello == "I"))
 
 # Rimuovo assenti
 dataset <- dataset %>% filter(Esito != "ASS") %>% filter(Esito != "RIFIUTATO") %>% filter(Esito != "RIT")
