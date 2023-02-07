@@ -18,9 +18,9 @@ xbar <- mean(as.numeric(esiti$Esito[esiti$Esito != "INS"]))
 xmed <- median(as.numeric(esiti$Esito[esiti$Esito != "INS"]))
 ```
 
-## Testo dell'esame
+<!-- ## Testo dell'esame -->
 
-La [prova d'esame](21_11_2022.html) è disponibile su questa pagina web.
+<!-- La [prova d'esame](21_11_2022.html) è disponibile su questa pagina web. -->
 
 ## Esiti
 
