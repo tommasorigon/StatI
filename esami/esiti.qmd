@@ -1,6 +1,6 @@
 ---
 title: 'Statistica I'
-subtitle: 'Esiti prova scritta - 6 Febbraio 2023'
+subtitle: 'Esiti prova scritta - 20 Febbraio 2023'
 editor: visual
 lang: it
 ---
