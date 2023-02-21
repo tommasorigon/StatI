@@ -24,7 +24,6 @@ dataset <- dataset %>% filter(Esito != "ASS") %>% filter(Esito != "RIFIUTATO") %
 aggregate(Esito ~ AA, function(x) mean(x == "INS"), data = filter(dataset, Appello == "I"))
 ```
 
-
 ```{r}
 dataset <- filter(dataset,  Esito != "INS")
 # dataset$Esito[dataset$Esito == "INS"] <- sample(10:17, size = sum(dataset$Esito == "INS"), replace = T)
@@ -33,18 +32,14 @@ dataset <- dataset %>% mutate(Esito = as.numeric(Esito))
 ggplot(data  = filter(dataset, Appello == "I"), aes(x = AA, y = Esito, fill = AA)) + geom_boxplot() + theme_bw() + xlab("Anno Accademico") + theme(legend.position = "none") + scale_y_continuous(breaks = 18:31)
 ```
 
-
 ```{r}
 aggregate(Esito ~ AA, mean, data = filter(dataset, Appello == "I"))
 ```
-
 
 ```{r}
 aggregate(Esito ~ AA, median, data = filter(dataset, Appello == "I"))
 ```
 
-
 ```{r}
 summary(lm(Esito ~ AA, data = filter(dataset, Appello == "I")))
 ```
-
