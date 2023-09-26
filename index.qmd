@@ -96,9 +96,7 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 
 ## Modalità d'esame
 
-La modalità di verifica delle conoscenze acquisite durante il corso è basata su una **prova scritta** e su una eventuale **prova orale**. La prova d'esame comprende esercizi simili a quelli visti nelle esercitazioni e quesiti di carattere teorico.
-
-La **prova orale** è **obbligatoria** per coloro che ottengano nella prova scritta una **votazione compresa tra 27 e 30** (estremi inclusi). In tutti gli altri casi, non è prevista una prova orale.
+La modalità di verifica delle conoscenze acquisite durante il corso è basata su una **prova scritta**. La prova d'esame comprende esercizi simili a quelli visti nelle esercitazioni e quesiti di carattere teorico.
 
 ## Propedeuticità
 
