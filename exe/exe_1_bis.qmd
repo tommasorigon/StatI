@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, c
 Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza **cumulata**.
 
 | $c_j$ (grammi) | $(249,250]$ | $(250, 251]$ | $(251, 252]$ | $(252, 253]$ | $(253, 254]$ | $(254 , 255]$ |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|----------------|-------------|--------------|--------------|--------------|--------------|---------------|
 | $N_j$          | 0           | 15           | 42           | 60           | 70           | 71            |
 
 1.  Si dica qual è l'unità statistica e la tipologia della variabile considerata.
@@ -52,7 +52,9 @@ Durante la correzione delle bozze di un libro di $280$ pagine si è riscontrata 
 
 Ai dipendenti di una piccola azienda è stato chiesto di precisare il loro titolo di studio. I risultati relativi a $n=22$ dipendenti sono i seguenti:
 
-    L, E, E, E, I, E, I, S, L, E, S, I, N, E, N, S, S, I, E, I, I, S 
+```         
+L, E, E, E, I, E, I, S, L, E, S, I, N, E, N, S, S, I, E, I, I, S 
+```
 
 in cui: `N` = nessun titolo di studio, `E` = licenza elementare, `I` = licenza media inferiore, `S` = licenza media superiore, e `L` = laurea.
 

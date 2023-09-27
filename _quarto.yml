@@ -2,22 +2,19 @@ project:
   type: website
   output-dir: docs
 
-lang: it
-
 website:
   title: "Statistica I"
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Homepage
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
     toc-title: Contenuto della pagina
     highlight-style: ayu
 
 editor: visual
-
