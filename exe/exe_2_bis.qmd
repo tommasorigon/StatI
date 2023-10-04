@@ -1,6 +1,22 @@
 ---
 title: 'Statistica I'
 subtitle: 'Esercizi 2: indici di posizione'
+lang: it
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+format:
+  html:
+    html-math-method: katex
+    echo: true
+    callout-appearance: minimal
+    theme: [cosmo, ../template.css]
+    toc: true
+    toc-title: Table of contents
+    embed-resources: true
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
 ---
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
@@ -50,7 +66,7 @@ Una ditta di trasporti rifornisce con uguale periodicità cinque negozi posti ri
 
 :::{.callout-note}
 ## Nota 
-Un camion può rifornire un negozio poi deve tornare al magazzino.
+Un camion rifornisce un negozio e poi deve tornare al magazzino.
 :::
 
 <!-- ### Schema della soluzione -->
