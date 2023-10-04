@@ -1,6 +1,22 @@
 ---
 title: 'Statistica I'
 subtitle: 'Esercizi preliminari: sommatorie e produttorie'
+lang: it
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+format:
+  html:
+    html-math-method: katex
+    echo: true
+    callout-appearance: minimal
+    theme: [cosmo, ../template.css]
+    toc: true
+    toc-title: Table of contents
+    embed-resources: true
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
 ---
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}

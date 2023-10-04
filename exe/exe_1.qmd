@@ -1,6 +1,22 @@
 ---
 title: 'Statistica I'
 subtitle: 'Esercitazione 1: distribuzioni di frequenza'
+lang: it
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+format:
+  html:
+    html-math-method: katex
+    echo: true
+    callout-appearance: minimal
+    theme: [cosmo, ../template.css]
+    toc: true
+    toc-title: Table of contents
+    embed-resources: true
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
 ---
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
@@ -11,7 +27,7 @@ knitr::opts_chunk$set(echo = F, eval= T, message=F, warning=F, error=F, comment=
 
 Il **diametro** del fusto di una pianta viene misurato attraverso uno strumento chiamato "Cavalletto". La misura viene effettuata tenendo il cavalletto in posizione perpendicolare al fusto ad una altezza dal terreno di circa 1.30 m, con una precisione non superiore a 1 cm.
 
-Nell'autunno del 1999 sono stati misurati i diametri di `n = 1887` **abeti rossi** presenti in una zona boschiva a San Vito di Cadore. Le misure sono elencante nella tabella seguente, in cui **D** = Diametro, $n_j$ = frequenze assolute.
+Nell'autunno del 1999 sono stati misurati i diametri di `n = 1887` **abeti rossi** presenti in una zona boschiva a San Vito di Cadore. Le misure sono elencate nella tabella seguente, in cui **D** = Diametro, $n_j$ = frequenze assolute.
 
 ```{r, results="asis"}
 diametri <- 18:77
@@ -36,7 +52,11 @@ knitr::kable(tab)
 
 1.  Qual è l'unità statistica di questo problema? Qual è la numerosità campionaria?
 
-2.  Per i dati riferiti al diametro del fusto si è soliti sintetizzare l'informazione in classi di 5 cm. Si costruisca tale tabella, usando pertanto gli intervalli $(17, 22], (22,27], \dots, (72,77]$. Si ottengano quindi: i) le frequenze assolute, ii) le frequenze relative, iii)-iv) le frequenze cumulate assolute e relative.
+2.  Per i dati riferiti al diametro del fusto si è soliti sintetizzare l'informazione in classi di 5 cm. Si costruisca tale tabella, usando pertanto gli intervalli $(17, 22], (22,27], \dots, (72,77]$. 
+Si ottengano: 
+    i. le frequenze assolute, 
+    ii. le frequenze relative, 
+    iii. le frequenze cumulate assolute e relative.
 
 3.  Si disegni l'istogramma dei dati utilizzando gli intervalli del punto precedente.
 
