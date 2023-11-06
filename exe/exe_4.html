@@ -282,7 +282,7 @@ Schema della soluzione
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In questo caso le quote di mercato sono misurate come le quantità vendute da ciascun operatore rispetto alla domanda totale. Le “frequenze relative” sono dunque i rapporti tra i TWh erogati da ciascuna impresa e i TWh totali.</p>
-<p>I calcoli necessari per l’ottenimento degli indici di entropia e di Gini sono riportati nel seguito.</p>
+<p>I calcoli necessari per l’ottenimento degli indici di entropia e di eterogeneità Gini sono riportati nel seguito.</p>
 <table class="table">
 <colgroup>
 <col style="width: 15%">
@@ -373,11 +373,90 @@ Schema della soluzione
 </tr>
 </tbody>
 </table>
-<p>Pertanto, l’indice di Gini e l’indice di Gini normalizzato sono pari a</p>
+<p>Pertanto, l’indice di eterogeneità Gini e l’indice di Gini normalizzato sono pari a</p>
 <p><span class="math display">G = 1 - \sum_{j=1}^k f_j^2 = 1 - 0.32 = 0.68, \qquad G_\text{norm} = \frac{k}{k-1}G = 9/8\times0.68 = 0.765.</span> L’entropia e l’entropia normalizzata sono invece pari a:</p>
 <p><span class="math display">
 H = - \sum_{j=1}^kf_j \log{f_j} = 1.54, \qquad H_\text{norm} = H / \log{k} = 1.54 / \log{9} = 0.7.
 </span></p>
+<p>Una possibilità alternativa consiste nel valutare la concorrenza del mercato tramite l’indice di concentrazione di Gini. Si ottenga anzitutto la tabella contenente le coppie <span class="math inline">(p_j, q_j)</span>, ordinate per quota.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operatore</th>
+<th style="text-align: right;"><span class="math inline">f_j</span></th>
+<th style="text-align: right;"><span class="math inline">p_j</span></th>
+<th style="text-align: right;"><span class="math inline">q_j</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Valgen</td>
+<td style="text-align: right;">0.0005</td>
+<td style="text-align: right;">0.1111</td>
+<td style="text-align: right;">0.0005</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sondel</td>
+<td style="text-align: right;">0.0266</td>
+<td style="text-align: right;">0.2222</td>
+<td style="text-align: right;">0.0271</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Erga</td>
+<td style="text-align: right;">0.0318</td>
+<td style="text-align: right;">0.3333</td>
+<td style="text-align: right;">0.0589</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Elettrogen</td>
+<td style="text-align: right;">0.0321</td>
+<td style="text-align: right;">0.4444</td>
+<td style="text-align: right;">0.0910</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Edison</td>
+<td style="text-align: right;">0.0731</td>
+<td style="text-align: right;">0.5556</td>
+<td style="text-align: right;">0.1642</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Interpower</td>
+<td style="text-align: right;">0.0832</td>
+<td style="text-align: right;">0.6667</td>
+<td style="text-align: right;">0.2474</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Eurogen</td>
+<td style="text-align: right;">0.0952</td>
+<td style="text-align: right;">0.7778</td>
+<td style="text-align: right;">0.3427</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Altri</td>
+<td style="text-align: right;">0.1266</td>
+<td style="text-align: right;">0.8889</td>
+<td style="text-align: right;">0.4693</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Enel prod.</td>
+<td style="text-align: right;">0.5307</td>
+<td style="text-align: right;">1.0000</td>
+<td style="text-align: right;">1.0000</td>
+</tr>
+</tbody>
+</table>
+<p>Da questa tabella il calcolo del <span class="blue">rapporto di concentrazione di Gini</span> è agevole, infatti: <span class="math display">
+\mathcal{R} = 1 - \frac{2}{n -1}\sum_{i=1}^n q_i = 1 - \frac{2}{8}(0.0005 + 0.0271 + 0.0589 + \cdots + 0.4693) = 0.6497.
+</span> Infine, la curva di Lorenz corrispondente è</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_4_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -557,7 +636,7 @@ H_\text{Piem} = 1.07, \qquad H_\text{Lomb} = 1.16.
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="exe_4_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="1600"></p>
+<p><img src="exe_4_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1600"></p>
 </figure>
 </div>
 </div>
