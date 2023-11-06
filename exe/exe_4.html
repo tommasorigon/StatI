@@ -378,7 +378,9 @@ Schema della soluzione
 <p><span class="math display">
 H = - \sum_{j=1}^kf_j \log{f_j} = 1.54, \qquad H_\text{norm} = H / \log{k} = 1.54 / \log{9} = 0.7.
 </span></p>
-<p>Una possibilità alternativa consiste nel valutare la concorrenza del mercato tramite l’indice di concentrazione di Gini. Si ottenga anzitutto la tabella contenente le coppie <span class="math inline">(p_j, q_j)</span>, ordinate per quota.</p>
+<p>Una possibilità alternativa consiste nel valutare la concorrenza del mercato tramite il rapporto di concentrazione di Gini.</p>
+<p>Si ottenga anzitutto la tabella contenente le coppie <span class="math inline">(p_j, q_j)</span>, ordinate per quota. In questo contesto, si ha che</p>
+<p><span class="math display">p_j = \frac{j}{n}, \qquad q_j = \sum_{i=1}^j f_{(i)}, \qquad j=1,\dots,n,</span> dove <span class="math inline">f_{(1)},\dots,f_{(n)}</span> sono le quote di mercato ordinate.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -446,7 +448,7 @@ H = - \sum_{j=1}^kf_j \log{f_j} = 1.54, \qquad H_\text{norm} = H / \log{k} = 1.5
 </tbody>
 </table>
 <p>Da questa tabella il calcolo del <span class="blue">rapporto di concentrazione di Gini</span> è agevole, infatti: <span class="math display">
-\mathcal{R} = 1 - \frac{2}{n -1}\sum_{i=1}^n q_i = 1 - \frac{2}{8}(0.0005 + 0.0271 + 0.0589 + \cdots + 0.4693) = 0.6497.
+\mathcal{R} = 1 - \frac{2}{n -1}\sum_{j=1}^{n-1} q_j = 1 - \frac{2}{8}(0.0005 + 0.0271 + 0.0589 + \cdots + 0.4693) = 0.6497.
 </span> Infine, la curva di Lorenz corrispondente è</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
