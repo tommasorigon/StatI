@@ -320,6 +320,288 @@ Schema della soluzione
 </section>
 <section id="esercizio-h" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-h">Esercizio H</h2>
+<p>Si consideri la popolazione residente delle province della regione <span class="blue">Lombardia</span> e <span class="orange">Veneto</span>, al primo Gennaio 2023. I dati ISTAT sono riportati nelle seguenti tabelle.</p>
+<table class="table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Provincia (Regione Lombardia)</th>
+<th style="text-align: left;">Popolazione residente (Gennaio 2023)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Varese</td>
+<td style="text-align: left;">877688</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Como</td>
+<td style="text-align: left;">595513</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sondrio</td>
+<td style="text-align: left;">178472</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Milano</td>
+<td style="text-align: left;">3219391</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bergamo</td>
+<td style="text-align: left;">1103768</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brescia</td>
+<td style="text-align: left;">1253993</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pavia</td>
+<td style="text-align: left;">534968</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cremona</td>
+<td style="text-align: left;">351169</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mantova</td>
+<td style="text-align: left;">404696</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lecco</td>
+<td style="text-align: left;">332043</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lodi</td>
+<td style="text-align: left;">227495</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Monza e Brianza</td>
+<td style="text-align: left;">871546</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Provincia (Regione Veneto)</th>
+<th style="text-align: left;">Popolazione residente (Gennaio 2023)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Belluno</td>
+<td style="text-align: left;">197751</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rovigo</td>
+<td style="text-align: left;">227418</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Venezia</td>
+<td style="text-align: left;">833703</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vicenza</td>
+<td style="text-align: left;">850942</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Treviso</td>
+<td style="text-align: left;">876115</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Verona</td>
+<td style="text-align: left;">923950</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Padova</td>
+<td style="text-align: left;">928374</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p>Si calcoli il rapporto di concentrazione di Gini per la regione Veneto e la regione Lombardia. Si commentino i risultati.</p></li>
+<li><p>Si disegnino quindi le curve di Lorenz corrispondenti.</p></li>
+</ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le tabelle seguenti costituiscono solamente uno schema della soluzione, non la soluzione stessa.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Provincia (Lombardia)</th>
+<th style="text-align: right;">Popolazione</th>
+<th style="text-align: right;"><span class="math inline">p_i</span></th>
+<th style="text-align: right;"><span class="math inline">q_i</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sondrio</td>
+<td style="text-align: right;">178472</td>
+<td style="text-align: right;">0.0833</td>
+<td style="text-align: right;">0.0179</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lodi</td>
+<td style="text-align: right;">227495</td>
+<td style="text-align: right;">0.1667</td>
+<td style="text-align: right;">0.0408</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lecco</td>
+<td style="text-align: right;">332043</td>
+<td style="text-align: right;">0.2500</td>
+<td style="text-align: right;">0.0742</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cremona</td>
+<td style="text-align: right;">351169</td>
+<td style="text-align: right;">0.3333</td>
+<td style="text-align: right;">0.1095</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mantova</td>
+<td style="text-align: right;">404696</td>
+<td style="text-align: right;">0.4167</td>
+<td style="text-align: right;">0.1501</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pavia</td>
+<td style="text-align: right;">534968</td>
+<td style="text-align: right;">0.5000</td>
+<td style="text-align: right;">0.2039</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Como</td>
+<td style="text-align: right;">595513</td>
+<td style="text-align: right;">0.5833</td>
+<td style="text-align: right;">0.2637</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Monza e Brianza</td>
+<td style="text-align: right;">871546</td>
+<td style="text-align: right;">0.6667</td>
+<td style="text-align: right;">0.3513</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Varese</td>
+<td style="text-align: right;">877688</td>
+<td style="text-align: right;">0.7500</td>
+<td style="text-align: right;">0.4395</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bergamo</td>
+<td style="text-align: right;">1103768</td>
+<td style="text-align: right;">0.8333</td>
+<td style="text-align: right;">0.5504</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Brescia</td>
+<td style="text-align: right;">1253993</td>
+<td style="text-align: right;">0.9167</td>
+<td style="text-align: right;">0.6765</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Milano</td>
+<td style="text-align: right;">3219391</td>
+<td style="text-align: right;">1.0000</td>
+<td style="text-align: right;">1.0000</td>
+</tr>
+</tbody>
+</table>
+<p>Di conseguenza, il rapporto di concentrazione di Gini per la regione Lombardia è <span class="math display">
+\mathcal{R}_\text{lomb} = 1 - \frac{2}{n -1}\sum_{i=1}^{n-1} q_i = 1 - \frac{2}{11}(0.0179 + 0.0408 + 0.0742 + \cdots + 0.6765) = 0.4768.
+</span> In alternativa, è possibile calcolare le differenza media semplice, ovvero <span class="math display">
+\Delta_\text{lomb} = \frac{4}{n(n-1)}\left(\sum_{i=1}^n i x_{(i)}\right) - 2 \bar{x}_\text{lomb}\frac{n+1}{n-1} = \frac{4}{12 \cdot 11} \cdot 90772001 - 2 \cdot 829228.5 \frac{13}{11} = 790672.1.
+</span></p>
+<p>dato che la media aritmetica è pari a <span class="math inline">\bar{x}_\text{lomb} = 829228.5</span>. Pertanto,</p>
+<p><span class="math display">
+\mathcal{R}_\text{lomb} = \frac{\Delta_\text{lomb}}{2 \bar{x}_\text{lomb}} = \frac{790672.1}{2 \cdot 829228.5}= 0.4768.
+</span> Per quel che riguarda la regione Veneto, con conti analoghi si ottiene anzitutto la tabella seguente:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Provincia (Veneto)</th>
+<th style="text-align: right;">Popolazione</th>
+<th style="text-align: right;"><span class="math inline">p_i</span></th>
+<th style="text-align: right;"><span class="math inline">q_i</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Belluno</td>
+<td style="text-align: right;">197751</td>
+<td style="text-align: right;">0.1429</td>
+<td style="text-align: right;">0.0409</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rovigo</td>
+<td style="text-align: right;">227418</td>
+<td style="text-align: right;">0.2857</td>
+<td style="text-align: right;">0.0879</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Venezia</td>
+<td style="text-align: right;">833703</td>
+<td style="text-align: right;">0.4286</td>
+<td style="text-align: right;">0.2602</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vicenza</td>
+<td style="text-align: right;">850942</td>
+<td style="text-align: right;">0.5714</td>
+<td style="text-align: right;">0.4361</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Treviso</td>
+<td style="text-align: right;">876115</td>
+<td style="text-align: right;">0.7143</td>
+<td style="text-align: right;">0.6172</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Verona</td>
+<td style="text-align: right;">923950</td>
+<td style="text-align: right;">0.8571</td>
+<td style="text-align: right;">0.8081</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Padova</td>
+<td style="text-align: right;">928374</td>
+<td style="text-align: right;">1.0000</td>
+<td style="text-align: right;">1.0000</td>
+</tr>
+</tbody>
+</table>
+<p>tramite la quale si perviene al rapporto di concentrazione di Gini pari a <span class="math inline">\mathcal{R}_\text{ven} = 0.2499</span>. Le curve di Lorenz corrispondenti sono disegnate nel seguito.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_3_bis_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
