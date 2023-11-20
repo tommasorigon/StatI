@@ -3203,7 +3203,7 @@ Schema della soluzione
 ## 16.250 18.000 18.625</code></pre>
 </div>
 <p>Confronto tra i due boxplot, da cui è possibile notare la presenza di due outlier. Trattandosi di un confronto, i due boxplot andavano disegnati <span class="blue">nello stesso grafico</span>.</p>
-<p>Il grafico seguente utilizza una <span class="orange">definizione di quartili leggermente diversa</span> da quella vista a lezione (ad esempio, si ottiene <code>16.325</code> al posto di <code>16.250</code> per <span class="math inline">\mathcal{Q}_1</span> della variabile <code>self</code>). Utilizzando la definizione di quartile vista a lezione, non risultano outlier per la variabile <code>self</code>.</p>
+<p>Il grafico seguente utilizza una <span class="orange">definizione di quartili leggermente diversa</span> da quella vista a lezione (si ottiene <code>16.325</code> al posto di <code>16.250</code>). Utilizzando la definizione di quartile vista a lezione, non risultano outlier per la variabile <code>self</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -3225,7 +3225,7 @@ Schema della soluzione
 <div class="cell" data-layout-align="center">
 <pre><code>## [1] 293.4354</code></pre>
 </div>
-<p>Indice <span class="math inline">\eta^2</span>, da cui si deduce una moderata dipendenza in media. È tuttavia probabile che il valore anomalo della variabile <code>cross</code> sia responsabile di una riduzione della dipendenza in media.</p>
+<p>Indice <span class="math inline">\eta^2</span>, da cui si deduce una moderata dipendenza in media. È inoltre possibile che tale dipendenza in media sia resa debole alla presenza di un outlier nella variabile <code>cross</code>.</p>
 <div class="cell" data-layout-align="center">
 <pre><code>## [1] 0.175003</code></pre>
 </div>
