@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tommaso Rigon">
+
+<title>Unità A.1: Sommatorie e produttorie</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="un_A_files/libs/clipboard/clipboard.min.js"></script>
+<script src="un_A_files/libs/quarto-html/quarto.js"></script>
+<script src="un_A_files/libs/quarto-html/popper.min.js"></script>
+<script src="un_A_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="un_A_files/libs/quarto-html/anchor.min.js"></script>
+<link href="un_A_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="un_A_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="un_A_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="un_A_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="un_A_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#homepage" id="toc-homepage" class="nav-link active" data-scroll-target="#homepage">Homepage</a></li>
+  <li><a href="#sommatorie-e-produttorie" id="toc-sommatorie-e-produttorie" class="nav-link" data-scroll-target="#sommatorie-e-produttorie">Sommatorie e produttorie</a></li>
+  <li><a href="#sommatorie-notazione" id="toc-sommatorie-notazione" class="nav-link" data-scroll-target="#sommatorie-notazione">Sommatorie: notazione</a></li>
+  <li><a href="#proprietà-delle-sommatorie" id="toc-proprietà-delle-sommatorie" class="nav-link" data-scroll-target="#proprietà-delle-sommatorie">Proprietà delle sommatorie</a></li>
+  <li><a href="#proprietà-delle-sommatorie-1" id="toc-proprietà-delle-sommatorie-1" class="nav-link" data-scroll-target="#proprietà-delle-sommatorie-1">Proprietà delle sommatorie</a></li>
+  <li><a href="#proprietà-delle-sommatorie-2" id="toc-proprietà-delle-sommatorie-2" class="nav-link" data-scroll-target="#proprietà-delle-sommatorie-2">Proprietà delle sommatorie</a></li>
+  <li><a href="#dimostrazione" id="toc-dimostrazione" class="nav-link" data-scroll-target="#dimostrazione">Dimostrazione</a></li>
+  <li><a href="#proprietà-delle-sommatorie-3" id="toc-proprietà-delle-sommatorie-3" class="nav-link" data-scroll-target="#proprietà-delle-sommatorie-3">Proprietà delle sommatorie</a></li>
+  <li><a href="#sommatorie-doppie" id="toc-sommatorie-doppie" class="nav-link" data-scroll-target="#sommatorie-doppie">Sommatorie doppie</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Altri Formati</h2><ul><li><a href="un_A_slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unità A.1: Sommatorie e produttorie</h1>
+<p class="subtitle lead">Statistica I - CdL SSE</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autore/Autrice</div>
+  <div class="quarto-title-meta-heading">Affiliazione</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><span class="orange">Tommaso Rigon</span> </p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <em>Università degli Studi di Milano-Bicocca</em>
+          </p>
+      </div>
+    </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="homepage" class="level2">
+<h2 class="anchored" data-anchor-id="homepage"><a href="../index.html">Homepage</a></h2>
+<ul>
+<li><p>Supponiamo di avere i seguenti <span class="orange">sei numeri</span>: 2, 15, 5, 8, 10, 3 così indicati: <span class="math display">
+a_1=2, a_2=15, a_3=5, a_4=8, a_5=10, a_6=3.
+</span> La loro somma <span class="math display">
+a_1 + a_2 + a_3 + a_4 + a_5 + a_6
+</span> può essere letta come <span class="blue">somma di tutti i valori</span> di <span class="math inline">a_i</span>, con <span class="math inline">i=1,2,\dots,6</span>.</p></li>
+<li><p>La somma di tutti i valori è generalmente rappresentata dalla lettera <span class="orange">greca maiuscola sigma</span>. Quindi, scriveremo <span class="math display">
+\begin{aligned}
+\sum_{i=1}^6a_i &amp;= a_1 + a_2+a_3+a_4+a_5+a_6\\
+              &amp;= 2+15+5+8+10+3 = 43,
+\end{aligned}
+</span>e si legge “<em>sommatoria delle <span class="math inline">a_i</span> con <span class="math inline">i</span> che varia da <span class="math inline">1</span> a <span class="math inline">6</span></em>’’.</p></li>
+</ul>
+</section>
+<section id="sommatorie-e-produttorie" class="level2">
+<h2 class="anchored" data-anchor-id="sommatorie-e-produttorie">Sommatorie e produttorie</h2>
+<ul>
+<li><p>Sia <span class="math inline">a_1,\dots,a_n</span> una sequenza di valori reali, dove <span class="math inline">a_i \in \mathbb{R}</span> per ogni <span class="math inline">i=1,\dots,n</span>.</p></li>
+<li><p>La somma di una sequenza di valori <span class="math inline">a_1,\dots,a_n</span> si può esprimere in maniera compatta come segue: <span class="math display">
+\sum_{i=1}^n a_i = a_1 + a_2 + \cdots + a_n,
+</span> ovvero tramite il simbolo di <span class="blue">sommatoria</span>.</p></li>
+<li><p>Il prodotto di una sequenza di valori <span class="math inline">a_1,\dots,a_n</span> si può esprimere in maniera compatta come segue: <span class="math display">
+\prod_{i=1}^n a_i = a_1 \times a_2 \times \cdots \times a_n,
+</span> ovvero tramite il simbolo di <span class="orange">produttoria</span>.</p></li>
+</ul>
+</section>
+<section id="sommatorie-notazione" class="level2">
+<h2 class="anchored" data-anchor-id="sommatorie-notazione">Sommatorie: notazione</h2>
+<ul>
+<li><p>Si osservi che nella sommatoria la lettera <span class="math inline">i</span>, indice del termine generico, può essere <span class="orange">sostituita</span> da un’altra <span class="blue">qualsiasi lettera</span>.</p></li>
+<li><p>Ad esempio si può scrivere <span class="math display">
+\sum_{i=1}^na_i=\sum_{k=1}^na_k = \sum_{s=1}^na_s.
+</span></p></li>
+<li><p><span class="blue">Se ciò non crea confusione</span>, talvolta si può trovare indicato <span class="math display">
+\sum_i a_i  \qquad \text{ al posto di } \qquad\sum_{i=1}^n a_i.
+</span></p></li>
+<li><p>A volte si trova anche la dicitura <span class="math inline">\sum a_i</span>, che tuttavia sarebbe meglio <span class="orange">evitare</span>.</p></li>
+<li><p>La somma dal termine <span class="math inline">j</span>-esimo al termine <span class="math inline">j</span>-esimo, coincide col termine <span class="math inline">j</span>-esimo. In simboli: <span class="math display">
+\sum_{i=j}^j a_i =a_j.
+</span></p></li>
+</ul>
+</section>
+<section id="proprietà-delle-sommatorie" class="level2">
+<h2 class="anchored" data-anchor-id="proprietà-delle-sommatorie">Proprietà delle sommatorie</h2>
+<ul>
+<li><p><span class="blue"><u>Proprietà</u></span>. Se <span class="math inline">\alpha \in \mathbb{R}</span> è una costante che non dipende dall’indice <span class="math inline">i</span>, allora <span class="math display">
+\sum_{i=1}^n \alpha a_i = \alpha \sum_{i=1}^na_i.
+</span>Infatti, si noti che <span class="math display">
+\sum_{i=1}^n \alpha a_i=\alpha  a_1+ \alpha  a_2+\dots+ \alpha  a_n = \alpha (a_1+a_2+\dots+a_n)=\alpha \sum_{i=1}^na_i.
+</span></p></li>
+<li><p><span class="blue"><u>Proprietà</u></span>. Si noti anche che: <span class="math display">
+\sum_{i=1}^n1=n.
+</span> Infatti <span class="math inline">\sum_{i=1}^n1</span> è una sommatoria il cui termine generico <span class="math inline">a_i=1</span>, perciò <span class="math display">
+\sum_{i=1}^na_i=a_1+a_2+\dots+a_n=\overbrace{1+1+\dots+1}^{n \text{ volte}}=n.
+</span></p></li>
+</ul>
+</section>
+<section id="proprietà-delle-sommatorie-1" class="level2">
+<h2 class="anchored" data-anchor-id="proprietà-delle-sommatorie-1">Proprietà delle sommatorie</h2>
+<ul>
+<li><p><span class="blue"><u>Proprietà</u></span>. Se <span class="math inline">m &gt; n</span>, allora vale la seguente <span class="orange">scomposizione</span> <span class="math display">
+\sum_{i=1}^na_i+\sum_{i=n+1}^ma_i=\sum_{i=1}^ma_i.
+</span> Infatti vale che: <span class="math display">
+\sum_{i=1}^na_i+\sum_{i=n+1}^ma_i = (a_1+a_2+\dots+a_n)+
+                                (a_{n+1}+a_{n+2}+\dots+a_{m})= \sum_{i=1}^ma_i.
+</span></p></li>
+<li><p><span class="blue"><u>Proprietà</u></span>. La sommatoria di una somma è pari alla somma delle sommatorie: <span class="math display">
+\sum_{i=1}^n(a_i+b_i)=\sum_{i=1}^na_i+\sum_{i=1}^nb_i.
+</span> Infatti vale che: <span class="math display">
+\begin{aligned}
+\sum_{i=1}^n(a_i+b_i)&amp;=(a_1+b_1)+(a_2+b_2)+\dots+(a_n+b_n)=\\
+                   &amp;=(a_1+a_2+\dots+a_n)+(b_1+b_2+\dots+b_n)=\sum_{i=1}^na_i+\sum_{i=1}^nb_i.
+\end{aligned}
+</span></p></li>
+</ul>
+</section>
+<section id="proprietà-delle-sommatorie-2" class="level2">
+<h2 class="anchored" data-anchor-id="proprietà-delle-sommatorie-2">Proprietà delle sommatorie</h2>
+<ul>
+<li><span class="blue"><u>Proprietà</u></span>. Se <span class="math inline">\alpha</span> e <span class="math inline">\beta</span> sono costanti che non dipendono dall’indice <span class="math inline">i</span>, allora: <span class="math display">
+\sum_{i=1}^n(\alpha a_i+\beta)=\left(\alpha \sum_{i=1}^na_i\right) + (n \times \beta) = \alpha \sum_{i=1}^na_i + n \times \beta.
+</span> Attenzione all’uso delle <span class="orange">parentesi</span>. Utilizzando le proprietà precedentemente viste: <span class="math display">
+\sum_{i=1}^n(\alpha a_i+\beta)=\sum_{i=1}^n\alpha a_i +\sum_{i=1}^n \beta= \alpha \sum_{i=1}^na_i + n\times \beta.
+</span></li>
+</ul>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Una non-proprietà delle sommatorie.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">
+\sum_{i=1}^na_ib_i\neq \sum_{i=1}^na_i \times \sum_{i=1}^nb_i.
+</span></p>
+</div>
+</div>
+</section>
+<section id="dimostrazione" class="level2">
+<h2 class="anchored" data-anchor-id="dimostrazione">Dimostrazione</h2>
+<ul>
+<li><p>Nella disuguaglianza precedente, il <span class="blue">primo termine</span> è pari a <span class="math display">
+\sum_{i=1}^na_ib_i=a_1b_1+a_2b_2+\dots+a_nb_n.
+</span></p></li>
+<li><p>Il <span class="orange">secondo termine</span> invece coincide con <span class="math display">
+\begin{aligned}
+\sum_{i=1}^na_i\times\sum_{i=1}^nb_i&amp;=(a_1+a_2+\dots+a_n)(b_1+b_2+\dots+b_n)=\\
+                                 &amp;=(a_1b_1+a_1b_2+\dots+a_1b_n) + \cdots +(a_nb_1+a_nb_2+\dots+a_nb_n)=\\
+                                 &amp;=\sum_{i=1}^na_ib_i+\sum_{i\neq j}a_ib_j,
+\end{aligned}
+</span> dove <span class="math inline">\sum_{i\neq j}a_ib_j</span> indica la sommatoria dei prodotti <span class="math inline">a_ib_j</span> estesa a tutte le coppie di indici <span class="math inline">i</span> e <span class="math inline">j</span> compresi tra <span class="math inline">1</span> e <span class="math inline">n</span> tali che <span class="math inline">i\neq j</span>.</p></li>
+</ul>
+</section>
+<section id="proprietà-delle-sommatorie-3" class="level2">
+<h2 class="anchored" data-anchor-id="proprietà-delle-sommatorie-3">Proprietà delle sommatorie</h2>
+<ul>
+<li><p><span class="blue"><u>Proprietà</u></span>. Come <span class="blue">caso particolare</span> della precedente dimostrazione, otteniamo <span class="math display">
+\left( \sum_{i=1}^na_i\right)^2= \sum_{i=1}^na_i \times \sum_{i=1}^na_i =\sum_{i=1}^na_i^2+\sum_{i\neq j}a_ia_j%= \sum_{i=1}^na_i^2+2\sum_{i&lt;j}a_ia_j.
+</span> Questo equivale a quanto visto precedentemente circa il prodotto di due sommatorie, nel caso particolare che esse <span class="orange">siano uguali</span>.</p></li>
+<li><p>Poichè <span class="math inline">a_ia_j=a_ja_i</span> si ottiene che ciascun prodotto si presenta due volte nella sommatoria. Potremo perciò scrivere <span class="math display">\sum_{i\neq j}a_ia_j=2\sum_{i&lt;j}a_ia_j.</span></p></li>
+<li><p>Scritto per esteso, si ottiene che <span class="math display">\begin{equation*}
+\sum_{i&lt;j}a_i a_j = (a_1a_2+a_1a_3+\dots+a_1a_n) + (a_2a_3+ a_2 a_4 + \dots+a_2a_n) + \dots + a_{n-1}a_n.
+\end{equation*}</span></p></li>
+</ul>
+</section>
+<section id="sommatorie-doppie" class="level2">
+<h2 class="anchored" data-anchor-id="sommatorie-doppie">Sommatorie doppie</h2>
+Siano <span class="math inline">a_{ij} \in \mathbb{R}</span> dei valori reali dipendenti da , ovvero [
+<span class="math display">\begin{array}{cccc}
+a_{11} &amp;a_{12} &amp;\dots &amp;a_{1m},\\
+a_{21} &amp;a_{22} &amp;\dots &amp;a_{2m},\\
+\vdots&amp;\vdots&amp;&amp;\vdots\\
+a_{n1} &amp;a_{n2} &amp;\dots &amp;a_{nm}.\\
+\end{array}</span>
+]
+La somma di questi <span class="math inline">n \times m</span> valori si può scrivere come segue: <span class="math display">
+\sum_{j=1}^m a_{1j}+ \dots + \sum_{j=1}^m a_{nj} = (a_{11}+a_{12}+\dots+a_{1m})+\dots+
+(a_{n1}+a_{n2}+\dots+a_{nm}).
+</span>
+Ponendo <span class="math inline">S_1 = \sum_{j=1}^m a_{1j},\dots, S_n = \sum_{j=1}^m a_{nj}</span>, otteniamo che la somma cercata è pari a [ S_1 ++ S_n= <em>{i=1}^n S_i =</em>{i=1}^n <em>{j=1}^m a</em>{ij}. ]
+<p>Si noti il caso particolare <span class="math inline">\sum_{i=k}^k \sum_{j=k'}^{k'} a_{ij}=a_{kk'}</span>.</p>
+<p>\end{frame}</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiato!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiato!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="un_A_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
