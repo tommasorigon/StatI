@@ -3216,7 +3216,7 @@ Schema della soluzione
 </div>
 </div>
 <hr>
-<p>La dipendenza in media può essere misurata tramite l’indice <span class="math inline">\eta^2</span>, che si ottiene con i seguenti passaggi.</p>
+<p>La dipendenza in media può essere misurata tramite l’indice <span class="math inline">\eta^2</span>, il cui calcolo richiede alcuni passaggi. Era potenzialmente possibile far uso <span class="orange">appropriati</span> indici alternativi non menzionati nel corso. Tuttavia, indici quali il coefficiente di variazione non misurano la dipendenza in media, bensì esclusivamente la variabilità dei dati.</p>
 <p>Devianza entro i gruppi:</p>
 <div class="cell" data-layout-align="center">
 <pre><code>## [1] 242.0833</code></pre>
@@ -3233,7 +3233,7 @@ Schema della soluzione
 <div class="cell" data-layout-align="center">
 <pre><code>## [1] 0.175003</code></pre>
 </div>
-<p>Se ne deduce una lieve dipendenza in media, che a sua volta implica che il metodo di impollinazione incrociata consente alle piante di avere maggior vigore. Questo risultato sembra essere in parziale contraddizione con quanto mostrato dai boxplot, che evidenziano una dipendenza in distribuzione tra i due gruppi molto più marcata. È tuttavia possibile che tale dipendenza sia resa debole dalla presenza di due outlier (entrambi pari a <code>12</code>) nella variabile <code>cross</code>.</p>
+<p>Se ne deduce una lieve dipendenza in media, che a sua volta implica che il metodo di impollinazione incrociata consente alle piante di avere maggior vigore. Questo risultato sembra essere in parziale contraddizione con quanto mostrato dai boxplot, che evidenziano una dipendenza in distribuzione tra i due gruppi molto più marcata. È tuttavia possibile che <span class="math inline">\eta^2</span> sia relativamente basso a causa dei due outlier (entrambi pari a <code>12</code>) nella variabile <code>cross</code>.</p>
 <hr>
 <p>Funzione di ripartizione empirica della variabile <code>diff</code>:</p>
 <div class="cell" data-layout-align="center">
@@ -3326,7 +3326,7 @@ Schema della soluzione
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Grafico a dispersione, con retta di regressione stimata (non richiesta)</p>
+<p>Grafico a dispersione (richiesto), con retta di regressione stimata (non richiesta)</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -3353,12 +3353,15 @@ Schema della soluzione
 <pre><code>## [1] 0.9282469 0.3605502</code></pre>
 </div>
 <hr>
-<p>Previsione della crescita quando <span class="math inline">x = 0</span></p>
+<p>La quantità fertilizzante sembra pertanto comportare un <span class="orange">aumento</span> della crescita. Ciò si deduce dal fatto che il coefficiente <span class="math inline">\hat{\beta}</span> calcolato in precedenza è positivo, congiuntamente al fatto che il coefficiente di correlazione <span class="math inline">\rho</span> è grande e positivo.</p>
+<p>Si noti il valore di <span class="math inline">R^2</span>, da solo, <span class="orange">non</span> consente di stabilire se esiste una relazione positiva o negativa tra le due variabili.</p>
+<hr>
+<p>Previsione della crescita quando <span class="math inline">x = 0</span> coincide con <span class="math inline">\hat{\alpha}</span>, ovvero:</p>
 <div class="cell" data-layout-align="center">
 <pre><code>## (Intercept) 
 ##    1.999277</code></pre>
 </div>
-<p>Valore del fertilizzante tale che la crescita sia pari a <span class="math inline">5</span></p>
+<p>Valore del fertilizzante tale per cui la crescita è pari a <span class="math inline">5</span></p>
 <div class="cell" data-layout-align="center">
 <pre><code>## (Intercept) 
 ##    4.300618</code></pre>
