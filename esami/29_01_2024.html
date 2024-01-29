@@ -24,18 +24,34 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="exe_8_bis_files/libs/clipboard/clipboard.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/quarto.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/popper.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/anchor.min.js"></script>
-<link href="exe_8_bis_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="exe_8_bis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="exe_8_bis_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="exe_8_bis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="exe_8_bis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="29_01_2024_files/libs/clipboard/clipboard.min.js"></script>
+<script src="29_01_2024_files/libs/quarto-html/quarto.js"></script>
+<script src="29_01_2024_files/libs/quarto-html/popper.min.js"></script>
+<script src="29_01_2024_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="29_01_2024_files/libs/quarto-html/anchor.min.js"></script>
+<link href="29_01_2024_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="29_01_2024_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="29_01_2024_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="29_01_2024_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="29_01_2024_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -47,11 +63,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Indice</h2>
    
   <ul>
-  <li><a href="#homepage" id="toc-homepage" class="nav-link active" data-scroll-target="#homepage">Homepage</a>
-  <ul class="collapse">
-  <li><a href="#esami-passati" id="toc-esami-passati" class="nav-link" data-scroll-target="#esami-passati">Esami passati</a></li>
-  <li><a href="#esami-passati---pre-2020" id="toc-esami-passati---pre-2020" class="nav-link" data-scroll-target="#esami-passati---pre-2020">Esami passati - Pre 2020</a></li>
-  </ul></li>
+  <li><a href="#problema-1" id="toc-problema-1" class="nav-link active" data-scroll-target="#problema-1">Problema 1</a></li>
+  <li><a href="#problema-2" id="toc-problema-2" class="nav-link" data-scroll-target="#problema-2">Problema 2</a></li>
+  <li><a href="#problema-3" id="toc-problema-3" class="nav-link" data-scroll-target="#problema-3">Problema 3</a></li>
   </ul>
 </nav>
 </div>
@@ -60,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Statistica I</h1>
-<p class="subtitle lead">Esami passati</p>
+<p class="subtitle lead">Esame 17 Novembre 2023</p>
 </div>
 
 
@@ -69,11 +83,11 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta-heading">Affiliazione</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author"><span class="orange">Tommaso Rigon</span> </p>
+    <p class="author">Tommaso Rigon </p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            <em>Università degli Studi di Milano-Bicocca</em>
+            DEMS
           </p>
       </div>
     </div>
@@ -88,103 +102,129 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="homepage" class="level1">
-<h1><a href="../index.html">Homepage</a></h1>
-<section id="esami-passati" class="level2">
-<h2 class="anchored" data-anchor-id="esami-passati">Esami passati</h2>
+<section id="problema-1" class="level2">
+<h2 class="anchored" data-anchor-id="problema-1">Problema 1</h2>
+<p>I dati riguardano il peso di <span class="math inline">n = 1,095,712</span> bambini nati da donne non ispaniche bianche negli Stati Uniti d’America nel 2013 tra la 39esima e la 40esima settimana. La variabile misurata è il <code>peso</code> del bambino alla nascita, raggruppato in classi.</p>
+<p>I dati sono stati tratti dalla Tabella 23, a pagina 51 di <a href="http://www.cdc.gov/nchs/data/nvsr/nvsr64/nvsr64_01.pdf">questo report</a>.</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Data esame</th>
-<th>Tema d’esame</th>
+<th style="text-align: right;">Peso (grammi)</th>
+<th style="text-align: right;">Frequenza assoluta</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>29 Gennaio 2024</td>
-<td><a href="../esami/29_01_2024.html">Esame</a></td>
+<td style="text-align: right;">(0, 2000]</td>
+<td style="text-align: right;">1491</td>
 </tr>
 <tr class="even">
-<td>17 Novembre 2023</td>
-<td><a href="../esami/17_11_2023.html">Esame</a></td>
+<td style="text-align: right;">(2000, 2500]</td>
+<td style="text-align: right;">12679</td>
 </tr>
 <tr class="odd">
-<td>21 Novembre 2022</td>
-<td><a href="../esami/21_11_2022.html">Esame</a></td>
+<td style="text-align: right;">(2500, 3000]</td>
+<td style="text-align: right;">124209</td>
 </tr>
 <tr class="even">
-<td>31 Gennaio 2022</td>
-<td><a href="../esami/31_01_2022.html">Esame</a></td>
+<td style="text-align: right;">(3000, 3500]</td>
+<td style="text-align: right;">442891</td>
 </tr>
 <tr class="odd">
-<td>22 Novembre 2021</td>
-<td><a href="../esami/22_11_2021.html">Esame</a></td>
+<td style="text-align: right;">(3500, 4000]</td>
+<td style="text-align: right;">389275</td>
 </tr>
 <tr class="even">
-<td>21 Giugno 2021</td>
-<td><a href="../esami/21_06_2021.html">Esame</a></td>
+<td style="text-align: right;">(4000, 4500]</td>
+<td style="text-align: right;">108886</td>
 </tr>
 <tr class="odd">
-<td>15 Febbraio 2021</td>
-<td><a href="../esami/15_02_2021.html">Esame</a></td>
+<td style="text-align: right;">(4500, 5000]</td>
+<td style="text-align: right;">14936</td>
 </tr>
 <tr class="even">
-<td>28 Gennaio 2021</td>
-<td><a href="../esami/28_01_2021.html">Esame</a></td>
-</tr>
-<tr class="odd">
-<td>16 Novembre 2020</td>
-<td><a href="../esami/16_11_2020.html">Esame</a></td>
+<td style="text-align: right;">(5000, <span class="math inline">\infty</span>)</td>
+<td style="text-align: right;">1345</td>
 </tr>
 </tbody>
 </table>
+<ol type="1">
+<li><p>Si calcoli il valore della funzione di ripartizione empirica della variabile <code>peso</code> in <span class="math inline">2500</span>, ovvero un bambino di basso peso alla nascita.</p></li>
+<li><p>Si disegni l’istogramma per la variabile <code>peso</code>. Si noti che le classi <strong>non</strong> sono equispaziate.</p></li>
+<li><p>Si identifichi la classe modale per la variabile <code>peso</code>.</p></li>
+<li><p>Si ottenga, se possibile, un’approssimazione della media aritmetica per la variabile <code>peso</code>. Si ottenga inoltre un’approssimazione del primo, del secondo e del terzo quartile.</p></li>
+<li><p>Si ottenga un indice di variabilità ed un indice di asimmetria per la variabile <code>peso</code>.</p></li>
+</ol>
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ::: -->
 </section>
-<section id="esami-passati---pre-2020" class="level2">
-<h2 class="anchored" data-anchor-id="esami-passati---pre-2020">Esami passati - Pre 2020</h2>
-<p><strong>Nota importante</strong>. I seguenti esami fanno riferimento agli Anni Accademici precedenti al 2020, in cui il corso era affidato ad un docente diverso da quello attuale.</p>
-<p>Il programma di allora era leggermente diverso da quello corrente. Non verranno quindi fornite spiegazioni riguardo gli argomenti non affrontati a lezione.</p>
+<section id="problema-2" class="level2">
+<h2 class="anchored" data-anchor-id="problema-2">Problema 2</h2>
+<p>I dati riguardano <span class="math inline">n = 2,126,791</span> bambini nati da donne non ispaniche bianche negli Stati Uniti d’America nel 2013. Le variabili misurate sono l’<code>età</code> della madre (<span class="math inline">h = 6</span> classi d’età) e la modalità del <code>parto</code> (<span class="math inline">k = 2</span>, ovvero naturale o cesareo). I dati sono riportati nella seguente tabella.</p>
+<p>I dati sono stati tratti dalla Tabella 22, a pagina 50 di <a href="http://www.cdc.gov/nchs/data/nvsr/nvsr64/nvsr64_01.pdf">questo report</a>.</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Data esame</th>
-<th>Link</th>
-<th>Argomenti non affrontati</th>
+<th>Età</th>
+<th>Parto naturale</th>
+<th>Parto cesareo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>18 Febbraio 2019</td>
-<td><a href="../esami/OLD_18_02_2019.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
+<td>(12, 19]</td>
+<td>84615</td>
+<td>23878</td>
 </tr>
 <tr class="even">
-<td>30 Gennaio 2019</td>
-<td><a href="../esami/OLD_30_01_2019.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
+<td>(19, 24]</td>
+<td>315541</td>
+<td>115506</td>
 </tr>
 <tr class="odd">
-<td>21 Novembre 2018</td>
-<td><a href="../esami/OLD_21_11_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
+<td>(24, 29]</td>
+<td>445748</td>
+<td>191312</td>
 </tr>
 <tr class="even">
-<td>20 Giugno 2018</td>
-<td><a href="../esami/OLD_20_06_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
+<td>(29, 34]</td>
+<td>407945</td>
+<td>212155</td>
 </tr>
 <tr class="odd">
-<td>24 Gennaio 2018</td>
-<td><a href="../esami/OLD_24_01_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
+<td>(34, 39]</td>
+<td>160820</td>
+<td>108038</td>
 </tr>
 <tr class="even">
-<td>13 Settembre 2017</td>
-<td><a href="../esami/OLD_13_09_2017.pdf">File pdf</a></td>
-<td>No</td>
+<td>(39, 54]</td>
+<td>31601</td>
+<td>29632</td>
 </tr>
 </tbody>
 </table>
+<ol type="1">
+<li><p>Si ottengano le distribuzioni marginali di <code>età</code> e <code>parto</code>.</p></li>
+<li><p>Si ottengano le distribuzioni condizionate (relative) della variabile <code>parto</code> condizionatamente ad <code>età</code>. Si <strong>commentino i risultati</strong> nel contesto del problema.</p></li>
+<li><p>Si consideri la variabile <code>età</code> condizionatamente a ciascun valore della variabile <code>parto</code>. Quale delle due variabili condizionate risulta maggiormente eterogenea?</p></li>
+<li><p>L’indice di connessione di Mortara <span class="math inline">C</span> è definito come segue <span class="math display">
+C = \frac{1}{2(1 - 1/\max\{h, k\})} \frac{1}{n}\sum_{i=1}^h\sum_{j=1}^k\left|n_{ij} - \hat{n}_{ij} \right|,
+</span> dove <span class="math inline">n_{ij}</span> sono le frequenze assolute mentre <span class="math inline">\hat{n}_{ij}</span> sono le <em>frequenze attese</em>. Si può dimostrare che <span class="math inline">0 \le C \le 1</span>. Che cosa misura l’indice di Mortara? In quale contesto risulta <span class="math inline">C = 0</span>?</p></li>
+<li><p>Si calcoli l’indice di Mortara utilizzando i dati a disposizione. Si <strong>commentino i risultati</strong> nel contesto del problema, tenendo presente anche di quanto ottenuto nei punti precedenti.</p></li>
+</ol>
 </section>
+<section id="problema-3" class="level2">
+<h2 class="anchored" data-anchor-id="problema-3">Problema 3</h2>
+<p>Si rispondano a <strong>tutti</strong> i seguenti quesiti di carattere <strong>teorico</strong>.</p>
+<p>Siano <span class="math inline">x_1,\dots,x_n</span> ed <span class="math inline">y_1,\dots,y_n</span> due insiemi di dati e siano <span class="math inline">w_1,\dots,w_n</span> dei dati trasformati tali che <span class="math inline">w_i = x_i + y_i</span>, per <span class="math inline">i=1,\dots,n</span>.</p>
+<ol type="1">
+<li><p>In quali circostanze la relazione <span class="math display">
+\text{var}(w) = \text{var}(x) + \text{var}(y),
+</span> risulta verificata?</p></li>
+<li><p>Si <strong>dimostri</strong> la seguente disuguaglianza: <span class="math display">
+|\text{cov}(x, y)| \le \text{sqm}(x)\text{sqm}(y).
+</span></p></li>
+</ol>
 </section>
 
 </main>
@@ -426,5 +466,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="exe_8_bis_files/libs/quarto-html/zenscroll-min.js"></script>
+<script src="29_01_2024_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
