@@ -90,7 +90,7 @@ Ciascun `ateneo` ha partecipato alla gara di slalom gigante maschile con un cert
 
 1. Si rappresentino graficamente le variabili `partecipanti` e `punteggio` tramite un diagramma a dispersione.
 
-2. Si specifichi un modello di regressione per studiare il `punteggio` medio in funzione del numero di `partecipanti`. Si stimi tale modello.
+2. Si specifichi un modello di regressione per studiare il `punteggio` medio ($y$) in funzione del numero di `partecipanti` ($x$). Si stimi tale modello.
 
 3. Si ottenga un indice di bontà d'adattamento per il modello stimato al punto precedente. Si ottenga inoltre la varianza residuale di tale modello. 
 
