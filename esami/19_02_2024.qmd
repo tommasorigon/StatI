@@ -42,7 +42,7 @@ abline(h = 0.5, lty = "dotted")
 abline(h = 0.75, lty = "dotted")
 ```
 
-1. Si dia la definizione di funzione di ripartizione $F(x)$ e si ottenga un valore approssimativo di $F(70)$ sulla base dei dati precedenti.
+1. Si dia la definizione di funzione di ripartizione empirica $F(x)$ e si ottenga un valore approssimativo di $F(70)$ sulla base dei dati precedenti.
 
 1. Sapendo che $F(43) = 0.1116279$, si dica quanti atleti hanno tagliato il traguardo con un tempo minore o uguale di $43$ secondi.
 

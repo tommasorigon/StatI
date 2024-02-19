@@ -36,7 +36,7 @@ Le seguenti soluzioni sono state gentilmente fornite dal [tutor di Statistica I]
 Per misurare la dipendenza in distribuzione di $x$ da $y$ utilizziamo l'indice $\chi^2$ normalizzato, che si basa sulla distanza tra frequenze attese e frequenze osservate, così definito:
 
 $$
-\chi^2_\text{norm} =  \frac{1}{n\:\min\{{h-1, k-1}\}} \sum_{i=1}^h\sum_{j=1}^k \frac{(n_{ij} - \hat{n}_{ij})^2}{\hat{n}_{ij}}.
+\chi^2_\text{norm} =  \frac{1}{n\min\{{h-1, k-1}\}} \sum_{i=1}^h\sum_{j=1}^k \frac{(n_{ij} - \hat{n}_{ij})^2}{\hat{n}_{ij}}.
 $$
 
 Posto $h = k = 3$, calcoliamo le frequenze attese $\hat{n}_{ij} = (n_{i+}n_{+j})/n$. Partendo dalla seguente:
