@@ -5,7 +5,6 @@ exe/.DS_Store
 slides/.DS_Store
 .DS_Store
 esami/ESITI.csv
-.DS_Store
-.Rproj.user
+.Rproj.user/
 .quarto/
 *.qmd
