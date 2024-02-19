@@ -1,0 +1,124 @@
+---
+title: "Statistica I"
+subtitle: 'Esame 17 Novembre 2023'
+lang: it
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+page-layout: full
+format:
+  html:
+    html-math-method: katex
+    echo: true
+    callout-appearance: minimal
+    theme: [simplex, ../template.css]
+    toc: true
+    toc-title: Indice
+    embed-resources: false
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 6, fig.width = 8)
+```
+
+## Problema 1
+
+```{r, echo=F, warning=FALSE, message = FALSE}
+classi <- c(0, 2000, 2500, 3000, 3500, 4000, 4500, 5000)
+# mids <- weights + 250
+freq <- c(5 + 48 + 308 + 1130, 12679, 124209, 442891, 389275, 108886, 14936, 1345) # Frequenze assolute
+n <- sum(freq) # Numero totale di bambini
+```
+
+I dati riguardano il peso di $n = 1,095,712$ bambini nati da donne non ispaniche bianche negli Stati Uniti d'America nel 2013 tra la 39esima e la 40esima settimana. La variabile misurata è il `peso` del bambino alla nascita, raggruppato in classi.
+
+I dati sono stati tratti dalla Tabella 23, a pagina 51 di [questo report](http://www.cdc.gov/nchs/data/nvsr/nvsr64/nvsr64_01.pdf).
+
+| Peso (grammi) |   Frequenza assoluta |
+|------:|------:|
+|   (0, 2000] |   1491|
+|   (2000, 2500] |  12679|
+|   (2500, 3000] | 124209|
+|   (3000, 3500] | 442891|
+|   (3500, 4000] | 389275|
+|   (4000, 4500] | 108886|
+|   (4500, 5000] |  14936|
+|   (5000, $\infty$) |   1345|
+
+1. Si calcoli il valore della funzione di ripartizione empirica della variabile `peso` in $2500$, ovvero un bambino di basso peso alla nascita. 
+
+1. Si disegni l'istogramma per la variabile `peso`. Si noti che le classi **non** sono equispaziate.
+
+1. Si identifichi la classe modale per la variabile `peso`.
+
+1. Si ottenga, se possibile, un'approssimazione della media aritmetica per la variabile `peso`. Si ottenga inoltre un'approssimazione del primo, del secondo e del terzo quartile.
+
+1. Si ottenga un indice di variabilità ed un indice di asimmetria per la variabile `peso`.
+
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ::: -->
+
+## Problema 2
+
+```{r, echo=F, warning=FALSE, message = FALSE}
+tab <- matrix(c(84615,23878,
+         315541, 115506,
+         445748, 191312,
+         407945, 212155,
+         160820, 108038,
+         31601, 29632), ncol = 2, byrow = TRUE)
+freq_x <- apply(tab, 1, sum)
+freq_y <- apply(tab, 2, sum)
+freq_att <- outer(freq_x, freq_y, "*") / sum(tab)
+#chisq.test(tab)
+#(sum(abs(tab - freq_att)) / sum(tab)) * (1 / 2*(1 - 1 / max(nrow(tab), ncol(tab))))
+```
+
+I dati riguardano $n = 2,126,791$ bambini nati da donne
+non ispaniche bianche negli Stati Uniti d'America nel 2013. Le variabili
+misurate sono l'`età` della madre ($h = 6$ classi d'età) e la modalità del `parto` ($k = 2$, ovvero naturale o cesareo). I dati sono riportati nella seguente tabella.
+
+I dati sono stati tratti dalla Tabella 22, a pagina 50 di [questo report](http://www.cdc.gov/nchs/data/nvsr/nvsr64/nvsr64_01.pdf).
+
+| Età      | Parto naturale | Parto cesareo |
+|----------|----------------|---------------|
+| (12, 19] | 84615          | 23878         |
+| (19, 24] | 315541         | 115506        |
+| (24, 29] | 445748         | 191312        |
+| (29, 34] | 407945         | 212155        |
+| (34, 39] | 160820         | 108038        |
+| (39, 54] | 31601          | 29632         |
+
+1. Si ottengano le distribuzioni marginali di `età` e `parto`. 
+
+1. Si ottengano le distribuzioni condizionate (relative) della variabile `parto` condizionatamente ad `età`. Si **commentino i risultati** nel contesto del problema.
+
+1. Si consideri la variabile `età` condizionatamente a ciascun valore della variabile `parto`. Quale delle due variabili condizionate risulta maggiormente eterogenea?
+
+1. L'indice di connessione di Mortara $C$ è definito come segue
+$$
+C = \frac{1}{2(1 - 1/\max\{h, k\})} \frac{1}{n}\sum_{i=1}^h\sum_{j=1}^k\left|n_{ij} - \hat{n}_{ij} \right|,
+$$
+dove $n_{ij}$ sono le frequenze assolute mentre $\hat{n}_{ij}$ sono le *frequenze attese*. Si può dimostrare che $0 \le C \le 1$. Che cosa misura l'indice di Mortara? In quale contesto risulta $C = 0$?
+
+1. Si calcoli l'indice di Mortara utilizzando i dati a disposizione. Si **commentino i risultati** nel contesto del problema, tenendo presente anche di quanto ottenuto nei punti precedenti.
+
+## Problema 3
+
+Si rispondano a **tutti** i seguenti quesiti di carattere **teorico**.
+
+Siano $x_1,\dots,x_n$ ed $y_1,\dots,y_n$ due insiemi di dati e siano $w_1,\dots,w_n$ dei dati trasformati tali che $w_i = x_i + y_i$, per $i=1,\dots,n$.
+
+1. In quali circostanze la relazione 
+$$
+\text{var}(w) = \text{var}(x) + \text{var}(y),
+$$
+risulta verificata? 
+
+1. Si **dimostri** la seguente disuguaglianza:
+$$
+|\text{cov}(x, y)| \le \text{sqm}(x)\text{sqm}(y).
+$$

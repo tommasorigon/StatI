@@ -24,18 +24,34 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="exe_8_bis_files/libs/clipboard/clipboard.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/quarto.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/popper.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/anchor.min.js"></script>
-<link href="exe_8_bis_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="exe_8_bis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="exe_8_bis_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="exe_8_bis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="exe_8_bis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="19_02_2024_files/libs/clipboard/clipboard.min.js"></script>
+<script src="19_02_2024_files/libs/quarto-html/quarto.js"></script>
+<script src="19_02_2024_files/libs/quarto-html/popper.min.js"></script>
+<script src="19_02_2024_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="19_02_2024_files/libs/quarto-html/anchor.min.js"></script>
+<link href="19_02_2024_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="19_02_2024_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="19_02_2024_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="19_02_2024_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="19_02_2024_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -47,11 +63,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Indice</h2>
    
   <ul>
-  <li><a href="#homepage" id="toc-homepage" class="nav-link active" data-scroll-target="#homepage">Homepage</a>
-  <ul class="collapse">
-  <li><a href="#esami-passati" id="toc-esami-passati" class="nav-link" data-scroll-target="#esami-passati">Esami passati</a></li>
-  <li><a href="#esami-passati---pre-2020" id="toc-esami-passati---pre-2020" class="nav-link" data-scroll-target="#esami-passati---pre-2020">Esami passati - Pre 2020</a></li>
-  </ul></li>
+  <li><a href="#problema-1" id="toc-problema-1" class="nav-link active" data-scroll-target="#problema-1">Problema 1</a></li>
+  <li><a href="#problema-2" id="toc-problema-2" class="nav-link" data-scroll-target="#problema-2">Problema 2</a></li>
+  <li><a href="#problema-3" id="toc-problema-3" class="nav-link" data-scroll-target="#problema-3">Problema 3</a></li>
   </ul>
 </nav>
 </div>
@@ -60,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Statistica I</h1>
-<p class="subtitle lead">Esami passati</p>
+<p class="subtitle lead">Esame 17 Novembre 2023</p>
 </div>
 
 
@@ -69,11 +83,11 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta-heading">Affiliazione</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author"><span class="orange">Tommaso Rigon</span> </p>
+    <p class="author">Tommaso Rigon </p>
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            <em>Università degli Studi di Milano-Bicocca</em>
+            DEMS
           </p>
       </div>
     </div>
@@ -88,107 +102,124 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="homepage" class="level1">
-<h1><a href="../index.html">Homepage</a></h1>
-<section id="esami-passati" class="level2">
-<h2 class="anchored" data-anchor-id="esami-passati">Esami passati</h2>
+<section id="problema-1" class="level2">
+<h2 class="anchored" data-anchor-id="problema-1">Problema 1</h2>
+<p>Il <a href="https://anciu.it/28-01-04-02-2024-san-martino-di-castrozza-tn-39-campionato-nazionale-anciu-sci-angelo-puppella/">39esimo campionato nazionale di sci dell’Associazione Nazionale Circoli Italiani Universitari</a> (ANCIU) si è svolto dal 28 gennaio al 4 febbraio 2024. Alla gara di slalom gigante maschile hanno partecipato <span class="math inline">n = 215</span> atleti.</p>
+<p>La variabile <code>tempo</code> misura i secondi impiegati per tagliare il traguardo. La funzione di ripartizione empirica della variabile <code>tempo</code> è disegnata nel seguito. Sono inoltre state disegnate delle linee orizzontali in corrispondenza dei valori <span class="math inline">0.25,0.5,0.75</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="19_02_2024_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li><p>Si dia la definizione di funzione di ripartizione <span class="math inline">F(x)</span> e si ottenga un valore approssimativo di <span class="math inline">F(70)</span> sulla base dei dati precedenti.</p></li>
+<li><p>Sapendo che <span class="math inline">F(43) = 0.1116279</span>, si dica quanti atleti hanno tagliato il traguardo con un tempo minore o uguale di <span class="math inline">43</span> secondi.</p></li>
+<li><p>Sulla base del grafico precedente, si ottenga un valore approssimativo per la mediana della variabile <code>tempo</code>. Si ottengano inoltre dei valori approssimativi per il primo ed il terzo quartile.</p></li>
+<li><p>Si ottengano quindi degli indici di variabilità e di asimmetria basati sui valori ottenuti al punto precedente. Si commentino i risultati.</p></li>
+<li><p>Sono presenti valori anomali? Perchè? Si disegni quindi un boxplot utilizzando i valori ottenuti ai punti precedenti <span class="orange">senza disegnare gli eventuali valori anomali</span>.</p></li>
+</ol>
+</section>
+<section id="problema-2" class="level2">
+<h2 class="anchored" data-anchor-id="problema-2">Problema 2</h2>
+<p>Il <a href="https://anciu.it/28-01-04-02-2024-san-martino-di-castrozza-tn-39-campionato-nazionale-anciu-sci-angelo-puppella/">39esimo campionato nazionale di sci dell’Associazione Nazionale Circoli Italiani Universitari</a> (ANCIU) si è svolto dal 28 gennaio al 4 febbraio 2024.</p>
+<p>Ciascun <code>ateneo</code> ha partecipato alla gara di slalom gigante maschile con un certo numero di atleti (<code>partecipanti</code>), totalizzando un certo <code>punteggio</code> di squadra. Le osservazioni relative agli <span class="math inline">n = 14</span> atenei con più di <span class="math inline">5</span> partecipanti sono riportate nella tabella seguente.</p>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Data esame</th>
-<th>Tema d’esame</th>
+<th style="text-align: left;"><code>ateneo</code></th>
+<th style="text-align: right;"><code>partecipanti</code></th>
+<th style="text-align: right;"><code>punteggio</code></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>19 Febbraio 2024</td>
-<td><a href="../esami/19_02_2024.html">Esame</a></td>
+<td style="text-align: left;">BOLOGNA</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">3382</td>
 </tr>
 <tr class="even">
-<td>29 Gennaio 2024</td>
-<td><a href="../esami/29_01_2024.html">Esame</a></td>
+<td style="text-align: left;">BRESCIA</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1818</td>
 </tr>
 <tr class="odd">
-<td>17 Novembre 2023</td>
-<td><a href="../esami/17_11_2023.html">Esame</a></td>
+<td style="text-align: left;">CA FOSCARI</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1545</td>
 </tr>
 <tr class="even">
-<td>21 Novembre 2022</td>
-<td><a href="../esami/21_11_2022.html">Esame</a></td>
+<td style="text-align: left;">CAGLIARI</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1131</td>
 </tr>
 <tr class="odd">
-<td>31 Gennaio 2022</td>
-<td><a href="../esami/31_01_2022.html">Esame</a></td>
+<td style="text-align: left;">CAMERINO</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1359</td>
 </tr>
 <tr class="even">
-<td>22 Novembre 2021</td>
-<td><a href="../esami/22_11_2021.html">Esame</a></td>
+<td style="text-align: left;">CATANIA</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">903</td>
 </tr>
 <tr class="odd">
-<td>21 Giugno 2021</td>
-<td><a href="../esami/21_06_2021.html">Esame</a></td>
+<td style="text-align: left;">CHIETI</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1031</td>
 </tr>
 <tr class="even">
-<td>15 Febbraio 2021</td>
-<td><a href="../esami/15_02_2021.html">Esame</a></td>
+<td style="text-align: left;">COSENZA</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">4498</td>
 </tr>
 <tr class="odd">
-<td>28 Gennaio 2021</td>
-<td><a href="../esami/28_01_2021.html">Esame</a></td>
+<td style="text-align: left;">FIRENZE</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">4182</td>
 </tr>
 <tr class="even">
-<td>16 Novembre 2020</td>
-<td><a href="../esami/16_11_2020.html">Esame</a></td>
+<td style="text-align: left;">GENOVA</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2663</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MILANO BICOCCA</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">2869</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MILANO STATALE</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">2861</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PADOVA</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">4558</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PARMA</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1023</td>
 </tr>
 </tbody>
 </table>
+<ol type="1">
+<li><p>Si rappresentino graficamente le variabili <code>partecipanti</code> e <code>punteggio</code> tramite un diagramma a dispersione.</p></li>
+<li><p>Si specifichi un modello di regressione per studiare il <code>punteggio</code> medio in funzione del numero di <code>partecipanti</code>. Si stimi tale modello.</p></li>
+<li><p>Si ottenga un indice di bontà d’adattamento per il modello stimato al punto precedente. Si ottenga inoltre la varianza residuale di tale modello.</p></li>
+<li><p>Si supponga che il numero di partecipanti per ateneo non sia in alcun modo collegato alle capacità degli atleti. Gli organizzatori della gara auspicano che il numero di <code>partecipanti</code>, a parità di capacità, non influenzi il <code>punteggio</code> della squadra. I dati raccolti sono compatibili con questa affermazione? Perchè?</p></li>
+<li><p>Si ottengano i valori dei residui per gli atenei Milano Bicocca, Padova e Cosenza. Come è possibile interpretare il valore di questi residui?</p></li>
+<li><p>Sulla base del modello stimato in precedenza, quanti punti avrebbe totalizzato Milano Bicocca (o un qualunque altro ateneo) se avesse gareggiato con <span class="math inline">30</span> atleti?</p></li>
+</ol>
 </section>
-<section id="esami-passati---pre-2020" class="level2">
-<h2 class="anchored" data-anchor-id="esami-passati---pre-2020">Esami passati - Pre 2020</h2>
-<p><strong>Nota importante</strong>. I seguenti esami fanno riferimento agli Anni Accademici precedenti al 2020, in cui il corso era affidato ad un docente diverso da quello attuale.</p>
-<p>Il programma di allora era leggermente diverso da quello corrente. Non verranno quindi fornite spiegazioni riguardo gli argomenti non affrontati a lezione.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Data esame</th>
-<th>Link</th>
-<th>Argomenti non affrontati</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>18 Febbraio 2019</td>
-<td><a href="../esami/OLD_18_02_2019.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="even">
-<td>30 Gennaio 2019</td>
-<td><a href="../esami/OLD_30_01_2019.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="odd">
-<td>21 Novembre 2018</td>
-<td><a href="../esami/OLD_21_11_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="even">
-<td>20 Giugno 2018</td>
-<td><a href="../esami/OLD_20_06_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="odd">
-<td>24 Gennaio 2018</td>
-<td><a href="../esami/OLD_24_01_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="even">
-<td>13 Settembre 2017</td>
-<td><a href="../esami/OLD_13_09_2017.pdf">File pdf</a></td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-</section>
+<section id="problema-3" class="level2">
+<h2 class="anchored" data-anchor-id="problema-3">Problema 3</h2>
+<p>Siano <span class="math inline">x_1,\dots,x_n</span> ed <span class="math inline">y_1,\dots,y_n</span> due insiemi di dati. Dopo aver spiegato il contesto del problema, si <span class="orange">dimostri</span> che le stime ai minimi quadrati per prevedere <span class="math inline">y</span> in funzione di <span class="math inline">x</span> tramite regressione lineare sono <span class="math inline">\hat{\beta} = \text{cov}(x, y) / \text{var}(x)</span> e <span class="math inline">\hat{\alpha} = \bar{y} - \hat{\beta}\bar{x}</span>.</p>
 </section>
 
 </main>
@@ -430,5 +461,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="exe_8_bis_files/libs/quarto-html/zenscroll-min.js"></script>
+<script src="19_02_2024_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

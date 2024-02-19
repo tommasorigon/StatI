@@ -1,0 +1,5 @@
+"0","                       rep(c(""No"", ""Occasionale"", ""Quasi ogni notte"", ""Ogni notte""), times = c(1355, 603, 192, 224)))
+"
+"2","Error in data.frame(disease = rep(c(""Si"", ""No""), times = c(110, 2374)),  : 
+  arguments imply differing number of rows: 2484, 2374
+"

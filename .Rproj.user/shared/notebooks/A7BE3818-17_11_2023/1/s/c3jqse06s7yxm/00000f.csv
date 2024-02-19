@@ -1,0 +1,1 @@
+"0","knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = ""center"", fig.height = 6, fig.width = 8)"

@@ -1,0 +1,115 @@
+---
+title: 'Statistica I'
+subtitle: 'Esame 21 Giugno 2021'
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+page-layout: full
+format:
+  html:
+    html-math-method: katex
+    echo: true
+    callout-appearance: minimal
+    theme: [simplex, ../template.css]
+    toc: true
+    toc-title: Indice
+    embed-resources: false
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
+---
+
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 6, fig.width = 8)
+```
+
+
+## Domande preliminari
+
+Le domande preliminari sono omesse. 
+
+## Esercizio 1
+
+La seguente tabella descrive la dimensione di $n = 895$ gruppi criminali di Chicago, relative all'anno 1927, in forma raggruppata.
+
+| Numero di membri | Frequenza assoluta |
+|---------|--------------------|
+| $(3, 5]$ | 37 |
+| $(5, 10]$ | 198 |
+| $(10, 15]$ | 191 |
+| $(15, 20]$ | 149 |
+| $(20, 25]$ | 79 |
+| $(25, 30]$ | 46 |
+| $(30, 40]$ | 55 |
+| $(40, 50]$ | 51 |
+| $(50, 75]$ | 26 |
+| $(75, 100]$ | 25 |
+| $(100, 200]$ | 25 |
+| $(200, 500]$ | 11 |
+| $(500, 1000]$ | 2 |
+
+1. (Teoria). Si dimostri che la somma degli scarti dalla media è pari a zero. 
+
+1. Si ottengano le frequenze relative e le frequenze relative cumulate della variabile `numeri di membri`. 
+
+1. Si calcoli il valore della funzione di ripartizione empirica della variabile `numeri di membri` nel valore $75$. 
+
+1. Si ottenga un'approssimazione della media aritmetica per la variabile `numero di membri`.
+
+1. Si ottenga un'approssimazione del primo, del secondo e del terzo quartile, per la variabile `numero di membri`.
+
+1. Si calcoli un opportuno indice di asimmetria per la variabile `numero di membri` e si dica se tale variabile risulta essere simmetrica o meno. 
+
+1. Il corpo di polizia di Chicago vuole togliere dalle strade della città i gruppi criminali più influenti, ovvero tutti i gruppi aventi un numero di membri maggiore o uguale di 300. Si fornisca un'approssimazione del numero di bande criminali coinvolte in questa operazione. 
+
+## Esercizio 2
+
+```{r data generation, echo = FALSE, results = "hide"}
+library(knitr)
+library(exams)
+
+numero_cicli <- c(1:12)
+freq_fumatori <- c(29, 16, 17, 4, 3, 9, 4, 5, 1, 1, 1, 3)
+freq_non_fumatori <- c(198, 107, 55, 38, 18, 22, 7, 9, 5, 3, 6, 6)
+
+x_f <- rep(numero_cicli, freq_fumatori)
+x_nf <- rep(numero_cicli, freq_non_fumatori)
+
+dataset <- data.frame(numero_cicli, freq_fumatori, freq_non_fumatori)
+colnames(dataset) <- c("# cicli", "# donne fumatrici", "# donne non fumatrici")
+```
+
+Per un insieme di $n = 567$ donne è stato registrato il numero di cicli mestruali necessari prima di rimanere incinte. Le donne sono divise in due gruppi: fumatrici e non fumatrici. I dati sono riportati nella tabella sottostante. 
+
+
+```{r, echo=F, warning=F}
+knitr::kable(dataset)
+```
+
+
+1. (Teoria). Si **dimostri** che la somma degli scarti quadratici da una costante è minima se e solo se la costante è posta uguale alla media.
+
+1. Si ottengano le medie aritmetiche di entrambi i gruppi. Quale dei due gruppi presenta un numero di cicli minore?
+
+1. Si ottengano e si confrontino i boxplot di entrambi gruppi. Ci sono delle differenze tra le due distribuzioni? Sono presenti outlier?
+
+1. Si ottengano le devianze e le varianze di entrambi i gruppi. Uno dei due gruppi presenta una variabilità maggiore? Se si, quale?
+
+1. Si calcolino la  devianza tra i gruppi, la devianza entro i gruppi e la devianza totale. Possiamo affermare che le medie dei gruppi differiscono in maniera significativa? Si calcoli un indice adeguato a supporto della risposta.
+
+
+## Esercizio 3
+
+Siano $x_1,\dots,x_n$ per $i=1,\dots,n$ dei dati a valori positivi. Inoltre, sia $\alpha \in \mathbb{R}$ un numero reale. Si consideri il seguente indice
+
+$$
+\bar{x}_\alpha = \left(\frac{1}{n}\sum_{i=1}^n x_i^\alpha\right)^{1/\alpha},
+$$
+che viene solitamente chiamato "media potenziata" di ordine $\alpha$.
+
+1. Si dica a cosa corrisponde il caso $\alpha = -1$. Si ottenga poi il limite $\lim_{\alpha \rightarrow 0} \bar{x}_\alpha$: corrisponde ad una media nota? 
+
+1. Le medie potenziate costituiscono un caso particolare delle medie di Bonferroni? Si motivi la risposta.  
+
+1. Si dimostri che vale la seguente relazione: $\bar{x}_1 \le \bar{x}_2$. 

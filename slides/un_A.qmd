@@ -1,0 +1,406 @@
+---
+title: "Unità A.1. Sommatorie e produttorie"
+subtitle: "Statistica I - CdL SSE"
+author: "[Tommaso Rigon]{.orange}"
+institute: "_Università degli Studi di Milano-Bicocca_"
+lang: it
+execute:
+  cache: false
+filters: 
+  - remove-pause.lua
+format:
+  revealjs:
+    auto-stretch: true
+    center: true
+    html-math-method: katex
+    transition: none
+    output-file: un_A_slides.html
+    slide-number: true
+    callout-appearance: default
+    callout-icon: false
+    code-line-numbers: true
+    theme: [default, ../template.css] # alternative themes (subset): default, night, dark
+    embed-resources: false
+    echo: false
+    fig-dpi: 250
+    # incremental: true  # Remove comment if you like incremental bullet points
+    logo: img/logoB.png
+    footer: "[Home page](https://tommasorigon.github.io/StatI)"
+  html:
+    html-math-method: katex
+    echo: false
+    callout-appearance: default
+    callout-icon: false
+    theme: [cosmo, ../template.css]
+    toc: true
+    toc-title: Table of contents
+    embed-resources: false
+    smooth-scroll: true
+    fig-dpi: 150
+editor: 
+  markdown: 
+    wrap: 72
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r}
+#| warning: false
+#| echo: false
+#| include: false
+#| message: false
+#| purl: false
+
+# Please ignore this chunk
+knitr::purl("un_A.qmd", output = "../code/un_A.R", documentation = 0)
+styler:::style_file("../code/un_A.R")
+```
+
+
+## [Homepage](../index.html)
+
+- Supponiamo di avere i seguenti [sei numeri]{.orange}: 2, 15, 5, 8, 10, 3 così indicati:
+$$
+a_1=2, a_2=15, a_3=5, a_4=8, a_5=10, a_6=3.
+$$
+La loro somma
+$$
+a_1 + a_2 + a_3 + a_4 + a_5 + a_6
+$$
+può essere letta come [somma di tutti i valori]{.blue} di $a_i$, con  $i=1,2,\dots,6$.
+
+- La somma di tutti i valori è generalmente rappresentata dalla lettera [greca maiuscola sigma]{.orange}. Quindi, scriveremo
+$$
+\begin{aligned}
+\sum_{i=1}^6a_i &= a_1 + a_2+a_3+a_4+a_5+a_6\\
+                &= 2+15+5+8+10+3 = 43,
+\end{aligned}
+$$e si legge "*sommatoria delle $a_i$ con $i$ che varia da $1$ a $6$*''.
+
+## Sommatorie e produttorie
+
+-  Sia $a_1,\dots,a_n$ una sequenza di valori reali, dove $a_i \in \mathbb{R}$ per ogni $i=1,\dots,n$.
+
+- La somma di una sequenza di valori $a_1,\dots,a_n$ si può esprimere in maniera compatta come segue:
+$$
+\sum_{i=1}^n a_i = a_1 + a_2 + \cdots + a_n,
+$$
+ovvero tramite il simbolo di [sommatoria]{.blue}. 
+
+- Il prodotto di una sequenza di valori $a_1,\dots,a_n$ si può esprimere in maniera compatta come segue:
+$$
+\prod_{i=1}^n a_i = a_1 \times a_2 \times \cdots \times a_n,
+$$
+ovvero tramite il simbolo di [produttoria]{.orange}.
+
+
+## Sommatorie: notazione
+
+-  Si osservi che nella sommatoria la lettera $i$, indice del termine  generico, può essere [sostituita]{.orange} da un'altra [qualsiasi lettera]{.blue}. 
+
+- Ad esempio si può scrivere
+$$
+\sum_{i=1}^na_i=\sum_{k=1}^na_k = \sum_{s=1}^na_s.
+$$
+
+- [Se ciò non crea confusione]{.blue}, talvolta si può trovare indicato 
+$$
+\sum_i a_i  \qquad \text{ al posto di } \qquad\sum_{i=1}^n a_i.
+$$
+
+
+- A volte si trova anche la dicitura $\sum a_i$, che tuttavia sarebbe meglio [evitare]{.orange}.
+
+- La somma dal termine $j$-esimo al termine $j$-esimo, coincide col termine $j$-esimo. In simboli:
+$$
+\sum_{i=j}^j a_i =a_j.
+$$
+
+## Proprietà delle sommatorie
+
+- [Proprietà]{.blue .underline}. Se $\alpha \in \mathbb{R}$ è una costante che non dipende dall'indice $i$, allora
+$$
+\sum_{i=1}^n \alpha a_i = \alpha \sum_{i=1}^na_i.
+$$Infatti, si noti che
+$$
+\sum_{i=1}^n \alpha a_i=\alpha  a_1+ \alpha  a_2+\dots+ \alpha  a_n = \alpha (a_1+a_2+\dots+a_n)=\alpha \sum_{i=1}^na_i.
+$$
+
+- [Proprietà]{.blue .underline}. Si noti anche che:
+$$
+\sum_{i=1}^n1=n.
+$$
+Infatti $\sum_{i=1}^n1$ è una sommatoria il cui termine generico $a_i=1$,
+perciò 
+$$
+\sum_{i=1}^na_i=a_1+a_2+\dots+a_n=\overbrace{1+1+\dots+1}^{n \text{ volte}}=n.
+$$
+
+## Proprietà delle sommatorie
+
+- [Proprietà]{.blue .underline}. Se $m > n$, allora vale la seguente [scomposizione]{.orange}
+$$
+\sum_{i=1}^na_i+\sum_{i=n+1}^ma_i=\sum_{i=1}^ma_i.
+$$
+Infatti vale che:
+$$
+\sum_{i=1}^na_i+\sum_{i=n+1}^ma_i = (a_1+a_2+\dots+a_n)+
+                                  (a_{n+1}+a_{n+2}+\dots+a_{m})= \sum_{i=1}^ma_i.
+$$
+
+- [Proprietà]{.blue .underline}. La sommatoria di una somma è pari alla somma delle sommatorie:
+$$
+\sum_{i=1}^n(a_i+b_i)=\sum_{i=1}^na_i+\sum_{i=1}^nb_i.
+$$
+Infatti vale che:
+$$
+\begin{aligned}
+\sum_{i=1}^n(a_i+b_i)&=(a_1+b_1)+(a_2+b_2)+\dots+(a_n+b_n)=\\
+                     &=(a_1+a_2+\dots+a_n)+(b_1+b_2+\dots+b_n)=\sum_{i=1}^na_i+\sum_{i=1}^nb_i.
+\end{aligned}
+$$
+
+## Proprietà delle sommatorie 
+
+- [Proprietà]{.blue .underline}. Se $\alpha$ e $\beta$ sono costanti che non dipendono dall'indice $i$, allora:
+$$
+\sum_{i=1}^n(\alpha a_i+\beta)=\left(\alpha \sum_{i=1}^na_i\right) + (n \times \beta) = \alpha \sum_{i=1}^na_i + n \times \beta.
+$$
+Attenzione all'uso delle [parentesi]{.orange}. Utilizzando le proprietà precedentemente viste:
+$$
+\sum_{i=1}^n(\alpha a_i+\beta)=\sum_{i=1}^n\alpha a_i +\sum_{i=1}^n \beta= \alpha \sum_{i=1}^na_i + n\times \beta.
+$$
+
+:::{.callout-warning}
+#### Una non-proprietà delle sommatorie
+
+$$
+\sum_{i=1}^na_ib_i\neq \sum_{i=1}^na_i \times \sum_{i=1}^nb_i.
+$$
+:::
+
+## Dimostrazione
+
+- Nella disuguaglianza precedente, il [primo termine]{.blue} è pari a
+$$
+\sum_{i=1}^na_ib_i=a_1b_1+a_2b_2+\dots+a_nb_n.
+$$
+
+- Il [secondo termine]{.orange} invece coincide con
+$$
+\begin{aligned}
+\sum_{i=1}^na_i\times\sum_{i=1}^nb_i&=(a_1+a_2+\dots+a_n)(b_1+b_2+\dots+b_n)=\\
+                                   &=(a_1b_1+a_1b_2+\dots+a_1b_n) + \cdots +(a_nb_1+a_nb_2+\dots+a_nb_n)=\\
+                                   &=\sum_{i=1}^na_ib_i+\sum_{i\neq j}a_ib_j,
+\end{aligned}
+$$
+dove $\sum_{i\neq j}a_ib_j$ indica la sommatoria dei prodotti $a_ib_j$ estesa a tutte le coppie di indici $i$ e $j$ compresi tra $1$ e $n$ tali che $i\neq j$.
+
+## Proprietà delle sommatorie
+
+- [Proprietà]{.blue .underline}. Come [caso particolare]{.blue} della precedente dimostrazione, otteniamo
+$$
+\left( \sum_{i=1}^na_i\right)^2= \sum_{i=1}^na_i \times \sum_{i=1}^na_i =\sum_{i=1}^na_i^2+\sum_{i\neq j}a_ia_j%= \sum_{i=1}^na_i^2+2\sum_{i<j}a_ia_j.
+$$
+Questo equivale a quanto visto precedentemente circa il prodotto di due sommatorie, nel caso particolare che esse [siano uguali]{.orange}.
+
+- Poichè $a_ia_j=a_ja_i$ si ottiene che ciascun prodotto si presenta due volte
+nella sommatoria. Potremo perciò scrivere 
+$$\sum_{i\neq j}a_ia_j=2\sum_{i<j}a_ia_j.$$
+
+- Scritto per esteso, si ottiene che
+$$
+\sum_{i<j}a_i a_j = (a_1a_2+a_1a_3+\dots+a_1a_n) + (a_2a_3+ a_2 a_4 + \dots+a_2a_n) + \dots + a_{n-1}a_n.
+$$
+
+
+## Sommatorie doppie
+
+- Siano $a_{ij} \in \mathbb{R}$ dei valori reali dipendenti da [due indici]{.orange}, ovvero
+$$
+\begin{array}{cccc}
+a_{11} &a_{12} &\dots &a_{1m},\\
+a_{21} &a_{22} &\dots &a_{2m},\\
+\vdots&\vdots&&\vdots\\
+a_{n1} &a_{n2} &\dots &a_{nm}.\\
+\end{array}
+$$
+
+- La somma di questi $n \times m$ valori si può scrivere come segue:
+$$
+\sum_{j=1}^m a_{1j}+ \dots + \sum_{j=1}^m a_{nj} = (a_{11}+a_{12}+\dots+a_{1m})+\dots+
+(a_{n1}+a_{n2}+\dots+a_{nm}).
+$$
+
+- Ponendo $S_1 = \sum_{j=1}^m a_{1j},\dots, S_n =  \sum_{j=1}^m a_{nj}$, otteniamo che la somma cercata è pari a
+$$
+S_1 +\dots + S_n= \sum_{i=1}^n S_i =\sum_{i=1}^n \sum_{j=1}^m a_{ij}.
+$$
+
+- Si noti il caso particolare $\sum_{i=k}^k \sum_{j=k'}^{k'} a_{ij}=a_{kk'}$.
+
+## Proprietà delle sommatorie doppie
+
+- [Proprietà]{.blue .underline}. Le sommatorie di una sommatoria doppia possono essere [cambiate di ordine]{.orange}, cioè si può scrivere
+$$
+\sum_{i=1}^n \sum_{j=1}^ma_{ij}=\sum_{j=1}^m\sum_{i=1}^na_{ij}
+$$
+Infatti, si noti che:
+\begin{equation*}
+\begin{aligned}
+\sum_{i=1}^n \sum_{j=1}^ma_{ij}&= (a_{11}+a_{12}+\dots+a_{1m})+\dots+(a_{n1}+a_{n2}+\dots+a_{nm})\\
+                       &=(a_{11}+a_{21}+\dots+a_{n1})+\dots+(a_{1m}+a_{2m}+\dots+a_{nm})\\
+                       &=\sum_{i=1}^na_{i1}+\sum_{i=1}^na_{i2}+\dots+\sum_{i=1}^na_{im} \\
+                       &=\sum_{j=1}^m \sum_{i=1}^na_{ij}.
+\end{aligned}                       
+\end{equation*}
+
+
+## Proprietà delle sommatorie doppie
+
+- [Proprietà]{.blue .underline}. Una sommatoria doppia può essere scritta come una sommatoria. Infatti:
+$$\sum_{j=1}^m \sum_{i=1}^na_{ij} =  \sum_{k = 1}^{n \times m} b_k,$$
+dove i valori $b_1,\dots,b_{n\times m}$ coincidono con i valori originali  $a_{11}, \dots,a_{1m},\dots,a_{n1},\dots,a_{nm}$ disposti in sequenza. 
+
+- Questo implica che molte proprietà delle sommatorie doppie seguono direttamente da quelle delle sommatorie.
+
+- [Proprietà]{.blue .underline}. Se $\alpha$  è una costante che non dipende dagli indici $i$ e $j$, allora
+$$
+\sum_{i=1}^n\sum_{j=1}^m \alpha a_{ij}=\sum_{i=1}^n\alpha \sum_{j=1}^m  a_{ij}=\alpha \sum_{i=1}^n \sum_{j=1}^m a_{ij}.
+$$
+
+- [Proprietà]{.blue .underline}. Vale che
+$$
+\sum_{i=1}^n \sum_{j=1}^m 1= n \times m.
+$$
+
+## Proprietà delle sommatorie doppie
+
+- [Proprietà]{.blue .underline}. Come in precedenza, vale che:
+$$
+\sum_{i=1}^n\sum_{j=1}^m(a_{ij}+b_{ij})=\sum_{i=1}^n \sum_{j=1}^m a_{ij}+
+               \sum_{i=1}^n \sum_{j=1}^m b_{ij}.
+$$
+
+- [Proprietà]{.blue .underline}. Anche nel caso delle sommatorie doppie vale che per $n > n_1$:
+$$
+\sum_{i=1}^{n_1}\sum_{j=1}^m a_{ij} + \sum_{i=n_1+1}^{n}\sum_{j=1}^m a_{ij}=\sum_{i=1}^n\sum_{j=1}^m a_{ij}.
+$$
+- Specularmente, vale anche che per $m > m_1$
+$$
+\sum_{i=1}^{n}\sum_{j=1}^{m_1} a_{ij} + \sum_{i=1}^{n}\sum_{j=m_1+1}^ma_{ij} =\sum_{i=1}^n\sum_{j=1}^m a_{ij}.
+$$
+
+- [Proprietà]{.blue .underline}. Infine, se $\alpha$ e $\beta$ sono costanti che non dipendono dagli indici $i$ e $j$, allora
+$$
+\sum_{i=1}^n \sum_{j=1}^m(\alpha a_{ij}+ \beta)=\alpha \sum_{i=1}^n \sum_{j=1}^m a_{ij} + m \times n \times \beta.
+$$
+
+## Proprietà delle sommatorie doppie
+
+- [Proprietà]{.blue .underline}. Si osservi ancora che è lecito estrarre da ogni sommatoria i termini che non dipendono dall'indice della sommatoria:
+$$
+\sum_{i=1}^n\sum_{j=1}^m a_i b_j=\sum_{i=1}^n a_i \sum_{j=1}^m b_j.
+$$
+
+- Si può perciò scrivere, come [caso particolare]{.blue}
+$$
+\left(\sum_{i=1}^na_i\right)^2= \sum_{j=1}^n \sum_{i=1}^n a_i a_j.
+$$
+Infatti, si ha che:
+$$
+\left(\sum_{i=1}^na_i\right)^2=\sum_{i=1}^na_i\times \sum_{i=1}^na_i=
+ \sum_{i=1}^na_i\sum_{j=1}^na_j= \sum_{i=1}^n \sum_{j=1}^n a_i a_j.
+$$
+
+## Proprietà delle sommatorie doppie
+\bi
+\item \empb{\underline{Proprietà}}. È lecito anche scrivere:
+\begin{equation*}
+\begin{aligned}
+\sum_{i=1}^n \sum_{j=1}^m a_i&=\sum_{i=1}^n a_i\sum_{j=1}^m 1= m\sum_{i=1}^n a_i,\\
+\sum_{i=1}^n \sum_{j=1}^m b_j&=\sum_{j=1}^m b_j\sum_{i=1}^n 1=n \sum_{j=1}^m b_j.
+\end{aligned}
+\end{equation*}
+\item \empb{\underline{Proprietà}}. È \empb{corretto} effettuare la seguente scomposizione:
+\[
+\sum_{i=1}^n \sum_{j=1}^m a_ib_{ij}= \sum_{i=1}^n \left(a_i\sum_{j=1}^m b_{ij}\right)=\sum_{i=1}^n a_i\sum_{j=1}^m b_{ij}.
+\]
+\item È invece \empr{priva di senso} la scrittura
+\[
+\sum_{j=1}^m b_{ij}\sum_{i=1}^na_i.
+\]
+\ei
+
+\end{frame}
+
+\begin{frame}\frametitle{Proprietà delle produttorie}
+\bi
+\item
+\empb{\underline{Proprietà}}. Se $\alpha$ è una costante che non dipende dall'indice $i$, allora vale che
+\[
+\prod_{i=1}^n  \alpha a_i = \alpha^n\prod_{i=1}^na_i.
+\]
+Infatti, si noti che:
+\[
+\prod_{i=1}^n \alpha a_i= \alpha a_1\times \alpha a_2\times\dots\times \alpha a_n=\alpha^n(a_1 \times a_2 \times \dots \times a_n)=\alpha^n\prod_{i=1}^na_i.
+\]
+\item \empb{\underline{Proprietà}}. Si osservi che:
+\[
+\prod_{i=1}^n 1=1.
+\]
+Infatti, si tratta una produttoria in cui il termine generico $a_i=1$
+\[
+\prod_{i=1}^n a_i=a_1\times a_2\times\dots\times a_n=1\times 1\times\dots\times 1=1.
+\]
+
+\ei
+
+\end{frame}
+
+\begin{frame}\frametitle{Proprietà delle produttorie}
+
+\bi
+\item La produttoria di una somma \empr{non} è uguale la somma delle produttorie:
+\[
+\prod_{i=1}^n(a_i+b_i)\neq\prod_{i=1}^na_i+\prod_{i=1}^nb_i.
+\]
+\item \empb{\underline{Proprietà}}. Vale che:
+\[
+\prod_{i=1}^na_ib_i=\prod_{i=1}^na_i \times \prod_{i=1}^nb_i.
+\]
+Infatti
+\begin{equation*}
+\begin{aligned}	
+\prod_{i=1}^na_ib_i&=a_1b_1\times a_2b_2\times\dots\times a_nb_n=(a_1a_2\cdots a_n) \times (b_1b_2\cdots b_n)=\prod_{i=1}^na_i\times \prod_{i=1}^nb_i.
+\end{aligned}
+\end{equation*}
+
+\ei
+\end{frame}
+
+\begin{frame}\frametitle{Proprietà delle produttorie}
+\bi
+\item \empb{\underline{Proprietà}}. Per $m > n$ vale che:
+\[
+\prod_{i=1}^n a_i\prod_{i=n+1}^m a_i=\prod_{i=1}^ma_i.
+\]
+Infatti si ha che
+$$
+\prod_{i=1}^n a_i\prod_{i=n+1}^m a_i = (a_1 a_2 \cdots a_n) \times (a_{n+1} a_{n+2} \cdots a_{m})= \prod_{i=1}^ma_i
+$$
+\item \empb{\underline{Proprietà}}. Se ogni $a_i > 0$, allora vale che
+\[
+\log \prod_{i=1}^na_i=\sum_{i=1}^n \log a_i.
+\]
+Infatti si ottiene che:
+\begin{equation*}
+\begin{aligned}		
+\log \prod_{i=1}^n a_i&= \log(a_1 a_2 \cdots a_n)=\log a_1 + \log a_2 + \dots + \log a_n = \sum_{i=1}^n \log a_i.
+\end{aligned}
+\end{equation*}
+\ei
+\end{frame}
+

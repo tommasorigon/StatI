@@ -1,0 +1,106 @@
+---
+title: "Statistica I"
+subtitle: 'Esame 17 Novembre 2023'
+lang: it
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+page-layout: full
+format:
+  html:
+    html-math-method: katex
+    echo: true
+    callout-appearance: minimal
+    theme: [simplex, ../template.css]
+    toc: true
+    toc-title: Indice
+    embed-resources: false
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 6, fig.width = 8)
+```
+
+## Problema 1
+
+Il [39esimo campionato nazionale di sci dell'Associazione Nazionale Circoli Italiani Universitari](https://anciu.it/28-01-04-02-2024-san-martino-di-castrozza-tn-39-campionato-nazionale-anciu-sci-angelo-puppella/) (ANCIU) si è svolto dal 28 gennaio al 4 febbraio 2024. Alla gara di slalom gigante maschile hanno partecipato $n = 215$ atleti. 
+
+La variabile `tempo` misura i secondi impiegati per tagliare il traguardo.  La funzione di ripartizione empirica della variabile `tempo` è disegnata nel seguito. Sono inoltre state disegnate delle linee orizzontali in corrispondenza dei valori $0.25,0.5,0.75$. 
+
+```{r}
+
+x <- c(34.26,35.79,36.43,36.99,38.91,38.93,39.27,39.3,39.37,40,40.1,40.13,40.23,40.34,40.92,41.05,41.12,41.33,41.86,42.36,42.64,42.66,42.73,42.96,43.13,43.2,43.33,43.48,43.68,43.77,43.85,44.25,44.42,44.48,44.63,44.65,44.88,44.98,45.02,45.12,45.16,45.22,45.24,45.33,45.54,45.56,45.81,45.87,46.04,46.18,46.21,46.23,46.23,46.34,46.39,46.63,46.69,46.74,46.77,46.95,47.21,47.25,47.33,47.35,47.42,47.49,47.71,47.78,47.79,47.96,48,48,48.04,48.25,48.28,48.41,48.49,48.53,48.77,48.81,48.84,48.93,49.05,49.18,49.2,49.26,49.37,49.46,49.51,49.61,49.62,49.69,49.82,50.18,50.28,50.42,50.52,50.58,50.7,50.77,50.94,51.28,51.28,51.37,51.4,51.43,51.46,51.5,51.53,51.55,51.68,51.73,51.94,52.4,52.46,52.77,53.06,53.06,53.24,53.32,53.47,53.49,53.54,53.54,53.64,54,54.25,54.4,54.44,54.45,54.47,54.66,54.7,55.01,55.14,55.26,55.28,55.38,55.6,55.6,56.03,56.19,56.22,56.23,56.54,56.57,56.59,56.6,56.79,56.91,57.04,57.15,57.28,57.29,57.5,57.51,57.56,57.58,57.6,57.76,57.93,58.11,58.28,58.32,58.57,58.69,59.26,59.26,59.3,59.58,59.83,59.91,59.95,60.43,60.58,61.54,61.55,62.27,62.83,62.85,63.35,63.65,63.68,63.77,63.83,64.4,64.74,65.49,65.63,65.91,66.32,66.42,66.74,67.41,67.53,67.56,68.2,68.88,69.19,69.59,71.9,73.64,76.54,76.66,76.97,79.98,82.21,83.5,93.38,98.81,98.92,101.2,107.64,113.09,116.06)
+
+plot(ecdf(x), ylab= "F(x)", main = "", xlab = "Tempo (secondi)", xaxt="n", yaxt="n")
+axis(1, at = seq(30, 120, by = 5), las=2)
+axis(2, at = seq(0, 1, by = 0.1), las=2)
+abline(h = 0.25, lty = "dotted")
+abline(h = 0.5, lty = "dotted")
+abline(h = 0.75, lty = "dotted")
+```
+
+1. Si dia la definizione di funzione di ripartizione $F(x)$ e si ottenga un valore approssimativo di $F(70)$ sulla base dei dati precedenti.
+
+1. Sapendo che $F(43) = 0.1116279$, si dica quanti atleti hanno tagliato il traguardo con un tempo minore o uguale di $43$ secondi.
+
+1. Sulla base del grafico precedente, si ottenga un valore approssimativo per la mediana della variabile `tempo`. Si ottengano inoltre dei valori approssimativi per il primo ed il terzo quartile.
+
+1. Si ottengano quindi degli indici di variabilità e di asimmetria basati sui valori ottenuti al punto precedente. Si commentino i risultati. 
+
+1. Sono presenti valori anomali? Perchè? Si disegni quindi un boxplot utilizzando i valori ottenuti ai punti precedenti [senza disegnare gli eventuali valori anomali]{.orange}.
+
+## Problema 2
+
+```{r, echo=F}
+ateneo <- c(
+  "ANCONA", "BERGAMO", "BOLOGNA", "BRESCIA", "CA FOSCARI", "CAGLIARI", "CAMERINO", "CATANIA", "CHIETI", "COSENZA", "FIRENZE", "GENOVA", "MILANO BICOCCA", "MILANO STATALE", "PADOVA", "PARMA",
+  "PISA", "SIENA", "TRENTO", "VARESE INSUBRIA"
+)
+x <- c(2, 1, 14, 8, 7, 9, 7, 9, 7, 33, 22, 12, 18, 22, 18, 8, 5, 5, 3, 5)
+y <- c(168, 69, 3382, 1818, 1545, 1131, 1359, 903, 1031, 4498, 4182, 2663, 2869, 2861, 4558, 1023, 1012, 938, 447, 526)
+dataset <- data.frame(partecipanti = x, punteggio = y)
+rownames(dataset) <- ateneo
+dataset <- dataset[dataset$partecipanti > 5,]
+# knitr::kable(dataset)
+```
+
+Il [39esimo campionato nazionale di sci dell'Associazione Nazionale Circoli Italiani Universitari](https://anciu.it/28-01-04-02-2024-san-martino-di-castrozza-tn-39-campionato-nazionale-anciu-sci-angelo-puppella/) (ANCIU) si è svolto dal 28 gennaio al 4 febbraio 2024. 
+
+Ciascun `ateneo` ha partecipato alla gara di slalom gigante maschile con un certo numero di atleti (`partecipanti`), totalizzando un certo `punteggio` di squadra. Le osservazioni relative agli $n = 14$ atenei con più di $5$ partecipanti sono riportate nella tabella seguente.
+
+| `ateneo`      | `partecipanti`| `punteggio`|
+|:--------------|------------:|---------:|
+|BOLOGNA        |           14|      3382|
+|BRESCIA        |            8|      1818|
+|CA FOSCARI     |            7|      1545|
+|CAGLIARI       |            9|      1131|
+|CAMERINO       |            7|      1359|
+|CATANIA        |            9|       903|
+|CHIETI         |            7|      1031|
+|COSENZA        |           33|      4498|
+|FIRENZE        |           22|      4182|
+|GENOVA         |           12|      2663|
+|MILANO BICOCCA |           18|      2869|
+|MILANO STATALE |           22|      2861|
+|PADOVA         |           18|      4558|
+|PARMA          |            8|      1023|
+
+1. Si rappresentino graficamente le variabili `partecipanti` e `punteggio` tramite un diagramma a dispersione.
+
+2. Si specifichi un modello di regressione per studiare il `punteggio` medio in funzione del numero di `partecipanti`. Si stimi tale modello.
+
+3. Si ottenga un indice di bontà d'adattamento per il modello stimato al punto precedente. Si ottenga inoltre la varianza residuale di tale modello. 
+
+4. Si supponga che il numero di partecipanti per ateneo non sia in alcun modo collegato alle capacità degli atleti. Gli organizzatori della gara auspicano che il numero di `partecipanti`, a parità di capacità, non influenzi il `punteggio` della squadra. I dati raccolti sono compatibili con questa affermazione? Perchè?
+
+5. Si ottengano i valori dei residui per gli atenei Milano Bicocca, Padova e Cosenza. Come è possibile interpretare il valore di questi residui?
+
+6. Sulla base del modello stimato in precedenza, quanti punti avrebbe totalizzato Milano Bicocca (o un qualunque altro ateneo) se avesse gareggiato con $30$ atleti?
+
+
+## Problema 3
+
+Siano $x_1,\dots,x_n$ ed $y_1,\dots,y_n$ due insiemi di dati. Dopo aver spiegato il contesto del problema, si [dimostri]{.orange} che le stime ai minimi quadrati per prevedere $y$ in funzione di $x$ tramite regressione lineare sono $\hat{\beta} = \text{cov}(x, y) / \text{var}(x)$ e $\hat{\alpha} = \bar{y} - \hat{\beta}\bar{x}$. 

@@ -1,0 +1,129 @@
+---
+title: 'Statistica I'
+subtitle: 'Esame 16 Novembre 2020'
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+page-layout: full
+format:
+  html:
+    html-math-method: katex
+    echo: true
+    callout-appearance: minimal
+    theme: [simplex, ../template.css]
+    toc: true
+    toc-title: Indice
+    embed-resources: false
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
+---
+
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 6, fig.width = 8)
+```
+
+
+```{r data generation, echo = FALSE, results = "hide"}
+## parameters
+a <- 2 #sample(2, 1)
+b <- sample(3:5, 1)
+n <- sample(4:6, 1)
+## solution
+res <- sum(a^(1:n) + b)
+```
+
+
+## Esercizio 1
+
+La variabile $x$ rappresenta la quantità di neve (in cm) che è caduta annualmente nella città di Buffalo, nello stato di New York, U.S.A. tra il 1910 ed il 1972, per un totale di $n = 63$ anni. La funzione di ripartizione empirica è disegnata nel seguito. Sono inoltre state disegnate delle linee orizzontali in corrispondenza dei valori $0.25,0.5,0.75$. 
+
+```{r, echo=FALSE}
+x <- scan("https://www2.stat.duke.edu/courses/Spring09/sta114/data/Hand/snowfall.dat")
+x <- 2.54*x
+plot(ecdf(x), ylab= "F(x)", main = "")
+abline(h = 0.25, lty = "dotted")
+abline(h = 0.5, lty = "dotted")
+abline(h = 0.75, lty = "dotted")
+```
+
+1. Si dia la definizione di mediana e una definizione di quantile$-p$. 
+
+1. Sulla base del grafico precedente, si ottenga un valore approssimativo per la mediana. Si ottengano inoltre dei valori approssimativi per il primo ed il terzo quartile.
+
+1. Si ottengano quindi degli indici di variabilità e di asimmetria basati sui valori ottenuti al punto precedente. Si commentino i risultati. 
+
+1. È noto che il massimo ed il minimo sono pari a `r max(x)` e `r min(x)`, rispettivamente. Si disegni quindi il boxplot utilizzando i valori ottenuti ai punti precedenti. Sono presenti valori anomali?
+
+1. Si calcoli la percentuale di anni in cui ha nevicato complessivamente più di 250cm.
+
+
+## Esercizio 2
+
+```{r data, echo = FALSE, results = "hide"}
+library(MASS)
+library(knitr)
+data("forbes")
+colnames(forbes)  <- c("Temperatura","Pressione")
+forbes$Temperatura <- (forbes$Temperatura - 32)*5/9
+forbes <- round(forbes,2)
+y <- forbes$Pressione
+x <- forbes$Temperatura
+```
+
+Per $n = `r nrow(forbes)`$ luoghi nelle Alpi viene misurata la pressione atmosferica (inHg) e la temperatura di ebollizione dell'acqua (in gradi Celsius). I dati provengono da un esperimento condotto da Forbes nel 1857. I dati sono riportati nella seguente tabella.
+
+```{r, results="asis", echo=F}
+kable(forbes)
+```
+
+1. Si disegni un istogramma della variabile `temperatura`, scegliendo un numero appropriato di classi equispaziate e giustificandone la scelta.
+
+1. Si ottengano la media aritmetica di entrambe le variabili `temperatura` e `pressione`. La relazione tra gradi Celsius e gradi Fahrenheit è la seguente:
+$$
+(\text{Fahrenheit}) = 32 + \frac{9}{5}(\text{Celsius}).
+$$
+Quanto vale la temperatura di ebollizione media espressa in gradi Fahrenheit? Si risponda senza ricalcolare tutti i valori della variabile `temperatura`.
+
+1. Si ottenga la varianza delle variabili `temperatura` e `pressione`.
+
+1. Si disegni un opportuno grafico che aiuti a comprendere la relazione tra le due variabili. Si calcoli quindi la correlazione: il valore ottenuto è coerente col grafico?
+
+1. Si ottenga la retta ai minimi quadrati per la relazione tra `temperatura` (variabile esplicativa $x$) e `pressione` (variabile risposta $y$), e la si disegni nel grafico ottenuto in precedenza. Si fornisca quindi un'interpretazione per i coefficienti.
+
+1. In base al modello stimato, se la temperatura di ebollizione dell'acqua è pari 97 gradi Celsius, a quanto è pari la pressione?
+
+1. Si ottenga un indice di bontà di adattamento ai dati della curva ottenuta e lo si interpreti nel contesto del problema.
+
+### Schema della soluzione
+
+Il grafico richiesto al punto 4 è il seguente:
+
+```{r}
+plot(x,y,xlab="Temperatura",ylab="Pressione")
+abline(lm(y~x),lty='dashed')
+```
+
+
+## Esercizio 3
+
+Si considerino le variabili `temperatura` e `pressione` presentate nell'esercizio precedente. La teoria fisica suggerisce che la relazione tra queste due variabili sia in realtà di tipo non-lineare. Se come in precedenza $y$ rappresenta la `pressione` ed $x$ la `temperatura`, allora il modello fisico suggerisce che
+
+$$
+y = \gamma\exp\{\lambda x\},
+$$
+dove $\gamma$ e $\lambda$ sono due costanti (ignote) positive. È inoltre noto che
+
+$$
+\frac{1}{17}\sum_{i=1}^{17} \log{y_i} = `r mean(log(y))`, \quad \frac{1}{17}\sum_{i=1}^{17} (\log{y_i})^2 = `r mean(log(y)^2)`, \quad \frac{1}{17}\sum_{i=1}^{17} x_i\log{y_i} = `r mean(x*log(y))`.
+$$
+
+1. Si ottengano dei valori ragionevoli per $\gamma$ e $\lambda$ e se ne fornisca un'interpretazione. 
+
+1. In base al nuovo modello stimato, se la temperatura di ebollizione dell'acqua è pari 97 gradi Celsius, a quanto è pari la pressione? Si confronti tale valore con quello ottenuto nell'esercizio precedente.
+
+1. Quale dei due modelli (lineare vs non-lineare) è preferibile? Si risponda tramite argomentazioni di tipo qualitativo.
+
+1. Quali indici confrontereste per verificare quale dei due modelli è preferibile da un punto di vista empirico? Se ne riporti la formula senza calcolarne il valore.
+

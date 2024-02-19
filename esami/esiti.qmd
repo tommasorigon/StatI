@@ -1,0 +1,61 @@
+---
+title: "Esiti prova del 29 Gennaio 2024"
+subtitle: "Statistica I"
+lang: it
+author:
+  name: Tommaso Rigon
+  affiliation: DEMS
+format:
+  html:
+    html-math-method: katex
+    echo: false
+    callout-appearance: minimal
+    theme: [cosmo, ../template.css]
+    toc: true
+    toc-title: Table of contents
+    embed-resources: true
+    code-line-numbers: true
+    smooth-scroll: true
+    fig-dpi: 250
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 4.5, fig.width = 7)
+```
+
+```{r}
+esiti_full <- read.csv("ESITI.csv", sep = ";")
+esiti <- subset(esiti_full,select=c(Matricola, Esito))
+esiti <- esiti[esiti$Esito != "ASS" & esiti$Esito != "RIT", ]
+
+xbar <- mean(as.numeric(esiti$Esito[esiti$Esito != "INS"]))
+xmed <- median(as.numeric(esiti$Esito[esiti$Esito != "INS"]))
+```
+
+
+## Testo dell'esame
+
+La [prova d'esame](29_01_2024.html) è disponibile online. Per visionare la propria prova è possibile venire a ricevimento.
+
+<!-- ## Distribuzione degli esiti -->
+
+
+<!-- La mediana dei voti sufficienti è `24`. La distribuzione dei voti sufficienti è riportata nel seguito tramite un boxplot. -->
+
+<!-- ```{r} -->
+<!-- par(mfrow = c(1, 1)) -->
+<!-- boxplot(as.numeric(esiti$Esito[esiti$Esito != "INS"]), xlab = "Voti sufficienti", horizontal = TRUE) -->
+<!-- ``` -->
+
+## Esiti
+
+```{r}
+esiti$Esito[esiti$Esito == 31] <- "30 e lode"
+knitr::kable(esiti[order(esiti$Matricola),],row.names = FALSE, align = c('l', 'l'))
+```
+
+```{r}
+# library(dplyr)
+#orale <- esiti_full %>% filter(!(Esito %in% c("INS", "RIT", "ASS"))) %>% filter(Esito >= 27)
+#knitr::kable(subset(orale, select = c(Cognome, Nome)))
+```
