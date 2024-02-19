@@ -1,6 +1,6 @@
 ---
 title: "Statistica I"
-subtitle: 'Esame 17 Novembre 2023'
+subtitle: 'Esame 29 Febbraio 2024'
 lang: it
 author:
   name: Tommaso Rigon
