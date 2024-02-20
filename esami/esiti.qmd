@@ -35,7 +35,7 @@ xmed <- median(as.numeric(esiti$Esito[esiti$Esito != "INS"]))
 
 ## Testo dell'esame
 
-La [prova d'esame](29_01_2024.html) è disponibile online. Per visionare la propria prova è possibile venire a ricevimento.
+La [prova d'esame](19_02_2024.html) è disponibile online. Per visionare la propria prova è possibile venire a ricevimento.
 
 <!-- ## Distribuzione degli esiti -->
 
