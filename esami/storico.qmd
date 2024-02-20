@@ -51,3 +51,8 @@ aggregate(Esito ~ AA, median, data = filter(dataset, Appello == "I"))
 ```{r}
 summary(lm(Esito ~ AA, data = filter(dataset, Appello == "I")))
 ```
+
+```{r}
+summary(lm(Esito ~ Appello  + AA, data = dataset))
+```
+
