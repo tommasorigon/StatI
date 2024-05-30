@@ -19,25 +19,22 @@ format:
     fig-dpi: 250
 ---
 
-
-L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli studenti i principali strumenti della [statistica descrittiva]{.orange} univariata e bivariata per l'analisi di dati riguardanti fenomeni di varia natura, inclusi quelli economici, aziendali e sociali.
+L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli studenti i principali strumenti della [statistica descrittiva]{.orange} univariata e bivariata.
 
 ## Materiale didattico
 
-Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collegamenti ipertestuali](). Si precisa che questa pagina web è soggetta a modifiche, quindi si prega di controllare l'ultima versione aggiornata.
+### Testi di riferimento
 
-### Testo di riferimento
+- Piccolo, D. (2010), [*Statistica*](https://www.mulino.it/isbn/9788815139023), Terza edizione, Il Mulino.
+- Cicchitelli, G., D'Urso P. e Minozzo, M. (2022), [*Statistica. Principi e metodi*](https://he.pearson.it/catalogo/642), Quarta edizione, Pearson.
 
--   Piccolo, D. (2010), *Statistica*, Terza edizione, Il Mulino.
+### Testo di consultazione
 
-### Testi di consultazione
-
--   Cicchitelli, G. (2012), *Statistica principi e metodi*, Seconda edizione, Pearson.
--   Piccolo, D. (2020), *Statistica per le decisioni*, Terza edizione, Il Mulino.
+- Piccolo, D. (2020). [*Statistica per le decisioni*](https://www.mulino.it/isbn/9788815272201), Terza edizione, Il Mulino.
 
 ### Materiale didattico
 
-[Nota]{.orange}: la dicitura §2.1 --- §2.4 indica che vanno considerate le Sezioni §2.1, §2.2, §2.3 e §2.4 del libro di testo.
+[Nota]{.orange}: la dicitura §2.1 --- §2.4 indica che vanno considerate le Sezioni §2.1, §2.2, §2.3 e §2.4 del libro di testo (Piccolo, 2010).
 
 | Argomenti                            | Materiale didattico                        | Ulteriore materiale               |
 |------------------------|---------------------------|----------------------|
@@ -109,7 +106,9 @@ Il materiale didattico di ciascuna lezione è scaricabile utilizzando i [collega
 
 ## Modalità d'esame
 
-La modalità di verifica delle conoscenze acquisite durante il corso è basata su una [prova scritta]{.orange}. La prova d'esame comprende esercizi simili a quelli visti nelle esercitazioni e quesiti di carattere teorico.
+La modalità di verifica delle conoscenze acquisite durante il corso è basata su una [prova scritta]{.orange}. La prova d'esame comprende [domande aperte]{.blue} di carattere teorico ed [esercizi]{.blue} simili a quelli visti a lezione. 
+
+Inoltre, gli studenti che otterranno una [valutazione alla prova scritta maggiore o uguale a 26]{.blue} dovranno obbligatoriamente sostenere una [prova orale aggiuntiva]{.orange}.
 
 ## Propedeuticità
 
