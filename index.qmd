@@ -82,11 +82,11 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 
 ### Approfondimenti
 
-#### Quotidiani
+<!-- #### Quotidiani -->
 
--   [La vera America è qui da noi: italiani più ricchi](https://www.corriere.it/esteri/20_giugno_25/vera-america-qui-noi-italiani-piu-ricchi-d4cc4256-b64b-11ea-9dea-5ac3c9ec7c08.shtml). *Corriere della Sera* del 25 Giugno 2020.
+<!-- -   [La vera America è qui da noi: italiani più ricchi](https://www.corriere.it/esteri/20_giugno_25/vera-america-qui-noi-italiani-piu-ricchi-d4cc4256-b64b-11ea-9dea-5ac3c9ec7c08.shtml). *Corriere della Sera* del 25 Giugno 2020. -->
 
--   [A caccia di un milione di scienziati dei dati. Inizia la democratizzazione della data science](https://nova.ilsole24ore.com/nova24-tech/a-caccia-di-un-milione-di-scienziati-dei-dati-inizia-la-democratizzazione-della-data-science/). *Nóva, de Il Sole 24 ore* del 20 Marzo 2019.
+<!-- -   [A caccia di un milione di scienziati dei dati. Inizia la democratizzazione della data science](https://nova.ilsole24ore.com/nova24-tech/a-caccia-di-un-milione-di-scienziati-dei-dati-inizia-la-democratizzazione-della-data-science/). *Nóva, de Il Sole 24 ore* del 20 Marzo 2019. -->
 
 #### Articoli scientifici (in inglese)
 
@@ -108,7 +108,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 
 La modalità di verifica delle conoscenze acquisite durante il corso è basata su una [prova scritta]{.orange}. La prova d'esame comprende [domande aperte]{.blue} di carattere teorico ed [esercizi]{.blue} simili a quelli visti a lezione. 
 
-Inoltre, gli studenti che otterranno una [valutazione alla prova scritta maggiore o uguale a 26]{.blue} dovranno obbligatoriamente sostenere una [prova orale aggiuntiva]{.orange}.
+<!-- Inoltre, gli studenti che otterranno una [valutazione alla prova scritta maggiore o uguale a 26]{.blue} dovranno obbligatoriamente sostenere una [prova orale aggiuntiva]{.orange}. -->
 
 ## Propedeuticità
 
