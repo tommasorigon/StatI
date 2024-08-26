@@ -98,6 +98,9 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 
 -   [Schwertman, N. C., Gilks, A. J., and Cameron, J. (1990)](approfondimenti/Schwertman1990.pdf). A simple noncalculus proof that the median minimizes the sum of the absolute deviations. *The American Statistician* **44**(1), 38--38.
 
+-   [Spiegelhalter (2004)](approfondimenti/Spiegelhalter2004.pdf). Shipman's statistical legacy. *Significance*.
+
+
 -   [Wainer, H. (1984)](approfondimenti/Wainer1984.pdf). How to display data badly. *The American Statistician* **38**(2), 137--147.
 
 ### Altro
