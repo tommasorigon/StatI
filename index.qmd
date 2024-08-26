@@ -31,6 +31,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 ### Testo di consultazione
 
 - Piccolo, D. (2020). [*Statistica per le decisioni*](https://www.mulino.it/isbn/9788815272201), Terza edizione, Il Mulino.
+- Spiegelhalter, D. (2020). [*L'arte della statistica*](https://www.einaudi.it/catalogo-libri/scienze-sociali/sociologia/larte-della-statistica-david-spiegelhalter-9788806246624/). Einaudi
 
 ### Materiale didattico
 
