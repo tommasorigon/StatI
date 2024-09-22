@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="exe_1_bis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -51,7 +51,34 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -60,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Indice</h2>
    
   <ul>
   <li><a href="#homepage" id="toc-homepage" class="nav-link active" data-scroll-target="#homepage">Homepage</a>
@@ -83,21 +110,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Autore/Autrice</div>
-  <div class="quarto-title-meta-heading">Affiliazione</div>
+<div class="quarto-title-meta-author column-page-left">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
     <p class="author"><span class="orange">Tommaso Rigon</span> </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             <em>Università degli Studi di Milano-Bicocca</em>
           </p>
       </div>
-    </div>
+  </div>
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
       
   
@@ -105,14 +132,17 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="homepage" class="level1">
 <h1><a href="../index.html">Homepage</a></h1>
+<p>Le soluzioni di alcuni esercizi sono state gentilmente fornite dal <span class="blue">tutor di Statistica I</span> dell’A.A. 2021/2022, <span class="orange">Alex Alborghetti</span>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
 <section id="esercizio-a" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h2>
 <p>Il controllo sul peso (in grammi) di <span class="math inline">n = 71</span> pacchetti di burro ha fornito la seguente distribuzione di frequenza <span class="orange">cumulata</span>.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 13%">
@@ -151,11 +181,126 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Rappresentare graficamente il fenomeno tramite un istogramma.</p></li>
 <li><p>Quanti sono i pacchetti di burro che pesano meno di <span class="math inline">252</span>g? Quanti quelli che hanno un peso compreso nell’intervallo <span class="math inline">(251, 252]</span>?</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’unità statistica considerata è il pacchetto di burro, mentre la variabile considerata è di tipo quantitativo continuo, poiché il peso di ciascun pacchetto può assumere valori in <span class="math inline">\mathbb{R}^+</span>. I dati sono suddivisi in sei classi di ampiezza pari a <span class="math inline">1 g</span>.</p>
+<p>Ricordando la definizione della generica frequenza cumulata:</p>
+<p><span class="math display">
+N_j = n_1 + \dots + n_j = \sum_{j'=1}^j n_{j'}, \quad \text{con} \; j = 1, \dots, k,
+</span> si può quindi notare che la j-esima frequenza assoluta <span class="math inline">n_j</span> è ottenibile come scarto tra <span class="math inline">N_j</span> ed <span class="math inline">N_{j-1}</span>, ovvero: <span class="math display">
+N_j - N_{j-1} = n_1 + \dots + n_{j-1} + n_j - (n_1 + \dots + n_{j-1}) = n_j.
+</span> Applicando questa formula si può quindi ricavare la seguente tabella:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Classe</th>
+<th style="text-align: center;">Freq. cumulata</th>
+<th style="text-align: center;">Freq. assoluta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(249, 250]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(250, 251]</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(251, 252]</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">42 - 15 = 27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(252, 253]</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">60 - 42 = 18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(253, 254]</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">70 - 60 = 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(254, 255]</td>
+<td style="text-align: center;">71</td>
+<td style="text-align: center;">71 - 70 = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Le frequenze relative, invece, si ottengono semplicemente rapportando le frequenze assolute alla numerosità campionaria, in questo caso pari ad <span class="math inline">n = 71</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Classe</th>
+<th style="text-align: center;">Freq. cumulata</th>
+<th style="text-align: center;">Freq. relativa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(249, 250]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(250, 251]</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">15/71 = 0.211</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(251, 252]</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">27/71 = 0.380</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(252, 253]</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">18/71 = 0.254</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(253, 254]</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">10/71 = 0.141</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(254, 255]</td>
+<td style="text-align: center;">71</td>
+<td style="text-align: center;">1/71 = 0.014</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_1_bis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I pacchetti di burro che pesano al più <span class="math inline">252 g</span> sono <span class="math inline">F(252) = 42</span>.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="esercizio-b" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-b">Esercizio B</h2>
 <p>Durante la correzione delle bozze di un libro di <span class="math inline">280</span> pagine si è riscontrata la seguente distribuzione degli errori di stampa per pagina:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Numero di errori</th>
@@ -195,6 +340,70 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Calcolare e disegnare la funzione di ripartizione.</p></li>
 <li><p>Qual è la proporzione di pagine con meno di 3 errori? Quanto vale <span class="math inline">F(3)</span>?</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’unità statistica è la pagina del libro. Il numero di errori di stampa per pagina è una variabile quantitativa discreta, poiché assume valori interi.</p>
+<p>Ricordando la definizione di funzione di ripartizione empirica: <span class="math display">
+F(x) = \frac{1}{n} \sum_{i=1}^n \mathbb{I}(x_i \leq x),
+</span> possiamo quindi ottenere la seguente tabella:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Valore</th>
+<th style="text-align: center;"><span class="math inline">F(x)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: center;">112/280 = 0.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">200/280 = 0.714</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">244/280 = 0.871</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">262/280 = 0.936</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: center;">272/280 = 0.971</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>La cui rappresentazione grafica è data da:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_1_bis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1800"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I risultati sono arrotondati a tre cifre decimali. La proporzione di pagine con meno di tre errori è <span class="math inline">F(2) = 0.871</span>, mentre <span class="math inline">F(3) = 0.936</span>, come visibile dalla tabella precedente.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="esercizio-c" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h2>
@@ -211,7 +420,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="esercizio-d-cicchitelli-esercizio-2.4" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-d-cicchitelli-esercizio-2.4">Esercizio D (Cicchitelli, esercizio 2.4)</h2>
 <p>Quella che segue è una distribuzione di frequenze di famiglie italiane secondo il numero di componenti (dati Istat; frequenze espresse in migliaia)</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 47%">
 <col style="width: 8%">
@@ -256,7 +465,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="exe_1_bis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="1800"></p>
+<p><img src="exe_1_bis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1800"></p>
 </figure>
 </div>
 </div>
@@ -272,6 +481,32 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell" data-layout-align="center">
 <pre><code>##  [1] -0.56 -0.23  1.56  0.07  0.13  1.72  0.46 -1.27 -0.69 -0.45</code></pre>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La variabile <span class="math inline">y</span> assume valori tendenzialmente minori della variabile <span class="math inline">x</span>, dato che dal grafico sembra appartenere all’intervallo <span class="math inline">(-1.3, 1.5)</span> circa, mentre la variabile <span class="math inline">y</span> appartiene all’intervallo <span class="math inline">(-3, 0.8)</span> circa.</p>
+<p>A giudicare dal grafico, vale approssimativamente che <span class="math inline">F_x(0) = 0.6</span>, mentre <span class="math inline">F_x (2) = 1</span>, dove <span class="math inline">F_x(\cdot)</span> rappresenta la funzione di ripartizione empirica della variabile <span class="math inline">x</span>.</p>
+<p>Come già osservato in precedenza, <span class="math inline">y</span> sembra appartenere all’intervallo <span class="math inline">(-3, 0.8)</span>, pertanto: <span class="math display">
+y = (0.22,\:-0.64,\: -0.60,\: -0.89,\: -1.56,\:  0.79,\: -0.50,\: -2.97,\: -0.30,\: -1.47)
+</span> e <span class="math display">
+x = (-0.56,\: -0.23,\:  1.56,\:  0.07,\:  0.13,\:  1.72,\:  0.46,\: -1.27,\: -0.69,\: -0.45),
+</span> Inoltre, si ottiene che: <span class="math display">
+F_x(0) = \frac{1}{10} \sum_{i=1}^{10} \mathbb{I}(x_i \leq 0) = 0.5, \qquad F_x(2) = \frac{1}{10} \sum_{i=1}^{10} \mathbb{I}(x_i \leq 2) = 1.
+</span> I valori del massimo e del minimo di <span class="math inline">y</span> sono invece i seguenti: <span class="math display">
+\min(y) = -2.97, \quad \max(y) = 0.79.
+</span></p>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -313,18 +548,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -332,12 +556,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiato!");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiato!");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -356,11 +580,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -370,8 +633,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -383,7 +655,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -427,6 +822,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -452,6 +848,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -512,6 +934,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

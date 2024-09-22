@@ -1,11 +1,6 @@
 ---
 title: 'Statistica I'
 subtitle: 'Esercizi 1: distribuzioni di frequenza'
-execute:
-  echo: false
-  include: true
-  warning: true
-lang: it
 author: "[Tommaso Rigon]{.orange}"
 institute: "_Università degli Studi di Milano-Bicocca_"
 page-layout: full
@@ -16,11 +11,13 @@ format:
     callout-appearance: minimal
     theme: [simplex, ../template.css]
     toc: true
-    toc-title: Table of contents
+    toc-title: Indice
     embed-resources: false
     code-line-numbers: true
     smooth-scroll: true
     fig-dpi: 250
+editor_options: 
+  chunk_output_type: console
 ---
 
 # [Homepage](../index.html)
@@ -29,6 +26,8 @@ format:
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 5, fig.width = 9)
 ```
+
+Le soluzioni di alcuni esercizi sono state gentilmente fornite dal [tutor di Statistica I]{.blue} dell'A.A. 2021/2022, [Alex Alborghetti]{.orange}, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori. 
 
 ## Esercizio A
 
@@ -45,6 +44,66 @@ Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la s
 3.  Rappresentare graficamente il fenomeno tramite un istogramma.
 
 4.  Quanti sono i pacchetti di burro che pesano meno di $252$g? Quanti quelli che hanno un peso compreso nell'intervallo $(251, 252]$?
+
+::: {.callout-note collapse=true}
+
+## Schema della soluzione
+
+L'unità statistica considerata è il pacchetto di burro, mentre la variabile considerata è di tipo quantitativo continuo, poiché il peso di ciascun pacchetto può assumere valori in $\mathbb{R}^+$. I dati sono suddivisi in sei classi di ampiezza pari a $1 g$.
+
+Ricordando la definizione della generica frequenza cumulata:
+
+$$
+N_j = n_1 + \dots + n_j = \sum_{j'=1}^j n_{j'}, \quad \text{con} \; j = 1, \dots, k,
+$$
+si può quindi notare che la j-esima frequenza assoluta $n_j$ è ottenibile come scarto tra $N_j$ ed $N_{j-1}$, ovvero: 
+$$
+N_j - N_{j-1} = n_1 + \dots + n_{j-1} + n_j - (n_1 + \dots + n_{j-1}) = n_j.
+$$ 
+Applicando questa formula si può quindi ricavare la seguente tabella:
+
+| Classe      | Freq. cumulata | Freq. assoluta |
+|:------------|:--------------:|:--------------:|
+| (249, 250\] |       0        |       0        |
+| (250, 251\] |       15       |       15       |
+| (251, 252\] |       42       |  42 - 15 = 27  |
+| (252, 253\] |       60       |  60 - 42 = 18  |
+| (253, 254\] |       70       |  70 - 60 = 10  |
+| (254, 255\] |       71       |  71 - 70 = 1   |
+
+Le frequenze relative, invece, si ottengono semplicemente rapportando le frequenze assolute alla numerosità campionaria, in questo caso pari ad $n = 71$.
+
+| Classe      | Freq. cumulata | Freq. relativa |
+|:------------|:--------------:|:--------------:|
+| (249, 250\] |       0        |       0        |
+| (250, 251\] |       15       | 15/71 = 0.211  |
+| (251, 252\] |       42       | 27/71 = 0.380  |
+| (252, 253\] |       60       | 18/71 = 0.254  |
+| (253, 254\] |       70       | 10/71 = 0.141  |
+| (254, 255\] |       71       |  1/71 = 0.014  |
+
+```{r }
+dati = c()
+numerosità = c(0, 15, 27, 18, 10, 1)
+
+for(i in 1:6)
+{
+  dati = c(dati, runif(numerosità[i], min = 248+i, max = 249+i))
+}
+
+hist(dati, 
+     breaks = 249:255,
+     freq = T, 
+     ylim = c(0, 30), 
+     main = "Istogramma",
+     xlab = "Peso (g)",
+     ylab = "Frequenze assolute"
+     )
+```
+
+I pacchetti di burro che pesano al più $252 g$ sono $F(252) = 42$.
+
+:::
 
 ## Esercizio B
 
@@ -66,6 +125,44 @@ Durante la correzione delle bozze di un libro di $280$ pagine si è riscontrata 
 3.  Calcolare e disegnare la funzione di ripartizione.
 
 4.  Qual è la proporzione di pagine con meno di 3 errori? Quanto vale $F(3)$?
+
+::: {.callout-note collapse=true}
+
+## Schema della soluzione
+
+L'unità statistica è la pagina del libro. Il numero di errori di stampa per pagina è una variabile quantitativa discreta, poiché assume valori interi. 
+
+Ricordando la definizione di funzione di ripartizione empirica: 
+$$
+F(x) = \frac{1}{n} \sum_{i=1}^n \mathbb{I}(x_i \leq x),
+$$ 
+possiamo quindi ottenere la seguente tabella:
+
+| Valore |     $F(x)$      |
+|:-------|:---------------:|
+| 0      |  112/280 = 0.4  |
+| 1      | 200/280 = 0.714 |
+| 2      | 244/280 = 0.871 |
+| 3      | 262/280 = 0.936 |
+| 4      | 272/280 = 0.971 |
+| 5      |        1        |
+
+La cui rappresentazione grafica è data da:
+
+```{r}
+dati = c(rep(0,112),
+         rep(1,88),
+         rep(2,44),
+         rep(3,18),
+         rep(4,10),
+         rep(5,8))
+rip = ecdf(dati)
+plot(rip, xlab = "Errori per pagina", ylab = "F(x)", main = "Funzione di ripartizione empirica", xlim = c(0,6))
+```
+
+I risultati sono arrotondati a tre cifre decimali. La proporzione di pagine con meno di tre errori è $F(2) = 0.871$, mentre $F(3) = 0.936$, come visibile dalla tabella precedente.
+
+:::
 
 ## Esercizio C
 
@@ -99,6 +196,8 @@ Quella che segue è una distribuzione di frequenze di famiglie italiane secondo 
 
 ## Esercizio E
 
+
+
 Si considerino le funzioni di ripartizione relative alle variabili $x$ ed $y$
 
 ```{r}
@@ -126,3 +225,31 @@ round(y,2)
 ```{r}
 round(x,2)
 ```
+
+::: {.callout-note collapse=true}
+
+## Schema della soluzione
+
+
+La variabile $y$ assume valori tendenzialmente minori della variabile $x$, dato che dal grafico sembra appartenere all'intervallo $(-1.3, 1.5)$ circa, mentre la variabile $y$ appartiene all'intervallo $(-3, 0.8)$ circa.
+
+A giudicare dal grafico, vale approssimativamente che $F_x(0) = 0.6$, mentre $F_x (2) = 1$, dove $F_x(\cdot)$ rappresenta la funzione di ripartizione empirica della variabile $x$.
+
+Come già osservato in precedenza, $y$ sembra appartenere all'intervallo $(-3, 0.8)$, pertanto:
+$$
+y = (0.22,\:-0.64,\: -0.60,\: -0.89,\: -1.56,\:  0.79,\: -0.50,\: -2.97,\: -0.30,\: -1.47)
+$$
+e
+$$
+x = (-0.56,\: -0.23,\:  1.56,\:  0.07,\:  0.13,\:  1.72,\:  0.46,\: -1.27,\: -0.69,\: -0.45),
+$$
+Inoltre, si ottiene che:
+$$
+F_x(0) = \frac{1}{10} \sum_{i=1}^{10} \mathbb{I}(x_i \leq 0) = 0.5, \qquad F_x(2) = \frac{1}{10} \sum_{i=1}^{10} \mathbb{I}(x_i \leq 2) = 1.
+$$ 
+I valori del massimo e del minimo di $y$ sono invece i seguenti:
+$$
+\min(y) = -2.97, \quad \max(y) = 0.79.
+$$
+
+:::
