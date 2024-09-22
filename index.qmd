@@ -45,7 +45,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | *Esercizi*                           | [Esercizi 0](exe/exe_0.html)               |                                   |
 | Concetti preliminari                 | [Slides unità A.2](slides/sl_A2.pdf)       | §2.1 --- §2.4, §2.6               |
 | Distribuzioni di frequenza           | [Slides unità B](slides/sl_B.pdf)          | §3.1 --- §3.5                     |
-| **Esercitazione**                    | [Esercitazione 1](exe/exe_1.html)          |                                   |
+| **Esercitazione**                    | [Esercitazione 1](exe/es_1.pdf)          |                                   |
 | *Esercizi*                           | [Esercizi 1](exe/exe_1_bis.html)           | [Soluzione 1](exe/sol_exe_1.html) |
 | Indici di posizione                  | [Slides unità C](slides/sl_C.pdf)          | §4.1 --- §4.4, §4.6, §4.9         |
 | **Applicazioni**                     | [Slides unità D](slides/sl_D.pdf)          |                                   |
