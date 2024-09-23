@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="exe_2_bis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -51,7 +51,34 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -65,18 +92,21 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#homepage" id="toc-homepage" class="nav-link active" data-scroll-target="#homepage">Homepage</a>
   <ul class="collapse">
-  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link" data-scroll-target="#esercizio-a">Esercizio A</a></li>
-  <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
-  <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
-  <li><a href="#esercizio-d" id="toc-esercizio-d" class="nav-link" data-scroll-target="#esercizio-d">Esercizio D</a></li>
-  <li><a href="#esercizio-e" id="toc-esercizio-e" class="nav-link" data-scroll-target="#esercizio-e">Esercizio E</a></li>
-  <li><a href="#esercizio-f" id="toc-esercizio-f" class="nav-link" data-scroll-target="#esercizio-f">Esercizio F</a></li>
-  <li><a href="#esercizio-g-difficile" id="toc-esercizio-g-difficile" class="nav-link" data-scroll-target="#esercizio-g-difficile">Esercizio G (difficile)</a></li>
-  <li><a href="#esercizio-h" id="toc-esercizio-h" class="nav-link" data-scroll-target="#esercizio-h">Esercizio H</a></li>
-  <li><a href="#esercizio-i" id="toc-esercizio-i" class="nav-link" data-scroll-target="#esercizio-i">Esercizio I</a>
+  <li><a href="#esercizio-a-velocità-della-luce-continuazione" id="toc-esercizio-a-velocità-della-luce-continuazione" class="nav-link" data-scroll-target="#esercizio-a-velocità-della-luce-continuazione">Esercizio A (Velocità della luce, continuazione)</a>
   <ul class="collapse">
-  <li><a href="#schema-della-soluzione" id="toc-schema-della-soluzione" class="nav-link" data-scroll-target="#schema-della-soluzione">Schema della soluzione</a></li>
+  <li><a href="#domande" id="toc-domande" class="nav-link" data-scroll-target="#domande">Domande</a></li>
   </ul></li>
+  <li><a href="#esercizio-b-gran-premio-del-canada" id="toc-esercizio-b-gran-premio-del-canada" class="nav-link" data-scroll-target="#esercizio-b-gran-premio-del-canada">Esercizio B (Gran premio del Canada)</a>
+  <ul class="collapse">
+  <li><a href="#domande-1" id="toc-domande-1" class="nav-link" data-scroll-target="#domande-1">Domande</a></li>
+  </ul></li>
+  <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
+  <li><a href="#esercizio-d-età-ed-altezza" id="toc-esercizio-d-età-ed-altezza" class="nav-link" data-scroll-target="#esercizio-d-età-ed-altezza">Esercizio D (Età ed altezza)</a></li>
+  <li><a href="#esercizio-e-ditta-di-trasporti" id="toc-esercizio-e-ditta-di-trasporti" class="nav-link" data-scroll-target="#esercizio-e-ditta-di-trasporti">Esercizio E (Ditta di trasporti)</a></li>
+  <li><a href="#esercizio-f" id="toc-esercizio-f" class="nav-link" data-scroll-target="#esercizio-f">Esercizio F</a></li>
+  <li><a href="#esercizio-g" id="toc-esercizio-g" class="nav-link" data-scroll-target="#esercizio-g">Esercizio G</a></li>
+  <li><a href="#esercizio-h-difficile" id="toc-esercizio-h-difficile" class="nav-link" data-scroll-target="#esercizio-h-difficile">Esercizio H (difficile)</a></li>
+  <li><a href="#esercizio-i" id="toc-esercizio-i" class="nav-link" data-scroll-target="#esercizio-i">Esercizio I</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -90,21 +120,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta-author">
+<div class="quarto-title-meta-author column-page-left">
   <div class="quarto-title-meta-heading">Autore/Autrice</div>
   <div class="quarto-title-meta-heading">Affiliazione</div>
   
     <div class="quarto-title-meta-contents">
     <p class="author"><span class="orange">Tommaso Rigon</span> </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             <em>Università degli Studi di Milano-Bicocca</em>
           </p>
       </div>
-    </div>
+  </div>
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
       
   
@@ -112,12 +142,101 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="homepage" class="level1">
 <h1><a href="../index.html">Homepage</a></h1>
-<section id="esercizio-a" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h2>
+<p>Alcune delle seguenti soluzioni sono state gentilmente fornite dal <span class="blue">tutor di Statistica I</span> dell’A.A. 2021/2022, <span class="orange">Alex Alborghetti</span>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
+<section id="esercizio-a-velocità-della-luce-continuazione" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-a-velocità-della-luce-continuazione">Esercizio A (Velocità della luce, continuazione)</h2>
+<p>Si faccia riferimento ai dati trasformati <span class="math inline">y_1,\dots,y_{66}</span> dell’<a href="es_1.pdf">Esercitazione 1</a>, riguardanti la <span class="orange">la velocità della luce</span>.</p>
+<section id="domande" class="level3">
+<h3 class="anchored" data-anchor-id="domande">Domande</h3>
+<ol type="1">
+<li>Si calcoli la media e la mediana dei dati. Si commentino i risultati.</li>
+<li>Si escluda il valore anomalo (-44) dall’analisi e si calcolino nuovamente media e mediana. Si commenti.</li>
+</ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I risultati che seguono <span class="orange">non</span> costituiscono la soluzione completa dato che i vari passaggi sono stati omessi.</p>
+<section id="media-e-mediana" class="level4">
+<h4 class="anchored" data-anchor-id="media-e-mediana">Media e mediana</h4>
+<p>La media dei dati trasformati è circa 26.21 mentre la mediana è 27.</p>
+</section>
+<section id="media-e-mediana-dati-trasformati" class="level4">
+<h4 class="anchored" data-anchor-id="media-e-mediana-dati-trasformati">Media e mediana dati trasformati</h4>
+<p>La media dei dati trasformati, escluso il valore anomalo -44, è pari a 27.29 mentre la mediana è 27.</p>
+</section>
+<section id="commento" class="level4">
+<h4 class="anchored" data-anchor-id="commento">Commento</h4>
+<p>Il valore anomalo influenza sensibilmente il valore della media aritmetica. Viceversa, la mediana rimane invariata.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="esercizio-b-gran-premio-del-canada" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-b-gran-premio-del-canada">Esercizio B (Gran premio del Canada)</h2>
+<p>Il Gran premio del Canada viene interrotto per la pioggia dopo <span class="math inline">42</span> giri, quando il pilota A era in terza posizione, con una velocità media di <span class="math inline">204</span> km/h. I restanti <span class="math inline">21</span> giri vengono percorsi da dal pilota A ad una media di <span class="math inline">126</span> km/h. Il circuito misura <span class="math inline">5</span> km. Al termine si sommano i tempi delle due frazioni di gara e il pilota A risulta il vincitore.</p>
+<section id="domande-1" class="level3">
+<h3 class="anchored" data-anchor-id="domande-1">Domande</h3>
+<ol type="1">
+<li><p>Calcolare la velocità media del pilota A.</p></li>
+<li><p>Calcolare la durata delle due frazioni di gara e quella complessiva.</p></li>
+</ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema di soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In totale ci sono <span class="math inline">n = 63 \times 5 = 315</span> km da percorrere, di cui <span class="math inline">42 \times 5 = 210</span> nella prima frazione di gara e <span class="math inline">21 \times 5 = 105</span> nella seconda. La velocità media complessiva si ottiene tramite una media armonica ponderata, ovvero</p>
+<p><span class="math display">
+\mathbb{A} = \frac{315}{210/204 + 105/126}= \frac{63}{42/204 + 21/126} = 169.1053.
+</span> Le durate delle due frazioni di gara <span class="math inline">t_1, t_2</span> sono pari a (tempo) = (distanza) / (velocità) e pertanto si ottiene che</p>
+<p><span class="math display">
+t_1 = 210 / 204 = 1.0294 \text{h}, \qquad t_2 = 105 / 126 = 0.8\bar{3} \text{h},
+</span> per un totale di <span class="math inline">t_1 + t_2 = 1.8627</span> ore.</p>
+</div>
+</div>
+</div>
+<!-- ## Blocchi di marmo -->
+<!-- Da una cava di marmo vengono ricavati $n = 25$ blocchi cubici, la cui distribuzione secondo la dimensione del lato ($l$) misurata in metri risulta la seguente: -->
+<!-- | Dimensione lato $l$ | $(1,2]$ | $(2,4]$ | $(4,5]$ | $(5,6]$ | -->
+<!-- |---------------------|---------|---------|---------|---------| -->
+<!-- | Frequenze assolute  | 8       | 9       | 6       | 2       | -->
+<!-- ### Domanda -->
+<!-- Si calcoli un'approssimazione per la dimensione media del lato di tali blocchi di marmo. -->
+<!-- ::: {.callout-note collapse=true} -->
+<!-- ## Schema della soluzione -->
+<!-- Procedendo come in un esercizio precedente, otteniamo che -->
+<!-- $$ -->
+<!-- \bar{x} \approx \frac{1}{25} \sum_{j=1}^4m_j n_j = \frac{1}{25}(1.5 \times 8 + 3 \times 9 + 4.5 \times 6 + 5.5 \times 2 ) = 3.08. -->
+<!-- $$ -->
+<!-- ::: -->
+</section>
+</section>
+<section id="esercizio-c" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h2>
 <p>Per le osservazioni <span class="math inline">x_1,\dots,x_{11}</span>, i cui valori sono <span class="math inline">(−4, 5, 3, 1, −1, 3, −1, 1, 0, 3, 2)</span>, si calcolino media e mediana.</p>
 <p>Inoltre, si dica quali sono mediana e media delle osservazioni trasformate <span class="math inline">y_1,\dots,y_{11}</span> che si ottengono trasformando i dati di partenza secondo le funzioni</p>
 <p><span class="math display">y_i = f_1(x_i)=e^{x_i}, \quad i=1,\dots,11.</span> <span class="math display">
@@ -128,7 +247,7 @@ y_i = f_3(x_i) = -3 x_i + 1,\qquad i=1,\dots,11.
 </span> <span class="math display">
 y_i = f_4(x_i) = x_i^2, \qquad i =1,\dots,11.
 </span></p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -141,16 +260,72 @@ Nota
 <p>Se possibile, si eviti di calcolare i valori <span class="math inline">y_1,\dots,y_n</span>.</p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>È dato il vettore di osservazioni:</p>
+<p><span class="math display">
+x = (-4,5,3,1,-1,3,-1,1,0,3,2)
+</span> Ricordando la definizione di media aritmetica, si ottiene quindi che: <span class="math display">
+\bar{x} = \frac{1}{n}\sum_{i=1}^nx_i = \frac{-4+5+3+\cdots + 2}{11} = 1.091
+</span></p>
+<p>Si trova facilmente dalla definizione che <span class="math inline">\text{Me}(x) = x_{(6)} = 1</span>. Sia <span class="math inline">f(x)</span> una trasformazione monotona dei dati di partenza, allora <span class="math inline">\text{Me}(f(x)) = f(\text{Me}(x))</span>.</p>
+<p>La media, invece, gode della proprietà di linearità, tale per cui <span class="math inline">\bar{y} = a + b\bar{x}</span>. Grazie a queste due proprietà, si possono ricavare i seguenti valori:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">y</span></th>
+<th style="text-align: center;"><span class="math inline">\text{Me}(y)</span></th>
+<th style="text-align: center;"><span class="math inline">\bar{y}</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">e^x</span></td>
+<td style="text-align: center;"><span class="math inline">e^{\text{Me}(x)} = e^1 = e</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">x+4</span></td>
+<td style="text-align: center;"><span class="math inline">\text{Me}(x) + 4 = 5</span></td>
+<td style="text-align: center;"><span class="math inline">\bar{x}+4 = 5.091</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">-3x+1</span></td>
+<td style="text-align: center;"><span class="math inline">-3 \text{Me}(x) +1=-2</span></td>
+<td style="text-align: center;"><span class="math inline">-3\bar{x}+1 = -2.273</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">x^2</span></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p>I tre spazi vuoti della tabella, invece, vanno necessariamente completati trasformando <span class="orange">manualmente</span> i dati e calcolando gli indici richiesti.</p>
+<p>Si trova che <span class="math inline">\bar{y} = n^{-1}\sum_{i=1}^n e^{x_i} = 20.295</span>, <span class="math inline">\text{Me}(x^2) = 4</span> e <span class="math inline">\bar{y} = n^{-1}\sum_{i=1}^n x_i^2 = 6.909</span>. I risultati sono stati arrotondati a tre cifre decimali.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="esercizio-b" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-b">Esercizio B</h2>
+<section id="esercizio-d-età-ed-altezza" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-d-età-ed-altezza">Esercizio D (Età ed altezza)</h2>
 <p>Di un gruppo di <span class="math inline">n = 100</span> ragazzi appartenenti ad una società sportiva si hanno le seguenti informazioni sull’età (in anni compiuti) e sulla statura (in cm). Sapendo che la media della statura relativa ai <span class="math inline">100</span> ragazzi è di <span class="math inline">178</span> cm, si determini:</p>
 <ol type="1">
 <li><p>La media della statura per i <span class="math inline">n_2 = 40</span> ragazzi di 17 anni.</p></li>
 <li><p>La media dell’età.</p></li>
 </ol>
 <p>È inoltre noto che:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Età</th>
@@ -177,10 +352,11 @@ Nota
 </tbody>
 </table>
 </section>
-<section id="esercizio-c" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h2>
-<p>Una ditta di trasporti rifornisce con uguale periodicità cinque negozi posti rispettivamente ai chilometri <span class="math inline">50, 89, 134, 198, 530</span> di una stessa strada. Avendo deciso di costruire un magazzino sulla strada medesima, la ditta vuole stabilirne la posizione (ovvero il chilometro della strada) in modo da minimizzare la distanza percorsa per rifornire i cinque negozi.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<section id="esercizio-e-ditta-di-trasporti" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-e-ditta-di-trasporti">Esercizio E (Ditta di trasporti)</h2>
+<p>Una ditta di trasporti rifornisce con uguale periodicità cinque negozi posti rispettivamente ai chilometri <span class="math inline">50, 89, 134, 198, 530</span> di una stessa strada.</p>
+<p>Avendo deciso di costruire un magazzino sulla strada medesima, la ditta vuole stabilirne la posizione (ovvero il chilometro della strada) in modo da minimizzare la distanza percorsa per rifornire i cinque negozi.</p>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -193,6 +369,24 @@ Nota
 <p>Un camion rifornisce un negozio e poi deve tornare al magazzino.</p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La distanza di un negozio dal magazzino può essere espressa come lo scarto <span class="math inline">|x_i - a|</span>km, dove <span class="math inline">x_i</span> è il chilometro al quale si trova il <span class="blue">negozio</span>, mentre <span class="math inline">a</span> è il chilometro al quale si trova il <span class="orange">magazzino</span>.</p>
+<p>Si deve individuare quel valore <span class="math inline">a</span> tale per cui il doppio (andata e ritorno) della somma di questi scarti viene minimizzata. Il valore <span class="math inline">a</span> deve, pertanto, corrispondere alla mediana, che vale <span class="math inline">134</span>.</p>
+<p>La distanza totale percorsa per rifornire tutti e cinque i negozi è pari a <span class="math inline">1178</span>km. Se avessimo posizionato il magazzino sul chilometro pari alla media, che vale <span class="math inline">200.2</span>km, avremmo dovuto percorrere <span class="math inline">1319.2</span>km.</p>
+</div>
+</div>
+</div>
 <!-- ### Schema della soluzione -->
 <!-- Detta $a$ la posizione del magazzino e $x_1, \dots, x_5$ le posizioni dei cinque negozi, la distanza totale percorsa per rifornire i negozi è -->
 <!-- $$ -->
@@ -200,10 +394,10 @@ Nota
 <!-- $$ -->
 <!-- in cui si è tenuto conto che un camion deve effettuare il viaggio di andata e poi tornare al magazzino. Sappiamo dalle proprietà della mediana che $D(a) \ge D(\text{Me})$ per ogni $a \in \mathbb{R}$, per cui poiché la mediana vale $\text{Me} = 134$, questo è il chilometro ottimale dove stabilire il magazzino. -->
 </section>
-<section id="esercizio-d" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-d">Esercizio D</h2>
+<section id="esercizio-f" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-f">Esercizio F</h2>
 <p>Il controllo sul peso (in grammi) di <span class="math inline">n = 71</span> pacchetti di burro ha fornito la seguente distribuzione di frequenza <strong>cumulata</strong>.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 14%">
 <col style="width: 14%">
@@ -241,56 +435,88 @@ Nota
 <li><p>Si calcolino media e mediana del peso dei pacchetti di burro.</p></li>
 <li><p>Si calcoli il primo ed il terzo quartile.</p></li>
 </ol>
-</section>
-<section id="esercizio-e" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-e">Esercizio E</h2>
-<p>È data la seguente distribuzione di mortalità, in un dato anno e luogo, divisa per classi d’età.</p>
-<table class="table">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-</colgroup>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Una tipica approssimazione della media, quando i dati sono suddivisi in classi, è la seguente: <span class="math display">
+\bar{x} \approx \frac{1}{n} \sum_{j=1}^k n_jm_j,
+</span> dove <span class="math inline">m_j</span> è il punto centrale del j-esimo intervallo ed <span class="math inline">n_j</span> è la sua frequenza assoluta.</p>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Età</th>
-<th><span class="math inline">(0,1]</span></th>
-<th><span class="math inline">(1,5]</span></th>
-<th><span class="math inline">(5, 25]</span></th>
-<th><span class="math inline">(25, 45]</span></th>
-<th><span class="math inline">(45, 65]</span></th>
-<th><span class="math inline">(65, 75]</span></th>
-<th><span class="math inline">(75, 100]</span></th>
+<th style="text-align: left;">Classe</th>
+<th style="text-align: center;">Freq. cumulata</th>
+<th style="text-align: center;">Freq. Assoluta</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Numero di morti</td>
-<td>203</td>
-<td>750</td>
-<td>4281</td>
-<td>5074</td>
-<td>6184</td>
-<td>1983</td>
-<td>799</td>
+<td style="text-align: left;">(249, 250]</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(250, 251]</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(251, 252]</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">42 - 15 = 27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(252, 253]</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">60 - 42 = 18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(253, 254]</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">70 - 60 = 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(254, 255]</td>
+<td style="text-align: center;">71</td>
+<td style="text-align: center;">71 - 70 = 1</td>
 </tr>
 </tbody>
 </table>
-<p>Si noti che <span class="math inline">n = 19274</span>. Effettuando, se necessarie, le dovute approssimazioni:</p>
-<ol type="1">
-<li><p>Si calcolino media e mediana dell’età.</p></li>
-<li><p>Si calcoli il primo ed il terzo quartile.</p></li>
-</ol>
+<p>Quindi, possiamo calcolare la media come:</p>
+<p><span class="math display">
+\bar{x} \approx \frac{0\cdot249.5+15\cdot250.5+27\cdot251.5+18\cdot252.5+10\cdot253.5+1\cdot254.5}{71} = 251.866.
+</span></p>
+<p>Invece, una comune approssimazione della mediana quando i dati sono suddivisi in classi è data da: <span class="math display">
+\text{Me}(x) \approx a_{j-1} + (a_j - a_{j-1})\frac{1/2 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
+</span></p>
+<p>dove <span class="math inline">(a_{j-1}, a_{j}]</span> è la classe alla quale la mediana appartiene ed <span class="math inline">F(\cdot)</span> è la funzione di ripartizione empirica.</p>
+<p>Nel nostro caso, la mediana, ovvero l’osservazione <span class="math inline">x_{(36)}</span>, appartiene all’intervallo <span class="math inline">(251,252]</span>. Sappiamo, inoltre, che <span class="math inline">F(252) = 42/71 = 0.592</span> e <span class="math inline">F(251) = 15/71 = 0.211</span>. Sostituendo tutti i valori nella formula, si ricava: <span class="math display">
+\text{Me}(x) \approx 251.759.
+</span></p>
+<p>Un’approssimazione del primo quartile, quando i dati sono suddivisi in classi, è invece: <span class="math display">
+Q_{0.25} \approx a_{j-1} + (a_j - a_{j-1})\frac{0.25 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
+</span> dove <span class="math inline">(a_{j-1}, a_{j}]</span> è la classe alla quale il primo quartile appartiene. Poiché il primo quartile apartiene all’intervallo <span class="math inline">(251,252]</span>, dato che <span class="math inline">F(252) = 0.592</span> e <span class="math inline">F(251) = 0.211</span>, sostituendo questi valori nella formula troviamo che <span class="math inline">Q_{0.25} \approx 251.102</span>.</p>
+<p>L’approssimazione del terzo quartile quando i dati sono suddivisi si ottiene invece tramite la formula: <span class="math display">
+Q_{0.75} \approx a_{j-1} + (a_j - a_{j-1})\frac{0.75 - F(a_{j-1})}{F(a_{j})-F(a_{j-1})},
+</span> dove <span class="math inline">(a_{j-1}, a_{j}]</span> è la classe alla quale il terzo quartile appartiene.</p>
+<p>Poiché il terzo quartile appartiene alla classe <span class="math inline">(252,253]</span> dato che <span class="math inline">F(252) = 0.592</span> e <span class="math inline">F(253) = 60/71 = 0.845</span>, sostituendo nella formula troviamo che <span class="math inline">Q_{0.75} \approx 252.625</span>.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="esercizio-f" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-f">Esercizio F</h2>
+<section id="esercizio-g" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-g">Esercizio G</h2>
 <p>Ai dipendenti di un’azienda è stato chiesto di indicare il grado di soddisfazione (1 = scarsa; 10 = ottima) riguardo alla qualità del cibo distribuito dalla mensa aziendale. I dati sono i seguenti:</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 7%">
@@ -342,10 +568,10 @@ Nota
 <li><p>I dipendenti risultano concordi nella valutazione della mensa? Sono contenti o scontenti? Cosa suggerireste ai responsabili della mensa?</p></li>
 </ol>
 </section>
-<section id="esercizio-g-difficile" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-g-difficile">Esercizio G (difficile)</h2>
+<section id="esercizio-h-difficile" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-h-difficile">Esercizio H (difficile)</h2>
 <p>In un’azienda industriale si hanno 5 linee diverse di produzione. Per ogni produzione si sono rilevati i dati seguenti</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th><strong>Linea di produzione</strong></th>
@@ -370,20 +596,20 @@ Nota
 <ol type="1">
 <li><p>Si calcoli il numero medio di pezzi prodotti tale da lasciare immutato il consumo totale di energia <span class="math inline">z</span>, nell’ipotesi che tra consumo energetico e numero di pezzi prodotti sussista la relazione: <span class="math display">
 z = k + h(x + 0.1 x^2),
-</span> dove <span class="math inline">k</span> e <span class="math inline">h</span> sono due valori costanti non noti. <strong>Suggerimento</strong>: si utilizzi l’approcco di Chisini.</p></li>
+</span> dove <span class="math inline">k</span> e <span class="math inline">h</span> sono due valori costanti non noti. <span class="orange">Suggerimento</span>: si utilizzi l’approcco di Chisini.</p></li>
 <li><p>Si svolga ora l’esercizio ipotizzando la relazione <span class="math display">
 z = k + hx,
 </span> dove <span class="math inline">k</span> e <span class="math inline">h</span> sono due valori costanti non noti.</p></li>
 </ol>
 </section>
-<section id="esercizio-h" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-h">Esercizio H</h2>
+<section id="esercizio-i" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-i">Esercizio I</h2>
 <p>Si consideri la seguente funzione di ripartizione della variabile <span class="math inline">x</span>, con <span class="math inline">n = 20</span>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="exe_2_bis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="1600"></p>
+<p><img src="exe_2_bis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
 </figure>
 </div>
 </div>
@@ -392,155 +618,22 @@ z = k + hx,
 <li><p>Quanto vale (approssimativamente) la mediana della variabile <span class="math inline">x</span>?</p></li>
 <li><p>Quanto valgono (approssimativamente) il primo ed il terzo quartile?</p></li>
 </ol>
-</section>
-<section id="esercizio-i" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-i">Esercizio I</h2>
-<p>Secondo i dati forniti dall’<a href="https://www.epicentro.iss.it/coronavirus/bollettino/Bollettino-sorveglianza-integrata-COVID-19_29-settembre-2020.pdf">Istituto Superiore di Sanità (ISS)</a>, aggiornati al 29 Settembre 2020, l’età delle persone decedute per COVID-19 in Italia sono in totale <span class="math inline">35.900</span>. Le persone di cui è nota l’età sono <span class="math inline">35.899</span> (ovvero tutte tranne una), distribuite nelle seguenti classi d’età:</p>
-<table class="table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 12%">
-<col style="width: 13%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Età</th>
-<th><span class="math inline">(0,9]</span></th>
-<th><span class="math inline">(9,19]</span></th>
-<th><span class="math inline">(19, 29]</span></th>
-<th><span class="math inline">(29, 39]</span></th>
-<th><span class="math inline">(39, 49]</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Numero di decessi</td>
-<td>4</td>
-<td>0</td>
-<td>15</td>
-<td>70</td>
-<td>318</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 10%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Età</th>
-<th><span class="math inline">(49, 59]</span></th>
-<th><span class="math inline">(59, 69]</span></th>
-<th><span class="math inline">(69, 79]</span></th>
-<th><span class="math inline">(79, 89]</span></th>
-<th><span class="math inline">&gt; 89</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Numero di decessi</td>
-<td>1255</td>
-<td>3599</td>
-<td>9372</td>
-<td>14686</td>
-<td>6580</td>
-</tr>
-</tbody>
-</table>
-<p>Si consideri chiusa l’ultima classe ipotizzando che l’età massima sia pari a <span class="math inline">115</span>. Effettuando, se necessarie, le dovute approssimazioni:</p>
-<ol type="1">
-<li><p>Si calcolino le frequenze relative e cumulate relative;</p></li>
-<li><p>Si calcolino media e mediana dell’età;</p></li>
-<li><p>Si calcoli il primo ed il terzo quartile.</p></li>
-</ol>
-<section id="schema-della-soluzione" class="level3">
-<h3 class="anchored" data-anchor-id="schema-della-soluzione">Schema della soluzione</h3>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;"><span class="math inline">n_j</span></th>
-<th style="text-align: right;"><span class="math inline">f_j</span></th>
-<th style="text-align: right;"><span class="math inline">F_j</span></th>
-<th style="text-align: right;"><span class="math inline">N_j</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0.0001</td>
-<td style="text-align: right;">0.0001</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0.0000</td>
-<td style="text-align: right;">0.0001</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">0.0004</td>
-<td style="text-align: right;">0.0005</td>
-<td style="text-align: right;">19</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">0.0019</td>
-<td style="text-align: right;">0.0025</td>
-<td style="text-align: right;">89</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">318</td>
-<td style="text-align: right;">0.0089</td>
-<td style="text-align: right;">0.0113</td>
-<td style="text-align: right;">407</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1255</td>
-<td style="text-align: right;">0.0350</td>
-<td style="text-align: right;">0.0463</td>
-<td style="text-align: right;">1662</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3599</td>
-<td style="text-align: right;">0.1003</td>
-<td style="text-align: right;">0.1466</td>
-<td style="text-align: right;">5261</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">9372</td>
-<td style="text-align: right;">0.2611</td>
-<td style="text-align: right;">0.4076</td>
-<td style="text-align: right;">14633</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">14686</td>
-<td style="text-align: right;">0.4091</td>
-<td style="text-align: right;">0.8167</td>
-<td style="text-align: right;">29319</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6580</td>
-<td style="text-align: right;">0.1833</td>
-<td style="text-align: right;">1.0000</td>
-<td style="text-align: right;">35899</td>
-</tr>
-</tbody>
-</table>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La mediana della variabile <span class="math inline">x</span> vale circa <span class="math inline">17</span>. Il primo quartile vale circa <span class="math inline">16</span>, il terzo <span class="math inline">22</span>.</p>
 </div>
 </div>
-</section>
+</div>
 </section>
 </section>
 
@@ -581,18 +674,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -624,11 +706,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -638,8 +759,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -651,7 +781,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -695,6 +948,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -720,6 +974,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -780,6 +1060,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
