@@ -22,22 +22,98 @@ format:
 
 # [Homepage](../index.html)
 
+Alcune delle seguenti soluzioni sono state gentilmente fornite dal [tutor di Statistica I]{.blue} dell'A.A. 2021/2022, [Alex Alborghetti]{.orange}, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori. 
+
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 4, fig.width = 8)
 ```
 
-## Esercizio A
+## Esercizio A (Tifosi e squadre di calcio)
 
-Da un collettivo di $n = 60$ occupati secondo il settore di attività e la posizione nella professione, si vuol verificare rispetto a quale carattere esso è più eterogeneo.
+Da un sondaggio condotto da un giornale sportivo in due regioni sul tifo per le principali squadre di calcio si sono ottenuti i risultati che seguono:
 
-| Settore di attività | A   | I   | AA  |
-|---------------------|-----|-----|-----|
-| Frequenze assolute  | 10  | 20  | 30  |
+|  | Tifosi Inter | Tifosi Milan | Tifosi Torino | Tifosi Juventus |
+| --------|--------|------|--------|----------|
+| Piemonte | 331    | 450  | 675    | 2354    |
+| Lombardia | 2125  | 3374 | 591    | 721     |
 
-| **Posizione professionale** | Imprenditore, dirigente | Lavoratore autonomo | Impiegato | Operaio |
-|-----------------|---------------|--------------|--------------|--------------|
-| Frequenze assolute          | 5                       | 10                  | 25        | 20      |
+
+1. Qual è la moda nelle due regioni?
+
+1. In quale delle due regioni c'è più omogeneità? Rispondere calcolando opportuni indici.
+
+1. Rappresentare graficamente i dati.
+
+::: {.callout-note collapse=true}
+### Schema della soluzione
+
+La moda, ovvero la modalità con frequenza più elevata, è "Juventus" per la regione Piemonte mentre è "Milan" per la regione Lombardia.
+
+I calcoli necessari per valutare gli indici di Gini e di entropia sono riportati nelle tabelle che seguono.
+
+```{r}
+nomi <- c( "Inter", "Milan","Torino", "Juventus")
+x <- c(331, 450, 675, 2354)
+x <- c(2125, 3374, 591, 721)
+freq_rel <- x / sum(x)
+
+
+#library(knitr)
+#kable(data.frame(nomi, freq_rel, freq_rel^2, log(freq_rel), freq_rel*log(freq_rel)), digits=4)
+```
+
+**Regione Piemonte**
+
+|       | $f_j$| $f_j^2$| $\log{f_j}$ | $f_j \log{f_j}$ |
+|:--------|--------:|----------:|-------------:|------------------------:|
+|Inter    |   0.0869|     0.0075|       -2.4433|                  -0.2123|
+|Milan    |   0.1181|     0.0140|       -2.1361|                  -0.2523|
+|Torino   |   0.1772|     0.0314|       -1.7307|                  -0.3066|
+|Juventus |   0.6178|     0.3817|       -0.4815|                  -0.2975|
+| **Totale** | 1 | 0.4346 | | -1.0687 |
+
+**Regione Lombardia**
+
+|       | $f_j$| $f_j^2$| $\log{f_j}$ | $f_j \log{f_j}$ |
+|:--------|--------:|----------:|-------------:|------------------------:|
+|Inter    |   0.3120|     0.0973|       -1.1648|                  -0.3634|
+|Milan    |   0.4954|     0.2454|       -0.7024|                  -0.3480|
+|Torino   |   0.0868|     0.0075|       -2.4445|                  -0.2121|
+|Juventus |   0.1059|     0.0112|       -2.2457|                  -0.2377|
+| **Totale** | 1 | 0.3615 | | -1.1612 |
+
+Pertanto, l'indice di Gini per Piemonte e Lombardia sono pari a
+
+$$
+G_\text{Piem} = 1 - 0.43 = 0.57, \qquad G_\text{Lomb} = 1 - 0.36 = 0.64.
+$$ 
+Gli indici normalizzati, in entrambi i casi, si ottengono moltiplicando i rispettivi indici per $4/3$, ottenendo $0.76$ per il Piemonte e $0.85$ per la Lombardia. L'entropia per piemonte e Lombardia sono invece pari a:
+
+$$
+H_\text{Piem} = 1.07, \qquad H_\text{Lomb} = 1.16.
+$$
+
+I corrispettivi indici relativi si ottengono dividendo entrambi i termini per $\log{4} \approx 1.39$. Ne risulta $0.77$ per il Piemonte e $0.84$ per la Lombardia. 
+
+Quindi, entrambi gli indici normalizzati suggeriscono che il Piemonte è più omogeneo (meno variabile) in termini di tifoserie.
+
+Una possibile rappresentazione grafica è costituita dai diagrammi a barre, che sono riportati nel seguito. Per facilitare il confronto tra le due regioni, sono state usate le frequenze relative.
+
+```{r}
+library(ggplot2)
+library(gridExtra)
+
+Piemonte <- data.frame(Squadra = rep(nomi, c(331, 450, 675, 2354) ))
+p1 <- ggplot(data=Piemonte, aes(x=Squadra, y=..count../nrow(Piemonte))) + geom_bar() + theme_bw() + xlab("Squadra") + ylab("Frequenze relative")
+
+Lombardia <- data.frame(Squadra = rep(nomi, c(2125, 3374, 591, 721)))
+p2 <- ggplot(data=Lombardia, aes(x=Squadra, y=..count../nrow(Lombardia))) + geom_bar() + theme_bw() + xlab("Squadra") + ylab("Frequenze relative")
+grid.arrange(p1,p2,ncol=2)
+```
+:::
+
+
 
 ## Esercizio B
 
@@ -71,6 +147,46 @@ I clienti di un'azienza locale di vendita per corrispondenza sono stati classifi
 
 Sapendo che l'indice di Gini normalizzato è pari a $G_\text{norm} = 0.85333$, si dica quali sono le frequenze relative di Udine e Pordenone.
 
+:::{.callout-note collapse=true}
+#### Schema della soluzione
+
+Il testo del problema indica che
+$$
+G_\text{norm} = \frac{4}{4-1} \left(1- \sum_{j=1}^kf_j^2\right) = 0.85333.
+$$
+Di conseguenza, si ottiene che
+$$
+\sum_{j=1}^kf_j^2 = -0.85333 \cdot \frac{4-1}{4} + 1,
+$$
+e pertanto:
+$$
+f_u^2 + f_p^2= -0.85333 \cdot \frac{4-1}{4} + 1 - 0.5^2 - 0.3^2 = 0.02.
+$$
+
+Sappiamo inoltre che la somma delle frequenze relative è $1$, ovvero:
+
+$$
+0.5+0.3+f_p+f_u = 1.
+$$
+
+Mettiamo a sistema queste due equazioni e risolviamo:
+
+$$
+f_u^2 + f_p^2=0.02 \qquad (\text{i}),
+$$
+e
+$$
+f_u+f_p = 0.2 \qquad (\text{ii}).
+$$
+
+Da (ii) si ricava $f_u = 0.2-f_p$. Sostituendo nella (i)
+$$
+ 0.2^2 - 0.4 f_p + 2f_p^2 = 0.02,
+$$
+
+cioè, risolvendo l'equazione di secondo grado: $f_p = 0.1 (=f_u).$
+:::
+
 ## Esercizio D
 
 I risultati di un'indagine sulla pratica di una specifica attività sportiva tra le donne di tre regioni italiane sono riassunti nella tabella seguente.
@@ -87,6 +203,26 @@ I risultati di un'indagine sulla pratica di una specifica attività sportiva tra
 
 3.  Si confronti l'eterogeneità della variabile "attività fisica" nelle tre regioni.
 
+::: {.callout-note collapse=true}
+#### Schema della soluzione
+
+La moda della variabile "attività fisica" in Lombardia è "Raramente".
+
+```{r}
+veneto = c(rep("1. Con continuità",64), rep("2. Saltuar.",33), rep("3. Raramente",112), rep("4. Mai",82))
+lombardia = c(rep("1. Con continuità",62), rep("2. Saltuar.",37), rep("3. Raramente",122), rep("4. Mai",68))
+trentino = c(rep("1. Con continuità",78), rep("2. Saltuar.",54), rep("3. Raramente",114), rep("4. Mai",50))
+
+barplot(table(veneto)/291, main = "Veneto", ylim = c(0,0.5))
+barplot(table(lombardia)/289, main = "Lombardia", ylim = c(0,0.5))
+barplot(table(trentino)/296, main = "Trentino", ylim = c(0,0.5))
+```
+
+Si noti che vanno utilizzate le frequenze relative, dato che la dimensione del campione è diversa nelle tre regioni. Possiamo confrontare l'eterogeneità tramite indice di Gini normalizzato. I risultati sono $G_\text{norm, Lomb} = 0.939$, $G_\text{norm, Ven} = 0.948$ e $G_\text{norm, Trent} = 0.961$. Per esercizio, provare a calcolare l'entropia di Shannon.
+
+
+:::
+
 ## Esercizio E
 
 Una regione delle alpi è stata suddivisa in 6 zone di uguale dimensione e conformazione. Per ogni sottoarea è stato svolto un censimento delle marmotte presenti. I risultati ottenuti sono stati:
@@ -97,15 +233,153 @@ Una regione delle alpi è stata suddivisa in 6 zone di uguale dimensione e confo
 
 Si valuti se le marmotte sono equamente presenti nelle $6$ zone con opportuni grafici ed indici.
 
-## Esercizio F
+<!-- ## Esercizio F -->
 
-Nella tabella seguente sono riportati i risultati relativi ad uno studio clinico per $n = 200$ pazienti affetti dal morbo di Hodgkin. Sono stati rilevati due tipi di istologici di linfonodi: PL (predominanza di linfociti) e SN (sclerosi nodulare).
+<!-- Nella tabella seguente sono riportati i risultati relativi ad uno studio clinico per $n = 200$ pazienti affetti dal morbo di Hodgkin. Sono stati rilevati due tipi di istologici di linfonodi: PL (predominanza di linfociti) e SN (sclerosi nodulare). -->
 
-Dopo tre mesi di trattamento è stato assegnato un giudizio clinico sull'efficacia tramite la classificazione: positivo, parziale, nessuno.
+<!-- Dopo tre mesi di trattamento è stato assegnato un giudizio clinico sull'efficacia tramite la classificazione: positivo, parziale, nessuno. -->
 
-|     | Positivo | Parziale | Nessuno |
-|-----|----------|----------|---------|
-| PL  | 74       | 18       | 12      |
-| SN  | 68       | 16       | 12      |
+<!-- |     | Positivo | Parziale | Nessuno | -->
+<!-- |-----|----------|----------|---------| -->
+<!-- | PL  | 74       | 18       | 12      | -->
+<!-- | SN  | 68       | 16       | 12      | -->
 
-Si chiede di valutare, con opportuni grafici ed indici, se l'efficacia del trattamento è stata la stessa per i due tipo di linfonodi.
+<!-- Si chiede di valutare, con opportuni grafici ed indici, se l'efficacia del trattamento è stata la stessa per i due tipo di linfonodi. -->
+
+## Esercizio F (Popolazione di Veneto e Lombardia)
+
+Si consideri la popolazione residente delle province della regione [Lombardia]{.blue} e [Veneto]{.orange}, al primo Gennaio 2023. I dati ISTAT sono riportati nelle seguenti tabelle.
+
+```{r}
+lombard <- c(877688, 595513, 178472, 3219391, 1103768, 1253993, 534968, 351169, 404696, 332043, 227495, 871546)
+names(lombard) <- c("Varese", "Como", "Sondrio", "Milano", "Bergamo", "Brescia", "Pavia", "Cremona", "Mantova", "Lecco", "Lodi", "Monza e Brianza")
+
+library(knitr)
+#kable(lombard)
+```
+
+| Provincia (Regione Lombardia) |       Popolazione residente (Gennaio 2023)|
+|:------------------|:--------------------|
+|Varese          |  877688|
+|Como            |  595513|
+|Sondrio         |  178472|
+|Milano          | 3219391|
+|Bergamo         | 1103768|
+|Brescia         | 1253993|
+|Pavia           |  534968|
+|Cremona         |  351169|
+|Mantova         |  404696|
+|Lecco           |  332043|
+|Lodi            |  227495|
+|Monza e Brianza |  871546|
+
+
+
+```{r}
+veneto <- c(923950, 850942, 197751, 876115, 833703, 928374, 227418)
+names(veneto) <- c("Verona", "Vicenza", "Belluno", "Treviso", "Venezia", "Padova", "Rovigo")
+# kable(veneto)
+```
+
+| Provincia (Regione Veneto) |       Popolazione residente (Gennaio 2023)|
+|:-------|:------|
+|Belluno | 197751|
+|Rovigo  | 227418|
+|Venezia | 833703|
+|Vicenza | 850942|
+|Treviso | 876115|
+|Verona  | 923950|
+|Padova  | 928374|
+
+1. Si calcoli il rapporto di concentrazione di Gini per la regione Veneto e la regione Lombardia. Si commentino i risultati.
+
+1. Si disegnino quindi le curve di Lorenz corrispondenti. 
+
+::: {.callout-note collapse=true}
+
+## Schema della soluzione
+
+Le tabelle seguenti costituiscono solamente uno schema della soluzione, non la soluzione stessa.
+
+```{r}
+lombard <- sort(lombard)
+p_lomb <- 1:length(lombard) / length(lombard)
+q_lomb <- cumsum(lombard) / sum(lombard)
+#kable(data.frame(abit = lombard, p = p_lomb, q = q_lomb), digits = 4)
+```
+
+| Provincia (Lombardia) |       Popolazione|      $p_i$|      $q_i$|
+|:---------------|-------:|------:|------:|
+|Sondrio         |  178472| 0.0833| 0.0179|
+|Lodi            |  227495| 0.1667| 0.0408|
+|Lecco           |  332043| 0.2500| 0.0742|
+|Cremona         |  351169| 0.3333| 0.1095|
+|Mantova         |  404696| 0.4167| 0.1501|
+|Pavia           |  534968| 0.5000| 0.2039|
+|Como            |  595513| 0.5833| 0.2637|
+|Monza e Brianza |  871546| 0.6667| 0.3513|
+|Varese          |  877688| 0.7500| 0.4395|
+|Bergamo         | 1103768| 0.8333| 0.5504|
+|Brescia         | 1253993| 0.9167| 0.6765|
+|Milano          | 3219391| 1.0000| 1.0000|
+
+```{r}
+n_lomb <- length(lombard)
+R_lomb <- 1 - 2 / (n_lomb - 1) * sum(q_lomb[-n_lomb])
+#round(R_lomb, 4)
+```
+
+Di conseguenza, il rapporto di concentrazione di Gini per la regione Lombardia è
+$$
+\mathcal{R}_\text{lomb} = 1 - \frac{2}{n -1}\sum_{i=1}^{n-1} q_i = 1 - \frac{2}{11}(0.0179 + 0.0408 + 0.0742 + \cdots + 0.6765) = 0.4768.
+$$
+In alternativa, è possibile calcolare le differenza media semplice, ovvero
+$$
+\Delta_\text{lomb} = \frac{4}{n(n-1)}\left(\sum_{i=1}^n i x_{(i)}\right) - 2 \bar{x}_\text{lomb}\frac{n+1}{n-1} = \frac{4}{12 \cdot 11} \cdot 90772001 - 2 \cdot 829228.5 \frac{13}{11} = 790672.1.
+$$
+```{r}
+Delta_lomb <- 4 / (n_lomb * (n_lomb -1)) * sum(lombard * 1:n_lomb) - 2 * mean(lombard) * (n_lomb + 1) / (n_lomb - 1)
+```
+dato che la media aritmetica è pari a $\bar{x}_\text{lomb} = 829228.5$. Pertanto,
+
+
+$$
+\mathcal{R}_\text{lomb} = \frac{\Delta_\text{lomb}}{2 \bar{x}_\text{lomb}} = \frac{790672.1}{2 \cdot 829228.5}= 0.4768.
+$$
+Per quel che riguarda la regione Veneto, con conti analoghi si ottiene anzitutto la tabella seguente:
+
+```{r}
+veneto <- sort(veneto)
+p_ven <- 1:length(veneto) / length(veneto)
+q_ven <- cumsum(veneto) / sum(veneto)
+# kable(data.frame(abit = veneto, p = p_ven, q = q_ven), digits = 4)
+```
+
+| Provincia (Veneto) |       Popolazione|      $p_i$|      $q_i$|
+|:-------|------:|------:|------:|
+|Belluno | 197751| 0.1429| 0.0409|
+|Rovigo  | 227418| 0.2857| 0.0879|
+|Venezia | 833703| 0.4286| 0.2602|
+|Vicenza | 850942| 0.5714| 0.4361|
+|Treviso | 876115| 0.7143| 0.6172|
+|Verona  | 923950| 0.8571| 0.8081|
+|Padova  | 928374| 1.0000| 1.0000|
+
+tramite la quale si perviene al rapporto di concentrazione di Gini pari a $\mathcal{R}_\text{ven} = 0.2499$. Le curve di Lorenz corrispondenti sono disegnate nel seguito. 
+
+```{r}
+R_ven <- 1 - 2 / (length(veneto) - 1) * sum(q_ven[-length(veneto)])
+# R_ven
+```
+
+
+
+```{r fig.height=6, fig.width=8}
+plot(c(0, p_lomb), c(0,q_lomb), type = "b", xlim = c(0, 1), ylim = c(0, 1), pch = 16, xlab = "Frazione cumulata delle province", 
+     ylab = "Frazione cumulata degli abitanti", main = "Lombardia (Blu) - Veneto (Arancione)", col = "darkblue")
+abline(c(0, 1), lty = "dotted")
+points(c(0, p_ven), c(0,q_ven), col = "darkorange", pch = 16)
+lines(c(0, p_ven), c(0,q_ven), col = "darkorange")
+```
+
+:::

@@ -59,7 +59,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | **Esercitazione**                    | [Esercitazione 3](exe/exe_3.html)          |                                   |
 | *Esercizi*                           | [Esercizi 3](exe/exe_3_bis.html)           | [Soluzione 3](exe/sol_exe_3.html) |
 | Dati qualitativi, eterogeneità       | [Slides unità I](slides/sl_I.pdf)          | §5.7                              |
-| **Esercitazione**                    | [Esercitazione 4](exe/exe_4.html)          |                                   |
+| **Esercitazione**                    | [Esercitazione 4](exe/es_4.pdf)          |                                   |
 | *Esercizi*                           | [Esercizi 4](exe/exe_4_bis.html)           | [Soluzione 4](exe/sol_exe_4.html) |
 |                                      | **STATISTICA BIVARIATA**                   |                                   |
 | Covarianza e correlazione            | [Slides unità J](slides/sl_J.pdf)          | §7.1, §7.6 --- §7.7               |

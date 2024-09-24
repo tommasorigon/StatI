@@ -74,26 +74,26 @@ $$
 
 :::
 
-## Tubi catodici
+<!-- ## Tubi catodici -->
 
-Una vecchia fabbrica di televisori produce due tipi di tubi catodici: il tipo A e il tipo B. I tubi catodici hanno tempi di durata media, rispettivamente di $1495$ ore e $1875$ ore e scarti quadratici medi rispettivamente di $280$ ore e $310$ ore. In generale, è preferibile il tubo catodico che ha la durata più alta e variabilità più bassa. 
+<!-- Una vecchia fabbrica di televisori produce due tipi di tubi catodici: il tipo A e il tipo B. I tubi catodici hanno tempi di durata media, rispettivamente di $1495$ ore e $1875$ ore e scarti quadratici medi rispettivamente di $280$ ore e $310$ ore. In generale, è preferibile il tubo catodico che ha la durata più alta e variabilità più bassa.  -->
 
-Quale dei due tubi catodici è preferibile?
+<!-- Quale dei due tubi catodici è preferibile? -->
 
-::: {.callout-note collapse=true}
+<!-- ::: {.callout-note collapse=true} -->
 
-## Schema della soluzione
+<!-- ## Schema della soluzione -->
 
-I tubi catodici di tipo B hanno durata media maggiore dei tubi catodici di tipo A. Anche la varianza dei tubi catodici di tipo B è maggiore di quelli di tipo A.
+<!-- I tubi catodici di tipo B hanno durata media maggiore dei tubi catodici di tipo A. Anche la varianza dei tubi catodici di tipo B è maggiore di quelli di tipo A. -->
 
-Tuttavia i due scarti quadratici medi non sono immediatamente confrontabili, poichè le medie delle due tipologie sono diverse. Un indicatore più adeguato in questo caso è il coefficiente di variazione:
+<!-- Tuttavia i due scarti quadratici medi non sono immediatamente confrontabili, poichè le medie delle due tipologie sono diverse. Un indicatore più adeguato in questo caso è il coefficiente di variazione: -->
 
-$$
-\text{CV}_A = \frac{\sigma_A}{\bar{x}_A} = \frac{280}{1495} \approx 0.187, \quad \text{CV}_B = \frac{\sigma_B}{\bar{x}_B} = \frac{310}{1875} \approx 0.165, 
-$$
+<!-- $$ -->
+<!-- \text{CV}_A = \frac{\sigma_A}{\bar{x}_A} = \frac{280}{1495} \approx 0.187, \quad \text{CV}_B = \frac{\sigma_B}{\bar{x}_B} = \frac{310}{1875} \approx 0.165,  -->
+<!-- $$ -->
 
-Concludiamo quindi che la tipologia B è preferibile, essendo caratterizzata da una media maggiore e un coefficiente di variazione minore. 
-:::
+<!-- Concludiamo quindi che la tipologia B è preferibile, essendo caratterizzata da una media maggiore e un coefficiente di variazione minore.  -->
+<!-- ::: -->
 
 ## Lampadine
 
