@@ -210,7 +210,7 @@ La distanza totale percorsa per rifornire tutti e cinque i negozi è pari a $117
 
 ## Esercizio F
 
-Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza **cumulata**.
+Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza [cumulata]{.orange}.
 
 | **Peso** $c_j$     | $(0,250]$ | $(250, 251]$ | $(251, 252]$ | $(252, 253]$ | $(253, 254]$ | $(254 , 255]$ |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
