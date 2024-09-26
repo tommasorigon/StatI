@@ -147,7 +147,7 @@ ggplot(data=dataset, aes(x = alcolici, y = tabacchi)) + geom_point() + theme_bw(
 
 
 
-## Esercizio B - Regressione con variabili standardizzate
+## Esercizio B (Regressione con variabili standardizzate)
 
 Si considerino due variabili statistiche $x$ ed $y$ e siano $\hat{\alpha}$ e $\hat{\beta}$ le stime ai minimi quadrati dei parametri del modello di regressione $y = \alpha + \beta x$.
 
@@ -189,7 +189,7 @@ Sono date le seguenti osservazioni da 4 regressori e 4 variabili dipendenti
 
 
 
-## Esercizio D (difficile)
+## Esercizio D (Difficile)
 
 Per $n = 10$ paesi dell'Unione Europea si è osservato il prezzo in euro di un litro di benzina (variabile $x$) ed il numero di veicoli pro-capite circolanti (variabile $y$). I dati si riferiscono alla fine degli anni $'90$. Si conoscono i seguenti risultati:
 $$
