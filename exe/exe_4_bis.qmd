@@ -248,7 +248,7 @@ Si valuti se le marmotte sono equamente presenti nelle $6$ zone con opportuni gr
 
 ## Esercizio F (Popolazione di Veneto e Lombardia)
 
-Si consideri la popolazione residente delle province della regione [Lombardia]{.blue} e [Veneto]{.orange}, al primo Gennaio 2023. I dati ISTAT sono riportati nelle seguenti tabelle.
+Si consideri la popolazione residente delle province della regione [Lombardia]{.blue} e [Veneto]{.orange}, al primo Gennaio 2023. I dati ISTAT sono riportati nelle seguenti tabelle. Per quel che riguarda la regione [Lombardia]{.blue}:
 
 ```{r}
 lombard <- c(877688, 595513, 178472, 3219391, 1103768, 1253993, 534968, 351169, 404696, 332043, 227495, 871546)
@@ -258,22 +258,16 @@ library(knitr)
 #kable(lombard)
 ```
 
-| Provincia (Regione Lombardia) |       Popolazione residente (Gennaio 2023)|
-|:------------------|:--------------------|
-|Varese          |  877688|
-|Como            |  595513|
-|Sondrio         |  178472|
-|Milano          | 3219391|
-|Bergamo         | 1103768|
-|Brescia         | 1253993|
-|Pavia           |  534968|
-|Cremona         |  351169|
-|Mantova         |  404696|
-|Lecco           |  332043|
-|Lodi            |  227495|
-|Monza e Brianza |  871546|
+| Provincia |   Popolazione residente| Provincia |   Popolazione residente|
+|:------------------|:--------------------|-----------|---------------|
+|Varese          |  877688 |Pavia           |  534968|
+|Como            |  595513|Cremona         |  351169|
+|Sondrio         |  178472|Mantova         |  404696|
+|Milano          | 3219391|Lecco           |  332043|
+|Bergamo         | 1103768|Lodi            |  227495|
+|Brescia         | 1253993|Monza e Brianza |  871546|
 
-
+mentre per quel che riguarda il [Veneto]{.orange}
 
 ```{r}
 veneto <- c(923950, 850942, 197751, 876115, 833703, 928374, 227418)
@@ -281,15 +275,13 @@ names(veneto) <- c("Verona", "Vicenza", "Belluno", "Treviso", "Venezia", "Padova
 # kable(veneto)
 ```
 
-| Provincia (Regione Veneto) |       Popolazione residente (Gennaio 2023)|
-|:-------|:------|
-|Belluno | 197751|
-|Rovigo  | 227418|
-|Venezia | 833703|
-|Vicenza | 850942|
-|Treviso | 876115|
-|Verona  | 923950|
-|Padova  | 928374|
+| Provincia |   Popolazione residente| Provincia |   Popolazione residente|
+|:------------------|:--------------------|-----------|---------------|
+|Belluno | 197751|Treviso | 876115|
+|Rovigo  | 227418|Verona  | 923950|
+|Venezia | 833703|Padova  | 928374|
+|Vicenza | 850942|-|-|
+
 
 1. Si calcoli il rapporto di concentrazione di Gini per la regione Veneto e la regione Lombardia. Si commentino i risultati.
 
