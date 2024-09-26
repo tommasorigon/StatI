@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="exe_5_bis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -51,7 +51,34 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -65,12 +92,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#homepage" id="toc-homepage" class="nav-link active" data-scroll-target="#homepage">Homepage</a>
   <ul class="collapse">
-  <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link" data-scroll-target="#esercizio-a">Esercizio A</a></li>
-  <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
-  <li><a href="#esercizio-c---regressione-con-variabili-standardizzate" id="toc-esercizio-c---regressione-con-variabili-standardizzate" class="nav-link" data-scroll-target="#esercizio-c---regressione-con-variabili-standardizzate">Esercizio C - Regressione con variabili standardizzate</a></li>
-  <li><a href="#esercizio-d---i-dati-di-anscombe" id="toc-esercizio-d---i-dati-di-anscombe" class="nav-link" data-scroll-target="#esercizio-d---i-dati-di-anscombe">Esercizio D - I dati di Anscombe</a></li>
+  <li><a href="#esercizio-a-tabacco-e-bevande-alcoliche" id="toc-esercizio-a-tabacco-e-bevande-alcoliche" class="nav-link" data-scroll-target="#esercizio-a-tabacco-e-bevande-alcoliche">Esercizio A (Tabacco e bevande alcoliche)</a></li>
+  <li><a href="#esercizio-b---regressione-con-variabili-standardizzate" id="toc-esercizio-b---regressione-con-variabili-standardizzate" class="nav-link" data-scroll-target="#esercizio-b---regressione-con-variabili-standardizzate">Esercizio B - Regressione con variabili standardizzate</a></li>
+  <li><a href="#esercizio-c-i-dati-di-anscombe" id="toc-esercizio-c-i-dati-di-anscombe" class="nav-link" data-scroll-target="#esercizio-c-i-dati-di-anscombe">Esercizio C (I dati di Anscombe)</a></li>
+  <li><a href="#esercizio-d-difficile" id="toc-esercizio-d-difficile" class="nav-link" data-scroll-target="#esercizio-d-difficile">Esercizio D (difficile)</a></li>
   <li><a href="#esercizio-e" id="toc-esercizio-e" class="nav-link" data-scroll-target="#esercizio-e">Esercizio E</a></li>
-  <li><a href="#esercizio-f-difficile" id="toc-esercizio-f-difficile" class="nav-link" data-scroll-target="#esercizio-f-difficile">Esercizio F (difficile)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -84,21 +110,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta-author">
+<div class="quarto-title-meta-author column-page-left">
   <div class="quarto-title-meta-heading">Autore/Autrice</div>
   <div class="quarto-title-meta-heading">Affiliazione</div>
   
     <div class="quarto-title-meta-contents">
     <p class="author"><span class="orange">Tommaso Rigon</span> </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             <em>Università degli Studi di Milano-Bicocca</em>
           </p>
       </div>
-    </div>
+  </div>
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
       
   
@@ -106,129 +132,218 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="homepage" class="level1">
 <h1><a href="../index.html">Homepage</a></h1>
-<section id="esercizio-a" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h2>
-<p>Nella figura che segue sono riportati i diagrammi a dispersione di <span class="math inline">4</span> coppie di variabili. Ad esse corrispondono i coefficienti di correlazione <span class="math inline">\rho</span> pari a <span class="math inline">-1,0,0.7,0.9</span>. Si dica a quale grafico corrisponde ciascun coefficiente.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="exe_5_bis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="1600"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="esercizio-b" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-b">Esercizio B</h2>
-<p>La tabella seguente esprime il peso (in chili) e l’altezza (in centimetri) di <span class="math inline">n = 20</span> persone adulte di sesso maschile.</p>
-<table class="table">
+<section id="esercizio-a-tabacco-e-bevande-alcoliche" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-a-tabacco-e-bevande-alcoliche">Esercizio A (Tabacco e bevande alcoliche)</h2>
+<p>I risultati di un’indagine del governo britannico sulla spesa delle famiglie possono essere utilizzati per investigare sulla relazione tra l’ammontare speso per i tabacchi e quello speso per le bevande alcoliche.</p>
+<p>La seguente tabella riporta, per <span class="math inline">n = 10</span> regioni della Gran Bretagna, la spesa settimanale media per famiglia per i due capitoli di spesa, espressa in sterline. I dati sono riferiti al 1981.</p>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Altezza</th>
-<th style="text-align: right;">Peso</th>
+<th>Regione</th>
+<th>Alcolici</th>
+<th>Tabacchi</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">177</td>
-<td style="text-align: right;">78</td>
+<td>North</td>
+<td>6.47</td>
+<td>4.03</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">172</td>
-<td style="text-align: right;">68</td>
+<td>Yorkshire</td>
+<td>6.13</td>
+<td>3.76</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">181</td>
-<td style="text-align: right;">72</td>
+<td>Northeast</td>
+<td>6.19</td>
+<td>3.77</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">176</td>
-<td style="text-align: right;">66</td>
+<td>East Midlands</td>
+<td>4.89</td>
+<td>3.34</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">177</td>
-<td style="text-align: right;">73</td>
+<td>West Midlands</td>
+<td>5.63</td>
+<td>3.47</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">174</td>
-<td style="text-align: right;">78</td>
+<td>East Anglia</td>
+<td>4.52</td>
+<td>2.92</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">173</td>
-<td style="text-align: right;">82</td>
+<td>Southeast</td>
+<td>5.89</td>
+<td>3.2</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">176</td>
-<td style="text-align: right;">80</td>
+<td>Southwest</td>
+<td>4.79</td>
+<td>2.71</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">172</td>
-<td style="text-align: right;">74</td>
+<td>Wales</td>
+<td>5.27</td>
+<td>3.53</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">174</td>
-<td style="text-align: right;">76</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">180</td>
-<td style="text-align: right;">70</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">172</td>
-<td style="text-align: right;">63</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">176</td>
-<td style="text-align: right;">60</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">175</td>
-<td style="text-align: right;">77</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">181</td>
-<td style="text-align: right;">82</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">165</td>
-<td style="text-align: right;">61</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">178</td>
-<td style="text-align: right;">78</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">193</td>
-<td style="text-align: right;">110</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">172</td>
-<td style="text-align: right;">72</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">183</td>
-<td style="text-align: right;">81</td>
+<td>Scotland</td>
+<td>6.08</td>
+<td>4.51</td>
 </tr>
 </tbody>
 </table>
+<p>Si valuti la funzione di regressione tra le due variabili (usando la variabile <code>alcolici</code> come esplicativa), ripercorrendo gli stessi punti svolti nell’<a href="es_5.pdf">esercitazione 5</a>. In particolare:</p>
 <ol type="1">
-<li><p>Si forniscano delle opportune misure che descrivono la distribuzione della variabile peso.</p></li>
-<li><p>La variabile peso risulta asimmetrica?</p></li>
-<li><p>Si disegni un opportuno grafico che descriva la distribuzione della variabile peso.</p></li>
-<li><p>La conoscenza dell’altezza degli individui permette una migliore descrizione del peso? Si risponda qualitativamente tramite un grafico.</p></li>
-<li><p>Si fornisca la funzione di regressione del peso (<span class="math inline">y</span>) rispetto all’altezza (<span class="math inline">x</span>). Tale modello si adatta bene ai dati?</p></li>
-<li><p>C’è un individuo che presenta un residuo elevato? Quale?</p></li>
-<li><p>Quanto vale la varianza dei residui?</p></li>
-<li><p>Se si eliminasse dall’analisi tale individuo i risultati cambierebbero in maniera rilevante? Possiamo dire che in questo caso la retta si adatta meglio?</p></li>
+<li>Si disegnino i dati tramite un diagramma dispersione.</li>
+<li>Si ottengano medie e varianze di <span class="math inline">x</span> ed <span class="math inline">y</span>.</li>
+<li>Si ottengano le stime ai minimi quadrati.</li>
+<li>Si ottengano i valori previsti ed i residui della regressione.</li>
+<li>Si ottenga la varianza residuale.</li>
+<li>Si calcoli <span class="math inline">R^2</span> e correlazione <span class="math inline">\rho</span>.</li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In primo luogo disegniamo graficamente i dati tramite un diagramma a dispersione</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_5_bis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Valutiamo quindi le principali quantità d’interesse, dove <span class="math inline">x_1,\dots,x_{10}</span> rappresentano gli alcolici e <span class="math inline">y_1,\dots,y_{10}</span> rappresentano invece i tabacchi. Di conseguenza, avremo che:</p>
+<p><span class="math display">
+\sum_{i=1}^nx_i y_i = 199.38, \qquad \sum_{i=1}^nx_i = 55.86, \qquad \sum_{i=1}^ny_i = 35.24.
+</span></p>
+<p>È inoltre possibile calcolare le seguenti quantità</p>
+<p><span class="math display">
+\sum_{i=1}^nx_i^2 = 316.169, \qquad \sum_{i=1}^ny_i^2 = 126.7.
+</span> Utilizzando le quantità del punto precedente, possiamo quindi ottenere la stima ai minimi quadrati <span class="math inline">(\hat{\alpha},\hat{\beta})</span> di un modello di regressione lineare semplice. In particolare, avremo che:</p>
+<p><span class="math display">\hat{\beta} = \frac{\text{cov}(x,y)}{\text{var}(x)} = \frac{19.938 - 5.586\times 3.524}{31.617 - 5.586^2}= 0.611.</span> Si ha infatti che <span class="math inline">\text{cov}(x,y) = 19.938 - 5.586\times 3.524 = 0.252936</span> mentre <span class="math inline">\text{var}(x) = 31.617 - 5.586^2 = 0.4136</span>. Inoltre avremo che:</p>
+<p><span class="math display">
+\hat{\alpha} = \bar{y} - \hat{\beta} \bar{x} = \frac{35.24}{10} - 0.611\frac{55.86}{10} = 0.111.
+</span> I valori previsti si ottengono quindi tramite l’equazione:</p>
+<p><span class="math display">
+\hat{y}_i = 0.111 + 0.611x_i.
+</span></p>
+<p>Per comodità, riportiamo i valori previsti ed i residui nella seguente tabella</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">x_i</span></th>
+<th style="text-align: right;"><span class="math inline">y_i</span></th>
+<th style="text-align: right;"><span class="math inline">\hat{y}_i</span></th>
+<th style="text-align: right;"><span class="math inline">r_i</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">6.47</td>
+<td style="text-align: right;">4.03</td>
+<td style="text-align: right;">4.06</td>
+<td style="text-align: right;">-0.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.13</td>
+<td style="text-align: right;">3.76</td>
+<td style="text-align: right;">3.86</td>
+<td style="text-align: right;">-0.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6.19</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">3.89</td>
+<td style="text-align: right;">-0.12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.89</td>
+<td style="text-align: right;">3.34</td>
+<td style="text-align: right;">3.10</td>
+<td style="text-align: right;">0.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.63</td>
+<td style="text-align: right;">3.47</td>
+<td style="text-align: right;">3.55</td>
+<td style="text-align: right;">-0.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.52</td>
+<td style="text-align: right;">2.92</td>
+<td style="text-align: right;">2.87</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.89</td>
+<td style="text-align: right;">3.20</td>
+<td style="text-align: right;">3.71</td>
+<td style="text-align: right;">-0.51</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4.79</td>
+<td style="text-align: right;">2.71</td>
+<td style="text-align: right;">3.04</td>
+<td style="text-align: right;">-0.33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5.27</td>
+<td style="text-align: right;">3.53</td>
+<td style="text-align: right;">3.33</td>
+<td style="text-align: right;">0.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6.08</td>
+<td style="text-align: right;">4.51</td>
+<td style="text-align: right;">3.83</td>
+<td style="text-align: right;">0.68</td>
+</tr>
+</tbody>
+</table>
+<p>Per valutare la bontà d’adattamento del modello usando l’indice <span class="math inline">R^2</span> si può procedere in due modi: i) calcolare il coefficiente di correlazione <span class="math inline">\rho</span> ed elevarlo al quadrato, oppure ii) attraverso il calcolo della varianza dei residui.</p>
+<p>Dalla precedente tabella, so ottiene che <span class="math inline">\text{var}(r) = n^{-1}\sum_{i=1}^n r_i^2 = 0.096</span>. Pertanto, otteniamo che</p>
+<p><span class="math display">
+R^2 = 1 - \frac{\text{var}(r)}{\text{var}(y)} = 1 - \frac{0.096}{12.67 - 3.524^2} = 0.62.
+</span> Alternativamente avremmo potuto calcolare l’indice di correlazione <span class="math display">
+\rho = \frac{\text{cov}(x,y)}{\sqrt{\text{var}(x)}\sqrt{\text{var}(y)}} = \frac{0.2529}{\sqrt{0.4136 \times 0.2514}} = 0.78428.
+</span> E pertanto si otterà che <span class="math inline">R^2 = \rho^2 = 0.62</span>. Concludiamo l’analisi rappresentano la retta di regressione sovrapposta ai dati.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_5_bis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="esercizio-c---regressione-con-variabili-standardizzate" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-c---regressione-con-variabili-standardizzate">Esercizio C - Regressione con variabili standardizzate</h2>
+<section id="esercizio-b---regressione-con-variabili-standardizzate" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-b---regressione-con-variabili-standardizzate">Esercizio B - Regressione con variabili standardizzate</h2>
 <p>Si considerino due variabili statistiche <span class="math inline">x</span> ed <span class="math inline">y</span> e siano <span class="math inline">\hat{\alpha}</span> e <span class="math inline">\hat{\beta}</span> le stime ai minimi quadrati dei parametri del modello di regressione <span class="math inline">y = \alpha + \beta x</span>.</p>
 <p>Si considerino quindi le variabili <span class="math display">
 z_i = \frac{x_i − \bar{x}}{\sigma_x}, \qquad w_i = \frac{y_i - \bar{y}}{\sigma_y},\qquad i=1,\dots,n.
@@ -239,10 +354,10 @@ z_i = \frac{x_i − \bar{x}}{\sigma_x}, \qquad w_i = \frac{y_i - \bar{y}}{\sigma
 <li><p>Cosa si può dire circa le devianze residui dei due modelli? E degli indici <span class="math inline">R^2</span>?</p></li>
 </ol>
 </section>
-<section id="esercizio-d---i-dati-di-anscombe" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-d---i-dati-di-anscombe">Esercizio D - I dati di Anscombe</h2>
+<section id="esercizio-c-i-dati-di-anscombe" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-c-i-dati-di-anscombe">Esercizio C (I dati di Anscombe)</h2>
 <p>Sono date le seguenti osservazioni da 4 regressori e 4 variabili dipendenti</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 8%">
@@ -384,129 +499,8 @@ z_i = \frac{x_i − \bar{x}}{\sigma_x}, \qquad w_i = \frac{y_i - \bar{y}}{\sigma
 <li><p>Si disegni il grafico a dispersione per ciascuna coppia di variabili considerata al punto precedente. Si commentino i risultati ottenuti in relazione al punto precedente.</p></li>
 </ol>
 </section>
-<section id="esercizio-e" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-e">Esercizio E</h2>
-<p>È opinione diffusa che il consumo di bevande alcoliche sia una delle principali cause di incidenti automobilistici. Con l’obiettivo di verificare una tale opinione, nella tabella seguente vengono forniti il numero di incidenti avvenuti nell’intera rete stradale nelle diverse regioni italiane e la percentuale di persone che consumano di vino per ogni regione.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Regione</th>
-<th style="text-align: right;">Incidenti</th>
-<th style="text-align: right;">Vino</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Piemonte</td>
-<td style="text-align: right;">4019</td>
-<td style="text-align: right;">60</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Valle d’Aosta</td>
-<td style="text-align: right;">14707</td>
-<td style="text-align: right;">59</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Lombardia</td>
-<td style="text-align: right;">407</td>
-<td style="text-align: right;">55</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Trentino-A.Adige</td>
-<td style="text-align: right;">46798</td>
-<td style="text-align: right;">55</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Veneto</td>
-<td style="text-align: right;">3200</td>
-<td style="text-align: right;">60</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Friuli-Venezia-Giulia</td>
-<td style="text-align: right;">18268</td>
-<td style="text-align: right;">58</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Liguria</td>
-<td style="text-align: right;">5164</td>
-<td style="text-align: right;">58</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Emilia Romagna</td>
-<td style="text-align: right;">9133</td>
-<td style="text-align: right;">61</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Toscana</td>
-<td style="text-align: right;">23531</td>
-<td style="text-align: right;">58</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Umbria</td>
-<td style="text-align: right;">19869</td>
-<td style="text-align: right;">59</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Marche</td>
-<td style="text-align: right;">3614</td>
-<td style="text-align: right;">63</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lazio</td>
-<td style="text-align: right;">7556</td>
-<td style="text-align: right;">54</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Abruzzo</td>
-<td style="text-align: right;">27377</td>
-<td style="text-align: right;">51</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Molise</td>
-<td style="text-align: right;">4725</td>
-<td style="text-align: right;">50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Campania</td>
-<td style="text-align: right;">470</td>
-<td style="text-align: right;">50</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Puglia</td>
-<td style="text-align: right;">9372</td>
-<td style="text-align: right;">51</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Basilicata</td>
-<td style="text-align: right;">9315</td>
-<td style="text-align: right;">53</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Calabria</td>
-<td style="text-align: right;">741</td>
-<td style="text-align: right;">50</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Sicilia</td>
-<td style="text-align: right;">3602</td>
-<td style="text-align: right;">43</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sardegna</td>
-<td style="text-align: right;">12685</td>
-<td style="text-align: right;">49</td>
-</tr>
-</tbody>
-</table>
-<ol type="1">
-<li><p>Attraverso un grafico, opportunamente commentato, si dia una prima valutazione sulla verifica della relazione sotto studio.</p></li>
-<li><p>Si costruisca e si stimi un semplice modello lineare che descriva la relazione tra le variabili vino (variabile <span class="math inline">x</span>) ed incidenti (variabile <span class="math inline">y</span>).</p></li>
-<li><p>Si fornisca una misura della qualità del modello per descrivere i dati disponibili.</p></li>
-<li><p>Si discuta sulla sensatezza dei risultati ottenuti, considerando in particolare le stime ottenute per i parametri.</p></li>
-</ol>
-</section>
-<section id="esercizio-f-difficile" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-f-difficile">Esercizio F (difficile)</h2>
+<section id="esercizio-d-difficile" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-d-difficile">Esercizio D (difficile)</h2>
 <p>Per <span class="math inline">n = 10</span> paesi dell’Unione Europea si è osservato il prezzo in euro di un litro di benzina (variabile <span class="math inline">x</span>) ed il numero di veicoli pro-capite circolanti (variabile <span class="math inline">y</span>). I dati si riferiscono alla fine degli anni <span class="math inline">'90</span>. Si conoscono i seguenti risultati: <span class="math display">
 \sum_{i=1}^nx_i = 8.79, \qquad \sum_{i=1}^ny_i = 8.63, \qquad \frac{1}{n}\sum_{i=1}^nx_i^2 = 0.77385, \qquad \frac{1}{n}\sum_{i=1}^ny_i^2 = 0.7695.
 </span> Inoltre, è noto che la somma dei residui al quadrato del modello di regressione <span class="math inline">y = \alpha + \beta x</span> sono pari a</p>
@@ -516,6 +510,41 @@ z_i = \frac{x_i − \bar{x}}{\sigma_x}, \qquad w_i = \frac{y_i - \bar{y}}{\sigma
 <hr>
 <p>Sulla base di queste informazioni, si ottengano le stime ai minimi quadrati <span class="math inline">\hat{\alpha}</span> e <span class="math inline">\hat{\beta}</span> e si ottenga un indice di bontà di adattamento. Si assuma inoltre che le variabili <span class="math inline">x</span> ed <span class="math inline">y</span> siano negativamente correlate.</p>
 <p><span class="blue">Suggerimento</span>. Si cominci ottenendo il valore <span class="math inline">R^2</span> e si ragioni quindi sulla definizione di <span class="math inline">\hat{\beta}</span>.</p>
+</section>
+<section id="esercizio-e" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-e">Esercizio E</h2>
+<p>Nella figura che segue sono riportati i diagrammi a dispersione di <span class="math inline">4</span> coppie di variabili. Ad esse corrispondono i coefficienti di correlazione <span class="math inline">\rho</span> pari a <span class="math inline">-1,0,0.7,0.9</span>. Si dica a quale grafico corrisponde ciascun coefficiente.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_5_bis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- ## Esercizio F -->
+<!-- La tabella seguente esprime il peso (in chili) e l’altezza (in centimetri) di $n = 20$ persone adulte di sesso maschile. -->
+<!-- | Altezza| Peso|Altezza|Peso -->
+<!-- |-------|----|---|---| -->
+<!-- |     177|   78|     174|   76| -->
+<!-- |     172|   68|    180|   70| -->
+<!-- |     181|   72|     172|   63| -->
+<!-- |     176|   66|     176|   60| -->
+<!-- |     177|   73|     175|   77| -->
+<!-- |     174|   78|     181|   82| -->
+<!-- |     173|   82|    165|   61| -->
+<!-- |     176|   80|     178|   78| -->
+<!-- |     172|   74|    193|  110| -->
+<!-- |     172|   72|     183|   81| -->
+<!-- 1. Si forniscano delle opportune misure che descrivono la distribuzione della variabile peso. -->
+<!-- 1. La variabile peso risulta asimmetrica? -->
+<!-- 1. Si disegni un opportuno grafico che descriva la distribuzione della variabile peso. -->
+<!-- 1. La conoscenza dell’altezza degli individui permette una migliore descrizione del peso? Si risponda qualitativamente tramite un grafico. -->
+<!-- 1. Si fornisca la funzione di regressione del peso ($y$) rispetto all’altezza ($x$). Tale modello si adatta bene ai dati? -->
+<!-- 1. C'è un individuo che presenta un residuo elevato? Quale? -->
+<!-- 1. Quanto vale la varianza dei residui? -->
+<!-- 1. Se si eliminasse dall’analisi tale individuo i risultati cambierebbero in maniera rilevante? Possiamo dire che in questo caso la retta si adatta meglio? -->
 </section>
 </section>
 
@@ -556,18 +585,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -599,11 +617,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -613,8 +670,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -626,7 +692,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -670,6 +859,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -695,6 +885,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -755,6 +971,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

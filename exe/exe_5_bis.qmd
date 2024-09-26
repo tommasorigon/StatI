@@ -26,71 +26,128 @@ format:
 knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, comment = NA, cache = F, include = T, R.options = list(width = 100), collapse = T, dpi = 200, fig.align = "center", fig.height = 4, fig.width = 8)
 ```
 
-## Esercizio A
+## Esercizio A (Tabacco e bevande alcoliche)
 
-Nella figura che segue sono riportati i diagrammi a dispersione di $4$ coppie di variabili. Ad esse corrispondono i coefficienti di correlazione $\rho$ pari a $-1,0,0.7,0.9$. Si dica a quale grafico corrisponde ciascun coefficiente.
+I risultati di un'indagine del governo britannico sulla spesa delle famiglie possono essere utilizzati per investigare sulla relazione tra l'ammontare speso per i tabacchi e quello speso per le bevande alcoliche. 
 
-```{r, fig.height=8}
-set.seed(18)
-x <- rnorm(200)
-y1 <- x + rnorm(200,0,1)
-y2 <- x + rnorm(200,0,0.43)
-y3 <- -x
-y4 <- rnorm(200,0,4)
+La seguente tabella riporta, per $n = 10$ regioni della Gran Bretagna, la spesa settimanale media per famiglia per i due capitoli di spesa, espressa in sterline. I dati sono riferiti al 1981.
 
-par(mfrow=c(2,2))
-plot(x,y1, ylab="y")
-plot(x,y2, ylab="y")
-plot(x,y3, ylab="y")
-plot(x,y4, ylab ="y")
+| Regione | Alcolici | Tabacchi |
+|---------|----------|----------|
+| North | 6.47 | 4.03|
+| Yorkshire | 6.13 | 3.76 |
+| Northeast | 6.19 | 3.77 |
+| East Midlands | 4.89 | 3.34 |
+| West Midlands | 5.63 | 3.47 |
+| East Anglia | 4.52 | 2.92 |
+| Southeast | 5.89 | 3.2 |
+| Southwest | 4.79 | 2.71 |
+| Wales | 5.27 | 3.53 |
+| Scotland | 6.08 | 4.51 |
+
+Si valuti la funzione di regressione tra le due variabili (usando la variabile `alcolici` come esplicativa), ripercorrendo gli stessi punti svolti nell'[esercitazione 5](es_5.pdf). In particolare:
+
+1. Si disegnino i dati tramite un diagramma dispersione.
+1. Si ottengano medie e varianze di $x$ ed $y$.
+1. Si ottengano le stime ai minimi quadrati.
+1. Si ottengano i valori previsti ed i residui della regressione.
+1. Si ottenga la varianza residuale.
+1. Si calcoli $R^2$ e correlazione $\rho$.
+
+```{r}
+alcolici <- c(6.47, 6.13, 6.19, 4.89, 5.63, 4.52, 5.89, 4.79, 5.27, 6.08)
+tabacchi <- c(4.03, 3.76, 3.77, 3.34, 3.47, 2.92, 3.2, 2.71, 3.53, 4.51)
+dataset <- data.frame(alcolici, tabacchi)
 ```
 
-## Esercizio B
+::: {.callout-note collapse=true}
+### Schema della soluzione
 
-La tabella seguente esprime il peso (in chili) e l’altezza (in centimetri) di $n = 20$ persone adulte di sesso maschile.
+In primo luogo disegniamo graficamente i dati tramite un diagramma a dispersione
 
-
-| Altezza| Peso|
-|-------:|----:|
-|     177|   78|
-|     172|   68|
-|     181|   72|
-|     176|   66|
-|     177|   73|
-|     174|   78|
-|     173|   82|
-|     176|   80|
-|     172|   74|
-|     174|   76|
-|     180|   70|
-|     172|   63|
-|     176|   60|
-|     175|   77|
-|     181|   82|
-|     165|   61|
-|     178|   78|
-|     193|  110|
-|     172|   72|
-|     183|   81|
+```{r}
+library(ggplot2)
+ggplot(data=dataset, aes(x = alcolici, y = tabacchi)) + geom_point() + theme_bw() + xlab("Alcolici") + ylab("Tabacchi")
+```
 
 
-1. Si forniscano delle opportune misure che descrivono la distribuzione della variabile peso.
+```{r}
+# sum(alcolici*tabacchi)
+#sum(alcolici)
+# sum(tabacchi)
+# sum(alcolici^2)
+#summary(lm(tabacchi ~alcolici))
+```
 
-1. La variabile peso risulta asimmetrica?
+Valutiamo quindi le principali quantità d'interesse, dove $x_1,\dots,x_{10}$ rappresentano gli alcolici e $y_1,\dots,y_{10}$ rappresentano invece i tabacchi. Di conseguenza, avremo che:
 
-1. Si disegni un opportuno grafico che descriva la distribuzione della variabile peso.
+$$
+\sum_{i=1}^nx_i y_i = 199.38, \qquad \sum_{i=1}^nx_i = 55.86, \qquad \sum_{i=1}^ny_i = 35.24.
+$$
 
-1. La conoscenza dell’altezza degli individui permette una migliore descrizione del peso? Si risponda qualitativamente tramite un grafico.
+È inoltre possibile calcolare le seguenti quantità
 
-1. Si fornisca la funzione di regressione del peso ($y$) rispetto all’altezza ($x$). Tale modello si adatta bene ai dati?
+$$
+\sum_{i=1}^nx_i^2 = 316.169, \qquad \sum_{i=1}^ny_i^2 = 126.7.
+$$
+Utilizzando le quantità del punto precedente, possiamo quindi ottenere la stima ai minimi quadrati $(\hat{\alpha},\hat{\beta})$ di un modello di regressione lineare semplice. In particolare, avremo che:
 
-1. C'è un individuo che presenta un residuo elevato? Quale?
+$$\hat{\beta} = \frac{\text{cov}(x,y)}{\text{var}(x)} = \frac{19.938 - 5.586\times 3.524}{31.617 - 5.586^2}= 0.611.$$
+Si ha infatti che $\text{cov}(x,y) = 19.938 - 5.586\times 3.524 = 0.252936$ mentre $\text{var}(x) = 31.617 - 5.586^2 = 0.4136$. Inoltre avremo che:
 
-1. Quanto vale la varianza dei residui?
+$$
+\hat{\alpha} = \bar{y} - \hat{\beta} \bar{x} = \frac{35.24}{10} - 0.611\frac{55.86}{10} = 0.111.
+$$
+I valori previsti si ottengono quindi tramite l'equazione:
 
-1. Se si eliminasse dall’analisi tale individuo i risultati cambierebbero in maniera rilevante? Possiamo dire che in questo caso la retta si adatta meglio?
+$$
+\hat{y}_i = 0.111 + 0.611x_i.
+$$
 
-## Esercizio C - Regressione con variabili standardizzate
+Per comodità, riportiamo i valori previsti ed i residui nella seguente tabella
+```{r}
+#library(knitr)
+y_fit <- 0.111 + 0.611*alcolici
+y_res <- tabacchi - y_fit
+#kable(cbind(dataset,y_fit,y_res ), digits=2) 
+```
+
+| $x_i$ | $y_i$ | $\hat{y}_i$ | $r_i$ |
+|--------:|--------:|-----:|-----:|
+|     6.47|     4.03|  4.06| -0.03|
+|     6.13|     3.76|  3.86| -0.10|
+|     6.19|     3.77|  3.89| -0.12|
+|     4.89|     3.34|  3.10|  0.24|
+|     5.63|     3.47|  3.55| -0.08|
+|     4.52|     2.92|  2.87|  0.05|
+|     5.89|     3.20|  3.71| -0.51|
+|     4.79|     2.71|  3.04| -0.33|
+|     5.27|     3.53|  3.33|  0.20|
+|     6.08|     4.51|  3.83|  0.68|
+
+Per valutare la bontà d'adattamento del modello usando l'indice $R^2$ si può procedere in due modi: i) calcolare il coefficiente di correlazione $\rho$ ed elevarlo al quadrato, oppure ii) attraverso il calcolo della varianza dei residui.
+
+Dalla precedente tabella, so ottiene che $\text{var}(r) = n^{-1}\sum_{i=1}^n r_i^2 = 0.096$. Pertanto, otteniamo che
+
+$$
+R^2 = 1 - \frac{\text{var}(r)}{\text{var}(y)} = 1 - \frac{0.096}{12.67 - 3.524^2} = 0.62.
+$$
+Alternativamente avremmo potuto calcolare l'indice di correlazione
+$$
+\rho = \frac{\text{cov}(x,y)}{\sqrt{\text{var}(x)}\sqrt{\text{var}(y)}} = \frac{0.2529}{\sqrt{0.4136 \times 0.2514}} = 0.78428. 
+$$
+E pertanto si otterà che $R^2 = \rho^2 = 0.62$. Concludiamo l'analisi rappresentano la retta di regressione sovrapposta ai dati.
+
+```{r}
+library(ggplot2)
+ggplot(data=dataset, aes(x = alcolici, y = tabacchi)) + geom_point() + theme_bw() + xlab("Alcolici") + ylab("Tabacchi") + geom_abline(intercept = 0.111, slope = 0.611, linetype="dotted")
+```
+:::
+
+
+
+
+## Esercizio B - Regressione con variabili standardizzate
 
 Si considerino due variabili statistiche $x$ ed $y$ e siano $\hat{\alpha}$ e $\hat{\beta}$ le stime ai minimi quadrati dei parametri del modello di regressione $y = \alpha + \beta x$.
 
@@ -106,7 +163,7 @@ Inoltre, si consideri il modello di regressione $w = \gamma + \delta z$.
 
 1. Cosa si può dire circa le devianze residui dei due modelli? E degli indici $R^2$?
 
-## Esercizio D - I dati di Anscombe
+## Esercizio C (I dati di Anscombe)
 
 Sono date le seguenti osservazioni da 4 regressori e 4 variabili dipendenti
 
@@ -130,43 +187,9 @@ Sono date le seguenti osservazioni da 4 regressori e 4 variabili dipendenti
 
 1. Si disegni il grafico a dispersione per ciascuna coppia di variabili considerata al punto precedente. Si commentino i risultati ottenuti in relazione al punto precedente.
 
-## Esercizio E
-
-È opinione diffusa che il consumo di bevande alcoliche sia una delle principali cause di incidenti automobilistici. Con l’obiettivo di verificare una tale opinione, nella tabella seguente vengono forniti il numero di incidenti avvenuti nell’intera rete stradale nelle diverse regioni italiane e la percentuale di persone che consumano di vino per ogni regione.
 
 
-|Regione               | Incidenti| Vino|
-|:---------------------|---------:|----:|
-|Piemonte              |      4019|   60|
-|Valle d’Aosta         |     14707|   59|
-|Lombardia             |       407|   55|
-|Trentino-A.Adige      |     46798|   55|
-|Veneto                |      3200|   60|
-|Friuli-Venezia-Giulia |     18268|   58|
-|Liguria               |      5164|   58|
-|Emilia Romagna        |      9133|   61|
-|Toscana               |     23531|   58|
-|Umbria                |     19869|   59|
-|Marche                |      3614|   63|
-|Lazio                 |      7556|   54|
-|Abruzzo               |     27377|   51|
-|Molise                |      4725|   50|
-|Campania              |       470|   50|
-|Puglia                |      9372|   51|
-|Basilicata            |      9315|   53|
-|Calabria              |       741|   50|
-|Sicilia               |      3602|   43|
-|Sardegna              |     12685|   49|
-
-1. Attraverso un grafico, opportunamente commentato, si dia una prima valutazione sulla verifica della relazione sotto studio.
-
-1. Si costruisca e si stimi un semplice modello lineare che descriva la relazione tra le variabili vino (variabile $x$) ed incidenti (variabile $y$).
-
-1. Si fornisca una misura della qualità del modello per descrivere i dati disponibili.
-
-1. Si discuta sulla sensatezza dei risultati ottenuti, considerando in particolare le stime ottenute per i parametri.
-
-## Esercizio F (difficile)
+## Esercizio D (difficile)
 
 Per $n = 10$ paesi dell'Unione Europea si è osservato il prezzo in euro di un litro di benzina (variabile $x$) ed il numero di veicoli pro-capite circolanti (variabile $y$). I dati si riferiscono alla fine degli anni $'90$. Si conoscono i seguenti risultati:
 $$
@@ -183,4 +206,50 @@ $$
 Sulla base di queste informazioni, si ottengano le stime ai minimi quadrati $\hat{\alpha}$ e $\hat{\beta}$ e si ottenga un indice di bontà di adattamento. Si assuma inoltre che le variabili $x$ ed $y$ siano negativamente correlate.
 
 [Suggerimento]{.blue}. Si cominci ottenendo il valore $R^2$ e si ragioni quindi sulla definizione di $\hat{\beta}$. 
+
+## Esercizio E
+
+Nella figura che segue sono riportati i diagrammi a dispersione di $4$ coppie di variabili. Ad esse corrispondono i coefficienti di correlazione $\rho$ pari a $-1,0,0.7,0.9$. Si dica a quale grafico corrisponde ciascun coefficiente.
+
+```{r, fig.height=8}
+set.seed(18)
+x <- rnorm(200)
+y1 <- x + rnorm(200,0,1)
+y2 <- x + rnorm(200,0,0.43)
+y3 <- -x
+y4 <- rnorm(200,0,4)
+
+par(mfrow=c(2,2))
+plot(x,y1, ylab="y")
+plot(x,y2, ylab="y")
+plot(x,y3, ylab="y")
+plot(x,y4, ylab ="y")
+```
+
+<!-- ## Esercizio F -->
+
+<!-- La tabella seguente esprime il peso (in chili) e l’altezza (in centimetri) di $n = 20$ persone adulte di sesso maschile. -->
+
+
+<!-- | Altezza| Peso|Altezza|Peso -->
+<!-- |-------|----|---|---| -->
+<!-- |     177|   78|     174|   76| -->
+<!-- |     172|   68|    180|   70| -->
+<!-- |     181|   72|     172|   63| -->
+<!-- |     176|   66|     176|   60| -->
+<!-- |     177|   73|     175|   77| -->
+<!-- |     174|   78|     181|   82| -->
+<!-- |     173|   82|    165|   61| -->
+<!-- |     176|   80|     178|   78| -->
+<!-- |     172|   74|    193|  110| -->
+<!-- |     172|   72|     183|   81| -->
+
+<!-- 1. Si forniscano delle opportune misure che descrivono la distribuzione della variabile peso. -->
+<!-- 1. La variabile peso risulta asimmetrica? -->
+<!-- 1. Si disegni un opportuno grafico che descriva la distribuzione della variabile peso. -->
+<!-- 1. La conoscenza dell’altezza degli individui permette una migliore descrizione del peso? Si risponda qualitativamente tramite un grafico. -->
+<!-- 1. Si fornisca la funzione di regressione del peso ($y$) rispetto all’altezza ($x$). Tale modello si adatta bene ai dati? -->
+<!-- 1. C'è un individuo che presenta un residuo elevato? Quale? -->
+<!-- 1. Quanto vale la varianza dei residui? -->
+<!-- 1. Se si eliminasse dall’analisi tale individuo i risultati cambierebbero in maniera rilevante? Possiamo dire che in questo caso la retta si adatta meglio? -->
 
