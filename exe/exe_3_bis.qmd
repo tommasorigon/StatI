@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, c
 
 Le soluzioni di alcuni esercizi sono state gentilmente fornite dal [tutor di Statistica I]{.blue} dell'A.A. 2021/2022, [Alex Alborghetti]{.orange}, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori. 
 
-## Esercizio A
+## Esercizio A 
 
 Si considerino i seguenti tre insiemi di $n = 10$ dati raccolti sulla medesima variabile in tre situazioni diverse: $$x = (−1.65, −5.74, −0.84, −4.50, 12.90, 0.84, −4.73, 7.89, 10.72, 4.40),$$ 
 $$y = (−5.34,−6.26,3.80,−2.15,−1.72,−7.35,6.84,5.92,1.72,7.76),$$ 
@@ -81,7 +81,7 @@ La tabella seguente costituisce solamente uno schema della soluzione, non la sol
 Il calcolo di eventuali oulier è agevole a partire dalla tabella precedente.
 :::
 
-## Esercizio B
+## Esercizio B (Giorni di ferie)
 
 Il numero di giorni di ferie richiesti per il mese di giugno 2019 in un campione di $n = 16$ lavoratori è rappresentato nella seguente tabella
 
@@ -176,7 +176,7 @@ Allora $\sigma = \sqrt{28.0625} = 5.297$.
 
 :::
 
-## Esercizio C
+## Esercizio C (Parti in Italia)
 
 Nel 1975 in Italia il numero di parti legittimi per età della madre al parto è stato il seguente:
 
@@ -198,7 +198,7 @@ Nel 1975 in Italia il numero di parti legittimi per età della madre al parto è
 
 1. Calcolare la percentuale dei nati per fasce d'età della madre.
 
-## Esercizio D
+## Esercizio D (Voto esame di maturità)
 
 Per $n = 56$ studenti si è rilevata la variabile `voto all’esame di maturità`. Il voto medio rilevato è pari a 76 e la varianza pari a 25.
 
@@ -263,4 +263,110 @@ hist(y, breaks= 30, main = "Variabile y", ylab = "Frequenze assolute")
 1. Quale delle due variabili presenta la maggiore variabilità? 
 
 1. A giudicare dal grafico, quando vale (approssimativamente) l'indice di asimmetria di Pearson? E quello di Bowley?
+```{r}
+#| fig-height: 3.5
+#| fig-width: 9
+x  = c(-1.65,-5.74,-0.84,-4.50,12.90,0.84,-4.73,7.89,10.72,4.40)
+y = c(-5.34,-6.26,3.80,-2.15,-1.72,-7.35,6.84,5.92,1.72,7.76)
+z = c(7.05, -0.43, -10.21, -5.44, -6.75, -12.33, 13.76, 21.51, 0.43, 6.14)
 
+par(mfrow = c(1,3))
+hist(x, ylim = c(0,4), xlim = c(-30,30), breaks = seq(-25,25,5), main = "", ylab = "Frequenza assoluta")
+hist(y, ylim = c(0,4), xlim = c(-30,30), breaks = seq(-25,25,5), main = "Istogrammi", ylab = "Frequenza assoluta")
+hist(z, ylim = c(0,4), xlim = c(-30,30), breaks = seq(-25,25,5), main = "", ylab = "Frequenza assoluta")
+```
+
+L'indice di asimmetria di Pearson è:
+
+$$
+\gamma_x = \frac{1}{n_x} \sum_{i=1}^{n_x} \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^3,
+$$
+mentre l'indice di curtosi di Person è:
+
+$$
+\kappa_x =  \frac{1}{n_x} \sum_{i=1}^{n_x} \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^4.
+$$
+
+Sono riportati di seguito i risultati calcolati sui dati a disposizione:
+
+| Dati | Media | Varianza | Asimmetria | Curtosi |           Descrizione           |
+|:-----|:-----:|:--------:|:----------:|:-------:|:-------------------------------:|
+| x    | 1.929 |  40.543  |   0.444    |  1.771  | Asimm. positiva, bassa curtosi. |
+| y    | 0.322 |  28.772  |   -0.022   |  1.501  | Asimm. negativa, bassa curtosi. |
+| z    | 1.373 | 105.237  |   2.251    |  2.251  | Asimm. positiva, bassa curtosi. |
+
+## Esercizio H (Altezza delle persone)
+
+Rilevando in centrimetri la statura di $n = 136$ persone, si sono contate $30$ persone con statura compresa tra i $150$ e $170$cm; $44$ con statura tra $170$ e $180$; $52$ tra $180$ e $190$ e $10$ tra $190$ e $197$, che è la statura massima rilevata.
+
+Si rappresentino i dati con un istogramma. 
+
+::: {.callout-note collapse=true}
+
+#### Schema della soluzione
+
+Supponendo che le classi siano chiuse a destra, possiamo rappresentare i dati nella seguente tabella:
+
+| Classi di statura | Frequenza assoluta | Ampiezza della classe | Densità di frequenza | Altezza rettangoli |
+|-------------------|--------------------|-----------------------|----------------------|--------------------|
+| $(150, 170]$      | 30 | 20 | 1.5 | 0.011 |
+| $(170, 180]$      | 44 | 10 | 4.4 | 0.032 |
+| $(180,190]$       | 52 | 10 | 5.2 | 0.038 |
+| $(190,197]$       | 10 | 7 | 1.429 | 0.010 |
+
+```{r}
+x <- c(rep(155, 30), rep(175,44), rep(185,52), rep(195,10))
+breaks <- c(150,170,180,190,197)
+hist(x, breaks = breaks, freq=FALSE, main = "", ylab= "Densità / n")
+```
+
+:::
+
+## Esercizio I (Moscerini della frutta)
+
+Un gruppo di ricercatori sta valutando la tossicità su _D. melanogaster_ (moscerini della frutta) di un composto molecolare. I moscerini vengono divisi casualmente in 10 gruppi e vengono trattati col composto. Dopo 1 giorno si registra la percentuale di moscerini non sopravvissuti per l’eccessiva tossicità.
+
+| Gruppo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+|--------|---|---|---|---|---|---|---|---|---|----|
+| Frazione di decessi | 0.38 | 0.32 | 0.59 | 0.58 | 0.41 | 0.87 | 0.54 | 0.4 | 0.42 | 0.4 | 
+
+1. Si individuino le distribuzioni di frequenze assolute cumulate, relative e relative cumulate della mortalità dei moscerini.
+
+1. Si tracci il box-plot.
+
+1. Si calcolino media e lo scarto quadratico medio. 
+
+1. Si calcoli un indice di variabilità robusto.
+
+::: {.callout-note collapse=true}
+
+## Schema della soluzione
+
+La tabella delle frequenze è riportata qui di seguito.
+
+| Frazione di decessi  | 0.32 | 0.38 | 0.4 |  0.41 |  0.42 | 0.54 |   0.58 |  0.59 | 0.87 |
+|--------|---|---|---|---|---|---|---|---|---|----|
+| $n_j$ | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 1 | 1 |
+| $N_j$ | 1 | 2 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| $f_j$ | 0.1 | 0.1 | 0.2 | 0.1 | 0.1 | 0.1 | 0.1 | 0.1 | 0.1 |
+| $F_j$ | 0.1 | 0.2 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1 |
+
+
+```{r}
+x <- c(0.38, 0.32, 0.59, 0.58, 0.41, 0.87,   0.54,  0.4, 0.42, 0.4) 
+```
+
+La media è pari a `r mean(x)` mentre lo scarto quadratico medio è pari a `r round(sqrt(mean(x^2) - mean(x)^2),3)`. La mediana è pari a `r median(x)`, mentre i quantili sono invece pari a
+
+```{r}
+quantile(x, type = 1)[c(2,4)]
+```
+
+È presente un outlier. Pertanto, il boxplot si ottiene come segue:
+
+```{r}
+boxplot(x)
+```
+
+Un indice di variabilità robusto è il MAD, pari in questo caso a `r median(abs(x - median(x)))`.
+:::
