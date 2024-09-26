@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, c
 
 Le soluzioni di alcuni esercizi sono state gentilmente fornite dal [tutor di Statistica I]{.blue} dell'A.A. 2021/2022, [Alex Alborghetti]{.orange}, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori. 
 
-## Esercizio A
+## Esercizio A (Peso pacchetti di burro)
 
 Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza [cumulata]{.orange}.
 
@@ -105,7 +105,7 @@ I pacchetti di burro che pesano al più $252 g$ sono $F(252) = 42$.
 
 :::
 
-## Esercizio B
+## Esercizio B (Errori di stampa)
 
 Durante la correzione delle bozze di un libro di $280$ pagine si è riscontrata la seguente distribuzione degli errori di stampa per pagina:
 
@@ -164,7 +164,7 @@ I risultati sono arrotondati a tre cifre decimali. La proporzione di pagine con 
 
 :::
 
-## Esercizio C
+## Esercizio C (Titolo di studio)
 
 Ai dipendenti di una piccola azienda è stato chiesto di precisare il loro titolo di studio. I risultati relativi a $n=22$ dipendenti sono i seguenti:
 
@@ -195,8 +195,6 @@ Quella che segue è una distribuzione di frequenze di famiglie italiane secondo 
 2.  Si determinino le frequenze cumulate relative e si commentino i risultati.
 
 ## Esercizio E
-
-
 
 Si considerino le funzioni di ripartizione relative alle variabili $x$ ed $y$
 

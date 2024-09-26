@@ -110,7 +110,7 @@ $$ per un totale di $t_1 + t_2 = 1.8627$ ore.
 <!-- $$ -->
 <!-- ::: -->
 
-## Esercizio C
+## Esercizio C (Trasformazioni dei dati)
 
 Per le osservazioni $x_1,\dots,x_{11}$, i cui valori sono $(−4, 5, 3, 1, −1, 3, −1, 1, 0, 3, 2)$, si calcolino media e mediana.
 
@@ -208,7 +208,7 @@ La distanza totale percorsa per rifornire tutti e cinque i negozi è pari a $117
 
 <!-- in cui si è tenuto conto che un camion deve effettuare il viaggio di andata e poi tornare al magazzino. Sappiamo dalle proprietà della mediana che $D(a) \ge D(\text{Me})$ per ogni $a \in \mathbb{R}$, per cui poiché la mediana vale $\text{Me} = 134$, questo è il chilometro ottimale dove stabilire il magazzino. -->
 
-## Esercizio F (continuazione)
+## Esercizio F (continuazione pacchetti di burro)
 
 Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza [cumulata]{.orange}.
 
@@ -268,7 +268,7 @@ Poiché il terzo quartile appartiene alla classe $(252,253]$ dato che $F(252) = 
 
 :::
 
-## Esercizio G
+## Esercizio G (Soddisfazione dipendenti)
 
 Ai dipendenti di un'azienda è stato chiesto di indicare il grado di soddisfazione (1 = scarsa; 10 = ottima) riguardo alla qualità del cibo distribuito dalla mensa aziendale. I dati sono i seguenti:
 
@@ -284,7 +284,7 @@ Ai dipendenti di un'azienda è stato chiesto di indicare il grado di soddisfazio
 
 4.  I dipendenti risultano concordi nella valutazione della mensa? Sono contenti o scontenti? Cosa suggerireste ai responsabili della mensa?
 
-## Esercizio H (difficile)
+## ☠️ - Esercizio H
 
 In un'azienda industriale si hanno 5 linee diverse di produzione. Per ogni produzione si sono rilevati i dati seguenti
 
