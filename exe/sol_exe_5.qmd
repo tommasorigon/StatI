@@ -33,13 +33,6 @@ Le seguenti soluzioni sono state gentilmente fornite dal [tutor di Statistica I]
 
 ### Esercizio A
 
-I dati nel grafico $A$ hanno una correlazione pari a $\rho = 0.7$,
-
-I dati nel grafico $B$ hanno una correlazione pari a $\rho = 0.9$,
-
-I dati nel grafico $C$ hanno una correlazione pari a $\rho = -1$,
-
-I dati nel grafico $D$ hanno una correlazione pari a $\rho = 0$.
 
 ### Esercizio B
 
@@ -139,47 +132,3 @@ La varianza dei residui vale $47.569$, il nuovo modello stimato senza il tredice
 
 ### Esercizio F
 
-Si ricorda che
-
-$$
-\text{var}(r) = \sigma_r^2 = \frac{1}{n}\sum_{i=1}^nr_i^2 = 0.001, 
-$$
-
-dato che la media dei residui è nulla. Inoltre, si sa che
-
-$$
- R^2 = 1-\frac{\sigma_r^2}{\sigma_y^2} = \left[\frac{\text{cov}(x,y)}{\sigma_x\sigma_y}\right]^2,
- $$
-
-dove:
-
-$$
-\begin{split}
-         &\sigma_y^2 = \frac{1}{n}\sum_{i=1}^ny_i^2 - \left[\frac{1}{n}\sum_{i=1}^ny_i\right]^2 = 0.025\\
-         &\sigma_x^2 = \frac{1}{n}\sum_{i=1}^nx_i^2 - \left[\frac{1}{n}\sum_{i=1}^nx_i\right]^2 = 0.001.\\
-     \end{split}
-$$
-
-Allora, si può ricavare:
-
-$$
-\text{cov}(x,y) = \pm \sqrt{\left(1-\frac{\sigma_r^2}{\sigma_y^2}\right)\sigma^2_y\sigma^2_x} = -0.005.
-$$
-
-(si prende il valore negativo per l'ipotesi di correlazione negativa) da cui:
-
-$$
-\hat{\beta} = \frac{\text{cov}(x,y)}{\sigma_x^2} = -5,
-$$
-
-e, di conseguenza,
-
-$$
- \hat{\alpha} = \bar{y} - \hat{\beta}\bar{x} = 5.528.
-$$
-
-L'indice $R^2$, invece, vale:
-
-$$
-R^2 = 1-\frac{\sigma_r^2}{\sigma_y^2} = 0.96.
-$$

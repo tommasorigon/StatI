@@ -67,7 +67,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | **Applicazione**                     | [Slides unità L](slides/sl_L.pdf)          | §22.9                             |
 | Correlazione parziale                | [Slides unità M](slides/sl_M.pdf)          | §7.6                              |
 | **Esercitazione**                    | [Esercitazione 5](exe/exe_5.html)          |                                   |
-| *Esercizi*                           | [Esercizi 5](exe/exe_5_bis.html)           | [Soluzione 5](exe/sol_exe_5.html) |
+| *Esercizi*                           | [Esercizi 5](exe/exe_5_bis.html)           | |
 | Analisi della varianza               | [Slides unità N](slides/sl_N.pdf)          | §7.4                              |
 | **Esercitazione**                    | [Esercitazione 6](exe/exe_6.html)          |                                   |
 | *Esercizi*                           | [Esercizi 6](exe/exe_6_bis.html)           | [Soluzione 6](exe/sol_exe_6.html) |

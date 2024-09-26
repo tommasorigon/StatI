@@ -47,9 +47,10 @@ La seguente tabella riporta, per $n = 10$ regioni della Gran Bretagna, la spesa 
 
 Si valuti la funzione di regressione tra le due variabili (usando la variabile `alcolici` come esplicativa), ripercorrendo gli stessi punti svolti nell'[esercitazione 5](es_5.pdf). In particolare:
 
-1. Si disegnino i dati tramite un diagramma dispersione.
+1. Si disegnino i dati tramite un diagramma a dispersione.
 1. Si ottengano medie e varianze di $x$ ed $y$.
 1. Si ottengano le stime ai minimi quadrati.
+1. Si disegni la retta di regressione stimata nel diagramma a dispersione.
 1. Si ottengano i valori previsti ed i residui della regressione.
 1. Si ottenga la varianza residuale.
 1. Si calcoli $R^2$ e correlazione $\rho$.
@@ -144,9 +145,6 @@ ggplot(data=dataset, aes(x = alcolici, y = tabacchi)) + geom_point() + theme_bw(
 ```
 :::
 
-
-
-
 ## Esercizio B (Regressione con variabili standardizzate)
 
 Si considerino due variabili statistiche $x$ ed $y$ e siano $\hat{\alpha}$ e $\hat{\beta}$ le stime ai minimi quadrati dei parametri del modello di regressione $y = \alpha + \beta x$.
@@ -207,6 +205,55 @@ Sulla base di queste informazioni, si ottengano le stime ai minimi quadrati $\ha
 
 [Suggerimento]{.blue}. Si cominci ottenendo il valore $R^2$ e si ragioni quindi sulla definizione di $\hat{\beta}$. 
 
+:::{.callout-note collapse=true}
+#### Schema della soluzione
+
+Si ricorda che
+
+$$
+\text{var}(r) = \sigma_r^2 = \frac{1}{n}\sum_{i=1}^nr_i^2 = 0.001, 
+$$
+
+dato che la media dei residui è nulla. Inoltre, si sa che
+
+$$
+ R^2 = 1-\frac{\sigma_r^2}{\sigma_y^2} = \left[\frac{\text{cov}(x,y)}{\sigma_x\sigma_y}\right]^2,
+ $$
+
+dove:
+
+$$
+\begin{split}
+         &\sigma_y^2 = \frac{1}{n}\sum_{i=1}^ny_i^2 - \left[\frac{1}{n}\sum_{i=1}^ny_i\right]^2 = 0.025\\
+         &\sigma_x^2 = \frac{1}{n}\sum_{i=1}^nx_i^2 - \left[\frac{1}{n}\sum_{i=1}^nx_i\right]^2 = 0.001.\\
+     \end{split}
+$$
+
+Allora, si può ricavare:
+
+$$
+\text{cov}(x,y) = \pm \sqrt{\left(1-\frac{\sigma_r^2}{\sigma_y^2}\right)\sigma^2_y\sigma^2_x} = -0.005.
+$$
+
+(si prende il valore negativo per l'ipotesi di correlazione negativa) da cui:
+
+$$
+\hat{\beta} = \frac{\text{cov}(x,y)}{\sigma_x^2} = -5,
+$$
+
+e, di conseguenza,
+
+$$
+ \hat{\alpha} = \bar{y} - \hat{\beta}\bar{x} = 5.528.
+$$
+
+L'indice $R^2$, invece, vale:
+
+$$
+R^2 = 1-\frac{\sigma_r^2}{\sigma_y^2} = 0.96.
+$$
+:::
+
 ## Esercizio E
 
 Nella figura che segue sono riportati i diagrammi a dispersione di $4$ coppie di variabili. Ad esse corrispondono i coefficienti di correlazione $\rho$ pari a $-1,0,0.7,0.9$. Si dica a quale grafico corrisponde ciascun coefficiente.
@@ -225,6 +272,19 @@ plot(x,y2, ylab="y")
 plot(x,y3, ylab="y")
 plot(x,y4, ylab ="y")
 ```
+
+
+:::{.callout-note collapse=true}
+#### Schema della soluzione
+
+I dati nel grafico $A$ hanno una correlazione pari a $\rho = 0.7$,
+
+I dati nel grafico $B$ hanno una correlazione pari a $\rho = 0.9$,
+
+I dati nel grafico $C$ hanno una correlazione pari a $\rho = -1$,
+
+I dati nel grafico $D$ hanno una correlazione pari a $\rho = 0$.
+:::
 
 <!-- ## Esercizio F -->
 
