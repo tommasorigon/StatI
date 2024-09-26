@@ -29,58 +29,6 @@ knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, c
 
 ## Esercizio A
 
-Il numero di giorni di ferie richiesti per il mese di giugno 2019 in un campione di $n = 16$ lavoratori è rappresentato nella seguente tabella
-
-|Modalità $c_j$|	3 |	7 |	8 |	11 | 15 | 17 | 24 |
-|--------------|----|---|---|----|----|----|---|
-|Frequenze assolute $n_j$| 2 | 4 |	5 |	1 |	2	|  1 | 1 |
-	
-
-1.	Rappresentare graficamente la funzione di ripartizione empirica.
-
-1.	Calcolare la mediana e i quartili. 
-
-1. Sono presenti outlier? Quindi, disegnare un boxplot.
-
-1.	Determinare media aritmetica.
-
-1.	Calcolare il campo di variazione, la differenza interquartile e lo scarto quadratico medio.
-
-## Esercizio B
-
-Nel 1975 in Italia il numero di parti legittimi per età della madre al parto è stato il seguente:
-
-| Età della madre | Numero nati |
-|-----------------|-------------|
-| (9, 14] | 489 |
-| (14, 20] | 94921 |
-| (20, 24] | 200255 |
-| (24, 29] | 274779 |
-| (29, 34] | 144282 |
-| (34, 44] | 99238 |
-| (44, 55] | 1747 |
-
-1. Si dica qual è l’unità statistica e qual è la variabile considerata. 
-
-1. Di che tipo di variabile si tratta?
-
-1. Rappresentare graficamente il fenomeno. [Attenzione]{.orange}: le classi non hanno dimensione uguale.
-
-1. Calcolare la percentuale dei nati per fasce d'età della madre.
-
-
-## Esercizio C
-
-Per $n = 56$ studenti si è rilevata la variabile `voto all’esame di maturità`. Il voto medio rilevato è pari a 76 e la varianza pari a 25.
-
-1. Se si osserva un ulteriore studente che ha riportato un voto pari a 90. Qual è il nuovo voto medio?
-
-1. Nella stessa ipotesi, come cambia la varianza?
-
-1. Se lo studente che si aggiunge ha riportato un voto pari a 76 come cambiano le risposte ai quesiti precedenti?
-
-## Esercizio D
-
 Si considerino i seguenti tre insiemi di $n = 10$ dati raccolti sulla medesima variabile in tre situazioni diverse: $$x = (−1.65, −5.74, −0.84, −4.50, 12.90, 0.84, −4.73, 7.89, 10.72, 4.40),$$ 
 $$y = (−5.34,−6.26,3.80,−2.15,−1.72,−7.35,6.84,5.92,1.72,7.76),$$ 
 $$z = (7.05, −0.43, −10.21, −5.44, −6.75, −12.33, 13.76, 21.51, 0.43, 6.14).$$ 
@@ -131,6 +79,59 @@ La tabella seguente costituisce solamente uno schema della soluzione, non la sol
 
 Il calcolo di eventuali oulier è agevole a partire dalla tabella precedente.
 :::
+
+## Esercizio B
+
+Il numero di giorni di ferie richiesti per il mese di giugno 2019 in un campione di $n = 16$ lavoratori è rappresentato nella seguente tabella
+
+|Modalità $c_j$|	3 |	7 |	8 |	11 | 15 | 17 | 24 |
+|--------------|----|---|---|----|----|----|---|
+|Frequenze assolute $n_j$| 2 | 4 |	5 |	1 |	2	|  1 | 1 |
+	
+
+1.	Rappresentare graficamente la funzione di ripartizione empirica.
+
+1.	Calcolare la mediana e i quartili. 
+
+1. Sono presenti outlier? Quindi, disegnare un boxplot.
+
+1.	Determinare media aritmetica.
+
+1.	Calcolare il campo di variazione, la differenza interquartile e lo scarto quadratico medio.
+
+## Esercizio C
+
+Nel 1975 in Italia il numero di parti legittimi per età della madre al parto è stato il seguente:
+
+| Età della madre | Numero nati |
+|-----------------|-------------|
+| (9, 14] | 489 |
+| (14, 20] | 94921 |
+| (20, 24] | 200255 |
+| (24, 29] | 274779 |
+| (29, 34] | 144282 |
+| (34, 44] | 99238 |
+| (44, 55] | 1747 |
+
+1. Si dica qual è l’unità statistica e qual è la variabile considerata. 
+
+1. Di che tipo di variabile si tratta?
+
+1. Rappresentare graficamente il fenomeno. [Attenzione]{.orange}: le classi non hanno dimensione uguale.
+
+1. Calcolare la percentuale dei nati per fasce d'età della madre.
+
+## Esercizio D
+
+Per $n = 56$ studenti si è rilevata la variabile `voto all’esame di maturità`. Il voto medio rilevato è pari a 76 e la varianza pari a 25.
+
+1. Se si osserva un ulteriore studente che ha riportato un voto pari a 90. Qual è il nuovo voto medio?
+
+1. Nella stessa ipotesi, come cambia la varianza?
+
+1. Se lo studente che si aggiunge ha riportato un voto pari a 76 come cambiano le risposte ai quesiti precedenti?
+
+
 
 ## Esercizio E
 

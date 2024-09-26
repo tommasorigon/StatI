@@ -208,7 +208,7 @@ La distanza totale percorsa per rifornire tutti e cinque i negozi è pari a $117
 
 <!-- in cui si è tenuto conto che un camion deve effettuare il viaggio di andata e poi tornare al magazzino. Sappiamo dalle proprietà della mediana che $D(a) \ge D(\text{Me})$ per ogni $a \in \mathbb{R}$, per cui poiché la mediana vale $\text{Me} = 134$, questo è il chilometro ottimale dove stabilire il magazzino. -->
 
-## Esercizio F
+## Esercizio F (continuazione)
 
 Il controllo sul peso (in grammi) di $n = 71$ pacchetti di burro ha fornito la seguente distribuzione di frequenza [cumulata]{.orange}.
 
