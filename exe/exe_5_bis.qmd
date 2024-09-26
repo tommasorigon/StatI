@@ -187,7 +187,7 @@ Sono date le seguenti osservazioni da 4 regressori e 4 variabili dipendenti
 
 
 
-## Esercizio D (Difficile)
+## ☠️ - Esercizio D
 
 Per $n = 10$ paesi dell'Unione Europea si è osservato il prezzo in euro di un litro di benzina (variabile $x$) ed il numero di veicoli pro-capite circolanti (variabile $y$). I dati si riferiscono alla fine degli anni $'90$. Si conoscono i seguenti risultati:
 $$
@@ -272,7 +272,6 @@ plot(x,y2, ylab="y")
 plot(x,y3, ylab="y")
 plot(x,y4, ylab ="y")
 ```
-
 
 :::{.callout-note collapse=true}
 #### Schema della soluzione

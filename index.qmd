@@ -56,7 +56,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | Mutua variabilità e concentrazione   | [Slides unità F.2](slides/sl_F2.pdf)      | §5.4 --- §5.5                     |
 | Istogrammi & boxplot                 | [Slides unità G](slides/sl_G.pdf)          | §3.4, §6.4, §6.5                  |
 | Simmetria, curtosi, multimodalità    | [Slides unità H](slides/sl_H.pdf)          | §6.1 --- §6.3                     |
-| **Esercitazione**                    | [Esercitazione 3]()          |                                   |
+| **Esercitazione**                    | [Esercitazione 3]          |                                   |
 | *Esercizi*                           | [Esercizi 3](exe/exe_3_bis.html)           |  |
 | Dati qualitativi, eterogeneità       | [Slides unità I](slides/sl_I.pdf)          | §5.7                              |
 | **Esercitazione**                    | [Esercitazione 4](exe/es_4.pdf)          |                                   |
@@ -66,7 +66,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | Regressione lineare semplice         | [Slides unità K](slides/sl_K.pdf)          | §22.1 --- §22.4, §22.8            |
 | **Applicazione**                     | [Slides unità L](slides/sl_L.pdf)          | §22.9                             |
 | Correlazione parziale                | [Slides unità M](slides/sl_M.pdf)          | §7.6                              |
-| **Esercitazione**                    | [Esercitazione 5](exe/exe_5.html)          |                                   |
+| **Esercitazione**                    | [Esercitazione 5]          |                                   |
 | *Esercizi*                           | [Esercizi 5](exe/exe_5_bis.html)           | |
 | Analisi della varianza               | [Slides unità N](slides/sl_N.pdf)          | §7.4                              |
 | **Esercitazione**                    | [Esercitazione 6](exe/exe_6.html)          |                                   |

@@ -114,8 +114,7 @@ grid.arrange(p1,p2,ncol=2)
 :::
 
 
-
-## Esercizio B
+## Esercizio B (Customer satisfaction)
 
 Siete il responsabile marketing di una grande azienda. Vi vengono forniti i dati di un'indagine di *customer satisfaction* svolta su $500$ clienti di un'azienda concorrente, che voi mettete a confronto con un'indagine su $100$ vostri clienti.
 
@@ -134,7 +133,7 @@ Sono disponibili le seguenti frequenze relative percentuali:
 
 4.  Si calcoli la mediana della soddisfazione dei clienti nei due casi.
 
-## Esercizio C (difficile)
+## ☠️ - Esercizio C 
 
 I clienti di un'azienza locale di vendita per corrispondenza sono stati classificati per provincia di residenza. Si conoscono le frequenze relative per le province di Trieste e Gorizia (si veda la tabella sottostante).
 
@@ -187,7 +186,7 @@ $$
 cioè, risolvendo l'equazione di secondo grado: $f_p = 0.1 (=f_u).$
 :::
 
-## Esercizio D
+## Esercizio D (Attività sportiva)
 
 I risultati di un'indagine sulla pratica di una specifica attività sportiva tra le donne di tre regioni italiane sono riassunti nella tabella seguente.
 
@@ -223,7 +222,7 @@ Si noti che vanno utilizzate le frequenze relative, dato che la dimensione del c
 
 :::
 
-## Esercizio E
+## Esercizio E (Marmotte nelle alpi)
 
 Una regione delle alpi è stata suddivisa in 6 zone di uguale dimensione e conformazione. Per ogni sottoarea è stato svolto un censimento delle marmotte presenti. I risultati ottenuti sono stati:
 
@@ -289,7 +288,7 @@ names(veneto) <- c("Verona", "Vicenza", "Belluno", "Treviso", "Venezia", "Padova
 
 ::: {.callout-note collapse=true}
 
-## Schema della soluzione
+#### Schema della soluzione
 
 Le tabelle seguenti costituiscono solamente uno schema della soluzione, non la soluzione stessa.
 
