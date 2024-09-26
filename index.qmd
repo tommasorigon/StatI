@@ -56,8 +56,8 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | Mutua variabilità e concentrazione   | [Slides unità F.2](slides/sl_F2.pdf)      | §5.4 --- §5.5                     |
 | Istogrammi & boxplot                 | [Slides unità G](slides/sl_G.pdf)          | §3.4, §6.4, §6.5                  |
 | Simmetria, curtosi, multimodalità    | [Slides unità H](slides/sl_H.pdf)          | §6.1 --- §6.3                     |
-| **Esercitazione**                    | [Esercitazione 3](exe/exe_3.html)          |                                   |
-| *Esercizi*                           | [Esercizi 3](exe/exe_3_bis.html)           | [Soluzione 3](exe/sol_exe_3.html) |
+| **Esercitazione**                    | [Esercitazione 3]()          |                                   |
+| *Esercizi*                           | [Esercizi 3](exe/exe_3_bis.html)           |  |
 | Dati qualitativi, eterogeneità       | [Slides unità I](slides/sl_I.pdf)          | §5.7                              |
 | **Esercitazione**                    | [Esercitazione 4](exe/es_4.pdf)          |                                   |
 | *Esercizi*                           | [Esercizi 4](exe/exe_4_bis.html)           |  |

@@ -96,8 +96,8 @@ window.Quarto = {
   <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
   <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
   <li><a href="#esercizio-d" id="toc-esercizio-d" class="nav-link" data-scroll-target="#esercizio-d">Esercizio D</a></li>
-  <li><a href="#esercizio-e" id="toc-esercizio-e" class="nav-link" data-scroll-target="#esercizio-e">Esercizio E</a></li>
-  <li><a href="#esercizio-f" id="toc-esercizio-f" class="nav-link" data-scroll-target="#esercizio-f">Esercizio F</a></li>
+  <li><a href="#esercizio-e-difficile" id="toc-esercizio-e-difficile" class="nav-link" data-scroll-target="#esercizio-e-difficile">Esercizio E (Difficile)</a></li>
+  <li><a href="#esercizio-f-difficile" id="toc-esercizio-f-difficile" class="nav-link" data-scroll-target="#esercizio-f-difficile">Esercizio F (Difficile)</a></li>
   <li><a href="#esercizio-g" id="toc-esercizio-g" class="nav-link" data-scroll-target="#esercizio-g">Esercizio G</a></li>
   </ul></li>
   </ul>
@@ -140,6 +140,7 @@ window.Quarto = {
 
 <section id="homepage" class="level1">
 <h1><a href="../index.html">Homepage</a></h1>
+<p>Le soluzioni di alcuni esercizi sono state gentilmente fornite dal <span class="blue">tutor di Statistica I</span> dell’A.A. 2021/2022, <span class="orange">Alex Alborghetti</span>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
 <section id="esercizio-a" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h2>
 <p>Si considerino i seguenti tre insiemi di <span class="math inline">n = 10</span> dati raccolti sulla medesima variabile in tre situazioni diverse: <span class="math display">x = (−1.65, −5.74, −0.84, −4.50, 12.90, 0.84, −4.73, 7.89, 10.72, 4.40),</span> <span class="math display">y = (−5.34,−6.26,3.80,−2.15,−1.72,−7.35,6.84,5.92,1.72,7.76),</span> <span class="math display">z = (7.05, −0.43, −10.21, −5.44, −6.75, −12.33, 13.76, 21.51, 0.43, 6.14).</span></p>
@@ -252,6 +253,109 @@ Schema della soluzione
 <li><p>Determinare media aritmetica.</p></li>
 <li><p>Calcolare il campo di variazione, la differenza interquartile e lo scarto quadratico medio.</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Viene riportata la tabella con le frequenze relative cumulate:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Modalità</th>
+<th style="text-align: center;">Freq. assoluta cumulata</th>
+<th style="text-align: center;">Freq. relativa cumulata</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.125</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.375</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">0.688</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0.750</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">0.875</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">17</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0.938</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">24</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_3_bis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Dalla tabella precedente, si ottiene <span class="math inline">\text{Me} = 8</span>, <span class="math inline">\mathcal{Q}_{0.25} = 7</span> e <span class="math inline">\mathcal{Q}_{0.75} = 11</span>, che sono i più piccoli valori che, rispettivamente, lasciano alla propria sinistra almeno il <span class="math inline">50\%</span>, <span class="math inline">25\%</span> e il <span class="math inline">75\%</span> dei dati.</p>
+<p>Costruiamo il boxplot. Abbiamo già i quartili, dobbiamo trovare i “baffi”. Il baffo inferiore è definito come:</p>
+<p><span class="math display">
+\max\{\min(x), \mathcal{Q}_{0.25}- 1.5 (\mathcal{Q}_{0.75} - \mathcal{Q}_{0.25})\} = \max\{3, 1\} = 3,
+</span> quello superiore è definito come:</p>
+<p><span class="math display">
+\min\{\max(x), \mathcal{Q}_{0.75} + 1.5 (\mathcal{Q}_{0.75} - \mathcal{Q}_{0.25})\} = \min\{24, 17\} = 17
+</span> Tutti i punti al di fuori dell’intervallo <span class="math inline">[3, 17]</span>, dunque, sono considerati <span class="orange">anomali</span>. Nel nostro caso, solamente il valore <span class="math inline">x_{(16)} = 24</span> è anomalo.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_3_bis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>La media aritmetica vale:</p>
+<p><span class="math display">
+\bar{x} = \frac{2 \times 3 + 4 \times 7 + \dots}{16} = 9.75.
+</span></p>
+<p>Il campo di variazione è lo scarto tra il valore massimo e il valore minimo, in questo caso <span class="math inline">24-3 = 21</span>. La differenza interquartile vale <span class="math inline">\mathcal{Q}_{0.75} - \mathcal{Q}_{0.25} = 4</span>.</p>
+<p>Lo scarto quadratico medio è per definizione pari a <span class="math inline">\sigma = \sqrt{\sigma^2}</span>. Possiamo riscrivere il termine <span class="math inline">\sigma^2</span> come:</p>
+<p><span class="math display">
+\begin{split}
+            \sigma^2 =&amp; \frac{1}{n} \sum_{i=1}^n(x_i-\bar{x})^2 = \frac{1}{n} \sum_{i=1}^n (x_i^2 - 2x_i\bar{x} + \bar{x}^2)\\
+            &amp;=\frac{1}{n} \sum_{i=1}^nx_i^2 -\frac{2}{n} \bar{x}\sum_{i=1}^n x_i + \bar{x}^2 \\
+            &amp; =\frac{1}{n} \sum_{i=1}^nx_i^2 - \bar{x}^2 \\
+            &amp;=\frac{2\cdot3^2+4\cdot7^2+\dots}{16}  - 9.75^2 = 28.0625.
+            \end{split}
+</span></p>
+<p>Allora <span class="math inline">\sigma = \sqrt{28.0625} = 5.297</span>.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="esercizio-c" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h2>
@@ -309,17 +413,41 @@ Schema della soluzione
 <li><p>Nella stessa ipotesi, come cambia la varianza?</p></li>
 <li><p>Se lo studente che si aggiunge ha riportato un voto pari a 76 come cambiano le risposte ai quesiti precedenti?</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sapendo che <span class="math inline">\bar{x} = 1/n\sum_{i=1}^nx_i = 76</span>, allora <span class="math inline">\bar{x}' = (76 \cdot n + 90)/ (n+1) = 76.25</span> è il nuovo voto medio.</p>
+<p>Sapendo che <span class="math inline">\sigma^2 = 1/n \sum_{i=1}^nx_i^2 - \bar{x}^2 = 25</span>, ricaviamo <span class="math display">
+\sum_{i=1}^nx_i^2 = 56\cdot(25+76^2) = 324856.
+</span></p>
+<p>Allora <span class="math inline">\sum_{i=1}^{n+1}x_i^2 = 324856+90^2 = 332956</span>. Quindi</p>
+<p><span class="math display">
+\sigma^{2'} = 332956/57-76.25^2 = 27.271.
+</span></p>
+<p>Se il nuovo dato valesse <span class="math inline">x_{57} = 76</span>, allora ci aspettiamo che la media rimanga invariata (per un motivo analogo alla proprietà di associatività) e la varianza diminuisca, dato che i dati si concentrano maggiormente attorno alla media, divenendo più precisamente pari a <span class="math inline">\sigma^{2'} = 25\cdot 56 / 57 = 24.561</span>.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="esercizio-e" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-e">Esercizio E</h2>
+<section id="esercizio-e-difficile" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-e-difficile">Esercizio E (Difficile)</h2>
 <p>Sia <span class="math inline">x</span> una variabile binaria, ovvero una variable che può assumere solo due modalità (<span class="math inline">0</span> e <span class="math inline">1</span>). La frequenza relativa associata al valore <span class="math inline">1</span> è <span class="math inline">f_1</span> mentre quella associata al valore <span class="math inline">0</span> è <span class="math inline">f_0 = 1 - f_1</span>.</p>
 <ol type="1">
 <li><p>Si calcoli la varianza della variabile <span class="math inline">x</span> in funzione di <span class="math inline">f_1</span>, ovvero <span class="math inline">\text{var}(x)</span>. Si supponga quindi che <span class="math inline">f_1 = 0.4</span> e si dica quanto vale la varianza in questo caso particolare.</p></li>
 <li><p>Si disegni il grafico di <span class="math inline">\text{var}(x)</span> in funzione di <span class="math inline">f_1</span>. Si trovi quindi il valore di <span class="math inline">f_1</span> che rende massima <span class="math inline">\text{var}(x)</span>.</p></li>
 </ol>
 </section>
-<section id="esercizio-f" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-f">Esercizio F</h2>
+<section id="esercizio-f-difficile" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-f-difficile">Esercizio F (Difficile)</h2>
 <p>Il peso (in kg) degli individui maschi adulti di una certa popolazione si distribuisce con media <span class="math inline">\bar{x} = 70</span> e deviazione standard <span class="math inline">\sigma = 15</span>. Supponendo di non aver accesso ai dati completi, cosa è possibile dire riguardo alla frequenza relativa di individui appartenenti alle seguenti classi?</p>
 <ol type="1">
 <li>Frequenza relativa della classe di peso <span class="math inline">[50, 90]</span>.</li>
@@ -336,7 +464,7 @@ Schema della soluzione
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="exe_3_bis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+<p><img src="exe_3_bis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
 </figure>
 </div>
 </div>
