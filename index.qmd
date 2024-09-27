@@ -66,7 +66,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | Regressione lineare semplice         | [Slides unità K](slides/sl_K.pdf)          | §22.1 --- §22.4, §22.8            |
 | **Applicazione**                     | [Slides unità L](slides/sl_L.pdf)          | §22.9                             |
 | Correlazione parziale                | [Slides unità M](slides/sl_M.pdf)          | §7.6                              |
-| **Esercitazione**                    | [Esercitazione 5]          |                                   |
+| **Esercitazione**                    | [Esercitazione 5](exe/es_5.pdf)          |                                   |
 | *Esercizi*                           | [Esercizi 5](exe/exe_5_bis.html)           | |
 | Analisi della varianza               | [Slides unità N](slides/sl_N.pdf)          | §7.4                              |
 | **Esercitazione**                    | [Esercitazione 6](exe/exe_6.html)          |                                   |
