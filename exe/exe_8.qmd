@@ -36,21 +36,6 @@ b <- a + sample(3:5, 1)
 res <- sum((10 - a:b)^2)
 ```
 
-## Esercizio 1
-
-Su $540$ dipendenti di un'azienda sono stati rilevati il sesso e i redditi netti dell’anno 2018, in migliaia di euro. I dati sono riportati nella seguente tabella:
-
-| | 22 | 23 | 24 | 25 |
-|------|-|-|---------|-|
-| Maschio  | 58| 48 | 89 | 105 |
-| Femmina | 46 | 38 | 71 | 85 |
-
-1. Risulta maggiormente eterogenea la variabile relativa al `reddito` o quella relativa al `sesso`?
-
-1. Le due variabili sono indipendenti in distribuzione?
-
-1. Le due variabili sono indipendenti in media?
-
 
 ```{r data generation2, echo = FALSE, results = "hide"}
 library(knitr)
@@ -59,7 +44,7 @@ y <- colesterolo <- c(338, 355, 282, 326, 325, 354, 224, 326, 284, 341, 318, 296
 x <- cognac <- c(0.00, 0.20, 0.35, 0.50, 0.70, 0.80, 1.00, 1.10, 1.15, 1.20, 1.25, 1.45, 1.50, 1.60, 1.60, 1.65, 1.70, 1.75, 1.80, 1.90)
 ```
 
-## Esercizio 2
+## Esercizio 1
 
 Un gruppo di medici ipotizza che assumere alcolici di qualità porti ad una buona condizione di salute cardiovascolare. Per analizzare tale ipotesi, hanno raccolto alcuni dati da un centro di salute pubblica. Per una ventina di persone adulte che si sono presentate a tale centro, è stato misurato il livello di colesterolo. 
 
@@ -97,7 +82,7 @@ kable(dataset)
 
 1. Si ottenga un indice di correlazione tra `cognac` e `colesterolo`.
 
-## Esercizio 3
+## Esercizio 2
 
 Sia $x$ una variabile binaria, ovvero una variabile che può assumere solamente due modalità ($0$ e $1$). La frequenza associata al valore $1$ è $f_1$, mentre quella associata al valore $0$ è $f_0 = 1 - f_1$.
 
