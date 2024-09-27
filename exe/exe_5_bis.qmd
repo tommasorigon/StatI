@@ -277,11 +277,8 @@ plot(x,y4, ylab ="y")
 #### Schema della soluzione
 
 I dati nel grafico $A$ hanno una correlazione pari a $\rho = 0.7$,
-
 I dati nel grafico $B$ hanno una correlazione pari a $\rho = 0.9$,
-
 I dati nel grafico $C$ hanno una correlazione pari a $\rho = -1$,
-
 I dati nel grafico $D$ hanno una correlazione pari a $\rho = 0$.
 :::
 
