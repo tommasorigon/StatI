@@ -37,7 +37,7 @@ ggplot(data  = filter(dataset, Appello == "I"), aes(x = AA, y = Esito, fill = AA
 ```
 
 ```{r}
-ggplot(data  = filter(dataset, Appello %in% c("I", "II", "III")), aes(x = AA, y = Esito, fill = Appello)) + geom_boxplot() + theme_light() + xlab("Anno Accademico") + theme(legend.position = "top") + scale_y_continuous(breaks = 18:31)
+ggplot(data  = filter(dataset, Appello %in% c("I", "II", "III")), aes(x = Appello, y = Esito, fill = Appello)) + geom_boxplot() + theme_light() + xlab("Anno Accademico") + theme(legend.position = "top") + scale_y_continuous(breaks = 18:31)
 ```
 
 ```{r}
@@ -55,4 +55,3 @@ summary(lm(Esito ~ AA, data = filter(dataset, Appello == "I")))
 ```{r}
 summary(lm(Esito ~ Appello  + AA, data = dataset))
 ```
-
