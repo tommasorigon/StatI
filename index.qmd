@@ -73,8 +73,8 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | *Esercizi*                           | [Esercizi 6](exe/exe_6_bis.html)           |  |
 | Tabelle di contingenza               | [Slides unità O](slides/sl_O.pdf)          | §7.1 --- §7.5                     |
 | La dipendenza tra variabili          | [Slides unità P](slides/sl_P.pdf)          | §7.4                              |
-| **Esercitazione**                    | [Esercitazione 7](exe/exe_7.html)          |                                   |
-| *Esercizi*                           | [Esercizi 7](exe/exe_7_bis.html)           | [Soluzione 7](exe/sol_exe_7.html) |
+| **Esercitazione**                    | [Esercitazione 7](exe/es_7.pdf)          |                                   |
+| *Esercizi*                           | [Esercizi 7](exe/exe_7_bis.html)           | |
 | **Simulazione d'esame**              | [Esercitazione 8](exe/exe_8.html)          |                                   |
 | La pandemia di COVID-19 in Lombardia | [Slides unità Q](slides/sl_Q.pdf)          |                                   |
 |                                      | **ESAMI PASSATI**                          |                                   |

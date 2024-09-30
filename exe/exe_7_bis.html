@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="exe_7_bis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -51,7 +51,34 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -68,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#esercizio-a" id="toc-esercizio-a" class="nav-link" data-scroll-target="#esercizio-a">Esercizio A</a></li>
   <li><a href="#esercizio-b" id="toc-esercizio-b" class="nav-link" data-scroll-target="#esercizio-b">Esercizio B</a></li>
   <li><a href="#esercizio-c" id="toc-esercizio-c" class="nav-link" data-scroll-target="#esercizio-c">Esercizio C</a></li>
-  <li><a href="#esercizio-d-difficile" id="toc-esercizio-d-difficile" class="nav-link" data-scroll-target="#esercizio-d-difficile">Esercizio D (difficile)</a></li>
+  <li><a href="#esercizio-d" id="toc-esercizio-d" class="nav-link" data-scroll-target="#esercizio-d">☠️ - Esercizio D</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -82,21 +109,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta-author">
+<div class="quarto-title-meta-author column-page-left">
   <div class="quarto-title-meta-heading">Autore/Autrice</div>
   <div class="quarto-title-meta-heading">Affiliazione</div>
   
     <div class="quarto-title-meta-contents">
     <p class="author"><span class="orange">Tommaso Rigon</span> </p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             <em>Università degli Studi di Milano-Bicocca</em>
           </p>
       </div>
-    </div>
+  </div>
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
       
   
@@ -104,14 +131,17 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="homepage" class="level1">
 <h1><a href="../index.html">Homepage</a></h1>
+<p>Alcune delle seguenti soluzioni sono state gentilmente fornite dal <span class="blue">tutor di Statistica I</span> dell’A.A. 2021/2022, <span class="orange">Alex Alborghetti</span>, che ringrazio. Le soluzioni sono state quindi riviste dal docente, che si assume le responsabilità di eventuali sviste ed errori.</p>
 <section id="esercizio-a" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-a">Esercizio A</h2>
 <p>La seguente tabella di contingenza mostra come <span class="math inline">n = 319</span> studenti universitari di varie università si distribuiscono sulla base delle due variabili “Tipo di maturità” e “Numero di esami superati durante il primo anno”.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -142,11 +172,119 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>Analizzare la dipendenza (in distribuzione) esistente tra le due variabili con gli strumenti a voi noti.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Per misurare la dipendenza in distribuzione di <span class="math inline">x</span> da <span class="math inline">y</span> utilizziamo l’indice <span class="math inline">\chi^2</span> normalizzato, che si basa sulla distanza tra frequenze attese e frequenze osservate, così definito:</p>
+<p><span class="math display">
+\chi^2_\text{norm} =  \frac{1}{n\min(h-1, k-1)} \sum_{i=1}^h\sum_{j=1}^k \frac{(n_{ij} - \hat{n}_{ij})^2}{\hat{n}_{ij}}.
+</span></p>
+<p>Posto <span class="math inline">h = k = 3</span>, calcoliamo le frequenze attese <span class="math inline">\hat{n}_{ij} = (n_{i+}n_{+j})/n</span>. Partendo dalla seguente:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">0-1</th>
+<th style="text-align: center;">2-5</th>
+<th style="text-align: center;">5+</th>
+<th style="text-align: right;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Maturità classica</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">31</td>
+<td style="text-align: right;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Maturità scientifica</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: right;">92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Altre</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">65</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: right;">119</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">184</td>
+<td style="text-align: center;">107</td>
+<td style="text-align: right;"><span class="math inline">n =</span> 319</td>
+</tr>
+</tbody>
+</table>
+<p>Applicando la formula:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">0-1</th>
+<th style="text-align: center;">2-5</th>
+<th style="text-align: center;">5+</th>
+<th style="text-align: right;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Maturità classica</td>
+<td style="text-align: center;">9.48</td>
+<td style="text-align: center;">62.3</td>
+<td style="text-align: center;">36.23</td>
+<td style="text-align: right;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Maturità scientifica</td>
+<td style="text-align: center;">8.08</td>
+<td style="text-align: center;">53.07</td>
+<td style="text-align: center;">30.86</td>
+<td style="text-align: right;">92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Altre</td>
+<td style="text-align: center;">10.45</td>
+<td style="text-align: center;">68.64</td>
+<td style="text-align: center;">39.92</td>
+<td style="text-align: right;">119</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">184</td>
+<td style="text-align: center;">107</td>
+<td style="text-align: right;"><span class="math inline">n =</span> 319</td>
+</tr>
+</tbody>
+</table>
+<p>Allora:</p>
+<p><span class="math display">
+\chi^2_\text{norm} \approx 0.01.
+</span></p>
+<p>Possiamo quindi concludere che, praticamente, esiste indipendenza in distribuzione tra le due variabili, ovvero, sulla base dei dati disponibili, il titolo di studio ottenuto alle superiori non sembra essere connesso con il numero di esami dati al primo anno di università, o comunque in modo molto lieve.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="esercizio-b" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-b">Esercizio B</h2>
 <p>Un’azienda vuole conoscere se la soddisfazione nel lavoro può essere determinata anche dallo stipendio del dipendente. A questo scopo ha intervistato tutti i suoi dipendenti e li ha classificati in base al reddito, come riportato nella tabella seguente.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 22%">
@@ -199,11 +337,183 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Si illustri le distribuzioni condizionate della variabile soddisfazione dato il reddito.</p></li>
 <li><p>Al crescere dello stipendio aumenta la soddisfazione?</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Riportiamo la tabella calcolando le frequenze marginali:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Molto ins.</th>
+<th style="text-align: center;">Poco ins.</th>
+<th style="text-align: center;">Poco sodd.</th>
+<th style="text-align: center;">Molto sodd.</th>
+<th style="text-align: right;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0-12</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">82</td>
+<td style="text-align: right;">206</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12-30</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">38</td>
+<td style="text-align: center;">104</td>
+<td style="text-align: center;">125</td>
+<td style="text-align: right;">289</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30-50</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">81</td>
+<td style="text-align: center;">113</td>
+<td style="text-align: right;">235</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50+</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">54</td>
+<td style="text-align: center;">92</td>
+<td style="text-align: right;">171</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">108</td>
+<td style="text-align: center;">319</td>
+<td style="text-align: center;">412</td>
+<td style="text-align: right;"><span class="math inline">n =</span> 901</td>
+</tr>
+</tbody>
+</table>
+<p>Come in precedenza, analizziamo la dipendenza in distribuzione tramite l’indice <span class="math inline">\chi^2</span>, costruiamo pertanto la tabella delle frequenze attese:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Molto ins.</th>
+<th style="text-align: center;">Poco ins.</th>
+<th style="text-align: center;">Poco sodd.</th>
+<th style="text-align: center;">Molto sodd.</th>
+<th style="text-align: right;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0-12</td>
+<td style="text-align: center;">14.2</td>
+<td style="text-align: center;">24.7</td>
+<td style="text-align: center;">72.9</td>
+<td style="text-align: center;">94.2</td>
+<td style="text-align: right;">206</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12-30</td>
+<td style="text-align: center;">19.9</td>
+<td style="text-align: center;">34.6</td>
+<td style="text-align: center;">102.3</td>
+<td style="text-align: center;">132.2</td>
+<td style="text-align: right;">289</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30-50</td>
+<td style="text-align: center;">16.2</td>
+<td style="text-align: center;">28.2</td>
+<td style="text-align: center;">83.2</td>
+<td style="text-align: center;">107.5</td>
+<td style="text-align: right;">235</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50+</td>
+<td style="text-align: center;">11.8</td>
+<td style="text-align: center;">20.5</td>
+<td style="text-align: center;">60.5</td>
+<td style="text-align: center;">78.2</td>
+<td style="text-align: right;">171</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">108</td>
+<td style="text-align: center;">319</td>
+<td style="text-align: center;">412</td>
+<td style="text-align: right;"><span class="math inline">n =</span> 901</td>
+</tr>
+</tbody>
+</table>
+<p>Possiamo quindi concludere che, praticamente, esiste indipendenza in distribuzione tra le due variabili. Qui sotto ne viene fornita la rappresentazione grafica.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_7_bis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_7_bis_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_7_bis_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="exe_7_bis_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1600"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="esercizio-c" class="level2">
 <h2 class="anchored" data-anchor-id="esercizio-c">Esercizio C</h2>
 <p>Nella tabella seguente è riportato il tipo di allattamento e la presenza o meno di difetti nella dentatura del neonato.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -228,11 +538,93 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Si dica attraverso un opportuno indice statistico appropriato se vi è associazione tra le due variabili rilevate.</p></li>
 <li><p>Si può inoltre affermare che il tipo di allattamento provoca difetti nella dentatura dei neonati?</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Riportiamo la tabella calcolando le frequenze marginali:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Denti normali</th>
+<th style="text-align: center;">Malocclusione</th>
+<th style="text-align: right;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Allattamento naturale</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Allattamento artificiale</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: right;"><span class="math inline">n=</span> 42</td>
+</tr>
+</tbody>
+</table>
+<p>Calcoliamo la tabella delle frequenze attese:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Denti normali</th>
+<th style="text-align: center;">Malocclusione</th>
+<th style="text-align: right;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Allattamento naturale</td>
+<td style="text-align: center;">2.4</td>
+<td style="text-align: center;">17.6</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Allattamento artificiale</td>
+<td style="text-align: center;">2.6</td>
+<td style="text-align: center;">19.4</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: right;"><span class="math inline">n=</span> 42</td>
+</tr>
+</tbody>
+</table>
+<p>Allora:</p>
+<p><span class="math display">
+\chi^2_\text{norm} \approx 0.06.
+</span></p>
+<p>Esiste quindi una lieve connessione tra il tipo di allattamento e i difetti nella dentatura del neonato. Non si può, però, affermare con certezza che passando da un tipo di allattamento ad un altro siano più frequenti difetti nella dentatura neonatale, dal momento che aver trovato una connessione non significa necessariamente aver trovato un rapporto di causalità. Inoltre, la numerosità campionaria è piuttosto ridotta.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="esercizio-d-difficile" class="level2">
-<h2 class="anchored" data-anchor-id="esercizio-d-difficile">Esercizio D (difficile)</h2>
+<section id="esercizio-d" class="level2">
+<h2 class="anchored" data-anchor-id="esercizio-d">☠️ - Esercizio D</h2>
 <p>Nella tabella che segue sono riportare le frequenze congiunte percentuali del numero di telefoni cellulari presenti in Italia a seconda delle diverse aree geografiche e di due fornitori. Si sa inoltre che il numero di clienti TIM è il <span class="math inline">50\%</span> più alto di quelli di Vodafone e che i clienti di TIM sono <span class="math inline">9</span> milioni.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th></th>
@@ -301,18 +693,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -344,11 +725,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -358,8 +778,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -371,7 +800,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -415,6 +967,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -440,6 +993,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -500,6 +1079,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
