@@ -125,7 +125,7 @@ Sono disponibili le seguenti frequenze relative percentuali:
 | Clienti azienda     | 14%                    | 16%              | 48%                    | 22%               |
 | Clienti concorrenza | 10%                    | 13%              | 62%                    | 15%               |
 
-1.  Rappresentare graficamente i dati usando le frequenze relative. [Suggerimento]{.blue}: si veda l'[Esercitazione 4](exe_4.html).
+1.  Rappresentare graficamente i dati usando le frequenze relative. [Suggerimento]{.blue}: si veda l'[Esercitazione 4](es_4.pdf).
 
 2.  Analizzare le differenze riscontrate tra le due distribuzioni e sinteticamente indicare le caratteristiche delle due distribuzioni.
 
