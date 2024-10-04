@@ -48,7 +48,7 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 | **Esercitazione** (dati Newcomb)                    | [Esercitazione 1](exe/es_1.pdf)          |                                   |
 | *Esercizi*                           | [Esercizi 1](exe/exe_1_bis.html)           |  |
 | Indici di posizione                  | [Slides unità C](slides/sl_C.pdf)          | §4.1 --- §4.4, §4.6, §4.9         |
-| **Applicazione**                     | [Slides unità D](slides/sl_D.pdf)          |                                   |
+| **Applicazione** (dati Student)                   | [Slides unità D](slides/sl_D.pdf)          |                                   |
 | **Applicazione**                                       | [Slides unità E](slides/sl_E.pdf)          |                                |
 | **Esercitazione**                    | [Esercitazione 2](exe/es_2.pdf)          |                                   |
 | *Esercizi*                           | [Esercizi 2](exe/exe_2_bis.html)           | |
