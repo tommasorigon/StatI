@@ -1,22 +1,25 @@
 ---
-title: "Esiti prova del 19 Febbraio 2024"
+title: 'Esiti prova del 19 Novembre 2024'
 subtitle: "Statistica I"
 lang: it
 author:
   name: Tommaso Rigon
   affiliation: DEMS
+page-layout: full
 format:
   html:
     html-math-method: katex
-    echo: false
+    echo: true
     callout-appearance: minimal
-    theme: [cosmo, ../template.css]
+    theme: [simplex, ../template.css]
     toc: true
-    toc-title: Table of contents
-    embed-resources: true
+    toc-title: Indice
+    embed-resources: false
     code-line-numbers: true
     smooth-scroll: true
     fig-dpi: 250
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
@@ -35,19 +38,19 @@ xmed <- median(as.numeric(esiti$Esito[esiti$Esito != "INS"]))
 
 ## Testo dell'esame
 
-La [prova d'esame](19_02_2024.html) è disponibile online. Per visionare la propria prova è possibile venire a ricevimento.
+La [prova d'esame](19_11_2024.html) è disponibile online. Per visionare la propria prova è possibile venire a ricevimento.
 
 <!-- ## Distribuzione degli esiti -->
 
 
-<!-- La mediana dei voti sufficienti è `24`. La distribuzione dei voti sufficienti è riportata nel seguito tramite un boxplot. -->
+<!-- La mediana dei voti sufficienti è `26`. La distribuzione dei voti sufficienti è riportata nel seguito tramite un boxplot. -->
 
 <!-- ```{r} -->
 <!-- par(mfrow = c(1, 1)) -->
 <!-- boxplot(as.numeric(esiti$Esito[esiti$Esito != "INS"]), xlab = "Voti sufficienti", horizontal = TRUE) -->
 <!-- ``` -->
 
-## Esiti
+<!-- ## Esiti -->
 
 ```{r}
 esiti$Esito[esiti$Esito == 31] <- "30 e lode"
