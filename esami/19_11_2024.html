@@ -160,6 +160,78 @@ y_i = \alpha + \beta x_i + \epsilon_i, \qquad i=1,\dots,79.
 <li><p>Si ottenga l’indice di bontà di adattamento <span class="math inline">R^2</span> e lo si <span class="orange">interpreti</span> nel contesto del problema.</p></li>
 <li><p>Si calcoli l’indice di curtosi di Pearson <span class="math inline">\kappa</span> per la variabile <code>secondo tentativo</code> e se ne dia un’interpretazione. Suggerimento: si ricordi che <span class="math inline">(a - b)^4 = a^4 - 4a^3b + 6 a^2 b^2 - 4 a b^3 + b^4</span>.</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Questo primo punto è stato svolto correttamente da quasi la totalità degli iscritti alla prova. Alcuni studenti <span class="orange">non</span> hanno però calcolato la correlazione. A partire dai valori riportati nel testo dell’esame, a meno di piccole discrepanze dovute all’approssimazione usata, si otteneva infatti che:</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Statistica</th>
+<th style="text-align: right;">Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Media x (primo tentativo)</td>
+<td style="text-align: right;">246.215190</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Media y (secondo tentativo)</td>
+<td style="text-align: right;">269.063291</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Varianza x (primo tentativo)</td>
+<td style="text-align: right;">5909.434706</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Varianza y (secondo tentativo)</td>
+<td style="text-align: right;">4245.477007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Covarianza(x, y)</td>
+<td style="text-align: right;">763.821823</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Correlazione(x,y)</td>
+<td style="text-align: right;">0.152495</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="2" type="1">
+<li><p>Era possibile stimare <span class="math inline">\alpha</span> e <span class="math inline">\beta</span> tramite <span class="blue">minimi quadrati</span>, usando le formule consuete, ottenendo: <span class="math display">
+\hat{\beta}= 0.129255, \quad  \hat{\alpha} = 237.238837.
+</span> Anche questa domanda è stata svolta correttamente dalla larga maggioranza degli studenti. Vi sono stati alcuni (pochi) <span class="orange">errori grossolani</span>, come ad es. l’uso di formule sbagliate, errori di conto banali, etc.</p></li>
+<li><p>L’interpretazione dei coefficienti stimati ha causato molte difficoltà. Nella maggior parte degli esami è stato osservato che al secondo tentativo le stime risultavano più accurate rispetto al primo, ovvero più vicine a 282, come emerge dalle medie. Inoltre, è stato talvolta notato che la varianza del secondo tentativo è inferiore a quella del primo. Sebbene queste affermazioni siano corrette, esse non rispondono alla domanda posta, che riguardava specificamente l’interpretazione dei coefficienti e del modello stimato. Ecco, ad esempio, quanto si poteva commentare:</p>
+<ol type="a">
+<li>Anzitutto, si poteva notare che <span class="math inline">\hat{\alpha}</span> rappresenta la stima, al secondo tentativo, di un ipotetico studente che al primo tentativo avesse dichiarato “0”. Sebbene si tratti di un caso poco realistico, <span class="math inline">\hat{\alpha}</span> ha proprio questo significato. Inoltre, <span class="math inline">\hat{\beta} = 0.129</span> implica che, in media, al crescere del valore del primo tentativo, aumenta anche il valore stimato del secondo. Più precisamente, ogni biglia aggiuntiva nel primo tentativo corrisponde, in media, a un incremento di <span class="math inline">0.129</span> biglie nel secondo tentativo.</li>
+<li>Ciò che in pochi hanno commentato è il fatto che <span class="math inline">\hat{\beta} &lt; 1</span>, analogamente a quanto avviene nei dati di Galton relativi alle altezze di padri e figli. Combinando questo aspetto con la stima di <span class="math inline">\hat{\alpha}</span>, si deduce che coloro che avevano <span class="orange">sottostimato</span> il numero di biglie al primo tentativo (ad esempio, <span class="math inline">x_1 = 100</span>) hanno in media <span class="blue">aumentato</span> la loro stima al secondo tentativo (<span class="math inline">\hat{y}_1 = 250.16</span>). Viceversa, coloro che avevano <span class="orange">sovrastimato</span> il numero di biglie al primo tentativo (ad esempio, <span class="math inline">x_2 = 400</span>) hanno in media <span class="blue">diminuito</span> la loro stima al secondo tentativo (<span class="math inline">\hat{y}_2 = 288.9407</span>).</li>
+<li>Complessivamente, gli studenti <span class="blue">hanno cambiato opinione</span>. Si osservi che una perfetta coerenza con la propria opinione precedente si sarebbe ottenuta nel caso in cui <span class="math inline">\hat{\alpha} = 0</span>, <span class="math inline">\hat{\beta} = 1</span> e, soprattutto, <span class="math inline">R^2 = 1</span>, cioè con dati perfettamente allineati alla bisettrice. Tuttavia, si riscontra che <span class="math inline">R^2 \approx 0.02</span>, oltre a valori differenti per <span class="math inline">\hat{\alpha}</span> e <span class="math inline">\hat{\beta}</span>. Pertanto, la tendenza media a correggere quanto fatto al primo tentativo (cioè quanto descritto al punto b.) spiega solo una piccola frazione della variabilità di <span class="math inline">y</span>. Gli studenti hanno effettivamente cambiato opinione, ma lo hanno fatto senza considerare in modo significativo quanto stimato nel primo tentativo.</li>
+</ol></li>
+<li><p>Usando le formule illustrate a lezione, la <span class="orange">varianza residuale</span> si calcola essere pari a <span class="math inline">\text{var}(r) = 4146.749496</span>. Inoltre, si ottiene che il valore previsto è <span class="math inline">\hat{y}_9 = 261.409453</span> e pertanto il <span class="orange">residuo</span> corrispondente è <span class="math inline">r_9 = y_9 - \hat{y}_9 = 204.590547</span>.</p></li>
+<li><p>Si ottiene che l’indice di bontà d’adattamento è pari a <span class="math inline">R^2 = \rho^2 = 0.023255</span>. Come detto in precedenza, questo significa la tendenza media a correggere quanto fatto al primo tentativo spiega solo una piccola frazione della variabilità di <span class="math inline">y</span>. Gli studenti hanno effettivamente cambiato opinione, ma lo hanno fatto senza considerare in modo significativo quanto stimato nel primo tentativo.</p></li>
+<li><p>Questo esercizio coinvolgeva numeri molto grandi e, di conseguenza, moltissimi hanno commesso errori di calcolo. L’indice di curtosi di Pearson si otteneva a partire dai dati a disposizione attraverso la seguente scomposizione: <span class="math display">
+\kappa_y = \frac{1}{\sigma_y^4}\frac{1}{n}\sum_{i=1}^n(y_i - \bar{y})^4 = \frac{1}{\sigma_y^4}\left[\frac{1}{n}\sum_{i=1}^ny_i^4 - 4 \bar{y}\frac{1}{n} \sum_{i=1}^ny_i^3 + 6 \bar{y}^2\frac{1}{n}\sum_{i=1}^ny_i^2 - 4 \bar{y}^3 \frac{1}{n} \sum_{i=1}^n y_i + \bar{y}^4\right].
+</span> Da questa scrittura, facendo attenzione a non dimenticare alcun termine, si otteneva che <span class="math inline">\kappa_y = 5.29635</span>, che implica un <span class="orange">eccesso di curtosi</span> (code pesanti) essendo che <span class="math inline">\kappa_y &gt; 3</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 <section id="problema-2" class="level2">
 <h2 class="anchored" data-anchor-id="problema-2">Problema 2</h2>
@@ -209,6 +281,236 @@ G = 2\: \text{var}(y).
 <li><p>Si stabilisca, tramite opportuni indici, se la variabile <code>risposta</code> è dipendente <span class="orange">in distribuzione</span> dalla variabile <code>domanda</code>. Si fornisca un’interpretazione di questi risultati.</p></li>
 <li><p>Si stabilisca, tramite opportuni indici, se la variabile <code>risposta</code> è dipendente <span class="orange">in media</span> dalla variabile <code>domanda</code>. Si fornisca un’interpretazione di questi risultati.</p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Questa prima domanda ha, con mia sorpresa, causato qualche difficoltà. Erano richieste le frequenze relative <span class="orange">condizionate</span>, le quali sono pari a</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Risposta errata</th>
+<th style="text-align: right;">Risposta corretta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">a</td>
+<td style="text-align: right;">0.800</td>
+<td style="text-align: right;">0.200</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">0.333</td>
+<td style="text-align: right;">0.667</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">c</td>
+<td style="text-align: right;">0.717</td>
+<td style="text-align: right;">0.283</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">d</td>
+<td style="text-align: right;">0.262</td>
+<td style="text-align: right;">0.738</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">e</td>
+<td style="text-align: right;">0.924</td>
+<td style="text-align: right;">0.076</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Si noti che ciascuna riga somma ad 1, pertanto questa tabella colleziona in forma compatta <span class="math inline">5</span> distribuzioni di frequenza.</p>
+<ol start="2" type="1">
+<li>Una variabile qualitativa è tanto più eterogenea quanto più le sue frequenze relative risultano simili tra loro. Era richiesto identificare la più eterogenea tra le 5 distribuzioni calcolate al punto 1. Come hanno fatto molti, si potevano calcolare gli indici di eterogeneità di Gini (o di Shannon) per ciascuna variabile, ottenendo:</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Risposta errata</th>
+<th style="text-align: right;">Risposta corretta</th>
+<th style="text-align: right;">Gini</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">a</td>
+<td style="text-align: right;">0.800</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.320</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">0.333</td>
+<td style="text-align: right;">0.667</td>
+<td style="text-align: right;">0.444</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">c</td>
+<td style="text-align: right;">0.717</td>
+<td style="text-align: right;">0.283</td>
+<td style="text-align: right;">0.406</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">d</td>
+<td style="text-align: right;">0.262</td>
+<td style="text-align: right;">0.738</td>
+<td style="text-align: right;">0.387</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">e</td>
+<td style="text-align: right;">0.924</td>
+<td style="text-align: right;">0.076</td>
+<td style="text-align: right;">0.140</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Da ciò si evince che la <span class="blue">risposta b</span> era la <span class="orange">più eterogenea</span>, avendo il valore di Gini maggiore. In questo caso molto semplice, è stata accettata come corretta anche la risposta di chi si è limitato a confrontare le frequenze relative, notando che la distanza tra <span class="math inline">0.333</span> e <span class="math inline">0.667</span> era la più piccola. Tuttavia, non è stata considerata corretta la risposta di chi ha scritto semplicemente “b” senza fornire alcuna giustificazione.</p>
+<ol start="3" type="1">
+<li><p>Questa domanda era leggermente più complessa delle altre e serviva per accedere alle valutazioni più alte. Come mostrato anche durante le esercitazioni, la varianza di una variabile binaria è data da: <span class="math display">
+\text{var}(y) = f_1(1 - f_1) = f_0(1 - f_0),
+</span> ricordando che <span class="math inline">f_1 = 1 - f_0</span>. Di conseguenza: <span class="math display">
+2\text{var}(x) = f_1(1 - f_1) + f_0(1 - f_0) = f_0(1 - f_0) + f_1(1 - f_1) = \sum_{j=0}^1 f_j(1 - f_j) = G.
+</span> Questa era una semplice dimostrazione. Sono state accettate anche dimostrazioni alternative, ovviamente purché corrette.</p></li>
+<li><p>Questa era una domanda “standard”, affrontata varie volte a lezione. Per verificare l’indipendenza in distribuzione, era possibile utilizzare l’indice di connessione <span class="math inline">\chi^2</span>. A tal fine, si potevano anzitutto calcolare le <span class="orange">frequenze attese</span>, che sono date da:</p></li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Risposta errata</th>
+<th style="text-align: right;">Risposta corretta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">a</td>
+<td style="text-align: right;">36.581</td>
+<td style="text-align: right;">23.419</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">38.410</td>
+<td style="text-align: right;">24.590</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">c</td>
+<td style="text-align: right;">36.581</td>
+<td style="text-align: right;">23.419</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">d</td>
+<td style="text-align: right;">37.190</td>
+<td style="text-align: right;">23.810</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">e</td>
+<td style="text-align: right;">40.239</td>
+<td style="text-align: right;">25.761</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Dalla tabella, si concludeva, dopo qualche calcolo, che <span class="math inline">\chi^2 = 90.612537</span> e inoltre che <span class="math inline">\chi^2_\text{norm} = 0.292299</span>. Di conseguenza, si osserva una discreta dipendenza in distribuzione. Questo implica semplicemente che la frazione di risposte corrette dipende dalla domanda, suggerendo che probabilmente le domande presentavano livelli di difficoltà diversi tra loro.</p>
+<ol start="5" type="1">
+<li>Questa domanda è stata inaspettatamente molto problematica: alcuni studenti hanno calcolato le <span class="orange">medie delle frequenze assolute</span>, che ovviamente non ha alcun senso. Veniva richiesto di valure la dipendenza <span class="orange">in media</span> della variabile <code>risposta</code> in funzione della variabile <code>domanda</code>. Si noti che la variabile risposta è <span class="blue">numerica</span> e assume i valori <span class="math inline">0</span> ed <span class="math inline">1</span>. Di conseguenza, le frequenze relative condizionate della risposta corretta corrispondono alle medie del gruppo, mentre le varianze condizionate sono pari alla metà dei coefficienti di Gini precedentemente calcolati. In primo luogo, andava pertanto ottenuta la seguente tabella:</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 53%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 8%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Risposta corretta (Media del gruppo)</th>
+<th style="text-align: right;">Gini</th>
+<th style="text-align: right;">Varianza</th>
+<th style="text-align: right;"><span class="math inline">n_j</span></th>
+<th style="text-align: right;"><span class="math inline">d_j^2</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">a</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.320</td>
+<td style="text-align: right;">0.160</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">9.600</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b</td>
+<td style="text-align: right;">0.667</td>
+<td style="text-align: right;">0.444</td>
+<td style="text-align: right;">0.222</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">14.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">c</td>
+<td style="text-align: right;">0.283</td>
+<td style="text-align: right;">0.406</td>
+<td style="text-align: right;">0.203</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">12.183</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">d</td>
+<td style="text-align: right;">0.738</td>
+<td style="text-align: right;">0.387</td>
+<td style="text-align: right;">0.193</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">11.803</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">e</td>
+<td style="text-align: right;">0.076</td>
+<td style="text-align: right;">0.140</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">4.621</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Si noti inoltre che <span class="math inline">\bar{x} = 0.390323</span>. A partire da questa tabella, si otteneva che: <span class="math inline">\mathscr{D}^2_\text{tr} = \sum_{j=1}^k n_j(\bar{x}_j - \bar{x})^2 = 21.563144,</span> e che <span class="math inline">\mathscr{D}^2_\text{en} = \sum_{j=1}^k d^2_j = 52.207824.</span> Da ciò si conclude che <span class="math inline">\mathscr{D} = \mathscr{D}^2_\text{tr} + \mathscr{D}^2_\text{en} = 73.770968</span>. Un indice di dipendenza in media è quindi dato da: <span class="math display">
+\eta^2 = \frac{\mathscr{D}^2_\text{tr}}{\mathscr{D}} = 0.292299.
+</span> Da questo si deduce una discreta dipendenza in media. <span class="orange">Nota</span>: questo valore è identico a <span class="math inline">\chi^2_\text{norm}</span>, nonostante sia stato ottenuto attraverso una procedura completamente diversa. Non si tratta di una coincidenza, anche se la dimostrazione di questo fatto non è immediata. In presenza di variabili binarie, infatti, vale che <span class="math inline">\eta^2 = \chi^2_\text{norm}</span> (!).</p>
+</div>
+</div>
+</div>
 </section>
 <section id="problema-3" class="level2">
 <h2 class="anchored" data-anchor-id="problema-3">Problema 3</h2>
@@ -217,6 +519,22 @@ G = 2\: \text{var}(y).
 <li><p>In quali circostanze la relazione <span class="math inline">\text{var}(w) = \text{var}(x) + \text{var}(y)</span> risulta verificata?</p></li>
 <li><p>Si <span class="blue">dimostri</span> la seguente disuguaglianza: <span class="math inline">|\text{cov}(x, y)| \le \text{sqm}(x)\text{sqm}(y).</span></p></li>
 </ol>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema della soluzione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Si tratta di argomenti trattati a lezione, per cui si rimanda alle slides e/o al libro di testo. Per quel che riguarda il primo punto, la relazione è verificata se <span class="math inline">\text{cov}(x, y) = 0</span>.</p>
+</div>
+</div>
+</div>
 </section>
 
 </main>
