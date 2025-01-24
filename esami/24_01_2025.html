@@ -24,18 +24,61 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="exe_8_bis_files/libs/clipboard/clipboard.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/quarto.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/popper.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="exe_8_bis_files/libs/quarto-html/anchor.min.js"></script>
-<link href="exe_8_bis_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="exe_8_bis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="exe_8_bis_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="exe_8_bis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="exe_8_bis_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="24_01_2025_files/libs/clipboard/clipboard.min.js"></script>
+<script src="24_01_2025_files/libs/quarto-html/quarto.js"></script>
+<script src="24_01_2025_files/libs/quarto-html/popper.min.js"></script>
+<script src="24_01_2025_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="24_01_2025_files/libs/quarto-html/anchor.min.js"></script>
+<link href="24_01_2025_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="24_01_2025_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="24_01_2025_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="24_01_2025_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="24_01_2025_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -47,11 +90,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Indice</h2>
    
   <ul>
-  <li><a href="#homepage" id="toc-homepage" class="nav-link active" data-scroll-target="#homepage">Homepage</a>
-  <ul class="collapse">
-  <li><a href="#esami-passati" id="toc-esami-passati" class="nav-link" data-scroll-target="#esami-passati">Esami passati</a></li>
-  <li><a href="#esami-passati---pre-2020" id="toc-esami-passati---pre-2020" class="nav-link" data-scroll-target="#esami-passati---pre-2020">Esami passati - Pre 2020</a></li>
-  </ul></li>
+  <li><a href="#problema-1" id="toc-problema-1" class="nav-link active" data-scroll-target="#problema-1">Problema 1</a></li>
+  <li><a href="#problema-2" id="toc-problema-2" class="nav-link" data-scroll-target="#problema-2">Problema 2</a></li>
+  <li><a href="#problema-3" id="toc-problema-3" class="nav-link" data-scroll-target="#problema-3">Problema 3</a></li>
   </ul>
 </nav>
 </div>
@@ -60,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Statistica I</h1>
-<p class="subtitle lead">Esami passati</p>
+<p class="subtitle lead">Esame 24 Gennaio 2025</p>
 </div>
 
 
@@ -69,11 +110,11 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta-heading">Affiliazione</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author"><span class="orange">Tommaso Rigon</span> </p>
+    <p class="author">Tommaso Rigon </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            <em>Università degli Studi di Milano-Bicocca</em>
+            DEMS
           </p>
       </div>
   </div>
@@ -90,119 +131,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="homepage" class="level1">
-<h1><a href="../index.html">Homepage</a></h1>
-<section id="esami-passati" class="level2">
-<h2 class="anchored" data-anchor-id="esami-passati">Esami passati</h2>
+<section id="problema-1" class="level2">
+<h2 class="anchored" data-anchor-id="problema-1">Problema 1</h2>
+<p>È stato analizzato il contenuto di <code>argento</code> (% Ag) di alcune monete bizantine rinvenute a Cipro. Nove di queste monete appartenevano alla prima coniazione del regno di re Manuele I Comneno (1143-1180), sette alla seconda coniazione avvenuta alcuni anni dopo, quattro alla terza coniazione ancora successiva, e altre sette a una quarta coniazione. Ci si è chiesti se vi fossero differenze significative nel contenuto di argento tra le monete coniate all’inizio e alla fine del regno di Manuele. I dati, divisi per gruppi e ordinati per periodo, sono riportati nel seguito.</p>
+<div class="cell" data-layout-align="center">
+<pre><code>## 5.9 6.8 6.4 7 6.6 7.7 7.2 6.9 6.2
+## 6.9 9 6.6 8.1 9.3 9.2 8.6
+## 4.9 5.5 4.6 4.5
+## 5.3 5.6 5.5 5.1 6.2 5.8 5.8</code></pre>
+</div>
+<ol type="1">
+<li><p>Disegnare l’istogramma della variabile <code>argento</code>, considerando tutte le <span class="math inline">n = 27</span> osservazioni (indipendentemente dai gruppi). Scegliere un numero adeguato di intervalli e motivare la scelta.</p></li>
+<li><p>La distribuzione della variabile marginale <code>argento</code> (indipendentemente dai gruppi) è bimodale? Motivare la risposta.</p></li>
+<li><p>Si calcoli un indice di asimmetria per la variabile <code>argento</code>, considerando tutte le <span class="math inline">n = 27</span> osservazioni (indipendentemente dai gruppi).</p></li>
+<li><p><span class="orange">Per ciascun gruppo</span> della variabile <code>argento</code>, calcolare mediana, primo e terzo quartile, individuare eventuali valori anomali e <span class="blue">confrontare</span> i boxplot.</p></li>
+<li><p>Determinare se esistono differenze tra le medie della variabile <code>argento</code> nei diversi gruppi utilizzando indici statistici appropriati e commentare i risultati.</p></li>
+</ol>
+<p><span class="blue">Riferimento bibliografico</span>: Hendy, M.F. and Charles, J.A. (1970) The production techniques, silver content and circulation history of the twelfth-century Byzantine Trachy. <em>Archaeometry</em>, 12, 13-21.</p>
+</section>
+<section id="problema-2" class="level2">
+<h2 class="anchored" data-anchor-id="problema-2">Problema 2</h2>
+<p>Il FantaSanremo è un gioco online basato sul Festival di Sanremo, la celebre competizione musicale italiana. Si tratta di un “fantasy game” ispirato a giochi come il Fantacalcio, ma incentrato sui cantanti in gara al Festival. I partecipanti formano una squadra scegliendo <span class="math inline">n = 7</span> artisti tra quelli in gara, assegnando loro un budget fittizio. Ogni giocatore ha un budget virtuale (di solito 100 Baudi, la moneta del gioco) per “comprare” i cantanti che vuole inserire nella sua squadra. Ogni cantante ha un valore in Baudi, determinato dalla sua popolarità e dalle aspettative.</p>
+<p>Di seguito sono indicati i costi dei cantanti (in “Baudi”, la moneta del gioco) per le due squadre.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Data esame</th>
-<th>Tema d’esame</th>
+<th style="text-align: left;"><code>squadra 1</code></th>
+<th style="text-align: left;"><code>squadra 2</code></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>24 Gennaio 2025</td>
-<td><a href="../esami/24_01_2025.html">Esame</a></td>
+<td style="text-align: left;">17 (Fedez)</td>
+<td style="text-align: left;">13 (Simone Cristicchi)</td>
 </tr>
 <tr class="even">
-<td>19 Novembre 2024</td>
-<td><a href="../esami/19_11_2024.html">Esame</a></td>
+<td style="text-align: left;">16 (Coma_Cose)</td>
+<td style="text-align: left;">12 (Modà)</td>
 </tr>
 <tr class="odd">
-<td>24 Giugno 2024</td>
-<td><a href="../esami/24_06_2024.html">Esame</a></td>
+<td style="text-align: left;">14 (Francesca Michielin)</td>
+<td style="text-align: left;">18 (Giorgia)</td>
 </tr>
 <tr class="even">
-<td>19 Febbraio 2024</td>
-<td><a href="../esami/19_02_2024.html">Esame</a></td>
+<td style="text-align: left;">16 (Noemi)</td>
+<td style="text-align: left;">15 (Rose Villain)</td>
 </tr>
 <tr class="odd">
-<td>29 Gennaio 2024</td>
-<td><a href="../esami/29_01_2024.html">Esame</a></td>
+<td style="text-align: left;">13 (Simone Cristicchi)</td>
+<td style="text-align: left;">18 (Elodie)</td>
 </tr>
 <tr class="even">
-<td>17 Novembre 2023</td>
-<td><a href="../esami/17_11_2023.html">Esame</a></td>
+<td style="text-align: left;">12 (Joan Thiele)</td>
+<td style="text-align: left;">12 (Emis Killa)</td>
 </tr>
 <tr class="odd">
-<td>21 Novembre 2022</td>
-<td><a href="../esami/21_11_2022.html">Esame</a></td>
-</tr>
-<tr class="even">
-<td>31 Gennaio 2022</td>
-<td><a href="../esami/31_01_2022.html">Esame</a></td>
-</tr>
-<tr class="odd">
-<td>22 Novembre 2021</td>
-<td><a href="../esami/22_11_2021.html">Esame</a></td>
-</tr>
-<tr class="even">
-<td>21 Giugno 2021</td>
-<td><a href="../esami/21_06_2021.html">Esame</a></td>
-</tr>
-<tr class="odd">
-<td>15 Febbraio 2021</td>
-<td><a href="../esami/15_02_2021.html">Esame</a></td>
-</tr>
-<tr class="even">
-<td>28 Gennaio 2021</td>
-<td><a href="../esami/28_01_2021.html">Esame</a></td>
-</tr>
-<tr class="odd">
-<td>16 Novembre 2020</td>
-<td><a href="../esami/16_11_2020.html">Esame</a></td>
+<td style="text-align: left;">12 (Lucio Corsi)</td>
+<td style="text-align: left;">12 (Sarah Toscano)</td>
 </tr>
 </tbody>
 </table>
+<ol type="1">
+<li><p>Calcolare il rapporto di concentrazione di Gini per la <code>squadra 1</code> e per la <code>squadra 2</code>.</p></li>
+<li><p>Disegnare le curve di Lorenz corrispondenti e confrontarle.</p></li>
+<li><p>Interpretare i risultati ottenuti nei due punti precedenti.</p></li>
+<li><p>In questo esempio specifico, sarebbe stato possibile confrontare la concentrazione tra i Baudi della <code>squadra 1</code> e <code>squadra 2</code> utilizzando la varianza? Perché?</p></li>
+<li><p>Supponiamo di redistribuire il budget totale all’interno della squadra, assegnando ai cantanti lo stesso valore medio, ovvero <span class="math inline">100 / 7 = 14.286</span> baudi. Come cambierebbero il rapporto di concentrazione di Gini e la curva di Lorenz per questa ipotetica squadra?</p></li>
+<li><p>Si supponga che in una futura edizione del FantaSanremo la valuta “Baudi” venga sostituita con una nuova moneta, gli “Amedei”, dove 1 Baudo equivale a 50 Amedei. Ogni squadra avrebbe quindi un budget di 5,000 Amedei, e i costi dei cantanti sarebbero convertiti nella nuova valuta. Quanto valgono i rapporti di concentrazione di Gini per le due squadre in questa nuova valuta? Si osservano variazioni rispetto ai rapporti calcolati in Baudi?</p></li>
+<li><p>(<span class="blue">Teoria</span>) Sia <span class="math inline">x_1, \dots, x_n</span> un insieme di dati. Consideriamo i dati trasformati <span class="math inline">y_1, \dots, y_n</span>, definiti come <span class="math inline">y_i = a + b x_i</span> per <span class="math inline">i = 1, \dots, n</span>, dove <span class="math inline">a</span> e <span class="math inline">b</span> sono due numeri reali arbitrari. <span class="orange">Dimostrare</span> che <span class="math inline">\text{var}(y) = b^2 \text{var}(x)</span>.</p></li>
+</ol>
 </section>
-<section id="esami-passati---pre-2020" class="level2">
-<h2 class="anchored" data-anchor-id="esami-passati---pre-2020">Esami passati - Pre 2020</h2>
-<p><strong>Nota importante</strong>. I seguenti esami fanno riferimento agli Anni Accademici precedenti al 2020, in cui il corso era affidato ad un docente diverso da quello attuale.</p>
-<p>Il programma di allora era leggermente diverso da quello corrente. Non verranno quindi fornite spiegazioni riguardo gli argomenti non affrontati a lezione.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Data esame</th>
-<th>Link</th>
-<th>Argomenti non affrontati</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>18 Febbraio 2019</td>
-<td><a href="../esami/OLD_18_02_2019.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="even">
-<td>30 Gennaio 2019</td>
-<td><a href="../esami/OLD_30_01_2019.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="odd">
-<td>21 Novembre 2018</td>
-<td><a href="../esami/OLD_21_11_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="even">
-<td>20 Giugno 2018</td>
-<td><a href="../esami/OLD_20_06_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="odd">
-<td>24 Gennaio 2018</td>
-<td><a href="../esami/OLD_24_01_2018.pdf">File pdf</a></td>
-<td>Si, parzialmente</td>
-</tr>
-<tr class="even">
-<td>13 Settembre 2017</td>
-<td><a href="../esami/OLD_13_09_2017.pdf">File pdf</a></td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-</section>
+<section id="problema-3" class="level2">
+<h2 class="anchored" data-anchor-id="problema-3">Problema 3</h2>
+<ol type="1">
+<li>Sia <span class="math inline">x_1,\dots,x_n</span> un insiemi di dati. Si <span class="orange">dimostri</span> che <span class="math display">
+\bar{x} = \arg\min_{\alpha \in \mathbb{R}}\sum_{i=1}^n(x_i - \alpha)^2.
+</span></li>
+<li>Inoltre si <span class="blue">dimostri</span> per <span class="math inline">n = 2</span> che <span class="math display">
+\min_{\alpha \in \mathbb{R}}\sum_{i=1}^n|x_i - \alpha| = \sum_{i=1}^n|x_i - \text{Me}|
+</span></li>
+</ol>
 </section>
 
 </main>
@@ -632,5 +640,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="exe_8_bis_files/libs/quarto-html/zenscroll-min.js"></script>
+<script src="24_01_2025_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

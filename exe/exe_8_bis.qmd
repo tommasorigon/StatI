@@ -30,6 +30,7 @@ knitr::opts_chunk$set(echo = F, eval = T, message = F, warning = F, error = F, c
 
 | Data esame       | Tema d'esame                      |
 |------------------|-----------------------------------|
+| 24 Gennaio 2025 | [Esame](../esami/24_01_2025.html) |
 | 19 Novembre 2024 | [Esame](../esami/19_11_2024.html) |
 | 24 Giugno 2024 | [Esame](../esami/24_06_2024.html) |
 | 19 Febbraio 2024 | [Esame](../esami/19_02_2024.html) |
