@@ -1,5 +1,5 @@
 ---
-title: 'Esiti prova del 17 Febbraio 2025'
+title: 'Esiti prova del 19 Giugno 2025'
 subtitle: "Statistica I"
 lang: it
 author:
