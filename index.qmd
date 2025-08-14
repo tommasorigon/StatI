@@ -23,17 +23,17 @@ L'obiettivo primario del Corso [Statistica I]{.blue} (6 CFU) è fornire agli stu
 
 ## Materiale didattico
 
-### Testi di riferimento
+#### Testi di riferimento
 
 - Piccolo, D. (2010), [*Statistica*](https://www.mulino.it/isbn/9788815139023), Terza edizione, Il Mulino.
 - Cicchitelli, G., D'Urso P. e Minozzo, M. (2022), [*Statistica. Principi e metodi*](https://he.pearson.it/catalogo/642), Quarta edizione, Pearson.
 
-### Testo di consultazione
+#### Testo di consultazione
 
 - Cairo, A. (2020). [*Come i grafici mentono*](https://www.raffaellocortina.it/scheda-libro/alberto-cairo/come-i-grafici-mentono-9788832851731-3296.html), Raffaello Cortina Editore.
 - Spiegelhalter, D. (2020). [*L'arte della statistica*](https://www.einaudi.it/catalogo-libri/scienze-sociali/sociologia/larte-della-statistica-david-spiegelhalter-9788806246624/), Einaudi.
 
-### Materiale didattico
+#### Slides ed esercizi
 
 [Nota]{.orange}: la dicitura §2.1 --- §2.4 indica che vanno considerate le Sezioni §2.1, §2.2, §2.3 e §2.4 del libro di testo (Piccolo, 2010).
 
