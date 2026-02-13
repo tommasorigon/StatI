@@ -9,3 +9,4 @@ esami/ESITI.csv
 .quarto/
 *.qmd
 esami/ESITI.csv
+.Rhistory
